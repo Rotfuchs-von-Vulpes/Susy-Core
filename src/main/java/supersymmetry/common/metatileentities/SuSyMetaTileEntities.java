@@ -107,7 +107,6 @@ public class SuSyMetaTileEntities {
     public static MetaTileEntityMiningDrill MINING_DRILL;
     public static MetaTileEntityGravitySeparator GRAVITY_SEPARATOR;
     public static MetaTileEntityQuencher QUENCHER;
-    public static MetaTileEntityRailroadEngineeringStation RAILROAD_ENGINEERING_STATION;
 
     public static MetaTileEntityEnergyHatch[] NEW_ENERGY_OUTPUT_HATCH_4A = new MetaTileEntityEnergyHatch[3];
     public static MetaTileEntityEnergyHatch[] NEW_ENERGY_OUTPUT_HATCH_16A = new MetaTileEntityEnergyHatch[4];
@@ -216,7 +215,6 @@ public class SuSyMetaTileEntities {
         MAGNETOHYDRODYNAMIC_GENERATOR = registerMetaTileEntity(15047, new MetaTileEntityMagnetohydrodynamicGenerator(susyId("magnetohydrodynamic_generator")));
         MINING_DRILL = registerMetaTileEntity(15048, new MetaTileEntityMiningDrill(susyId("mining_drill")));
         QUENCHER = registerMetaTileEntity(15049, new MetaTileEntityQuencher(susyId("quencher")));
-        RAILROAD_ENGINEERING_STATION = registerMetaTileEntity(15050, new MetaTileEntityRailroadEngineeringStation(susyId("railroad_engineering_station")));
 
         PRIMITIVE_MUD_PUMP = registerMetaTileEntity(15051, new MetaTileEntityPrimitiveMudPump(susyId("primitive_mud_pump")));
 
