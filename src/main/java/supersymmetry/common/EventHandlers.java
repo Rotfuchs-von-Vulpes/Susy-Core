@@ -2,8 +2,6 @@ package supersymmetry.common;
 
 import com.alcatrazescapee.notreepunching.common.items.ItemCeramicBucket;
 import com.alcatrazescapee.notreepunching.common.items.ModItems;
-import gregtech.api.util.GTTeleporter;
-import gregtech.api.util.TeleportHandler;
 import gregtech.common.items.MetaItems;
 import gregtechfoodoption.item.GTFOMetaItem;
 import net.minecraft.block.BlockCauldron;
@@ -12,13 +10,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.server.management.PlayerList;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
@@ -29,9 +25,7 @@ import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
 import supersymmetry.Supersymmetry;
-import supersymmetry.common.event.MobHordeWorldData;
 
 @Mod.EventBusSubscriber(modid = Supersymmetry.MODID)
 public class EventHandlers {
@@ -49,8 +43,8 @@ public class EventHandlers {
             data.setBoolean(FIRST_SPAWN, true);
             playerData.setTag(EntityPlayer.PERSISTED_NBT_TAG, data);
 
-            GTTeleporter teleporter = new GTTeleporter((WorldServer) event.player.world, event.player.posX, event.player.posY , event.player.posZ);
-            TeleportHandler.teleport(event.player, event.player.dimension, teleporter, event.player.posX, event.player.posY, event.player.posZ);
+//            GTTeleporter teleporter = new GTTeleporter((WorldServer) event.player.world, event.player.posX, event.player.posY , event.player.posZ);
+//            TeleportHandler.teleport(event.player, event.player.dimension, teleporter, event.player.posX, event.player.posY, event.player.posZ);
 
             event.player.addItemStackToInventory(GTFOMetaItem.EMERGENCY_RATIONS.getStackForm(10));
             event.player.addItemStackToInventory(MetaItems.PROSPECTOR_LV.getChargedStack(100000));
@@ -102,36 +96,6 @@ public class EventHandlers {
                 event.getWorld().getBlockState(target.getBlockPos()).getBlock() instanceof BlockCauldron) {
             event.setCanceled(true);
             cancelFillBucket = false;
-        }
-    }
-
-    @SubscribeEvent
-    public static void onTrySpawnPortal(BlockEvent.PortalSpawnEvent event) {
-        event.setCanceled(true);
-    }
-
-    @SubscribeEvent
-    public static void on(TickEvent.WorldTickEvent event) {
-
-        World world = event.world;
-
-        if (world.isRemote) {
-            return;
-        }
-
-        if (event.phase != TickEvent.Phase.END) {
-            return;
-        }
-
-        if (world.provider.getDimension() != 0) {
-            return;
-        }
-
-        if (world instanceof WorldServer server) {
-            PlayerList list = server.getMinecraftServer().getPlayerList();
-            MobHordeWorldData mobHordeWorldData = MobHordeWorldData.get(world);
-            list.getPlayers().forEach(p -> mobHordeWorldData.getPlayerData(p.getPersistentID()).update(p));
-            mobHordeWorldData.markDirty();
         }
     }
 }
