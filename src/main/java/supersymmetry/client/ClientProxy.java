@@ -100,6 +100,7 @@ public class ClientProxy extends CommonProxy {
         event.getToolTip().addAll(tooltips);
     }
 
+
     @SubscribeEvent
     public static void registerModels(@NotNull ModelRegistryEvent event) {
         SuSyBlocks.registerItemModels();
