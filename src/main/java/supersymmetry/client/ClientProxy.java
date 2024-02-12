@@ -18,7 +18,6 @@ import supersymmetry.Supersymmetry;
 import supersymmetry.api.recipes.catalysts.CatalystGroup;
 import supersymmetry.api.recipes.catalysts.CatalystInfo;
 import supersymmetry.common.CommonProxy;
-import supersymmetry.common.SusyMetaEntities;
 import supersymmetry.common.blocks.SheetedFrameItemBlock;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SuSyMetaBlocks;
@@ -34,7 +33,6 @@ public class ClientProxy extends CommonProxy {
 
     public void preLoad() {
         super.preLoad();
-        SusyMetaEntities.initRenderers();
     }
 
     @Override
