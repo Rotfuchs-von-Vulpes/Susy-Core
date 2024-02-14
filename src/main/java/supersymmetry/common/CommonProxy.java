@@ -2,6 +2,7 @@ package supersymmetry.common;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
+import gregtech.api.unification.material.properties.MaterialProperties;
 import gregtech.common.items.MetaItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityZombie;
@@ -21,6 +22,7 @@ import supersymmetry.api.unification.ore.SusyOrePrefix;
 import supersymmetry.api.unification.ore.SusyStoneTypes;
 import supersymmetry.api.unification.material.properties.SuSyPropertyKey;
 import supersymmetry.common.blocks.*;
+import supersymmetry.common.event.SuSyChangeFlags;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.materials.SusyMaterials;
 import supersymmetry.loaders.SuSyWorldLoader;
@@ -107,7 +109,9 @@ public class CommonProxy {
 
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerMaterials(@NotNull MaterialEvent event) {
+        MaterialProperties.addBaseType(SuSyPropertyKey.FIBER);
         SusyMaterials.init();
+        SuSyChangeFlags.init();
     }
 
     @SubscribeEvent(priority = EventPriority.HIGH)
@@ -124,7 +128,7 @@ public class CommonProxy {
         //SusyMaterials.removeFlags();
     }
 
-    @SubscribeEvent()
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         SusyOreDictionaryLoader.init();
         SuSyMetaBlocks.registerOreDict();
