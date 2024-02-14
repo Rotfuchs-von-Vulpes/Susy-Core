@@ -1,8 +1,7 @@
 package supersymmetry.common;
 
+import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
-import gregtech.api.unification.material.event.MaterialEvent;
-import gregtech.api.unification.material.event.PostMaterialEvent;
 import gregtech.common.items.MetaItems;
 import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityZombie;
@@ -15,7 +14,6 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib3.GeckoLib;
 import supersymmetry.Supersymmetry;
 import supersymmetry.api.event.MobHordeEvent;
 import supersymmetry.api.recipes.SuSyRecipeMaps;
@@ -25,9 +23,13 @@ import supersymmetry.common.blocks.SheetedFrameItemBlock;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SuSyMetaBlocks;
 import supersymmetry.common.blocks.SusyStoneVariantBlock;
+import supersymmetry.api.unification.material.properties.SuSyPropertyKey;
+import supersymmetry.common.blocks.*;
+import supersymmetry.common.event.SuSyChangeFlags;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.materials.SusyMaterials;
 import supersymmetry.loaders.SuSyWorldLoader;
+import supersymmetry.loaders.recipes.SuSyRecipeLoader;
 import supersymmetry.loaders.SusyOreDictionaryLoader;
 import supersymmetry.loaders.recipes.SuSyRecipeLoader;
 
@@ -40,14 +42,13 @@ import static supersymmetry.common.blocks.SuSyMetaBlocks.SHEETED_FRAMES;
 public class CommonProxy {
 
     public void preLoad(){
-        GeckoLib.initialize();
         SusyStoneTypes.init();
         SuSyRecipeMaps.init();
     }
 
     public void load() {
         SuSyWorldLoader.init();
-        new MobHordeEvent((p) -> new EntityZombie(p.world), 4, 8, "zombies").setMaximumDistanceUnderground(10).setNightOnly(true);
+        //new MobHordeEvent((p) -> new EntityZombie(p.world), 4, 8).setMaximumDistanceUnderground(10);
     }
 
     @SubscribeEvent
@@ -109,7 +110,9 @@ public class CommonProxy {
 
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerMaterials(@NotNull MaterialEvent event) {
+        MaterialProperties.addBaseType(SuSyPropertyKey.FIBER);
         SusyMaterials.init();
+        SuSyChangeFlags.init();
     }
 
     @SubscribeEvent(priority = EventPriority.HIGH)
@@ -126,7 +129,7 @@ public class CommonProxy {
         //SusyMaterials.removeFlags();
     }
 
-    @SubscribeEvent()
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         SusyOreDictionaryLoader.init();
         SuSyMetaBlocks.registerOreDict();

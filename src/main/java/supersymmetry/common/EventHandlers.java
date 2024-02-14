@@ -7,6 +7,7 @@ import gregtechfoodoption.item.GTFOMetaItem;
 import net.minecraft.block.BlockCauldron;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -96,6 +97,16 @@ public class EventHandlers {
                 event.getWorld().getBlockState(target.getBlockPos()).getBlock() instanceof BlockCauldron) {
             event.setCanceled(true);
             cancelFillBucket = false;
+        }
+    }
+
+    @SubscribeEvent
+    public static void onCrafted(PlayerEvent.ItemCraftedEvent event) {
+        for (int i = 0; i < event.craftMatrix.getSizeInventory(); i++) {
+            if (event.craftMatrix.getStackInSlot(i).isItemEqual(new ItemStack(Items.WATER_BUCKET))) {
+                event.craftMatrix.setInventorySlotContents(i, new ItemStack(Items.AIR));
+                break;
+            }
         }
     }
 }
