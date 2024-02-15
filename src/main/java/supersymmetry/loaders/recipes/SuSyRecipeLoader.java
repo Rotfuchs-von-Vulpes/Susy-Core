@@ -3,6 +3,7 @@ package supersymmetry.loaders.recipes;
 import biomesoplenty.api.item.BOPItems;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
@@ -11,7 +12,11 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.blocks.StoneVariantBlock;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
+import gregtechfoodoption.GTFOMaterialHandler;
+import gregtechfoodoption.integration.appleskin.GTFOMetaFoodHelper;
 import gregtechfoodoption.item.GTFOMetaItem;
+import gregtechfoodoption.item.GTFOMetaItems;
+import gregtechfoodoption.item.food.GTFOFoodUseManager;
 import gregtechfoodoption.recipe.GTFORecipeMaps;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -19,16 +24,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
+import supersymmetry.api.recipes.SuSyRecipeMaps;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SusyStoneVariantBlock;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.materials.SusyMaterials;
 import supersymmetry.loaders.recipes.misc.BrickChain;
 
-import java.util.Arrays;
-import java.util.EnumMap;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static gregtech.api.recipes.GTRecipeHandler.removeAllRecipes;
@@ -41,6 +44,7 @@ import static gregtech.common.blocks.BlockSteamCasing.SteamCasingType.BRONZE_HUL
 import static gregtech.common.blocks.MetaBlocks.STEAM_CASING;
 import static gregtech.common.items.MetaItems.SHAPE_EXTRUDER_BLOCK;
 import static gregtechfoodoption.GTFOMaterialHandler.BakingSodaSolution;
+import static supersymmetry.api.recipes.SuSyRecipeMaps.BLENDER_RECIPES;
 
 public class SuSyRecipeLoader {
 
@@ -317,6 +321,7 @@ public class SuSyRecipeLoader {
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(Items.COOKED_MUTTON));
         // Methane * 43
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(Items.CARROT));
+
         // Iron Dust * 1
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, OreDictUnifier.get(dust, YellowLimonite, 4));
         // Iron Dust * 1
@@ -324,11 +329,14 @@ public class SuSyRecipeLoader {
 
 
         // Baking Soda Solution * 1000
-        removeRecipesByInputs(MIXER_RECIPES, new ItemStack[]{ OreDictUnifier.get(OrePrefix.dust, Brick) }, new FluidStack[]{ Water.getFluid(1000) });
+        removeRecipesByInputs(MIXER_RECIPES, new ItemStack[]{ OreDictUnifier.get(OrePrefix.dust, SodiumBicarbonate) }, new FluidStack[]{ Water.getFluid(1000) });
+        removeRecipesByInputs(BLENDER_RECIPES, new ItemStack[]{ OreDictUnifier.get(OrePrefix.dust, SodiumBicarbonate) }, new FluidStack[]{ Water.getFluid(1000) });
+
         // Crushed Bauxite Ore * 1
         removeRecipesByInputs(FORGE_HAMMER_RECIPES, OreDictUnifier.get(ore, Bauxite));
         // Crushed Bauxite Ore * 2
         removeRecipesByInputs(MACERATOR_RECIPES, OreDictUnifier.get(ore, Bauxite));
+
         // Flower Pot * 1
         removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack(Items.BRICK, 3));
 
@@ -452,6 +460,20 @@ public class SuSyRecipeLoader {
                 'P', SuSyMetaItems.STEAM_PISTON.getStackForm(),
                 'R', STEAM_CASING.getItemVariant(BRONZE_HULL),
                 'G', new ItemStack(Blocks.GLASS));
+
+        VACUUM_RECIPES.recipeBuilder()
+                .inputs(GTFOMaterialHandler.MATTER_GRAHAM_HOT.getItemStack())
+                .outputs(GTFOMetaItem.GRAHAM_CRACKER.getStackForm())
+                .EUt(60)
+                .duration(20)
+                .buildAndRegister();
+
+        VACUUM_RECIPES.recipeBuilder()
+                .inputs(GTFOMaterialHandler.HotAppleHardCandy.getItemStack())
+                .outputs(GTFOMetaItem.APPLE_HARD_CANDY.getStackForm())
+                .EUt(5)
+                .duration(200)
+                .buildAndRegister();
 
         BrickChain.init();
 
