@@ -2,6 +2,7 @@ package supersymmetry.loaders.recipes.misc;
 
 import biomesoplenty.api.item.BOPItems;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.MetaBlocks;
@@ -15,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import supersymmetry.api.unification.ore.SusyStoneTypes;
 import supersymmetry.common.blocks.*;
 
+import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static supersymmetry.common.blocks.SuSyBlocks.*;
 import static supersymmetry.common.blocks.SusyStoneVariantBlock.*;
 
@@ -37,7 +39,7 @@ public class BrickChain {
     private static void CompressBrickRecipes(ItemStack brick_mix, ItemStack compressed_brick) {
         ModHandler.addShapelessRecipe("Compress" + brick_mix.getDisplayName() + "_1", compressed_brick, MetaItems.WOODEN_FORM_BRICK, brick_mix);
         compressed_brick.setCount(8);
-        ModHandler.addShapedRecipe(false, "Compress" + brick_mix.getDisplayName() + "_8", compressed_brick,
+        ModHandler.addShapedRecipe("Compress" + brick_mix.getDisplayName() + "_8", compressed_brick,
                 "MMM", "MWM", "MMM",
                 'M', brick_mix,
                 'W', MetaItems.WOODEN_FORM_BRICK);
@@ -53,6 +55,8 @@ public class BrickChain {
         };
 
         Arrays.stream(name_removals).forEach(ModHandler::removeRecipeByName);
+
+        removeRecipesByInputs(RecipeMaps.COMPRESSOR_RECIPES, OreDictUnifier.get(dust, Fireclay));
 
         ModHandler.addSmeltingRecipe(
                 SUSY_STONE_BLOCKS.get(StoneVariant.COBBLE).getItemVariant(StoneType.LIMESTONE),

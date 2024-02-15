@@ -5,6 +5,7 @@ import com.alcatrazescapee.notreepunching.common.items.ModItems;
 import gregtech.common.items.MetaItems;
 import gregtechfoodoption.item.GTFOMetaItem;
 import net.minecraft.block.BlockCauldron;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -27,6 +28,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import supersymmetry.Supersymmetry;
+import gregtech.api.unification.material.Materials;
+import supersymmetry.common.materials.SusyMaterials;
 
 @Mod.EventBusSubscriber(modid = Supersymmetry.MODID)
 public class EventHandlers {
@@ -103,6 +106,7 @@ public class EventHandlers {
     @SubscribeEvent
     public static void onCrafted(PlayerEvent.ItemCraftedEvent event) {
         for (int i = 0; i < event.craftMatrix.getSizeInventory(); i++) {
+            if (!event.crafting.isItemEqual(FluidUtil.getFilledBucket(Materials.SaltWater.getFluid(1000)))) return;
             if (event.craftMatrix.getStackInSlot(i).isItemEqual(new ItemStack(Items.WATER_BUCKET))) {
                 event.craftMatrix.setInventorySlotContents(i, new ItemStack(Items.AIR));
                 break;
