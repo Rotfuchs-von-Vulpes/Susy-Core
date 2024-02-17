@@ -4,6 +4,7 @@ import biomesoplenty.api.item.BOPItems;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.blocks.StoneVariantBlock;
@@ -57,6 +58,15 @@ public class BrickChain {
         Arrays.stream(name_removals).forEach(ModHandler::removeRecipeByName);
 
         removeRecipesByInputs(RecipeMaps.COMPRESSOR_RECIPES, OreDictUnifier.get(dust, Fireclay));
+        removeRecipesByInputs(RecipeMaps.FORMING_PRESS_RECIPES,
+                new ItemStack(Blocks.SAND, 3, 32767),
+                new ItemStack(Blocks.GRAVEL, 2),
+                OreDictUnifier.get(dust, Bentonite),
+                OreDictUnifier.get(dust, Talc),
+                new ItemStack(Items.WHEAT),
+                WOODEN_FORM_BRICK.getStackForm());
+        ModHandler.removeFurnaceSmelting(GTFOMetaItem.MUD_BRICK.getStackForm());
+        ModHandler.removeFurnaceSmelting(COMPRESSED_FIRECLAY.getStackForm());
 
         ModHandler.addSmeltingRecipe(
                 SUSY_STONE_BLOCKS.get(StoneVariant.COBBLE).getItemVariant(StoneType.LIMESTONE),
