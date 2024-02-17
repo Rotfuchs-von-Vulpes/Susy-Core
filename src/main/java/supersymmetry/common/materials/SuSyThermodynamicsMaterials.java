@@ -13,37 +13,40 @@ import static supersymmetry.common.materials.Util.determineTemperatureLiquid;
 
 public class SuSyThermodynamicsMaterials {
 
-    private static void generateHighPressureGases(Material materialName, int id, boolean generateCold){
+    private static Material[] generateHighPressureGases(Material materialName, int id){
         var color = materialName.getMaterialRGB();
 
-        new Material.Builder(id, SuSyUtility.susyId("hot_hp_" + materialName.toString()))
+        Material mat1 = new Material.Builder(id, SuSyUtility.susyId("hot_hp_" + materialName.toString()))
                 .gas(new FluidBuilder().temperature(323))
                 .color(color)
                 .components(materialName, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        new Material.Builder(id + 1, SuSyUtility.susyId("hp_" + materialName.toString()))
+        Material mat2 = new Material.Builder(id + 1, SuSyUtility.susyId("hp_" + materialName.toString()))
                 .gas()
                 .color(color)
                 .components(materialName, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        if (generateCold) {
-            new Material.Builder(id + 2, SuSyUtility.susyId("cold_hp_" + materialName.toString()))
-                    .gas(new FluidBuilder().temperature(223))
-                    .color(color)
-                    .components(materialName, 1)
-                    .flags(DISABLE_DECOMPOSITION)
-                    .build();
-        }
+        return new Material[]{mat1, mat2};
     }
 
-    private static void generateLiquidFromGas(Material materialName, int id, int boilingTemperature){
+    private static Material generateColdHighPressureGases(Material materialName, int id){
+        var color = materialName.getMaterialRGB();
+        return new Material.Builder(id + 2, SuSyUtility.susyId("cold_hp_" + materialName.toString()))
+                .gas(new FluidBuilder().temperature(223))
+                .color(color)
+                .components(materialName, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+    }
+
+    private static Material generateLiquidFromGas(Material materialName, int id, int boilingTemperature){
         var color = materialName.getMaterialRGB();
 
-        new Material.Builder(id, SuSyUtility.susyId("liquid_" + materialName.toString()))
+        return new Material.Builder(id, SuSyUtility.susyId("liquid_" + materialName.toString()))
                 .liquid(new FluidBuilder().temperature(boilingTemperature))
                 .color(color)
                 .components(materialName, 1)
@@ -51,42 +54,44 @@ public class SuSyThermodynamicsMaterials {
                 .build();
     }
 
-    private static void generateThermoRefrigerant(Material materialName, int id){
+    private static Material[] generateThermoRefrigerant(Material materialName, int id){
         var color = materialName.getMaterialRGB();
 
-        new Material.Builder(id, SuSyUtility.susyId("hot_compressed_" + materialName.toString()))
+        Material mat1 = new Material.Builder(id, SuSyUtility.susyId("hot_compressed_" + materialName.toString()))
                 .gas(new FluidBuilder().temperature(323))
                 .color(color)
                 .components(materialName, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        new Material.Builder(id + 1, SuSyUtility.susyId("compressed_" + materialName.toString()))
+        Material mat2 = new Material.Builder(id + 1, SuSyUtility.susyId("compressed_" + materialName.toString()))
                 .gas()
                 .color(color)
                 .components(materialName, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        new Material.Builder(id + 2, SuSyUtility.susyId("cold_compressed_" + materialName.toString()))
+        Material mat3 = new Material.Builder(id + 2, SuSyUtility.susyId("cold_compressed_" + materialName.toString()))
                 .gas(new FluidBuilder().temperature(223))
                 .color(color)
                 .components(materialName, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        new Material.Builder(id + 3, SuSyUtility.susyId("cold_" + materialName.toString()))
+        Material mat4 = new Material.Builder(id + 3, SuSyUtility.susyId("cold_" + materialName.toString()))
                 .gas(new FluidBuilder().temperature(223))
                 .color(color)
                 .components(materialName, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        return new Material[]{mat1, mat2, mat3, mat4};
     }
 
-    private static void generateCoolant(Material materialName, int id){
+    private static Material generateCoolant(Material materialName, int id){
         int color = materialName.getMaterialRGB();
 
-        new Material.Builder(id, SuSyUtility.susyId("warm_" + materialName.toString()))
+        return new Material.Builder(id, SuSyUtility.susyId("warm_" + materialName.toString()))
                 .liquid(new FluidBuilder().temperature(303))
                 .color(color)
                 .components(materialName, 1)
@@ -95,10 +100,10 @@ public class SuSyThermodynamicsMaterials {
 
     }
 
-    private static void generateHotGas(Material material, int id) {
+    private static Material generateHotGas(Material material, int id) {
         int color = material.getMaterialRGB();
 
-        new Material.Builder(id, SuSyUtility.susyId("hot_" + material.toString()))
+        return new Material.Builder(id, SuSyUtility.susyId("hot_" + material.toString()))
                 .gas(new FluidBuilder().temperature(determineTemperatureGas(material) + 100))
                 .color(color)
                 .components(material, 1)
@@ -106,197 +111,299 @@ public class SuSyThermodynamicsMaterials {
                 .build();
     }
 
-    private static void generateGreenhouseGases(Material material, int id) {
+    private static Material[] generateGreenhouseGases(Material material, int id) {
         int color = material.getMaterialRGB();
 
-        new Material.Builder(id, SuSyUtility.susyId("warm_dry_" + material.toString()))
+        Material mat1 = new Material.Builder(id, SuSyUtility.susyId("warm_dry_" + material.toString()))
                 .gas(new FluidBuilder().temperature(determineTemperatureGas(material) + 20))
                 .color(color)
                 .components(material, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        new Material.Builder(id + 1, SuSyUtility.susyId("warm_" + material.toString()))
+        Material mat2 = new Material.Builder(id + 1, SuSyUtility.susyId("warm_" + material.toString()))
                 .gas(new FluidBuilder().temperature(determineTemperatureGas(material) + 20))
                 .color(color)
                 .components(material, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        new Material.Builder(id + 2, SuSyUtility.susyId("warm_humid_" + material.toString()))
+        Material mat3 = new Material.Builder(id + 2, SuSyUtility.susyId("warm_humid_" + material.toString()))
                 .gas(new FluidBuilder().temperature(determineTemperatureGas(material) + 20))
                 .color(color)
                 .components(material, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        new Material.Builder(id + 3, SuSyUtility.susyId("dry_" + material.toString()))
+        Material mat4 = new Material.Builder(id + 3, SuSyUtility.susyId("dry_" + material.toString()))
                 .gas(new FluidBuilder().temperature(determineTemperatureGas(material)))
                 .color(color)
                 .components(material, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        new Material.Builder(id + 4, SuSyUtility.susyId("humid_" + material.toString()))
+        Material mat5 = new Material.Builder(id + 4, SuSyUtility.susyId("humid_" + material.toString()))
                 .gas(new FluidBuilder().temperature(determineTemperatureGas(material)))
                 .color(color)
                 .components(material, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        new Material.Builder(id + 5, SuSyUtility.susyId("cool_dry_" + material.toString()))
+        Material mat6 = new Material.Builder(id + 5, SuSyUtility.susyId("cool_dry_" + material.toString()))
                 .gas(new FluidBuilder().temperature(determineTemperatureGas(material) - 20))
                 .color(color)
                 .components(material, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        new Material.Builder(id + 6, SuSyUtility.susyId("cool_" + material.toString()))
+        Material mat7 = new Material.Builder(id + 6, SuSyUtility.susyId("cool_" + material.toString()))
                 .gas(new FluidBuilder().temperature(determineTemperatureGas(material) - 20))
                 .color(color)
                 .components(material, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        new Material.Builder(id + 7, SuSyUtility.susyId("cool_humid_" + material.toString()))
+        Material mat8 = new Material.Builder(id + 7, SuSyUtility.susyId("cool_humid_" + material.toString()))
                 .gas(new FluidBuilder().temperature(determineTemperatureGas(material) - 20))
                 .color(color)
                 .components(material, 1)
                 .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        return new Material[]{mat1, mat2, mat3, mat4, mat5, mat6, mat7, mat8};
+    }
+
+    private static Material generatePurifiedGas(Material material, int id) {
+        int color = material.getMaterialRGB();
+
+        return new Material.Builder(id, SuSyUtility.susyId("high_purity_" + material.toString()))
+                .gas(new FluidBuilder().temperature(determineTemperatureGas(material)))
+                .color(color)
+                .components(material, 1)
                 .build();
     }
 
-    private static void generatePurifiedGas(Material material, int id) {
-        int color = material.getMaterialRGB();
-
-        new Material.Builder(id, SuSyUtility.susyId("high_purity_" + material.toString()))
-                .gas(new FluidBuilder().temperature(determineTemperatureGas(material)))
-                .color(color)
-                .components(material, 1)
-                .build();
-    }
-
-    private static void generatePurifiedLiquid(Material material, int id) {
+    private static Material generatePurifiedLiquid(Material material, int id) {
         var color = material.getMaterialRGB();
 
-        new Material.Builder(id, SuSyUtility.susyId("high_purity_" + material.toString()))
+        return new Material.Builder(id, SuSyUtility.susyId("high_purity_" + material.toString()))
                 .liquid(new FluidBuilder().temperature(determineTemperatureLiquid(material)))
                 .color(color)
                 .components(material, 1)
                 .build();
     }
     public static void init() {
-        generateHighPressureGases(Hydrogen, 22000, true);
+        Material[] temp;
 
-        generateHighPressureGases(Oxygen, 22003, true);
+        temp = generateHighPressureGases(Hydrogen, 22000);
+        HotHighPressureHydrogen = temp[0];
+        HighPressureHydrogen = temp[1];
 
-        generateHighPressureGases(Helium, 22006, true);
+        ColdHighPressureHydrogen = generateColdHighPressureGases(Hydrogen, 22000);
 
-        generateHighPressureGases(Neon, 22009, true);
+        temp = generateHighPressureGases(Oxygen, 22003);
+        HotHighPressureOxygen = temp[0];
+        HighPressureOxygen = temp[1];
 
-        generateHighPressureGases(Argon, 22012, true);
+        ColdHighPressureOxygen = generateColdHighPressureGases(Oxygen, 22003);
 
-        generateHighPressureGases(Krypton, 22015, true);
+        temp = generateHighPressureGases(Helium, 22006);
+        HotHighPressureHelium = temp[0];
+        HighPressureHelium = temp[1];
 
-        generateHighPressureGases(Xenon, 22018, true);
+        ColdHighPressureHelium = generateColdHighPressureGases(Helium, 22006);
 
-        generateHighPressureGases(Nitrogen, 22021, true);
+        temp = generateHighPressureGases(Neon, 22009);
+        HotHighPressureNeon = temp[0];
+        HighPressureNeon = temp[1];
 
-        generateHighPressureGases(Propene, 22024, false);
+        ColdHighPressureNeon = generateColdHighPressureGases(Neon, 22009);
 
-        generateHighPressureGases(Benzene, 22027, false);
+        temp = generateHighPressureGases(Argon, 22012);
+        HotHighPressureArgon = temp[0];
+        HighPressureArgon = temp[1];
 
-        generateHighPressureGases(CarbonMonoxide, 22030, false);
+        ColdHighPressureArgon = generateColdHighPressureGases(Argon, 22012);
 
-        generateHighPressureGases(Air, 22033, true);
+        temp = generateHighPressureGases(Krypton, 22015);
+        HotHighPressureKrypton = temp[0];
+        HighPressureKrypton = temp[1];
 
-        generateHighPressureGases(NetherAir, 22036, true);
+        ColdHighPressureKrypton = generateColdHighPressureGases(Krypton, 22015);
 
-        generateHighPressureGases(RefineryGas, 22039, true);
+        temp = generateHighPressureGases(Xenon, 22018);
+        HotHighPressureXenon = temp[0];
+        HighPressureXenon = temp[1];
 
-        generateHighPressureGases(Methane, 22042, true);
+        ColdHighPressureXenon = generateColdHighPressureGases(Xenon, 22018);
 
-        generateHighPressureGases(NaturalGas, 22045, true);
+        temp = generateHighPressureGases(Nitrogen, 22021);
+        HotHighPressureNitrogen = temp[0];
+        HighPressureNitrogen = temp[1];
 
-        generateHighPressureGases(DecarburizedAir, 22048, true);
+        ColdHighPressureNitrogen = generateColdHighPressureGases(Nitrogen, 22021);
 
-        generateLiquidFromGas(Hydrogen, 22100, 14);
+        temp = generateHighPressureGases(Propene, 22024);
+        HotHighPressurePropene = temp[0];
+        HighPressurePropene = temp[1];
 
-        generateLiquidFromGas(Neon, 22102, 27);
+        temp = generateHighPressureGases(Benzene, 22027);
+        HotHighPressureBenzene = temp[0];
+        HighPressureBenzene = temp[1];
 
-        generateLiquidFromGas(Argon, 22103, 88);
+        temp = generateHighPressureGases(CarbonMonoxide, 22030);
+        HotHighPressureCarbonMonoxide = temp[0];
+        HighPressureCarbonMonoxide = temp[1];
 
-        generateLiquidFromGas(Krypton, 22104, 120);
+        temp = generateHighPressureGases(Air, 22033);
+        HotHighPressureAir = temp[0];
+        HighPressureAir = temp[1];
 
-        generateLiquidFromGas(Xenon, 22105, 165);
+        ColdHighPressureAir = generateColdHighPressureGases(Air, 22033);
 
-        generateLiquidFromGas(Nitrogen, 22106, 77);
+        temp = generateHighPressureGases(NetherAir, 22036);
+        HotHighPressureNetherAir = temp[0];
+        HighPressureNetherAir = temp[1];
 
-        generateLiquidFromGas(RefineryGas, 22107, 112);
+        ColdHighPressureNetherAir = generateColdHighPressureGases(NetherAir, 22036);
 
-        generateLiquidFromGas(Methane, 22108, 112);
+        temp = generateHighPressureGases(RefineryGas, 22039);
+        HotHighPressureRefineryGas = temp[0];
+        HighPressureRefineryGas = temp[1];
 
-        generateLiquidFromGas(NaturalGas, 22109, 110);
+        ColdHighPressureRefineryGas = generateColdHighPressureGases(RefineryGas, 22039);
 
-        generateLiquidFromGas(DecarburizedAir, 22110, 80);
+        temp = generateHighPressureGases(Methane, 22042);
+        HotHighPressureMethane = temp[0];
+        HighPressureMethane = temp[1];
 
-        generateThermoRefrigerant(Ammonia, 22150);
+        ColdHighPressureMethane = generateColdHighPressureGases(Methane, 22042);
 
-        generateThermoRefrigerant(Propane, 22155);
+        temp = generateHighPressureGases(NaturalGas, 22045);
+        HotHighPressureNaturalGas = temp[0];
+        HighPressureNaturalGas = temp[1];
 
-        generateThermoRefrigerant(CarbonDioxide, 22160);
+        ColdHighPressureNaturalGas = generateColdHighPressureGases(NaturalGas, 22045);
 
-        generateThermoRefrigerant(Trichlorofluoromethane, 22165);
+        temp = generateHighPressureGases(DecarburizedAir, 22048);
+        HotHighPressureDecarburizedAir = temp[0];
+        HighPressureDecarburizedAir = temp[1];
 
-        generateThermoRefrigerant(Dichlorodifluoromethane, 22170);
+        ColdHighPressureDecarburizedAir = generateColdHighPressureGases(DecarburizedAir, 22048);
 
-        generateThermoRefrigerant(Chlorotrifluoromethane, 22175);
+        LiquidHydrogen = generateLiquidFromGas(Hydrogen, 22100, 14);
 
-        generateThermoRefrigerant(Chlorodifluoromethane, 22180);
+        LiquidNeon = generateLiquidFromGas(Neon, 22102, 27);
 
-        generateCoolant(Water, 22300);
+        LiquidArgon = generateLiquidFromGas(Argon, 22103, 88);
 
-        generateCoolant(EthyleneGlycol, 22305);
+        LiquidKrypton = generateLiquidFromGas(Krypton, 22104, 120);
 
-        generateCoolant(SaltWater, 22310);
+        LiquidXenon = generateLiquidFromGas(Xenon, 22105, 165);
 
-        generateCoolant(Lubricant, 22315);
+        LiquidNitrogen = generateLiquidFromGas(Nitrogen, 22106, 77);
 
-        generateCoolant(PolychlorinatedBiphenyl, 22320);
+        LiquidRefineryGas = generateLiquidFromGas(RefineryGas, 22107, 112);
 
-        generateCoolant(Brine, 22325);
+        LiquidMethane = generateLiquidFromGas(Methane, 22108, 112);
 
-        generateCoolant(SodiumPotassium, 22330);
+        LiquidNaturalGas = generateLiquidFromGas(NaturalGas, 22109, 110);
 
-        generateHotGas(Air, 22400);
+        LiquidDecarburizedAir = generateLiquidFromGas(DecarburizedAir, 22110, 80);
 
-        generateHotGas(Nitrogen, 22401);
+        temp = generateThermoRefrigerant(Ammonia, 22150);
+        HotCompressedAmmonia = temp[0];
+        CompressedAmmonia = temp[1];
+        ColdCompressedAmmonia = temp[2];
+        ColdAmmonia = temp[3];
 
-        generatePurifiedGas(Hydrogen, 22500);
+        temp = generateThermoRefrigerant(Propane, 22155);
+        HotCompressedPropane = temp[0];
+        CompressedPropane = temp[1];
+        ColdCompressedPropane = temp[2];
+        ColdPropane = temp[3];
 
-        generatePurifiedGas(Helium, 22501);
+        temp = generateThermoRefrigerant(CarbonDioxide, 22160);
+        HotCompressedCarbonDioxide = temp[0];
+        CompressedCarbonDioxide = temp[1];
+        ColdCompressedCarbonDioxide = temp[2];
+        ColdCarbonDioxide = temp[3];
 
-        generatePurifiedGas(Nitrogen, 22502);
+        temp = generateThermoRefrigerant(Trichlorofluoromethane, 22165);
+        HotCompressedTrichlorofluoromethane = temp[0];
+        CompressedTrichlorofluoromethane = temp[1];
+        ColdCompressedTrichlorofluoromethane = temp[2];
+        ColdTrichlorofluoromethane = temp[3];
 
-        generatePurifiedGas(Oxygen, 22503);
+        temp = generateThermoRefrigerant(Dichlorodifluoromethane, 22170);
+        HotCompressedDichlorodifluoromethane = temp[0];
+        CompressedDichlorodifluoromethane = temp[1];
+        ColdCompressedDichlorodifluoromethane = temp[2];
+        ColdDichlorodifluoromethane = temp[3];
 
-        generatePurifiedGas(Fluorine, 22504);
+        temp = generateThermoRefrigerant(Chlorotrifluoromethane, 22175);
+        HotCompressedChlorotrifluoromethane = temp[0];
+        CompressedChlorotrifluoromethane = temp[1];
+        ColdCompressedChlorotrifluoromethane = temp[2];
+        ColdChlorotrifluoromethane = temp[3];
 
-        generatePurifiedGas(Neon, 22505);
+        temp = generateThermoRefrigerant(Chlorodifluoromethane, 22180);
+        HotCompressedChlorodifluoromethane = temp[0];
+        CompressedChlorodifluoromethane = temp[1];
+        ColdCompressedChlorodifluoromethane = temp[2];
+        ColdChlorodifluoromethane = temp[3];
 
-        generatePurifiedGas(Chlorine, 22506);
+        WarmWater = generateCoolant(Water, 22300);
 
-        generatePurifiedGas(Argon, 22507);
+        WarmEthyleneGlycol = generateCoolant(EthyleneGlycol, 22305);
 
-        generatePurifiedGas(Krypton, 22508);
+        WarmSaltWater = generateCoolant(SaltWater, 22310);
 
-        generatePurifiedGas(Xenon, 22509);
+        WarmLubricant = generateCoolant(Lubricant, 22315);
 
-        generatePurifiedLiquid(Bromine, 22600);
+        WarmPolychlorinatedBiphenyl = generateCoolant(PolychlorinatedBiphenyl, 22320);
 
-        generatePurifiedLiquid(Mercury, 22601);
+        WarmBrine = generateCoolant(Brine, 22325);
 
-        generateGreenhouseGases(EarthGreenhouseGas, 22700);
+        WarmSodiumPotassium = generateCoolant(SodiumPotassium, 22330);
+
+        HotAir = generateHotGas(Air, 22400);
+
+        HotNitrogen = generateHotGas(Nitrogen, 22401);
+
+        HighPurifyHydrogen = generatePurifiedGas(Hydrogen, 22500);
+
+        HighPurifyHelium = generatePurifiedGas(Helium, 22501);
+
+        HighPurifyNitrogen = generatePurifiedGas(Nitrogen, 22502);
+
+        HighPurifyOxygen = generatePurifiedGas(Oxygen, 22503);
+
+        HighPurifyFluorine = generatePurifiedGas(Fluorine, 22504);
+
+        HighPurifyNeon = generatePurifiedGas(Neon, 22505);
+
+        HighPurifyChlorine = generatePurifiedGas(Chlorine, 22506);
+
+        HighPurifyArgon = generatePurifiedGas(Argon, 22507);
+
+        HighPurifyKrypton = generatePurifiedGas(Krypton, 22508);
+
+        HighPurifyXenon = generatePurifiedGas(Xenon, 22509);
+
+        HighPurifyBromine = generatePurifiedLiquid(Bromine, 22600);
+
+        HighPurifyMercury = generatePurifiedLiquid(Mercury, 22601);
+
+        temp = generateGreenhouseGases(EarthGreenhouseGas, 22700);
+        WarmDryEarthGreenhouseGas = temp[0];
+        WarmEarthGreenhouseGas = temp[1];
+        WarmHumidEarthGreenhouseGas = temp[2];
+        DryEarthGreenhouseGas = temp[1];
+        HumidEarthGreenhouseGas = temp[1];
+        CoolEarthGreenhouseGas = temp[1];
+        CoolDryEarthGreenhouseGas = temp[1];
+        CoolHumidEarthGreenhouseGas = temp[1];
 
         EarthlikeAir = new Material.Builder(22800, SuSyUtility.susyId("earth_like_air"))
                 .gas()
