@@ -136,25 +136,6 @@ public class CementChain {
                     .buildAndRegister();
         }
 
-//        def dyes = [
-//                "dye_white",
-//                "dye_orange",
-//                "dye_magenta",
-//                "dye_light_blue",
-//                "dye_yellow",
-//                "dye_lime",
-//                "dye_pink",
-//                "dye_gray",
-//                "dye_light_gray",
-//                "dye_cyan",
-//                "dye_purple",
-//                "dye_blue",
-//                "dye_brown",
-//                "dye_green",
-//                "dye_red",
-//                "dye_black"
-//        ];
-
         {
             int i = 0;
             for (Material dye : CHEMICAL_DYES) {
