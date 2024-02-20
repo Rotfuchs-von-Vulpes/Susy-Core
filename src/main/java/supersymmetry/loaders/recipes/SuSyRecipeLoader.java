@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SusyStoneVariantBlock;
 import supersymmetry.common.materials.SusyMaterials;
+import supersymmetry.loaders.recipes.gameplay.Smelting;
+import supersymmetry.loaders.recipes.gameplay.StartingAge;
 import supersymmetry.loaders.recipes.misc.BrickChain;
 import supersymmetry.loaders.recipes.misc.CementChain;
 import supersymmetry.loaders.recipes.misc.ModifyRecipeMaps;
@@ -23,6 +25,10 @@ public class SuSyRecipeLoader {
 
     public static void init() {
         ModifyRecipeMaps.init();
+
+        Smelting.init();
+        StartingAge.init();
+
         BrickChain.init();
         CementChain.init();
 
