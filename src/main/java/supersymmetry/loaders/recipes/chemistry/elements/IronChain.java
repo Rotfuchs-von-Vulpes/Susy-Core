@@ -13,6 +13,8 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.INTEGRATED_CIRCUIT;
 import static net.minecraft.init.Items.COAL;
 import static net.minecraft.init.Items.IRON_INGOT;
+import static supersymmetry.api.recipes.SuSyRecipeMaps.REACTION_FURNACE_RECIPES;
+import static supersymmetry.api.recipes.SuSyRecipeMaps.ROASTER_RECIPES;
 import static supersymmetry.common.materials.SusyMaterials.*;
 
 public class IronChain {
@@ -266,5 +268,53 @@ public class IronChain {
                     .duration(combustible.duration * 60)
                     .buildAndRegister();
         }
+
+        REACTION_FURNACE_RECIPES.recipeBuilder()
+                .input(dust, Iron)
+                .fluidInputs(CarbonMonoxide.getFluid(5000))
+                .fluidOutputs(CrudeIronPentacarbonyl.getFluid(1000))
+                .duration(200)
+                .EUt(60)
+                .buildAndRegister();
+
+        DISTILLERY_RECIPES.recipeBuilder()
+                .fluidInputs(CrudeIronPentacarbonyl.getFluid(1000))
+                .fluidOutputs(IronPentacarbonyl.getFluid(1000))
+                .duration(300)
+                .EUt(30)
+                .buildAndRegister();
+
+        ROASTER_RECIPES.recipeBuilder()
+                .fluidInputs(IronPentacarbonyl.getFluid(1000))
+                .output(dust, HighPurityIron)
+                .fluidOutputs(CarbonMonoxide.getFluid(5000))
+                .duration(300)
+                .EUt(30)
+                .buildAndRegister();
+
+        BLAST_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .input(dust, HighPurityIron)
+                .outputs(new ItemStack(IRON_INGOT))
+                .duration(60)
+                .blastFurnaceTemp(1750)
+                .EUt(60)
+                .buildAndRegister();
+
+        ROASTER_RECIPES.recipeBuilder()
+                .input(dust, IronIIIHydroxide, 14)
+                .output(dust, IronIIIOxide, 5)
+                .fluidOutputs(Steam.getFluid(3000))
+                .duration(80)
+                .EUt(30)
+                .buildAndRegister();
+
+        ROASTER_RECIPES.recipeBuilder()
+                .input(dust, IronIIHydroxide, 5)
+                .output(dust, IronIIOxide, 2)
+                .fluidOutputs(Steam.getFluid(1000))
+                .EUt(30)
+                .duration(200)
+                .buildAndRegister();
     }
 }
