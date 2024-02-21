@@ -67,7 +67,8 @@ public class ModifyRecipeMaps {
             ModHandler.removeRecipeByName("notreepunching:saw_planks_" + i);
         }
 
-        ModHandler.removeRecipeByName("notreepunching:saw_log_sticks");
+        ModHandler.removeRecipeByName("notreepunching:misc/saw_log_sticks");
+        ModHandler.removeRecipeByName("notreepunching:misc/saw_planks_sticks");
 
         // LPG * 370
         removeRecipesByInputs(CENTRIFUGE_RECIPES, Butane.getFluid(320));

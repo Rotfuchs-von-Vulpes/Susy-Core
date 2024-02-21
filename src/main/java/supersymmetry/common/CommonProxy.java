@@ -2,9 +2,9 @@ package supersymmetry.common;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
+import gregtech.api.unification.material.properties.MaterialProperties;
 import gregtech.common.items.MetaItems;
 import net.minecraft.block.Block;
-import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.crafting.IRecipe;
@@ -15,14 +15,9 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
 import supersymmetry.Supersymmetry;
-import supersymmetry.api.event.MobHordeEvent;
 import supersymmetry.api.recipes.SuSyRecipeMaps;
 import supersymmetry.api.unification.ore.SusyOrePrefix;
 import supersymmetry.api.unification.ore.SusyStoneTypes;
-import supersymmetry.common.blocks.SheetedFrameItemBlock;
-import supersymmetry.common.blocks.SuSyBlocks;
-import supersymmetry.common.blocks.SuSyMetaBlocks;
-import supersymmetry.common.blocks.SusyStoneVariantBlock;
 import supersymmetry.api.unification.material.properties.SuSyPropertyKey;
 import supersymmetry.common.blocks.*;
 import supersymmetry.common.event.SuSyChangeFlags;
@@ -31,12 +26,15 @@ import supersymmetry.common.materials.SusyMaterials;
 import supersymmetry.loaders.SuSyWorldLoader;
 import supersymmetry.loaders.recipes.SuSyRecipeLoader;
 import supersymmetry.loaders.SusyOreDictionaryLoader;
-import supersymmetry.loaders.recipes.SuSyRecipeLoader;
+import supersymmetry.loaders.recipes.SuSyMaterialRecipeHandler;
+import gregtech.api.unification.material.event.MaterialEvent;
+import gregtech.api.unification.material.event.PostMaterialEvent;
 
 import java.util.Objects;
 import java.util.function.Function;
 
 import static supersymmetry.common.blocks.SuSyMetaBlocks.SHEETED_FRAMES;
+import static com.alcatrazescapee.notreepunching.ModConfig.GENERAL;
 
 @Mod.EventBusSubscriber(modid = Supersymmetry.MODID)
 public class CommonProxy {
@@ -44,11 +42,11 @@ public class CommonProxy {
     public void preLoad(){
         SusyStoneTypes.init();
         SuSyRecipeMaps.init();
+        GENERAL.replaceLogRecipes = false;
     }
 
     public void load() {
         SuSyWorldLoader.init();
-        //new MobHordeEvent((p) -> new EntityZombie(p.world), 4, 8).setMaximumDistanceUnderground(10);
     }
 
     @SubscribeEvent
