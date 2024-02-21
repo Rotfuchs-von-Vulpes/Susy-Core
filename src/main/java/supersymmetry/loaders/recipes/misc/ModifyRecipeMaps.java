@@ -1,13 +1,10 @@
 package supersymmetry.loaders.recipes.misc;
 
-import biomesoplenty.api.item.BOPItems;
-import gregtech.api.GTValues;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.unification.ore.StoneTypes;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.*;
 import gregtech.common.items.MetaItems;
@@ -18,14 +15,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
-import net.minecraftforge.fml.common.Mod;
 import supersymmetry.common.blocks.BlockResource;
-import supersymmetry.common.covers.CoverSteamPump;
-import supersymmetry.common.item.SuSyMetaItems;
-import supersymmetry.common.metatileentities.SuSyMetaTileEntities;
 
 import java.util.Arrays;
 import java.util.Objects;
