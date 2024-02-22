@@ -8,7 +8,9 @@ import net.minecraft.item.ItemStack;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SusyStoneVariantBlock;
 import supersymmetry.common.materials.SusyMaterials;
+import supersymmetry.loaders.recipes.chemistry.elements.CopperChain;
 import supersymmetry.loaders.recipes.chemistry.elements.IronChain;
+import supersymmetry.loaders.recipes.chemistry.organic_chemistry.WoodPyrolysisChain;
 import supersymmetry.loaders.recipes.gameplay.Smelting;
 import supersymmetry.loaders.recipes.gameplay.StartingAge;
 import supersymmetry.loaders.recipes.misc.BrickChain;
@@ -33,6 +35,9 @@ public class SuSyRecipeLoader {
         BrickChain.init();
         CementChain.init();
 
+        WoodPyrolysisChain.init();
+
+        CopperChain.init();
         IronChain.init();
 
         // ModHandler.addShapelessRecipe("convert_old_slaked_lime", OreDictUnifier.get(dust, CalciumHydroxide), OreDictUnifier.get(dust, Quicklime));
