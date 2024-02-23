@@ -4,19 +4,16 @@ import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
-import supersymmetry.api.fluids.SusyFluidStorageKeys;
 
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static gregtech.api.recipes.RecipeMaps.*;
-import static gregtech.api.recipes.RecipeMaps.DISTILLERY_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.ITEM_FILTER;
+import static gregtech.common.items.MetaItems.*;
 import static supersymmetry.api.fluids.SusyFluidStorageKeys.IMPURE_SLURRY;
 import static supersymmetry.api.fluids.SusyFluidStorageKeys.SLURRY;
 import static supersymmetry.api.recipes.SuSyRecipeMaps.*;
-import static supersymmetry.common.item.SuSyMetaItems.ANODE_SLIME_COPPER;
-import static supersymmetry.common.item.SuSyMetaItems.GRAPHITE_ELECTRODE;
+import static supersymmetry.common.item.SuSyMetaItems.*;
 import static supersymmetry.common.materials.SusyMaterials.*;
 
 public class CopperChain {
