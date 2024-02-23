@@ -1226,7 +1226,7 @@ public class SusyMaterials {
     public static Material ChloromethaneSolution;
     public static Material AcidicTetrafluoroethylene;
     public static Material TrinitromethaneSolution;
-    public static Material TetranitronmethaneSolution;
+    public static Material TetranitromethaneSolution;
     public static Material ImpureDimethyldichlorosilane;
     public static Material ChlorinatedGlycerol;
     public static Material EpichlorohydrinSolution;
@@ -1341,7 +1341,6 @@ public class SusyMaterials {
     public static Material Bistrichloromethylbenzene;
     public static Material TerephthaloylChloride;
     public static Material Kevlar;
-    public static Material AceticAnhydride;
     public static Material CelluloseAcetate;
     public static Material Pyridine;
     public static Material Quinoline;
