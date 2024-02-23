@@ -181,7 +181,7 @@ public class SuSyOrganicChemistryMaterials {
                 .color(0x333c52)
                 .build();
 
-        TetranitronmethaneSolution = new Material.Builder(15028, SuSyUtility.susyId("tetranitromethane_solution"))
+        TetranitromethaneSolution = new Material.Builder(15028, SuSyUtility.susyId("tetranitromethane_solution"))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
                 .components(Tetranitromethane, 1, SulfuricAcid, 1, Water, 3)
                 .color(0x373352)
