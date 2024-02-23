@@ -5,6 +5,7 @@ import gregtech.api.unification.OreDictUnifier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidStack;
+import supersymmetry.loaders.recipes.Utils.CarbonSource;
 
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -42,34 +43,7 @@ public class IronChain {
         }
     }
 
-    private static class Combustible {
-        private final ItemStack name;
-        private final ItemStack byproduct;
-        private final int carbon;
-        private final int duration;
-        static int num_item_by_provider(int required, int provider) {
-            int result = required / provider;
-            if (required % provider > 0) {
-                result += 1;
-            }
-            return result;
-        }
-
-        // Return the number of CarbonSource items with summary carbon content
-        // equal to carbon content of %required_carbon_items% anthracite items
-        public int equivalent(int required_carbon_items) {
-            return num_item_by_provider(required_carbon_items * 90, carbon);
-        }
-
-        public Combustible(ItemStack name, int carbon, ItemStack byproduct, int duration) {
-            this.name = name;
-            this.carbon = carbon;
-            this.byproduct = byproduct;
-            this.duration = duration;
-        }
-    }
     public static void init() {
-
         ItemStack circuitNBT = INTEGRATED_CIRCUIT.getStackForm();
         NBTTagCompound nbt = new NBTTagCompound();
 
@@ -118,20 +92,20 @@ public class IronChain {
                 new Reductant(Hydrogen.getFluid(2000), Steam.getFluid(1000))
         };
 
-        Combustible[] combustibles = {
-                new Combustible(OreDictUnifier.get(gem, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2),
-                new Combustible(OreDictUnifier.get(gem, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
-                new Combustible(OreDictUnifier.get(dust, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
-                new Combustible(OreDictUnifier.get(gem, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
-                new Combustible(OreDictUnifier.get(dust, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
-                new Combustible(OreDictUnifier.get(gem, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-                new Combustible(OreDictUnifier.get(dust, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-                new Combustible(OreDictUnifier.get(gem, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-                new Combustible(OreDictUnifier.get(dust, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+        CarbonSource[] combustibles = {
+                new CarbonSource(OreDictUnifier.get(gem, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2),
+                new CarbonSource(OreDictUnifier.get(gem, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
+                new CarbonSource(OreDictUnifier.get(dust, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
+                new CarbonSource(OreDictUnifier.get(gem, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
+                new CarbonSource(OreDictUnifier.get(dust, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
+                new CarbonSource(OreDictUnifier.get(gem, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+                new CarbonSource(OreDictUnifier.get(dust, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+                new CarbonSource(OreDictUnifier.get(gem, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+                new CarbonSource(OreDictUnifier.get(dust, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
         };
 
         for (Blastable blastable : blastables) {
-            for (Combustible combustible : combustibles) {
+            for (CarbonSource combustible : combustibles) {
                 int amount = combustible.equivalent(1) * blastable.reductant_required;
 
                 combustible.name.setCount(amount);
@@ -248,7 +222,7 @@ public class IronChain {
 
         //CEMENTED STEEL
 
-        for (Combustible combustible : combustibles) {
+        for (CarbonSource combustible : combustibles) {
             combustible.name.setCount(combustible.equivalent(1));
             combustible.byproduct.setCount(combustible.equivalent(1));
 
