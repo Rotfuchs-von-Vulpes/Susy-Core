@@ -10,14 +10,12 @@ import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.properties.*;
 import supersymmetry.api.SusyLog;
 import supersymmetry.api.unification.material.info.SuSyMaterialFlags;
-import supersymmetry.api.util.SuSyUtility;
 
 import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Map;
 
 public class SusyMaterials {
-
     public static Material ManganeseIronArsenicPhosphide;
     public static Material PraseodymiumNickel;
     public static Material GadoliniumSiliconGermanium;
@@ -1360,7 +1358,6 @@ public class SusyMaterials {
     public static Material LauricAcid;
     public static Material CapricAcid;
     public static Material PrimaryAmineN;
-    public static Material NineOctadecanone;
     public static Material TriOctylDecylAmine;
     public static Material Diethylbenzene;
     public static Material Divinylbenzene;

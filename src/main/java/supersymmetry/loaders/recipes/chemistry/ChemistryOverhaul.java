@@ -2,13 +2,9 @@ package supersymmetry.loaders.recipes.chemistry;
 
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.oredict.OreDictionary;
 import supersymmetry.loaders.recipes.Utils.CarbonSource;
-
-import java.util.List;
 
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -18,7 +14,6 @@ import static gregtechfoodoption.GTFOMaterialHandler.*;
 import static gregtechfoodoption.GTFOMaterialHandler.AceticAnhydride;
 import static supersymmetry.api.recipes.SuSyRecipeMaps.*;
 import static supersymmetry.api.unification.ore.SusyOrePrefix.*;
-import static supersymmetry.common.item.CatalystItems.REDUCTION_CATALYST_BED;
 import static supersymmetry.common.item.SuSyMetaItems.*;
 import static supersymmetry.common.materials.SusyMaterials.*;
 import static supersymmetry.common.materials.SusyMaterials.SodiumCyanide;
