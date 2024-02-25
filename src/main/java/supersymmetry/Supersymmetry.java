@@ -1,7 +1,6 @@
 package supersymmetry;
 
 import gregtech.GTInternalTags;
-import net.minecraft.entity.monster.EntityZombie;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
@@ -9,18 +8,16 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import org.jetbrains.annotations.NotNull;
-import supersymmetry.api.event.MobHordeEvent;
 import supersymmetry.api.sound.SusySounds;
 import supersymmetry.common.CommonProxy;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SuSyMetaBlocks;
-import supersymmetry.common.command.CommandHordeBase;
-import supersymmetry.common.command.CommandHordeStart;
-import supersymmetry.common.command.CommandHordeStatus;
-import supersymmetry.common.command.CommandHordeStop;
 import supersymmetry.common.covers.SuSyCoverBehaviors;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.metatileentities.SuSyMetaTileEntities;
+import supersymmetry.worldGen.SuSyWorldGen;
+
+import java.io.IOException;
 import supersymmetry.loaders.SuSyIRLoader;
 
 @Mod(name = Supersymmetry.NAME, modid = Supersymmetry.MODID, version = "0.1.12", dependencies = GTInternalTags.DEP_VERSION_STRING + ";required-after:gcym;required-after:gregtechfoodoption;required-after:notreepunching")
@@ -55,21 +52,28 @@ public class Supersymmetry {
         SusySounds.registerSounds();
 
         SuSyMetaTileEntities.init();
+
+//        try {
+//            SuSyWorldGen.init();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @Mod.EventHandler
     public void onInit(@NotNull FMLInitializationEvent event) {
+        boolean doesDummyFileExist = SuSyWorldGen.INSTANCE.doesDummyFileExist();
+
+        try {
+            if (!doesDummyFileExist) {
+                SuSyWorldGen.INSTANCE.addRemoveVeins();
+                SuSyWorldGen.INSTANCE.createDummyFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         proxy.load();
         SuSyCoverBehaviors.init();
-    }
-
-    @Mod.EventHandler
-    public void onServerStarting(@NotNull FMLServerStartingEvent event) {
-        CommandHordeBase hordeCommand = new CommandHordeBase();
-        event.registerServerCommand(hordeCommand);
-
-        hordeCommand.addSubcommand(new CommandHordeStart());
-        hordeCommand.addSubcommand(new CommandHordeStop());
-        hordeCommand.addSubcommand(new CommandHordeStatus());
     }
 }

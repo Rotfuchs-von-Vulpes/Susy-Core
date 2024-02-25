@@ -1,0 +1,43 @@
+{
+  "weight": 120,
+  "density": 1,
+  "max_height": 255,
+  "min_height": 0,
+  "vein_populator": {
+    "type": "surface_rock",
+    "material": "bauxite"
+  },
+  "generator": {
+    "type": "layered",
+    "radius": [
+      20,
+      20
+    ]
+  },
+  "filler": {
+    "type": "layered",
+    "values": [
+      {
+        "primary": {
+          "block":"susy:resource_block",
+          "variant":"bauxite"
+	}
+      },
+      {
+        "secondary": {
+          "block":"susy:resource_block",
+          "variant":"bauxite"
+        }
+      },
+      {
+        "between": {
+          "block":"susy:resource_block",
+          "variant":"bauxite"
+	}
+      },
+      {
+        "sporadic": "ore:ilmenite"
+      }
+    ]
+  }
+}

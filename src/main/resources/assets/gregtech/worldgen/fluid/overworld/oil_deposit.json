@@ -1,0 +1,19 @@
+{
+  "weight": -1,
+  "name": "Overworld Oil Deposit",
+  "yield": {
+    "min": 400,
+    "max": 600
+  },
+  "depletion": {
+    "amount": 0,
+    "chance": 0,
+    "depleted_yield": 400
+  },
+  "fluid": "oil",
+  "biome_modifier": {
+    "type": "biome_dictionary",
+    "ocean": 20,
+    "sandy": 30
+  }
+}
