@@ -14,6 +14,9 @@ import supersymmetry.common.blocks.SuSyMetaBlocks;
 import supersymmetry.common.covers.SuSyCoverBehaviors;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.metatileentities.SuSyMetaTileEntities;
+import supersymmetry.worldGen.SuSyWorldGen;
+
+import java.io.IOException;
 
 @Mod(name = Supersymmetry.NAME, modid = Supersymmetry.MODID, version = "0.1.12", dependencies = GTInternalTags.DEP_VERSION_STRING + ";required-after:gcym;required-after:gregtechfoodoption;required-after:notreepunching")
 
@@ -45,10 +48,27 @@ public class Supersymmetry {
         SusySounds.registerSounds();
 
         SuSyMetaTileEntities.init();
+
+//        try {
+//            SuSyWorldGen.init();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @Mod.EventHandler
     public void onInit(@NotNull FMLInitializationEvent event) {
+        boolean doesDummyFileExist = SuSyWorldGen.INSTANCE.doesDummyFileExist();
+
+        try {
+            if (!doesDummyFileExist) {
+                SuSyWorldGen.INSTANCE.addRemoveVeins();
+                SuSyWorldGen.INSTANCE.createDummyFile();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         proxy.load();
         SuSyCoverBehaviors.init();
     }
