@@ -2,9 +2,9 @@ package supersymmetry.loaders.recipes.chemistry;
 
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
+import gregtech.api.unification.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.oredict.OreDictionary;
 import supersymmetry.loaders.recipes.Utils.CarbonSource;
 
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
@@ -932,19 +932,18 @@ public class ChemistryOverhaul {
                 .EUt(30)
                 .buildAndRegister();
 
-//        dyesLowercase = ["black", "red", "green", "brown", "blue", "purple", "cyan", "light_gray", "gray", "pink", "lime", "yellow", "light_blue", "magenta", "orange", "white"]
-//        dyesUppercase = ["Black", "Red", "Green", "Brown", "Blue", "Purple", "Cyan", "LightGray", "Gray", "Pink", "Lime", "Yellow", "LightBlue", "Magenta", "Orange", "White"]
-//
-//        for (int i = 0; i < 16; i++) {
-//            MIXER_RECIPES.recipeBuilder()
-//                    .inputs(ore('dye' + dyesUppercase[i]) * 1)
-//                    .input(dust, Salt, 2)
-//                    .fluidInputs(SulfuricAcid.getFluid(250))
-//                    .fluidOutputs(Dye + dyesLowercase[i].getFluid(288))
-//                    .duration(160)
-//                    .EUt(24)
-//                    .buildAndRegister();
-//        }
+        Material[] dyes = {DyeBlack, DyeRed, DyeGreen, DyeBrown, DyeBlue, DyePurple, DyeCyan, DyeLightGray, DyeGray, DyePink, DyeLime, DyeYellow, DyeLightBlue, DyeMagenta, DyeOrange, DyeWhite};
+        String[] dyesUppercase = {"Black", "Red", "Green", "Brown", "Blue", "Purple", "Cyan", "LightGray", "Gray", "Pink", "Lime", "Yellow", "LightBlue", "Magenta", "Orange", "White"};
+        for (int i = 0; i < 16; i++) {
+            MIXER_RECIPES.recipeBuilder()
+                    .input("dye" + dyesUppercase[i], 1)
+                    .input(dust, Salt, 2)
+                    .fluidInputs(SulfuricAcid.getFluid(250))
+                    .fluidOutputs(dyes[i].getFluid(288))
+                    .duration(160)
+                    .EUt(24)
+                    .buildAndRegister();
+        }
 
         DISTILLATION_RECIPES.recipeBuilder()
                 .fluidInputs(HydrochloricAcid.getFluid(500))
