@@ -200,8 +200,8 @@ public class SuSyFirstDegreeMaterials {
         HighPurityChrome = generatePurifiedElement(Chrome, 8015, true, false);
         HighPurityManganese = generatePurifiedElement(Manganese, 8016, false, false);
         HighPurityIron = generatePurifiedElement(Iron, 8017, false, false);
-        HighPurityNickel = generatePurifiedElement(Cobalt, 8018, false, false);
-        HighPurityCobalt = generatePurifiedElement(Nickel, 8019, false, false);
+        HighPurityNickel = generatePurifiedElement(Nickel, 8018, false, false);
+        HighPurityCobalt = generatePurifiedElement(Cobalt, 8019, false, false);
         HighPurityCopper = generatePurifiedElement(Copper, 8020, false, false);
         HighPurityZinc = generatePurifiedElement(Zinc, 8021, false, false);
         HighPurityGallium = generatePurifiedElement(Gallium, 8022, true, false);
