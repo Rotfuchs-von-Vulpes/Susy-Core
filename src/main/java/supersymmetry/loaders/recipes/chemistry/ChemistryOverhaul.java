@@ -4,6 +4,7 @@ import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.OreDictionary;
 import supersymmetry.loaders.recipes.Utils.CarbonSource;
 
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
@@ -180,7 +181,7 @@ public class ChemistryOverhaul {
         for (CarbonSource carbon : CarbonGlobalsSources) {
             ROASTER_RECIPES.recipeBuilder()
                     .inputs(carbon.name)
-                    .input(dust, Sulfur, 2)
+                    .input("dustAnyPuritySulfur", 2)
                     .fluidOutputs(CarbonDisulfide.getFluid(1000))
                     .duration(100)
                     .EUt(60)
@@ -192,7 +193,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .fluidInputs(Oxygen.getFluid(10000))
-                .input(dust, Phosphorus, 4)
+                .input("dustAnyPurityPhosphorus", 4)
                 .output(dust, PhosphorusPentoxide, 14)
                 .duration(40)
                 .EUt(30)
@@ -202,7 +203,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .fluidInputs(Oxygen.getFluid(2000))
-                .input(dust, Sulfur)
+                .input("dustAnyPuritySulfur", 1)
                 .fluidOutputs(SulfurDioxide.getFluid(1000))
                 .duration(60)
                 .EUt(7)
@@ -323,7 +324,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .input(dust, CalciumSulfate, 6)
-                .input(dust, Carbon, 2)
+                .input("dustAnyPurityCarbon", 2)
                 .output(dust, CalciumSulfide, 2)
                 .fluidOutputs(CarbonDioxide.getFluid(2000))
                 .duration(30)
@@ -377,7 +378,7 @@ public class ChemistryOverhaul {
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(SulfuricAcid.getFluid(1000))
-                .input(dust, Iron, 1)
+                .input("dustAnyPurityIron", 1)
                 .output(dust, IronSulfate, 6)
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .duration(200)
@@ -405,8 +406,8 @@ public class ChemistryOverhaul {
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
-                .input(dust, Sulfur)
-                .input(dust, Iron)
+                .input("dustAnyPuritySulfur", 1)
+                .input("dustAnyPurityIron", 1)
                 .output(dust, IronIISulfide, 2)
                 .duration(160)
                 .EUt(7)
@@ -415,7 +416,7 @@ public class ChemistryOverhaul {
 // Antimony Trioxide ROASTER_RECIPES
         ROASTER_RECIPES.recipeBuilder()
                 .fluidInputs(Oxygen.getFluid(3000))
-                .input(dust, Antimony)
+                .input("dustAnyPurityAntimony", 1)
                 .output(dust, AntimonyTrioxide)
                 .duration(60)
                 .EUt(7)
@@ -514,7 +515,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .input(dust, SodiumSulfate, 7)
-                .input(dust, Carbon, 2)
+                .input("dustAnyPurityCarbon", 2)
                 .fluidOutputs(CarbonDioxide.getFluid(2000))
                 .output(dust, SodiumSulfide, 3)
                 .duration(60)
@@ -559,7 +560,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .fluidInputs(Chlorine.getFluid(3000))
-                .input(dust, Antimony)
+                .input("dustAnyPurityAntimony", 1)
                 .output(dust, AntimonyTrichloride, 4)
                 .duration(200)
                 .EUt(30)
@@ -1122,7 +1123,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .fluidInputs(Chlorine.getFluid(6000))
-                .input(dust, Iron, 2)
+                .input("dustAnyPurityIron", 2)
                 .output(dust, Iron3Chloride, 8)
                 .duration(160)
                 .EUt(30)
@@ -1151,8 +1152,8 @@ public class ChemistryOverhaul {
 // Sodium Potassium
 
         MIXER_RECIPES.recipeBuilder()
-                .input(dust, Sodium)
-                .input(dust, Potassium)
+                .input("dustAnyPuritySodium", 1)
+                .input("dustAnyPurityPotassium", 1)
                 .fluidOutputs(SodiumPotassium.getFluid(1000))
                 .duration(3000)
                 .EUt(30)
@@ -1260,7 +1261,7 @@ public class ChemistryOverhaul {
         TRICKLE_BED_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(CarbonMonoxide.getFluid(50))
                 .fluidInputs(Chlorine.getFluid(100))
-                .notConsumable(dust, Carbon)
+                .notConsumable(OreDictUnifier.get("dustAnyPurityCarbon"))
                 .fluidOutputs(Phosgene.getFluid(50))
                 .duration(10)
                 .EUt(30)
@@ -1333,7 +1334,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .fluidInputs(Chlorine.getFluid(1000))
-                .input(dust, Sodium)
+                .input("dustAnyPuritySodium", 1)
                 .output(dust, Salt, 2)
                 .duration(200)
                 .EUt(7)
@@ -1343,7 +1344,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .fluidInputs(Chlorine.getFluid(1000))
-                .input(dust, Potassium)
+                .input("dustAnyPurityPotassium", 1)
                 .output(dust, RockSalt, 2)
                 .duration(200)
                 .EUt(7)
@@ -1524,7 +1525,7 @@ public class ChemistryOverhaul {
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(SodiumHydroxideSolution.getFluid(2000))
-                .input(dust, Aluminium, 2)
+                .input("dustAnyPurityAluminium", 2)
                 .fluidOutputs(Hydrogen.getFluid(6000))
                 .output(dust, SodiumAluminate, 8)
                 .duration(200)
@@ -1841,7 +1842,7 @@ public class ChemistryOverhaul {
 //n-butyllithium
 
         MIXER_RECIPES.recipeBuilder()
-                .input(dust, Lithium, 2)
+                .input("dustAnyPurityLithium", 2)
                 .fluidInputs(DiethylEther.getFluid(1000))
                 .fluidOutputs(LithiumSolution.getFluid(1000))
                 .EUt(30)
@@ -2145,7 +2146,7 @@ public class ChemistryOverhaul {
         REACTION_FURNACE_RECIPES.recipeBuilder()
                 .fluidInputs(HotHighPressureMethane.getFluid(1000))
                 .fluidInputs(Steam.getFluid(1000))
-                .notConsumable(dust, Nickel)
+                .notConsumable(OreDictUnifier.get("dustAnyPurityNickel"))
                 .fluidOutputs(Syngas.getFluid(7000))
                 .duration(160)
                 .EUt(120)
@@ -2154,14 +2155,14 @@ public class ChemistryOverhaul {
         REACTION_FURNACE_RECIPES.recipeBuilder()
                 .fluidInputs(HotHighPressureNaturalGas.getFluid(1500))
                 .fluidInputs(Steam.getFluid(1000))
-                .notConsumable(dust, Nickel)
+                .notConsumable(OreDictUnifier.get("dustAnyPurityNickel"))
                 .fluidOutputs(Syngas.getFluid(7000))
                 .duration(160)
                 .EUt(120)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
-                .input(dust, Zinc)
+                .input("dustAnyPurityZinc", 1)
                 .fluidInputs(Oxygen.getFluid(1000))
                 .output(dust, ZincOxide, 2)
                 .duration(300)
@@ -2208,7 +2209,7 @@ public class ChemistryOverhaul {
         PYROLYSE_RECIPES.recipeBuilder()
                 .fluidInputs(Methane.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(4000))
-                .input(dust, Bismuth)
+                .input("dustAnyPurityBismuth", 2)
                 .output(dust, SpentBismuthCatalyst, 2)
                 .duration(10)
                 .EUt(480 * 2)
@@ -2328,7 +2329,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .fluidInputs(Chlorine.getFluid(2000))
-                .input(dust, Palladium)
+                .input("dustAnyPurityPalladium", 1)
                 .output(dust, PalladiumChloride, 3)
                 .duration(280)
                 .EUt(120)
@@ -2336,7 +2337,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .fluidInputs(Chlorine.getFluid(2000))
-                .input(dust, Copper)
+                .input("dustAnyPurityCopper", 1)
                 .output(dust, CopperIIChloride, 3)
                 .duration(280)
                 .EUt(120)
@@ -2400,7 +2401,7 @@ public class ChemistryOverhaul {
         BATCH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(PhosphorusTrichloride.getFluid(1000))
                 .fluidInputs(Chlorobenzene.getFluid(3000))
-                .input(dust, Sodium, 6)
+                .input("dustAnyPuritySodium", 6)
                 .output(dust, Triphenylphosphine)
                 .output(dust, Salt, 12)
                 .duration(100)
@@ -2539,7 +2540,7 @@ public class ChemistryOverhaul {
 
         MIXER_RECIPES.recipeBuilder()
                 .fluidInputs(Aluminium.getFluid(144))
-                .input(dust, Nickel, 1)
+                .input("dustAnyPurityNickel", 1)
                 .input(dustTiny, Zinc, 1)
                 .output(dust, RaneyNickel, 2)
                 .duration(200)
@@ -2576,7 +2577,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .circuitMeta(1)
-                .input(dust, Copper, 1)
+                .input("dustAnyPurityCopper", 1)
                 .fluidInputs(Oxygen.getFluid(1000))
                 .output(dust, CupricOxide, 2)
                 .duration(100)
@@ -2585,7 +2586,7 @@ public class ChemistryOverhaul {
 
         ROASTER_RECIPES.recipeBuilder()
                 .circuitMeta(2)
-                .input(dust, Copper, 2)
+                .input("dustAnyPurityCopper", 2)
                 .fluidInputs(Oxygen.getFluid(1000))
                 .output(dust, CuprousOxide, 3)
                 .duration(100)
@@ -2643,7 +2644,7 @@ public class ChemistryOverhaul {
 // DicobaltOctacarbonyl
 
         ROASTER_RECIPES.recipeBuilder()
-                .input(dust, Cobalt, 2)
+                .input("dustAnyPurityCobalt", 2)
                 .fluidInputs(CarbonMonoxide.getFluid(8000))
                 .output(dust, DicobaltOctacarbonyl, 18)
                 .duration(200)
@@ -2663,8 +2664,8 @@ public class ChemistryOverhaul {
 // Copper Bismuth
 
         MIXER_RECIPES.recipeBuilder()
-                .input(dust, Bismuth, 1)
-                .input(dust, Copper, 1)
+                .input("dustAnyPurityBismuth", 1)
+                .input("dustAnyPurityCopper", 1)
                 .output(dust, BismuthCopper, 2)
                 .duration(100)
                 .EUt(30)
@@ -2755,7 +2756,7 @@ public class ChemistryOverhaul {
 // Ziegler-Natta
 
         ROASTER_RECIPES.recipeBuilder()
-                .input(dust, Aluminium)
+                .input("dustAnyPurityAluminium", 1)
                 .fluidInputs(Chlorine.getFluid(3000))
                 .output(dust, AluminiumChloride, 4)
                 .duration(100) // Adjust the duration as needed
@@ -2763,7 +2764,7 @@ public class ChemistryOverhaul {
                 .buildAndRegister();;
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
-                .input(dust, Aluminium, 2)
+                .input("dustAnyPurityAluminium", 2)
                 .fluidInputs(Hydrogen.getFluid(6000))
                 .fluidInputs(Ethylene.getFluid(6000))
                 .fluidOutputs(Triethylaluminium.getFluid(1000))
@@ -2842,7 +2843,7 @@ public class ChemistryOverhaul {
         BATCH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(Methanol.getFluid(6000))
                 .fluidInputs(Bromine.getFluid(3000))
-                .input(dust, Sulfur)
+                .input("dustAnyPuritySulfur", 1)
                 .fluidOutputs(Bromomethane.getFluid(6000))
                 .fluidOutputs(VeryDilutedSulfuricAcid.getFluid(3000))
                 .duration(60) // Adjust the duration as needed
@@ -2966,7 +2967,7 @@ public class ChemistryOverhaul {
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
-                .input(dust, Sulfur, 1)
+                .input("dustAnyPuritySulfur", 1)
                 .fluidInputs(Chlorine.getFluid(2000))
                 .fluidOutputs(SulfurDichloride.getFluid(1000))
                 .duration(300)
@@ -3012,7 +3013,7 @@ public class ChemistryOverhaul {
 
 // Lithium Hydride
         ROASTER_RECIPES.recipeBuilder()
-                .input(dust, Lithium, 1)
+                .input("dustAnyPurityLithium", 1)
                 .fluidInputs(Hydrogen.getFluid(1000))
                 .output(dust, LithiumHydride, 2)
                 .duration(200)
@@ -3139,7 +3140,7 @@ Thus, HSQ should be 1.24% molar in MIBK
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(PotassiumHydroxideSolution.getFluid(3000))
-                .input(dust, Phosphorus, 4)
+                .input("dustAnyPurityPhosphorus", 4)
                 .fluidOutputs(Phosphine.getFluid(1000))
                 .output(dust, PotassiumHypophosphite, 18)
                 .duration(200)
@@ -3148,7 +3149,7 @@ Thus, HSQ should be 1.24% molar in MIBK
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(SodiumHydroxideSolution.getFluid(3000))
-                .input(dust, Phosphorus, 4)
+                .input("dustAnyPurityPhosphorus", 4)
                 .fluidOutputs(Phosphine.getFluid(1000))
                 .output(dust, SodiumHypophosphite, 18)
                 .duration(200)
@@ -3231,7 +3232,7 @@ Thus, HSQ should be 1.24% molar in MIBK
 
 // Phosphorus trichloride
         ROASTER_RECIPES.recipeBuilder()
-                .input(dust, Phosphorus, 4)
+                .input("dustAnyPurityPhosphorus", 4)
                 .fluidInputs(Chlorine.getFluid(12000))
                 .fluidOutputs(PhosphorusTrichloride.getFluid(2000))
                 .output(dust, PhosphorusPentachloride, 12)
@@ -3241,7 +3242,7 @@ Thus, HSQ should be 1.24% molar in MIBK
 
         MIXER_RECIPES.recipeBuilder()
                 .fluidInputs(PhosphorusTrichloride.getFluid(1000))
-                .input(dust, Phosphorus, 4)
+                .input("dustAnyPurityPhosphorus", 4)
                 .fluidOutputs(PhosphorusSolution.getFluid(1000))
                 .duration(300)
                 .EUt(30)
@@ -3502,7 +3503,7 @@ Thus, HSQ should be 1.24% molar in MIBK
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(Ammonia.getFluid(1000))
-                .input(dust, Sodium)
+                .input("dustAnyPuritySodium", 1)
                 .fluidOutputs(Hydrogen.getFluid(1000))
                 .output(dust, SodiumAmide, 4)
                 .EUt(120)
@@ -3510,7 +3511,7 @@ Thus, HSQ should be 1.24% molar in MIBK
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
-                .input(dust, Carbon)
+                .input("dustAnyPurityCarbon", 1)
                 .input(dust, SodiumAmide, 4)
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .output(dust, SodiumCyanide, 3)
@@ -3549,7 +3550,7 @@ Thus, HSQ should be 1.24% molar in MIBK
 //ALON
 
         TUBE_FURNACE_RECIPES.recipeBuilder()
-                .input(dust, Aluminium)
+                .input("dustAnyPurityAluminium", 1)
                 .fluidInputs(Nitrogen.getFluid(1000))
                 .notConsumable(dust, AmmoniumChloride, 6)
                 .output(dust, AluminiumNitride, 2)
@@ -3616,8 +3617,8 @@ Thus, HSQ should be 1.24% molar in MIBK
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
-                .input(dust, Aluminium)
-                .input(dust, Sodium, 3)
+                .input("dustAnyPurityAluminium", 1)
+                .input("dustAnyPuritySodium", 3)
                 .fluidInputs(Chloromethane.getFluid(3000))
                 .output(dust, Salt, 6)
                 .fluidOutputs(Trimethylaluminium.getFluid(1000))
@@ -3819,7 +3820,7 @@ Thus, HSQ should be 1.24% molar in MIBK
 //BENZENE FROM PHENOL
         ROASTER_RECIPES.recipeBuilder()
                 .fluidInputs(Phenol.getFluid(1000))
-                .input(dust, Zinc)
+                .input("dustAnyPurityZinc", 1)
                 .fluidOutputs(Benzene.getFluid(1000))
                 .output(dust, ZincOxide, 2)
                 .duration(120)
@@ -3905,7 +3906,7 @@ Thus, HSQ should be 1.24% molar in MIBK
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
-                .input(dust, Zinc)
+                .input("dustAnyPurityZinc", 1)
                 .input(dust, DichlorobistriphenylphosphinenickelII)
                 .fluidInputs(CarbonMonoxide.getFluid(2000))
                 .notConsumable(Tetrahydrofuran.getFluid(1000))
