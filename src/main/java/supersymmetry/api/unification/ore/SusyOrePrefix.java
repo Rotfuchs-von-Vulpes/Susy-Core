@@ -7,7 +7,6 @@ import gregtech.api.unification.ore.OrePrefix;
 import supersymmetry.api.unification.material.info.SuSyMaterialFlags;
 import supersymmetry.api.unification.material.info.SuSyMaterialIconType;
 import static gregtech.api.unification.ore.OrePrefix.Flags.ENABLE_UNIFICATION;
-import static gregtech.api.unification.ore.OrePrefix.Conditions.*;
 
 public class SusyOrePrefix {
     public static OrePrefix oreGabbro = new OrePrefix("oreGabbro", -1L,  null, MaterialIconType.ore, 1L, OrePrefix.Conditions.hasOreProperty);
