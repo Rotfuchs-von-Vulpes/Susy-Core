@@ -42,13 +42,6 @@ public class WaterPurificationChain {
                 .EUt(30)
                 .buildAndRegister();
 
-        DISTILLERY_RECIPES.recipeBuilder()
-                .fluidInputs(SeaWater.getFluid(1000))
-                .fluidOutputs(Water.getFluid(1000))
-                .duration(240)
-                .EUt(30)
-                .buildAndRegister();
-
         EVAPORATION_POOL.recipeBuilder()
                 .fluidInputs(SaltWater.getFluid(20000))
                 .output(dust, Salt, 40)
