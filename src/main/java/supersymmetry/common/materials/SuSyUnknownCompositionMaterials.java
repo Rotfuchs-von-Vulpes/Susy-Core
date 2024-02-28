@@ -27,7 +27,7 @@ public class SuSyUnknownCompositionMaterials {
                 .color(0x211b14)
                 .build();
 
-        Seawater = new Material.Builder(27052, SuSyUtility.susyId("sea_water"))
+        SeaWater = new Material.Builder(27052, SuSyUtility.susyId("sea_water"))
                 .liquid()
                 .color(0x3c5bc2)
                 .build();
