@@ -2190,7 +2190,7 @@ public class ChemistryOverhaul {
         REACTION_FURNACE_RECIPES.recipeBuilder()
                 .fluidInputs(Syngas.getFluid(7000))
                 .fluidInputs(Steam.getFluid(1000))
-                .notConsumable(CATALYST_BED_SUPPORT_GRID)
+                .notConsumable(catalystBed, LTSCatalyst)
                 .fluidOutputs(ReformedSyngas.getFluid(9000))
                 .duration(320)
                 .EUt(30)
