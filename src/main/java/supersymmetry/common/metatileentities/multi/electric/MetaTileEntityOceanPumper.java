@@ -163,7 +163,7 @@ public class MetaTileEntityOceanPumper extends MultiblockWithDisplayBase impleme
     public boolean insertFluid(boolean simulate) {
         if (!isInValidLocation()) return false;
         int fillamount = (int)Math.min(1L * Integer.MAX_VALUE, 500L * (1 << (GTUtility.getTierByVoltage(this.energyContainers.getInputVoltage()) - 1) * 2));
-        FluidStack Seawater = SusyMaterials.Seawater.getFluid(fillamount);
+        FluidStack Seawater = SusyMaterials.SeaWater.getFluid(fillamount);
         int caninsertamount = outputTankInventory.fill(Seawater, false);
         if (!simulate) {
             Seawater.amount = Math.min(fillamount, caninsertamount);

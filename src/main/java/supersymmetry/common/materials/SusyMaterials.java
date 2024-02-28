@@ -28,7 +28,6 @@ public class SusyMaterials {
     public static Material Kimberlite;
     public static Material Latex;
     public static Material Mud;
-    public static Material Seawater;
 
     //Minerals
     public static Material Anorthite;
