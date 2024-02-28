@@ -17,9 +17,7 @@ import supersymmetry.loaders.recipes.chemistry.organic_chemistry.WoodPyrolysisCh
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.polymers.RubberChain;
 import supersymmetry.loaders.recipes.gameplay.Smelting;
 import supersymmetry.loaders.recipes.gameplay.StartingAge;
-import supersymmetry.loaders.recipes.misc.BrickChain;
-import supersymmetry.loaders.recipes.misc.CementChain;
-import supersymmetry.loaders.recipes.misc.ModifyRecipeMaps;
+import supersymmetry.loaders.recipes.misc.*;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -38,6 +36,8 @@ public class SuSyRecipeLoader {
 
         BrickChain.init();
         CementChain.init();
+        WaterPurificationChain.init();
+        PollutionChain.init();
 
         WoodPyrolysisChain.init();
         Extractants.init();
