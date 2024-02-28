@@ -5,12 +5,17 @@ import com.alcatrazescapee.notreepunching.common.items.ModItems;
 import gregtech.common.items.MetaItems;
 import gregtechfoodoption.item.GTFOMetaItem;
 import net.minecraft.block.BlockCauldron;
+import net.minecraft.block.BlockLiquid;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.BlockStateBase;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.play.client.CPacketPlayer;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -44,9 +49,6 @@ public class EventHandlers {
             data.setBoolean(FIRST_SPAWN, true);
             playerData.setTag(EntityPlayer.PERSISTED_NBT_TAG, data);
 
-//            GTTeleporter teleporter = new GTTeleporter((WorldServer) event.player.world, event.player.posX, event.player.posY , event.player.posZ);
-//            TeleportHandler.teleport(event.player, event.player.dimension, teleporter, event.player.posX, event.player.posY, event.player.posZ);
-
             event.player.addItemStackToInventory(GTFOMetaItem.EMERGENCY_RATIONS.getStackForm(10));
             event.player.addItemStackToInventory(MetaItems.PROSPECTOR_LV.getChargedStack(100000));
         }
@@ -59,6 +61,7 @@ public class EventHandlers {
         World world = event.getWorld();
         BlockPos pos = event.getPos();
         IBlockState blockState = world.getBlockState(pos);
+
         if (itemStack.getItem() == ModItems.CERAMIC_BUCKET && !world.isRemote && blockState.getBlock() instanceof BlockCauldron) {
             event.setCanceled(true);
             BlockCauldron cauldron = (BlockCauldron) blockState.getBlock();
