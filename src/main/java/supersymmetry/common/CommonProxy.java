@@ -1,9 +1,6 @@
 package supersymmetry.common;
 
 import gregtech.api.block.VariantItemBlock;
-import gregtech.api.unification.material.properties.MaterialProperties;
-import gregtech.api.worldgen.config.OreDepositDefinition;
-import gregtech.api.worldgen.config.WorldGenRegistry;
 import gregtech.common.items.MetaItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -26,12 +23,12 @@ import supersymmetry.api.unification.ore.SusyOrePrefix;
 import supersymmetry.api.unification.ore.SusyStoneTypes;
 import supersymmetry.api.unification.material.properties.SuSyPropertyKey;
 import supersymmetry.common.blocks.*;
-import supersymmetry.common.event.SuSyChangeFlags;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.materials.SusyMaterials;
 import supersymmetry.loaders.SuSyWorldLoader;
 import supersymmetry.loaders.recipes.SuSyRecipeLoader;
 import supersymmetry.loaders.SusyOreDictionaryLoader;
+import supersymmetry.loaders.recipes.SuSyMaterialRecipeHandler;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
 
