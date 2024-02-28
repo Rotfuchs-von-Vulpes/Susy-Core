@@ -12,9 +12,6 @@ import supersymmetry.api.sound.SusySounds;
 import supersymmetry.common.CommonProxy;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SuSyMetaBlocks;
-import supersymmetry.common.command.CommandHordeBase;
-import supersymmetry.common.command.CommandHordeStart;
-import supersymmetry.common.command.CommandHordeStop;
 import supersymmetry.common.covers.SuSyCoverBehaviors;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.metatileentities.SuSyMetaTileEntities;
@@ -75,15 +72,5 @@ public class Supersymmetry {
 
         proxy.load();
         SuSyCoverBehaviors.init();
-    }
-
-    @Mod.EventHandler
-    public void onServerStarting(@NotNull FMLServerStartingEvent event) {
-        CommandHordeBase hordeCommand = new CommandHordeBase();
-        event.registerServerCommand(hordeCommand);
-
-        hordeCommand.addSubcommand(new CommandHordeStart());
-        hordeCommand.addSubcommand(new CommandHordeStop());
-
     }
 }
