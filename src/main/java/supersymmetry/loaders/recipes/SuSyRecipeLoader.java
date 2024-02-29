@@ -9,6 +9,7 @@ import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SusyStoneVariantBlock;
 import supersymmetry.common.materials.SusyMaterials;
 import supersymmetry.loaders.recipes.chemistry.ChemistryOverhaul;
+import supersymmetry.loaders.recipes.chemistry.Dyes;
 import supersymmetry.loaders.recipes.chemistry.ElectrolysisOverhaul;
 import supersymmetry.loaders.recipes.chemistry.elements.CopperChain;
 import supersymmetry.loaders.recipes.chemistry.elements.IronChain;
@@ -44,6 +45,7 @@ public class SuSyRecipeLoader {
         RubberChain.init();
 
         ChemistryOverhaul.init();
+        Dyes.init();
         ElectrolysisOverhaul.init();
 
         CopperChain.init();
