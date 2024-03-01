@@ -11,6 +11,7 @@ import supersymmetry.common.materials.SusyMaterials;
 import supersymmetry.loaders.recipes.chemistry.ChemistryOverhaul;
 import supersymmetry.loaders.recipes.chemistry.Dyes;
 import supersymmetry.loaders.recipes.chemistry.ElectrolysisOverhaul;
+import supersymmetry.loaders.recipes.chemistry.OreSorting;
 import supersymmetry.loaders.recipes.chemistry.elements.CopperChain;
 import supersymmetry.loaders.recipes.chemistry.elements.IronChain;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.Extractants;
@@ -47,6 +48,7 @@ public class SuSyRecipeLoader {
         ChemistryOverhaul.init();
         Dyes.init();
         ElectrolysisOverhaul.init();
+        OreSorting.init();
 
         CopperChain.init();
         IronChain.init();
