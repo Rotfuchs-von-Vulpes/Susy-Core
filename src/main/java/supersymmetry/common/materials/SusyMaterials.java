@@ -1692,7 +1692,6 @@ public class SusyMaterials {
     public static Material DilutedNitromethane;
 
 // Thermodynamics Materials
-
     public static Material EarthlikeAir;
     public static Material HotHighPressureSteam;
     public static Material WasteGaseousNitrogen;

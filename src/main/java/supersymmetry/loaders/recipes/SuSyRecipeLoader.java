@@ -8,10 +8,7 @@ import net.minecraft.item.ItemStack;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SusyStoneVariantBlock;
 import supersymmetry.common.materials.SusyMaterials;
-import supersymmetry.loaders.recipes.chemistry.ChemistryOverhaul;
-import supersymmetry.loaders.recipes.chemistry.Dyes;
-import supersymmetry.loaders.recipes.chemistry.ElectrolysisOverhaul;
-import supersymmetry.loaders.recipes.chemistry.OreSorting;
+import supersymmetry.loaders.recipes.chemistry.*;
 import supersymmetry.loaders.recipes.chemistry.elements.CopperChain;
 import supersymmetry.loaders.recipes.chemistry.elements.IronChain;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.Extractants;
@@ -45,6 +42,7 @@ public class SuSyRecipeLoader {
         Extractants.init();
         RubberChain.init();
 
+        AirDistillation.init();
         ChemistryOverhaul.init();
         Dyes.init();
         ElectrolysisOverhaul.init();
