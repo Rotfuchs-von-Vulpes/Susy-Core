@@ -1367,12 +1367,6 @@ public class ModifyRecipeMaps {
         nbt.setInteger("Configuration", 4);
         circuit.setTagCompound(nbt);
         removeRecipesByInputs(ASSEMBLER_RECIPES, OreDictUnifier.get(stick, Steel, 4), circuit);
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(stick, Steel, 4)
-                .output(frameGt, Steel, 2)
-                .EUt(7)
-                .duration(60)
-                .buildAndRegister();
         ModHandler.removeRecipeByName("gregtech:frame_steel");
         ModHandler.addShapedRecipe(true, "gregtech:frame_steel",
                 OreDictUnifier.get(frameGt, Steel, 4), "SSS", "SwS", "SSS",
