@@ -48,6 +48,7 @@ public class SuSyRecipeLoader {
         ElectrolysisOverhaul.init();
         Gems.init();
         MagneticIronRodChain.init();
+        Magnets.init();
         OreSorting.init();
 
         CopperChain.init();
