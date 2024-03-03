@@ -11,10 +11,7 @@ import supersymmetry.common.materials.SusyMaterials;
 import supersymmetry.loaders.recipes.chemistry.*;
 import supersymmetry.loaders.recipes.chemistry.elements.CopperChain;
 import supersymmetry.loaders.recipes.chemistry.elements.IronChain;
-import supersymmetry.loaders.recipes.chemistry.organic_chemistry.ExplosivesChain;
-import supersymmetry.loaders.recipes.chemistry.organic_chemistry.Extractants;
-import supersymmetry.loaders.recipes.chemistry.organic_chemistry.PhthalateDerivatives;
-import supersymmetry.loaders.recipes.chemistry.organic_chemistry.WoodPyrolysisChain;
+import supersymmetry.loaders.recipes.chemistry.organic_chemistry.*;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.polymers.RubberChain;
 import supersymmetry.loaders.recipes.gameplay.Smelting;
 import supersymmetry.loaders.recipes.gameplay.StartingAge;
@@ -36,6 +33,7 @@ public class SuSyRecipeLoader {
 
         RubberChain.init();
 
+        CoalPyrolysisChain.init();
         ExplosivesChain.init();
         Extractants.init();
         PhthalateDerivatives.init();
