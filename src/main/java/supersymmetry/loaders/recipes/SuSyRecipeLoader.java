@@ -47,6 +47,7 @@ public class SuSyRecipeLoader {
         Magnets.init();
         OreSorting.init();
         PaperChain.init();
+        Quenching.init();
         StainlessSteelChain.init();
         WaterPurificationChain.init();
 
