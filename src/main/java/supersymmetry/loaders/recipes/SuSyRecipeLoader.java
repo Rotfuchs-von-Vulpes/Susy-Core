@@ -50,6 +50,7 @@ public class SuSyRecipeLoader {
         MagneticIronRodChain.init();
         Magnets.init();
         OreSorting.init();
+        PaperChain.init();
 
         CopperChain.init();
         IronChain.init();
