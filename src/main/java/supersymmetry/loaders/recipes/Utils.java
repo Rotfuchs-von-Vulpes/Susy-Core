@@ -9,28 +9,34 @@ import static supersymmetry.common.materials.SusyMaterials.FuelOil;
 import static supersymmetry.common.materials.SusyMaterials.Syngas;
 
 public class Utils {
-    public static class CarbonSource {
+    public static class Carbon {
         public final ItemStack name;
-        public final ItemStack byproduct;
         public final int carbon;
-        public final int duration;
-        static int num_item_by_provider(int required, int provider) {
+        public Carbon(ItemStack name, int carbon) {
+            this.name = name;
+            this.carbon = carbon;
+        }
+
+        protected int numItemByProvider(int required, int provider) {
             int result = required / provider;
             if (required % provider > 0) {
                 result += 1;
             }
             return result;
         }
+    }
+    public static class CarbonSource extends Carbon {
+        public final ItemStack byproduct;
+        public final int duration;
 
         // Return the number of CarbonSource items with summary carbon content
         // equal to carbon content of %required_carbon_items% anthracite items
         public int equivalent(int required_carbon_items) {
-            return num_item_by_provider(required_carbon_items * 90, carbon);
+            return numItemByProvider(required_carbon_items * 90, carbon);
         }
 
         public CarbonSource(ItemStack name, int carbon, ItemStack byproduct, int duration) {
-            this.name = name;
-            this.carbon = carbon;
+            super(name, carbon);
             this.byproduct = byproduct;
             this.duration = duration;
         }
