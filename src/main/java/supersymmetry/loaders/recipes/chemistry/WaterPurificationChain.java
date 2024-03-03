@@ -1,4 +1,4 @@
-package supersymmetry.loaders.recipes.misc;
+package supersymmetry.loaders.recipes.chemistry;
 
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
