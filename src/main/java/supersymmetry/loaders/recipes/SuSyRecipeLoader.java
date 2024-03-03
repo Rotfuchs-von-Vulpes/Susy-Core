@@ -29,16 +29,13 @@ public class SuSyRecipeLoader {
     public static void init() {
         ModifyRecipeMaps.init();
 
-        Smelting.init();
-        StartingAge.init();
+        CopperChain.init();
+        IronChain.init();
 
-        BrickChain.init();
-        CementChain.init();
-        PollutionChain.init();
-
-        WoodPyrolysisChain.init();
-        Extractants.init();
         RubberChain.init();
+
+        Extractants.init();
+        WoodPyrolysisChain.init();
 
         AirDistillation.init();
         ChemistryOverhaul.init();
@@ -53,8 +50,12 @@ public class SuSyRecipeLoader {
         StainlessSteelChain.init();
         WaterPurificationChain.init();
 
-        CopperChain.init();
-        IronChain.init();
+        Smelting.init();
+        StartingAge.init();
+
+        BrickChain.init();
+        CementChain.init();
+        PollutionChain.init();
 
         // ModHandler.addShapelessRecipe("convert_old_slaked_lime", OreDictUnifier.get(dust, CalciumHydroxide), OreDictUnifier.get(dust, Quicklime));
 
