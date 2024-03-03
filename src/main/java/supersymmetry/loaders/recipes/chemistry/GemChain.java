@@ -12,7 +12,7 @@ import static gregtech.common.items.MetaItems.*;
 import static supersymmetry.api.recipes.SuSyRecipeMaps.*;
 import static supersymmetry.common.materials.SusyMaterials.*;
 
-public class Gems {
+public class GemChain {
     public static void init() {
         CVD_RECIPES.recipeBuilder()
                 .notConsumable(SILICON_WAFER)
