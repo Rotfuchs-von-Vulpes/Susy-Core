@@ -35,7 +35,6 @@ public class SuSyRecipeLoader {
 
         BrickChain.init();
         CementChain.init();
-        WaterPurificationChain.init();
         PollutionChain.init();
 
         WoodPyrolysisChain.init();
@@ -52,6 +51,7 @@ public class SuSyRecipeLoader {
         OreSorting.init();
         PaperChain.init();
         StainlessSteelChain.init();
+        WaterPurificationChain.init();
 
         CopperChain.init();
         IronChain.init();
