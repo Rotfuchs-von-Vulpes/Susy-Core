@@ -46,7 +46,7 @@ public class SuSyRecipeLoader {
         ChemistryOverhaul.init();
         Dyes.init();
         ElectrolysisOverhaul.init();
-        Gems.init();
+        GemChain.init();
         MagneticIronRodChain.init();
         Magnets.init();
         OreSorting.init();
