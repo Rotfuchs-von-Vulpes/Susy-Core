@@ -26,7 +26,6 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.SHAPE_EXTRUDER_BLOCK;
 
 public class SuSyRecipeLoader {
-
     public static void init() {
         ModifyRecipeMaps.init();
 
@@ -43,6 +42,7 @@ public class SuSyRecipeLoader {
 
         AirDistillation.init();
         ChemistryOverhaul.init();
+        DeuteriumChain.init();
         Dyes.init();
         ElectrolysisOverhaul.init();
         GemChain.init();
