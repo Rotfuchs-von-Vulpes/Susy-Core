@@ -13,6 +13,7 @@ import supersymmetry.loaders.recipes.chemistry.elements.CopperChain;
 import supersymmetry.loaders.recipes.chemistry.elements.IronChain;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.ExplosivesChain;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.Extractants;
+import supersymmetry.loaders.recipes.chemistry.organic_chemistry.PhthalateDerivatives;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.WoodPyrolysisChain;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.polymers.RubberChain;
 import supersymmetry.loaders.recipes.gameplay.Smelting;
@@ -37,6 +38,7 @@ public class SuSyRecipeLoader {
 
         ExplosivesChain.init();
         Extractants.init();
+        PhthalateDerivatives.init();
         WoodPyrolysisChain.init();
 
         AirDistillation.init();
