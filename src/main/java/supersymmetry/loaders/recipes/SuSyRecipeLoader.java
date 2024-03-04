@@ -14,6 +14,7 @@ import supersymmetry.loaders.recipes.chemistry.elements.IronChain;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.*;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.polymers.AramidChain;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.polymers.EpoxyChain;
+import supersymmetry.loaders.recipes.chemistry.organic_chemistry.polymers.NylonChain;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.polymers.RubberChain;
 import supersymmetry.loaders.recipes.gameplay.Smelting;
 import supersymmetry.loaders.recipes.gameplay.StartingAge;
@@ -35,6 +36,7 @@ public class SuSyRecipeLoader {
 
         AramidChain.init();
         EpoxyChain.init();
+        NylonChain.init();
         RubberChain.init();
 
         CoalPyrolysisChain.init();
