@@ -1,6 +1,5 @@
 package supersymmetry.loaders.recipes.chemistry.organic_chemistry.polymers;
 
-import gregtech.api.unification.material.MarkerMaterial;
 import gregtech.api.unification.material.MarkerMaterials;
 
 import static gregtech.api.recipes.RecipeMaps.*;
