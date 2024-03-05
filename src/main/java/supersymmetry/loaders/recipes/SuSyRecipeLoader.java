@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SusyStoneVariantBlock;
 import supersymmetry.common.materials.SusyMaterials;
+import supersymmetry.loaders.recipes.biology.ResinChain;
 import supersymmetry.loaders.recipes.chemistry.*;
 import supersymmetry.loaders.recipes.chemistry.elements.CopperChain;
 import supersymmetry.loaders.recipes.chemistry.elements.IronChain;
@@ -27,6 +28,8 @@ import static gregtech.common.items.MetaItems.SHAPE_EXTRUDER_BLOCK;
 public class SuSyRecipeLoader {
     public static void init() {
         ModifyRecipeMaps.init();
+
+        ResinChain.init();
 
         CopperChain.init();
         IronChain.init();
