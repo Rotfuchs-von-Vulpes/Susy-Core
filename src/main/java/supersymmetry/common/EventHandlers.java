@@ -13,6 +13,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.client.CPacketPlayer;
@@ -28,10 +29,14 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import supersymmetry.Supersymmetry;
 import gregtech.api.unification.material.Materials;
+
+import static gregtech.common.items.MetaItems.SHAPE_MOLD_BALL;
+import static gregtech.common.items.MetaItems.STICKY_RESIN;
 
 @Mod.EventBusSubscriber(modid = Supersymmetry.MODID)
 public class EventHandlers {
@@ -105,11 +110,22 @@ public class EventHandlers {
 
     @SubscribeEvent
     public static void onCrafted(PlayerEvent.ItemCraftedEvent event) {
-        for (int i = 0; i < event.craftMatrix.getSizeInventory(); i++) {
-            if (!event.crafting.isItemEqual(FluidUtil.getFilledBucket(Materials.SaltWater.getFluid(1000)))) return;
-            if (event.craftMatrix.getStackInSlot(i).isItemEqual(new ItemStack(Items.WATER_BUCKET))) {
-                event.craftMatrix.setInventorySlotContents(i, new ItemStack(Items.AIR));
-                break;
+        if (event.crafting.isItemEqual(FluidUtil.getFilledBucket(Materials.SaltWater.getFluid(1000)))) {
+            for (int i = 0; i < event.craftMatrix.getSizeInventory(); i++) {
+                if (event.craftMatrix.getStackInSlot(i).isItemEqual(new ItemStack(Items.WATER_BUCKET))) {
+                    event.craftMatrix.setInventorySlotContents(i, new ItemStack(Items.AIR));
+                    break;
+                }
+            }
+        }
+
+        if (event.crafting.isItemEqual(STICKY_RESIN.getStackForm())) {
+            for (int i = 0; i < event.craftMatrix.getSizeInventory(); i++) {
+                ItemStack stack = event.craftMatrix.getStackInSlot(i);
+                if (stack.isItemEqual(SHAPE_MOLD_BALL.getStackForm())) {
+                    event.craftMatrix.setInventorySlotContents(i, SHAPE_MOLD_BALL.getStackForm(stack.getCount() + 1));
+                    break;
+                }
             }
         }
     }
