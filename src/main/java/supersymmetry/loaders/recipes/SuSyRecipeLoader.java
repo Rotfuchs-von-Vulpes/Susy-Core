@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SusyStoneVariantBlock;
 import supersymmetry.common.materials.SusyMaterials;
+import supersymmetry.loaders.recipes.biology.FermentingChain;
+import supersymmetry.loaders.recipes.biology.GreenhouseChain;
 import supersymmetry.loaders.recipes.biology.ResinChain;
 import supersymmetry.loaders.recipes.chemistry.*;
 import supersymmetry.loaders.recipes.chemistry.elements.CopperChain;
@@ -29,6 +31,8 @@ public class SuSyRecipeLoader {
     public static void init() {
         ModifyRecipeMaps.init();
 
+        FermentingChain.init();
+        GreenhouseChain.init();
         ResinChain.init();
 
         CopperChain.init();
