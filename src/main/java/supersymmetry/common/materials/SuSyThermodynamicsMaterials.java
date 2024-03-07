@@ -405,7 +405,7 @@ public class SuSyThermodynamicsMaterials {
         CoolDryEarthGreenhouseGas = temp[1];
         CoolHumidEarthGreenhouseGas = temp[1];
 
-        EarthlikeAir = new Material.Builder(22800, SuSyUtility.susyId("earth_like_air"))
+        EarthLikeAir = new Material.Builder(22800, SuSyUtility.susyId("earth_like_air"))
                 .gas()
                 .color(0x8fbfe3)
                 .build();
