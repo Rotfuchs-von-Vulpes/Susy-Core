@@ -12,7 +12,6 @@ import static gregtech.common.items.MetaItems.SHAPE_MOLD_BALL;
 import static gregtech.common.items.MetaItems.STICKY_RESIN;
 import static gregtechfoodoption.GTFOMaterialHandler.RubberSap;
 import static net.minecraft.init.Items.SLIME_BALL;
-import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static supersymmetry.common.materials.SusyMaterials.Resin;
 
 public class ResinChain {
