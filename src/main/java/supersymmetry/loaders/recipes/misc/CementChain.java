@@ -49,7 +49,7 @@ public class CementChain {
 
     public static void init() {
         for (Utils.Combustible fuel : Utils.sintering_fuels) {
-            if (fuel.isPlasme()) {
+            if (fuel.isPlasma) {
                 SINTERING_RECIPES.recipeBuilder()
                         .inputs(OreDictUnifier.get(dust, Clay))
                         .inputs(OreDictUnifier.get(dust, Limestone))
