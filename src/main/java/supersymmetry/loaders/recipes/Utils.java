@@ -42,10 +42,10 @@ public class Utils {
         }
     }
     public static class Combustible {
-        private final FluidStack fluid;
-        private final boolean isPlasme;
-        private final int duration;
-        private final Fluid byproduct;
+        public final FluidStack fluid;
+        public final boolean isPlasma;
+        public final int duration;
+        public final Fluid byproduct;
         int byproductAmount;
 
         public FluidStack getFluid() {
@@ -60,13 +60,9 @@ public class Utils {
             return duration;
         }
 
-        public boolean isPlasme() {
-            return this.isPlasme;
-        }
-
         public Combustible(FluidStack fluid, boolean isPlasma, int amountRequired, int duration, Fluid byproduct, int byproductAmount) {
             this.fluid = fluid;
-            this.isPlasme = isPlasma;
+            this.isPlasma = isPlasma;
             this.fluid.amount = amountRequired;
             this.duration = duration;
             this.byproduct = byproduct;
@@ -75,8 +71,8 @@ public class Utils {
     }
 
     public static class Comburent {
-        private final FluidStack fluid;
-        private final int duration;
+        public final FluidStack fluid;
+        public final int duration;
 
         public FluidStack getFluid() {
             return fluid;

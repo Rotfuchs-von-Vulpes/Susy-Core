@@ -198,6 +198,26 @@ public class SuSyPetrochemistryMaterials {
                 .color(0xbdb648)
                 .build();
 
+        LightlySteamcrackedNaphtha = new Material.Builder(20039, SuSyUtility.susyId("lightly_steamcracked_naphta"))
+                .liquid(new FluidBuilder().temperature(773))
+                .color(0xff0000)
+                .build();
+
+        SeverelySteamcrackedNaphtha = new Material.Builder(20040, SuSyUtility.susyId("severely_steamcracked_naphta"))
+                .liquid(new FluidBuilder().temperature(773))
+                .color(0xff0000)
+                .build();
+
+        LightlyHydrocrackedNaphtha = new Material.Builder(20041, SuSyUtility.susyId("lightly_hydrocracked_naphta"))
+                .liquid(new FluidBuilder().temperature(773))
+                .color(0xff0000)
+                .build();
+
+        SeverelyHydrocrackedNaphtha = new Material.Builder(20042, SuSyUtility.susyId("severely_hydrocracked_naphta"))
+                .liquid(new FluidBuilder().temperature(773))
+                .color(0xff0000)
+                .build();
+
         UpgradedLubricatingOilMix = new Material.Builder(20054, SuSyUtility.susyId("upgraded_lubricating_oil_mix"))
                 .liquid(new FluidBuilder().temperature(773))
                 .color(0x948f43)
@@ -305,12 +325,12 @@ public class SuSyPetrochemistryMaterials {
                 .build();
 
         CFiveFraction = new Material.Builder(20075, SuSyUtility.susyId("c_five_fraction"))
-                .fluid()
+                .liquid()
                 .color(0x9c8638)
                 .build();
 
-        DimerizedCFiveFraction = new Material.Builder(20076, SuSyUtility.susyId("c_five_fraction"))
-                .fluid()
+        DimerizedCFiveFraction = new Material.Builder(20076, SuSyUtility.susyId("dimerized_c_five_fraction"))
+                .liquid()
                 .color(0x9c9538)
                 .build();
     }
