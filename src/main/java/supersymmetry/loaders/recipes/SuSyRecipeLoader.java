@@ -15,6 +15,10 @@ import supersymmetry.loaders.recipes.chemistry.*;
 import supersymmetry.loaders.recipes.chemistry.elements.CopperChain;
 import supersymmetry.loaders.recipes.chemistry.elements.IronChain;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.*;
+import supersymmetry.loaders.recipes.chemistry.organic_chemistry.petrochemistry.Fuel;
+import supersymmetry.loaders.recipes.chemistry.organic_chemistry.petrochemistry.Lubricants;
+import supersymmetry.loaders.recipes.chemistry.organic_chemistry.petrochemistry.OilOverhaul;
+import supersymmetry.loaders.recipes.chemistry.organic_chemistry.petrochemistry.Surfactants;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.polymers.*;
 import supersymmetry.loaders.recipes.gameplay.Smelting;
 import supersymmetry.loaders.recipes.gameplay.StartingAge;
@@ -37,6 +41,11 @@ public class SuSyRecipeLoader {
 
         CopperChain.init();
         IronChain.init();
+
+        Fuel.init();
+        Lubricants.init();
+        OilOverhaul.init();
+        Surfactants.init();
 
         AramidChain.init();
         EpoxyChain.init();
