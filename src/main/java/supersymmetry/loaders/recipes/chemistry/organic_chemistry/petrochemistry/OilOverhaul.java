@@ -154,8 +154,8 @@ public class OilOverhaul {
         fractions.add(new OilFraction(NaturalGas, SulfuricNaturalGas, TreatedSulfuricNaturalGas));
 
         LinkedHashMap<Material, OilFractionCrackable> crackFractions = new LinkedHashMap<>();
-        crackFractions.put(Kerosene, new OilFractionCrackable(Kerosene, LightlyHydrocrackedKerosene, SeverelyHydrocrackedKerosene, LightlySteamcrackedKerosene, SeverelySteamcrackedKerosene));
-        crackFractions.put(Naphtha, new OilFractionCrackable(Naphtha, LightlyHydrocrackedNaphtha, SeverelyHydrocrackedNaphtha, LightlySteamcrackedNaphtha, SeverelySteamcrackedNaphtha));
+        crackFractions.put(Kerosene, new OilFractionCrackable(Kerosene, LightlySteamCrackedNaphtha, SeverelyHydrocrackedKerosene, LightlySteamcrackedKerosene, SeverelySteamcrackedKerosene));
+        crackFractions.put(Naphtha, new OilFractionCrackable(Naphtha, LightlyHydroCrackedNaphtha, SeverelyHydroCrackedNaphtha, LightlySteamCrackedNaphtha, SeverelySteamCrackedNaphtha));
         crackFractions.put(Gasoline, new OilFractionCrackable(Gasoline, LightlyHydrocrackedGasoline, SeverelyHydrocrackedGasoline, LightlySteamcrackedGasoline, SeverelySteamcrackedGasoline));
 
         LinkedMapHandler<Oil> oils = new LinkedMapHandler<>();
