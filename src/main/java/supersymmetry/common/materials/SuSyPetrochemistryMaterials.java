@@ -198,26 +198,6 @@ public class SuSyPetrochemistryMaterials {
                 .color(0xbdb648)
                 .build();
 
-        LightlySteamcrackedNaphtha = new Material.Builder(20039, SuSyUtility.susyId("lightly_steamcracked_naphta"))
-                .liquid(new FluidBuilder().temperature(773))
-                .color(0xff0000)
-                .build();
-
-        SeverelySteamcrackedNaphtha = new Material.Builder(20040, SuSyUtility.susyId("severely_steamcracked_naphta"))
-                .liquid(new FluidBuilder().temperature(773))
-                .color(0xff0000)
-                .build();
-
-        LightlyHydrocrackedNaphtha = new Material.Builder(20041, SuSyUtility.susyId("lightly_hydrocracked_naphta"))
-                .liquid(new FluidBuilder().temperature(773))
-                .color(0xff0000)
-                .build();
-
-        SeverelyHydrocrackedNaphtha = new Material.Builder(20042, SuSyUtility.susyId("severely_hydrocracked_naphta"))
-                .liquid(new FluidBuilder().temperature(773))
-                .color(0xff0000)
-                .build();
-
         UpgradedLubricatingOilMix = new Material.Builder(20054, SuSyUtility.susyId("upgraded_lubricating_oil_mix"))
                 .liquid(new FluidBuilder().temperature(773))
                 .color(0x948f43)

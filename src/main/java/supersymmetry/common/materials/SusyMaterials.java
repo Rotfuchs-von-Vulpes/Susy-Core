@@ -541,10 +541,6 @@ public class SusyMaterials {
     public static Material SeverelyHydrocrackedGasoline;
 
     public static Material TreatedSulfuricNaphtha;
-    public static Material LightlySteamcrackedNaphtha;
-    public static Material SeverelySteamcrackedNaphtha;
-    public static Material LightlyHydrocrackedNaphtha;
-    public static Material SeverelyHydrocrackedNaphtha;
     public static Material NaphthaReformate;
     public static Material UpgradedNaphthaMix;
 
