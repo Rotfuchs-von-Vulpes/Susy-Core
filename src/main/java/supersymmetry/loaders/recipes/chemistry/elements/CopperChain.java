@@ -22,7 +22,6 @@ public class CopperChain {
         Material impureSlurry;
         int amount_produced;
         boolean produces_iron;
-
         CopperOre(Material name, Material impureSlurry, int amount_produced, boolean produces_iron) {
             this.name = name;
             this.impureSlurry = impureSlurry;
@@ -135,7 +134,7 @@ public class CopperChain {
                 FROTH_FLOTATION.recipeBuilder()
                         .fluidInputs(copperOre.impureSlurry.getFluid((copperOre.amount_produced * 1000) + 1000))
                         .notConsumable(dust, Quicklime)
-                        .notConsumable(dust,SodiumEthylXanthate)
+                        .notConsumable(dust, SodiumEthylXanthate)
                         .notConsumable(SodiumCyanideSolution.getFluid(100))
                         .notConsumable(MethylIsobutylCarbinol.getFluid(100))
                         .fluidOutputs(CopperConcentrateSlurry.getFluid(copperOre.amount_produced * 1000))

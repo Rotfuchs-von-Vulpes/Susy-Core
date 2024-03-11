@@ -17,6 +17,7 @@ import static net.minecraft.init.Items.IRON_INGOT;
 import static supersymmetry.api.recipes.SuSyRecipeMaps.REACTION_FURNACE_RECIPES;
 import static supersymmetry.api.recipes.SuSyRecipeMaps.ROASTER_RECIPES;
 import static supersymmetry.common.materials.SusyMaterials.*;
+import static supersymmetry.loaders.recipes.Utils.combustibles;
 
 public class IronChain {
     private static class Blastable {
@@ -90,18 +91,6 @@ public class IronChain {
         Reductant[] reductants = {
                 new Reductant(CarbonMonoxide.getFluid(1000), CarbonDioxide.getFluid(1000)),
                 new Reductant(Hydrogen.getFluid(2000), Steam.getFluid(1000))
-        };
-
-        CarbonSource[] combustibles = {
-                new CarbonSource(OreDictUnifier.get(gem, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2),
-                new CarbonSource(OreDictUnifier.get(gem, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
-                new CarbonSource(OreDictUnifier.get(dust, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
-                new CarbonSource(OreDictUnifier.get(gem, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
-                new CarbonSource(OreDictUnifier.get(dust, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
-                new CarbonSource(OreDictUnifier.get(gem, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-                new CarbonSource(OreDictUnifier.get(dust, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-                new CarbonSource(OreDictUnifier.get(gem, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-                new CarbonSource(OreDictUnifier.get(dust, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
         };
 
         for (Blastable blastable : blastables) {
