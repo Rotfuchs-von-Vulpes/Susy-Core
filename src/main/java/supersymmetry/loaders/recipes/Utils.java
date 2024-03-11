@@ -1,12 +1,15 @@
 package supersymmetry.loaders.recipes;
 
+import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.unification.material.Materials.*;
-import static supersymmetry.common.materials.SusyMaterials.FuelOil;
-import static supersymmetry.common.materials.SusyMaterials.Syngas;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.gem;
+import static supersymmetry.common.materials.SusyMaterials.*;
 
 public class Utils {
     public static class Carbon {
@@ -41,32 +44,58 @@ public class Utils {
             this.duration = duration;
         }
     }
+    public static final CarbonSource[] highPurityCombustibles = {
+            new CarbonSource(OreDictUnifier.get(dust, HighPurityCarbon), 100, OreDictUnifier.get(dustTiny, Ash), 1),
+            new CarbonSource(OreDictUnifier.get(dust, Carbon), 100, OreDictUnifier.get(dustTiny, Ash), 1),
+            new CarbonSource(OreDictUnifier.get(dust, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2),
+    };
+    public static final CarbonSource[] combustibles = {
+            new CarbonSource(OreDictUnifier.get(gem, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2),
+            new CarbonSource(OreDictUnifier.get(gem, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
+            new CarbonSource(OreDictUnifier.get(dust, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
+            new CarbonSource(OreDictUnifier.get(gem, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
+            new CarbonSource(OreDictUnifier.get(dust, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
+            new CarbonSource(OreDictUnifier.get(gem, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+            new CarbonSource(OreDictUnifier.get(dust, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+            new CarbonSource(OreDictUnifier.get(gem, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+            new CarbonSource(OreDictUnifier.get(dust, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+    };
+    public static final CarbonSource[] sources = {
+            new CarbonSource(OreDictUnifier.get(gem, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2),
+            new CarbonSource(OreDictUnifier.get(gem, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
+            new CarbonSource(OreDictUnifier.get(dust, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
+            new CarbonSource(OreDictUnifier.get(gem, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
+            new CarbonSource(OreDictUnifier.get(dust, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
+            new CarbonSource(OreDictUnifier.get(gem, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+            new CarbonSource(OreDictUnifier.get(dust, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+            new CarbonSource(OreDictUnifier.get(gem, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+            new CarbonSource(OreDictUnifier.get(dust, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
+            new CarbonSource(OreDictUnifier.get(gem, Lignite), 25, OreDictUnifier.get(dustTiny, Ash), 0),
+            new CarbonSource(OreDictUnifier.get(gem, Lignite), 25, OreDictUnifier.get(dustTiny, Ash), 0),
+    };
     public static class Combustible {
         public final FluidStack fluid;
         public final boolean isPlasma;
         public final int duration;
-        public final Fluid byproduct;
-        int byproductAmount;
+        public final FluidStack byproduct;
 
         public FluidStack getFluid() {
             return fluid;
         }
 
         public FluidStack getByproduct() {
-            return new FluidStack(byproduct, byproductAmount);
+            return byproduct;
         }
 
         public int getDuration() {
             return duration;
         }
 
-        public Combustible(FluidStack fluid, boolean isPlasma, int amountRequired, int duration, Fluid byproduct, int byproductAmount) {
+        public Combustible(FluidStack fluid, boolean isPlasma, int duration, FluidStack byproduct) {
             this.fluid = fluid;
             this.isPlasma = isPlasma;
-            this.fluid.amount = amountRequired;
             this.duration = duration;
             this.byproduct = byproduct;
-            this.byproductAmount = byproductAmount;
         }
     }
 
@@ -82,17 +111,16 @@ public class Utils {
             return duration;
         }
 
-        Comburent(FluidStack fluid, int amountRequired, int duration) {
+        Comburent(FluidStack fluid, int duration) {
             this.fluid = fluid;
-            this.fluid.amount = amountRequired;
             this.duration = duration;
         }
     }
 
     public static class Blanket {
-        FluidStack fluid;
-        int amountRequired;
-        int duration;
+        public FluidStack fluid;
+        public int amountRequired;
+        public int duration;
 
         Blanket(FluidStack fluid, int amountRequired, int duration) {
             this.fluid = fluid;
@@ -102,16 +130,16 @@ public class Utils {
     }
 
     public static Combustible[] sintering_fuels = {
-        new Combustible(Methane.getFluid(1), false, 10, 50, CarbonDioxide.getFluid(), 5),
-        new Combustible(Syngas.getFluid(1), false, 10, 50, CarbonDioxide.getFluid(), 5),
-        new Combustible(NaturalGas.getFluid(1), false, 10, 50, CarbonDioxide.getFluid(), 5),
-        new Combustible(RefineryGas.getFluid(1), false, 10, 50, CarbonDioxide.getFluid(), 5),
-        new Combustible(Helium.getPlasma(1), true, 10, 5, Helium.getFluid(), 10)
+        new Combustible(Methane.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+        new Combustible(Syngas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+        new Combustible(NaturalGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+        new Combustible(RefineryGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+        new Combustible(Helium.getPlasma(10), true, 5, Helium.getFluid(10))
     };
 
     public static Comburent[] sintering_comburents = {
-        new Comburent(Air.getFluid(1), 10, 50),
-        new Comburent(Oxygen.getFluid(1), 8, 30)
+        new Comburent(Air.getFluid(10), 50),
+        new Comburent(Oxygen.getFluid(8), 30)
     };
 
     public static Blanket[] sintering_blankets = {
@@ -119,14 +147,30 @@ public class Utils {
     };
 
     public static Combustible[] rotary_kiln_fuels = {
-        new Combustible(Methane.getFluid(1), false, 10, 50, CarbonDioxide.getFluid(), 5),
-        new Combustible(NaturalGas.getFluid(1), false, 10, 50, CarbonDioxide.getFluid(), 5),
-        new Combustible(RefineryGas.getFluid(1), false, 10, 50, CarbonDioxide.getFluid(), 5),
-        new Combustible(FuelOil.getFluid(1), false, 4, 50, CarbonDioxide.getFluid(), 25)
+        new Combustible(Methane.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+        new Combustible(NaturalGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+        new Combustible(RefineryGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+        new Combustible(FuelOil.getFluid(4), false, 50, CarbonDioxide.getFluid(25))
     };
 
     public static Comburent[] rotary_kiln_comburents = {
-        new Comburent(Air.getFluid(1), 250, 50),
-        new Comburent(Oxygen.getFluid(1), 50, 30)
+        new Comburent(Air.getFluid(250), 50),
+        new Comburent(Oxygen.getFluid(50), 30)
+    };
+
+    public static class InertGas {
+        public FluidStack name;
+        public int duration;
+        InertGas(Material name, int amount_required, int duration) {
+            this.name = name.getFluid(amount_required);
+            this.duration = duration;
+        }
+    }
+
+    public static InertGas[] inertGases =
+    {
+            new InertGas(Nitrogen, 8000, 4),
+            new InertGas(Helium, 4000, 2),
+            new InertGas(Argon, 1000, 1)
     };
 }

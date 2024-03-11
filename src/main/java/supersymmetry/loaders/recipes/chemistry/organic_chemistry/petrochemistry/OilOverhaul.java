@@ -6,7 +6,6 @@ import gregtech.api.unification.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 import org.apache.logging.log4j.Level;
-import org.jetbrains.annotations.NotNull;
 import supersymmetry.api.SusyLog;
 import supersymmetry.loaders.recipes.Utils;
 

@@ -13,13 +13,9 @@ import static gregtech.common.items.MetaItems.INTEGRATED_CIRCUIT;
 import static supersymmetry.api.recipes.SuSyRecipeMaps.ADVANCED_ARC_FURNACE;
 import static supersymmetry.api.recipes.SuSyRecipeMaps.BLENDER_RECIPES;
 import static supersymmetry.common.materials.SusyMaterials.*;
+import static supersymmetry.loaders.recipes.Utils.highPurityCombustibles;
 
 public class StainlessSteelChain {
-    private static final CarbonSource[] combustibles = {
-            new CarbonSource(OreDictUnifier.get(dust, HighPurityCarbon), 100, OreDictUnifier.get(dustTiny, Ash), 1),
-            new CarbonSource(OreDictUnifier.get(dust, Carbon), 100, OreDictUnifier.get(dustTiny, Ash), 1),
-            new CarbonSource(OreDictUnifier.get(dust, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2),
-    };
     public static void init() {
         ItemStack nbtCircuit = INTEGRATED_CIRCUIT.getStackForm();
         NBTTagCompound nbt = new NBTTagCompound();
@@ -118,7 +114,7 @@ public class StainlessSteelChain {
 //     .EUt(Globals.voltAmps[3])
 //     .buildAndRegister();
 
-        for (CarbonSource highPurityCombustible : combustibles) {
+        for (CarbonSource highPurityCombustible : highPurityCombustibles) {
             highPurityCombustible.name.setCount(highPurityCombustible.equivalent(2));
             BLAST_RECIPES.recipeBuilder()
                     .input(dust, SiliconDioxide, 3)
