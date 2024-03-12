@@ -18,7 +18,7 @@ public class SilverChain {
                 .chancedOutput(dust, SilverOxide, 3, 7500, 0)
                 .fluidOutputs(SulfurDioxide.getFluid(1000))
                 .duration(60)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -28,7 +28,7 @@ public class SilverChain {
                 .chancedOutput(dust, SilverOxide, 3, 7500, 0)
                 .fluidOutputs(SulfurDioxide.getFluid(1000))
                 .duration(60)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -37,7 +37,7 @@ public class SilverChain {
                 .output(dust, SilverOxide, 3)
                 .fluidOutputs(SulfurDioxide.getFluid(1000))
                 .duration(60)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -46,7 +46,7 @@ public class SilverChain {
                 .output(dust, SilverOxide, 3)
                 .fluidOutputs(SulfurDioxide.getFluid(1000))
                 .duration(60)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -54,7 +54,7 @@ public class SilverChain {
                 .output(dust, Silver, 2)
                 .fluidOutputs(Oxygen.getFluid(1000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //CYANIDE LEACHING (UNIVERSAL)
@@ -65,7 +65,7 @@ public class SilverChain {
                 .fluidInputs(DistilledWater.getFluid(8000))
                 .fluidOutputs(SulfidicSilverCyanideSolution.getFluid(8000))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         CSTR_RECIPES.recipeBuilder()
@@ -74,7 +74,7 @@ public class SilverChain {
                 .fluidOutputs(SilverCyanideSolution.getFluid(400))
                 .fluidOutputs(HydrogenSulfide.getFluid(100))
                 .duration(12)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ELECTROLYTIC_CELL_RECIPES.recipeBuilder()
@@ -85,7 +85,7 @@ public class SilverChain {
                 .fluidOutputs(Chlorine.getFluid(2000))
                 .fluidOutputs(SodiumCyanideSolution.getFluid(8000))
                 .duration(480)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //PYRARGYRITE (90%)
@@ -95,7 +95,7 @@ public class SilverChain {
                 .fluidInputs(DistilledWater.getFluid(12000))
                 .fluidOutputs(SulfidicPyrargyriteCyanideLeachSolution.getFluid(12000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -105,7 +105,7 @@ public class SilverChain {
                 .fluidOutputs(PyrargyriteCyanideLeachSolution.getFluid(12000))
                 .fluidOutputs(HydrogenSulfide.getFluid(1500))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ELECTROLYTIC_CELL_RECIPES.recipeBuilder()
@@ -116,7 +116,7 @@ public class SilverChain {
                 .fluidOutputs(Chlorine.getFluid(6000))
                 .fluidOutputs(SodiumCyanideSolution.getFluid(12000))
                 .duration(480)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //STEPHANITE (100%)
@@ -127,7 +127,7 @@ public class SilverChain {
                 .fluidOutputs(SulfidicStephaniteCyanideLeachSolution.getFluid(10000))
                 .chancedOutput(dust, Stephanite, 5000, 0)
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -137,7 +137,7 @@ public class SilverChain {
                 .fluidOutputs(StephaniteCyanideLeachSolution.getFluid(10000))
                 .fluidOutputs(HydrogenSulfide.getFluid(1250))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ELECTROLYTIC_CELL_RECIPES.recipeBuilder()
@@ -148,7 +148,7 @@ public class SilverChain {
                 .fluidOutputs(Chlorine.getFluid(5000))
                 .fluidOutputs(SodiumCyanideSolution.getFluid(20000))
                 .duration(480)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //THIOSULFATE LEACHING (SPECIALIZED) (100%)
@@ -159,7 +159,7 @@ public class SilverChain {
                 .fluidInputs(DistilledWater.getFluid(5000))
                 .fluidOutputs(PyrargyriteThiosulfateLeachSolution.getFluid(1000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -168,7 +168,7 @@ public class SilverChain {
                 .output(dust, SilverSulfide, 9)
                 .fluidOutputs(ThiosulfateThioantimoniteSolution.getFluid(2000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -177,7 +177,7 @@ public class SilverChain {
                 .output(dust, IronThioantimonite, 5)
                 .fluidOutputs(SodiumThiosulfateSolution.getFluid(6000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -187,7 +187,7 @@ public class SilverChain {
                 .fluidOutputs(HydrogenSulfide.getFluid(3000))
                 .fluidOutputs(DilutedIronIIIChlorideSolution.getFluid(2000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         DISTILLERY_RECIPES.recipeBuilder()
@@ -195,7 +195,7 @@ public class SilverChain {
                 .output(dust, Iron3Chloride, 4)
                 .fluidOutputs(Water.getFluid(3000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //PROUSTITE
@@ -205,7 +205,7 @@ public class SilverChain {
                 .fluidInputs(DistilledWater.getFluid(5000))
                 .fluidOutputs(ProustiteThiosulfateLeachSolution.getFluid(1000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -214,7 +214,7 @@ public class SilverChain {
                 .output(dust, SilverSulfide, 9)
                 .fluidOutputs(ThiosulfateThioarseniteSolution.getFluid(2000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -223,7 +223,7 @@ public class SilverChain {
                 .output(dust, IronThioarsenite, 5)
                 .fluidOutputs(SodiumThiosulfateSolution.getFluid(6000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -233,7 +233,7 @@ public class SilverChain {
                 .fluidOutputs(HydrogenSulfide.getFluid(3000))
                 .fluidOutputs(DilutedIronIIIChlorideSolution.getFluid(2000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //SILVER CHLORIDE
@@ -245,7 +245,7 @@ public class SilverChain {
                 .output(dust, Silver, 2)
                 .fluidOutputs(ZincChlorideSolution.getFluid(1000))
                 .duration(360)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         DISTILLERY_RECIPES.recipeBuilder()
@@ -253,7 +253,7 @@ public class SilverChain {
                 .output(dust, ZincChloride, 3)
                 .fluidOutputs(Water.getFluid(1000))
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //SILVER NITRATE
@@ -262,7 +262,7 @@ public class SilverChain {
                 .fluidInputs(SilverNitrateSolution.getFluid(1000))
                 .fluidOutputs(DilutedSilverNitrateSolution.getFluid(1000))
                 .duration(20)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ELECTROLYZER_RECIPES.recipeBuilder()
@@ -273,7 +273,7 @@ public class SilverChain {
                 .fluidOutputs(NitricAcid.getFluid(2000))
                 .fluidOutputs(Oxygen.getFluid(1000))
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //HIGH PURITY SILVER
@@ -284,7 +284,7 @@ public class SilverChain {
                 .fluidOutputs(SilverNitrateSolution.getFluid(2700))
                 .fluidOutputs(NitricOxide.getFluid(1000))
                 .duration(360)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ELECTROLYTIC_CELL_RECIPES.recipeBuilder()
@@ -296,7 +296,7 @@ public class SilverChain {
                 .output(ANODE_SLIME_SILVER)
                 .fluidOutputs(SpentMoebiusElectrolyte.getFluid(250))
                 .duration(480)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
     }

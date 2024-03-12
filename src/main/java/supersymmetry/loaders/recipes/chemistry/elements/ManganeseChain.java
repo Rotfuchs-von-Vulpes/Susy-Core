@@ -38,7 +38,7 @@ public class ManganeseChain {
                     .fluidOutputs(CarbonDioxide.getFluid(1000))
                     .blastFurnaceTemp(1200)
                     .duration(120)
-                    .EUt(30)
+                    .EUt(120)
                     .buildAndRegister();
         }
 
@@ -47,7 +47,7 @@ public class ManganeseChain {
                 .output(dust, ManganeseIIOxide, 2)
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         for (Utils.CarbonSource combustible : highPurityCombustibles) {
@@ -59,7 +59,7 @@ public class ManganeseChain {
                     .chancedOutput(combustible.byproduct, 1000, 0)
                     .fluidOutputs(CarbonMonoxide.getFluid(1000))
                     .duration(120 * combustible.duration)
-                    .EUt(7)
+                    .EUt(30)
                     .buildAndRegister();
         }
 
@@ -88,7 +88,7 @@ NATURAL GAS: 5.4 mol H, 1.65 mol C, 12 mol e-
                     .fluidOutputs(reductant.byproduct)
                     .fluidOutputs(Steam.getFluid(1000 - reductant.byproduct.amount))
                     .duration(120)
-                    .EUt(120)
+                    .EUt(480)
                     .buildAndRegister();
         }
 
@@ -99,7 +99,7 @@ NATURAL GAS: 5.4 mol H, 1.65 mol C, 12 mol e-
                     .output(dust, ManganeseIIOxide, 2)
                     .fluidOutputs(reductant.byproduct)
                     .duration(120)
-                    .EUt(120)
+                    .EUt(480)
                     .buildAndRegister();
         }
 
@@ -109,7 +109,7 @@ NATURAL GAS: 5.4 mol H, 1.65 mol C, 12 mol e-
                 .fluidInputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(CrudeManganeseIISulfateSolution.getFluid(1000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -118,7 +118,7 @@ NATURAL GAS: 5.4 mol H, 1.65 mol C, 12 mol e-
                 .chancedOutput(dust, IronIIIHydroxide, 7, 500, 0)
                 .fluidOutputs(ManganeseIISulfateSolution.getFluid(4000))
                 .duration(200)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ELECTROLYTIC_CELL_RECIPES.recipeBuilder()
@@ -128,7 +128,7 @@ NATURAL GAS: 5.4 mol H, 1.65 mol C, 12 mol e-
                 .output(dust, Manganese)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .duration(480)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 // MnCl2

@@ -22,7 +22,7 @@ public class NiobiumChain {
                 .output(sifted, Pyrochlore)
                 .chancedOutput(dust, LimestoneTailings, 2500, 0)
                 .chancedOutput(dust, Calcite, 2500, 0)
-                .EUt(7)
+                .EUt(30)
                 .duration(40)
                 .buildAndRegister();
 
@@ -31,7 +31,7 @@ public class NiobiumChain {
                 .output(concentrate, Pyrochlore)
                 .chancedOutput(dust, LimestoneTailings, 2500, 0)
                 .chancedOutput(dust, Calcite, 2500, 0)
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -39,7 +39,7 @@ public class NiobiumChain {
                 .input(concentrate, Pyrochlore, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(Pyrochlore.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -51,7 +51,7 @@ public class NiobiumChain {
                 .notConsumable(MethylIsobutylCarbinol.getFluid(100))
                 .fluidOutputs(Pyrochlore.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .fluidOutputs(LimestoneTailingSlurry.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -60,7 +60,7 @@ public class NiobiumChain {
                 .output(flotated, Pyrochlore, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
                 .duration(20)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder() // Roasted Pyrochlore
@@ -68,7 +68,7 @@ public class NiobiumChain {
                 .input(dust, Quicklime)
                 .output(dust, RoastedPyrochlore, 16)
                 .duration(20)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         CHEMICAL_BATH_RECIPES.recipeBuilder() // Digested Pyrochlore
@@ -77,7 +77,7 @@ public class NiobiumChain {
                 .output(dust, DigestedPyrochlore, 16)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .duration(20)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         REACTION_FURNACE_RECIPES.recipeBuilder() // Ferroniobium-tantalum
@@ -90,14 +90,14 @@ public class NiobiumChain {
                 .output(dust, Calcium, 14)
                 .fluidOutputs(SodiumNitrite.getFluid(720))
                 .duration(800)
-                .EUt(480)
+                .EUt(1920)
                 .buildAndRegister();
 
         FLUID_SOLIDFICATION_RECIPES.recipeBuilder()
                 .fluidInputs(SodiumNitrite.getFluid(144))
                 .output(dust, SodiumNitrite)
                 .duration(40)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         REACTION_FURNACE_RECIPES.recipeBuilder() // Impure Niobium Pentachloride
@@ -108,7 +108,7 @@ public class NiobiumChain {
                 .fluidOutputs(Iron3Chloride.getFluid(1296))
                 .fluidOutputs(ImpureNiobiumPentachloride.getFluid(7000))
                 .duration(400)
-                .EUt(480)
+                .EUt(1920)
                 .buildAndRegister();
 
         DISTILLATION_RECIPES.recipeBuilder() // Niobium Pentachloride
@@ -116,14 +116,14 @@ public class NiobiumChain {
                 .fluidOutputs(TantalumPentachloride.getFluid(500))
                 .fluidOutputs(NiobiumPentachloride.getFluid(6500))
                 .duration(100)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         FLUID_SOLIDFICATION_RECIPES.recipeBuilder()
                 .fluidInputs(NiobiumPentachloride.getFluid(1000))
                 .output(dust, NiobiumPentachloride, 6)
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder() // Niobium Oxide Dihydrate
@@ -132,7 +132,7 @@ public class NiobiumChain {
                 .output(dust, NiobiumOxideDihydrate, 9)
                 .fluidOutputs(HydrochloricAcid.getFluid(10000))
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 // Columbite
@@ -143,7 +143,7 @@ public class NiobiumChain {
                 .output(sifted, Columbite)
                 .chancedOutput(dust, PegmatiteTailings, 2500, 0)
                 .chancedOutput(dust, NetherQuartz, 2500, 0)
-                .EUt(7)
+                .EUt(30)
                 .duration(40)
                 .buildAndRegister();
 
@@ -152,7 +152,7 @@ public class NiobiumChain {
                 .output(concentrate, Columbite)
                 .chancedOutput(dust, PegmatiteTailings, 2500, 0)
                 .chancedOutput(dust, NetherQuartz, 2500, 0)
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -160,7 +160,7 @@ public class NiobiumChain {
                 .input(concentrate, Columbite, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(Columbite.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -172,7 +172,7 @@ public class NiobiumChain {
                 .notConsumable(HydrochloricAcid.getFluid(100))
                 .fluidOutputs(Columbite.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .fluidOutputs(PegmatiteTailingSlurry.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -181,7 +181,7 @@ public class NiobiumChain {
                 .output(flotated, Columbite, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
                 .duration(20)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         AUTOCLAVE_RECIPES.recipeBuilder() // Impure Fluoroniobic Acid Solution
@@ -190,7 +190,7 @@ public class NiobiumChain {
                 .fluidInputs(DilutedSulfuricAcid.getFluid(2000))
                 .fluidOutputs(ImpureFluoroniobicAcidSolution.getFluid(1000))
                 .duration(80)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder() // Niobium-rich Extract
@@ -199,7 +199,7 @@ public class NiobiumChain {
                 .fluidOutputs(NiobiumRichExtract.getFluid(6000))
                 .fluidOutputs(MetalSulfateWaste.getFluid(1000))
                 .duration(80)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder() // Scrubbed Niobium-rich Extract
@@ -216,7 +216,7 @@ public class NiobiumChain {
                 .fluidOutputs(DilutedTantalumExtract.getFluid(500))
                 .fluidOutputs(FluoroniobicAcidSolution.getFluid(500))
                 .duration(5)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder() // Purified Fluoroniobic Acid Solution
@@ -225,7 +225,7 @@ public class NiobiumChain {
                 .fluidOutputs(PurifiedFluoroniobicAcidSolution.getFluid(6000))
                 .fluidOutputs(NiobiumRichExtract.getFluid(1500))
                 .duration(80)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder() // Niobium Oxide Dihydrate (2 H2NbF7 + 14 NH3 + 5 H2O --> 14 NH4F + Nb2O5)
@@ -235,7 +235,7 @@ public class NiobiumChain {
                 .chancedOutput(dust, NiobiumOxideDihydrate, 9, 6750, 0)
                 .fluidOutputs(AmmoniumFluorideSolution.getFluid(9450))
                 .duration(80)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -243,7 +243,7 @@ public class NiobiumChain {
                 .input(dust, AmmoniumFluoride, 6)
                 .fluidOutputs(Ammonia.getFluid(1000))
                 .fluidOutputs(HydrogenFluoride.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -252,7 +252,7 @@ public class NiobiumChain {
                 .output(dust, NiobiumOxide, 7)
                 .fluidOutputs(Steam.getFluid(2000))
                 .duration(80)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         ADVANCED_ARC_FURNACE.recipeBuilder() // Niobium
@@ -261,7 +261,7 @@ public class NiobiumChain {
                 .output(dust, Alumina, 25)
                 .fluidOutputs(Niobium.getFluid(864))
                 .duration(240)
-                .EUt(480)
+                .EUt(1920)
                 .buildAndRegister();
 
 // From tantalite
@@ -271,7 +271,7 @@ public class NiobiumChain {
                 .fluidOutputs(MethylIsobutylKetone.getFluid(9000))
                 .fluidOutputs(PurifiedFluoroniobicAcidSolution.getFluid(1000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -280,7 +280,7 @@ public class NiobiumChain {
                 .chancedOutput(dust, IronSulfate, 6, 5000, 0)
                 .chancedOutput(dust, ManganeseIISulfate, 6, 5000, 0)
                 .duration(80)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder()
@@ -288,7 +288,7 @@ public class NiobiumChain {
                 .fluidInputs(Water.getFluid(1000))
                 .fluidOutputs(ManganeseIISulfateSolution.getFluid(1000))
                 .duration(160)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
     }
 }

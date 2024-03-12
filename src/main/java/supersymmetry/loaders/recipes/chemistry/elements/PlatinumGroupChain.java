@@ -36,7 +36,7 @@ public class PlatinumGroupChain {
                 .fluidOutputs(Hydrogen.getFluid(1000))
                 .fluidOutputs(NitrogenDioxide.getFluid(5000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -45,7 +45,7 @@ public class PlatinumGroupChain {
                 .output(dust, IronIIChloride, 3)
                 .fluidOutputs(CementedAlluvialPGMSolution.getFluid(10000))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         CRYSTALLIZER_RECIPES.recipeBuilder() // 2 H2PtCl6 + 4 NH4Cl --> 2 (NH4)2PtCl6 + 4 HCl
@@ -55,7 +55,7 @@ public class PlatinumGroupChain {
                 .chancedOutput(dust, AmmoniumHexachloroplatinate, 34, 7500, 0)
                 .fluidOutputs(AlluvialPlatinumMotherLiquor.getFluid(14000))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         DISTILLATION_RECIPES.recipeBuilder()
@@ -65,7 +65,7 @@ public class PlatinumGroupChain {
                 .fluidOutputs(Water.getFluid(13000))
                 .fluidOutputs(HydrogenChloride.getFluid(4000))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         REACTION_FURNACE_RECIPES.recipeBuilder()
@@ -75,14 +75,14 @@ public class PlatinumGroupChain {
                 .fluidOutputs(Ammonia.getFluid(2000))
                 .fluidOutputs(HydrogenChloride.getFluid(6000))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         MACERATOR_RECIPES.recipeBuilder()
                 .input(SPONGE_PLATINUM)
                 .output(dust, Platinum)
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -91,7 +91,7 @@ public class PlatinumGroupChain {
                 .fluidOutputs(AlluvialDivalentPalladiumSolution.getFluid(14000))
                 .fluidOutputs(Chlorine.getFluid(50))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         CRYSTALLIZER_RECIPES.recipeBuilder()
@@ -100,7 +100,7 @@ public class PlatinumGroupChain {
                 .chancedOutput(dust, Diamminedichloropalladium, 11, 3750, 0)
                 .fluidOutputs(AlluvialPalladiumMotherLiquor.getFluid(8000)) //(NH4Cl)2(ZnCl2)(HCl)4(H2O)16
                 .duration(60)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         REACTION_FURNACE_RECIPES.recipeBuilder()
@@ -110,7 +110,7 @@ public class PlatinumGroupChain {
                 .fluidOutputs(Ammonia.getFluid(2000))
                 .fluidOutputs(HydrogenChloride.getFluid(2000))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         DISTILLATION_RECIPES.recipeBuilder()
@@ -120,7 +120,7 @@ public class PlatinumGroupChain {
                 .fluidOutputs(Water.getFluid(14000))
                 .fluidOutputs(HydrogenChloride.getFluid(4000))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //MODERN SEPARATION PROCESSES

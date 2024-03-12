@@ -75,7 +75,7 @@ public class NickelChain {
                 .fluidOutputs(DilutedSulfuricAcid.getFluid(2000))
                 .fluidOutputs(Oxygen.getFluid(1000))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //MOND PROCESS

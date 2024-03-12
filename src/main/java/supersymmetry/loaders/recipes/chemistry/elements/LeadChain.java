@@ -25,7 +25,7 @@ public class LeadChain {
                 .input(dustImpure, Galena, 8)
                 .fluidInputs(DistilledWater.getFluid(3000))
                 .fluidOutputs(Galena.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 3000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -35,7 +35,7 @@ public class LeadChain {
                 .notConsumable(SodiumCyanideSolution.getFluid(100))
                 .fluidOutputs(Galena.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .fluidOutputs(GalenaByproductsSlurry.getFluid(2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -43,7 +43,7 @@ public class LeadChain {
                 .fluidInputs(Galena.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .output(dust, Galena, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -52,7 +52,7 @@ public class LeadChain {
                 .notConsumable(dust, SodiumEthylXanthate)
                 .fluidOutputs(SphaleriteByproductSlurry.getFluid(1000))
                 .fluidOutputs(GraniteTailingSlurry.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -60,7 +60,7 @@ public class LeadChain {
                 .fluidInputs(SphaleriteByproductSlurry.getFluid(1000))
                 .output(dust, Sphalerite, 2)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -69,7 +69,7 @@ public class LeadChain {
                 .input(dustImpure, Cerussite, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(Cerussite.getFluid(SusyFluidStorageKeys.SLURRY, 2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -78,7 +78,7 @@ public class LeadChain {
                 .notConsumable(dust, SodiumEthylXanthate)
                 .fluidOutputs(Cerussite.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .fluidOutputs(GraniteTailingSlurry.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -86,7 +86,7 @@ public class LeadChain {
                 .fluidInputs(Cerussite.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .output(dust, Cerussite, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -103,7 +103,7 @@ public class LeadChain {
                 .input(dustImpure, Anglesite, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(Anglesite.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -112,7 +112,7 @@ public class LeadChain {
                 .notConsumable(dust, SodiumEthylXanthate)
                 .fluidOutputs(Anglesite.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 1000))
                 .fluidOutputs(GraniteTailingSlurry.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -120,7 +120,7 @@ public class LeadChain {
                 .fluidInputs(Anglesite.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .output(dust, Anglesite, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -401,7 +401,7 @@ public class LeadChain {
         ROASTER_RECIPES.recipeBuilder()
                 .input(ANODE_SLIME_LEAD)
                 .output(dust, BlackMetal)
-                .EUt(120)
+                .EUt(480)
                 .duration(400)
                 .buildAndRegister();
 
@@ -410,7 +410,7 @@ public class LeadChain {
                 .fluidInputs(Oxygen.getFluid(9000))
                 .fluidOutputs(AntimonyArsenicFlueGas.getFluid(1000))
                 .output(dust, BurnedBlackMetal, 2)
-                .EUt(120)
+                .EUt(480)
                 .duration(400)
                 .buildAndRegister();
 
@@ -428,7 +428,7 @@ public class LeadChain {
                 .fluidInputs(Oxygen.getFluid(2500))
                 .output(dust, Silver)
                 .output(dust, LithargeSlag, 5)
-                .EUt(120)
+                .EUt(480)
                 .duration(400)
                 .buildAndRegister();
 
@@ -437,7 +437,7 @@ public class LeadChain {
                 .fluidInputs(BettsCrudeLead.getFluid(1440))
                 .output(dust, CopperDross, 2)
                 .fluidOutputs(DecopperedBettsLead.getFluid(1296))
-                .EUt(120)
+                .EUt(480)
                 .duration(400)
                 .buildAndRegister();
 
@@ -447,7 +447,7 @@ public class LeadChain {
                 .input("dustAnyPurityCalcium", 3)
                 .fluidOutputs(Lead.getFluid(1728))
                 .fluidOutputs(BismuthDross.getFluid(2160))
-                .EUt(120)
+                .EUt(480)
                 .duration(800)
                 .buildAndRegister();
 

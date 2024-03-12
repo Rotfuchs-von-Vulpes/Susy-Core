@@ -17,7 +17,7 @@ public class FluorineChain {
                 .fluidOutputs(PotassiumFluorideSolution.getFluid(2000))
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         DISTILLERY_RECIPES.recipeBuilder()
@@ -25,7 +25,7 @@ public class FluorineChain {
                 .fluidOutputs(Water.getFluid(1000))
                 .output(dust, PotassiumFluoride, 2)
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //HYDROFLUORIC ACID ELECTROLYSIS

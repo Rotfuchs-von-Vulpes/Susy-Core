@@ -20,7 +20,7 @@ public class HafniumChain {
                 .fluidInputs(DilutedSulfuricAcid.getFluid(80))
                 .fluidOutputs(HafniumExtractionMixture.getFluid(1000))
                 .fluidOutputs(HafniumSulfateSolution.getFluid(40))
-                .EUt(120)
+                .EUt(480)
                 .duration(20)
                 .buildAndRegister();
 
@@ -29,7 +29,7 @@ public class HafniumChain {
                 .output(dust, HafniumDioxide, 3)
                 .fluidOutputs(Steam.getFluid(2000))
                 .fluidOutputs(SulfurTrioxide.getFluid(2000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -42,7 +42,7 @@ public class HafniumChain {
                     .output(dust, ImpureHafniumTetrachloride, 5)
                     .fluidOutputs(CarbonMonoxide.getFluid(2000))
                     .duration(200 * highPurityCombustible.duration)
-                    .EUt(120)
+                    .EUt(480)
                     .buildAndRegister();
         }
 
@@ -52,7 +52,7 @@ public class HafniumChain {
                 .notConsumable(Hydrogen.getFluid(1000))
                 .fluidOutputs(HafniumTetrachloride.getFluid(720))
                 .duration(100)
-                .EUt(480)
+                .EUt(1920)
                 .buildAndRegister();
 
         for (Utils.InertGas inertGas : inertGases) {
@@ -65,7 +65,7 @@ public class HafniumChain {
                     .fluidOutputs(MagnesiumChloride.getFluid(864))
                     .blastFurnaceTemp(2150)
                     .duration(100 * inertGas.duration)
-                    .EUt(480)
+                    .EUt(1920)
                     .buildAndRegister();
         }
 
@@ -73,14 +73,14 @@ public class HafniumChain {
                 .input(SPONGE_HAFNIUM_CRUDE)
                 .output(SPONGE_HAFNIUM)
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         MACERATOR_RECIPES.recipeBuilder()
                 .input(SPONGE_HAFNIUM)
                 .output(dust, Hafnium)
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //VAN ARKEL-DE BOER
@@ -90,7 +90,7 @@ public class HafniumChain {
                 .input("dustAnyPurityIodine", 4)
                 .output(dust, HafniumIodide, 5)
                 .duration(360)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CVD_RECIPES.recipeBuilder()
@@ -99,7 +99,7 @@ public class HafniumChain {
                 .output(dust, HighPurityHafnium)
                 .fluidOutputs(Iodine.getFluid(576))
                 .duration(180)
-                .EUt(480)
+                .EUt(1920)
                 .buildAndRegister();
     }
 }

@@ -29,7 +29,7 @@ public class ArsenicChain {
                 .fluidOutputs(SulfurDioxide.getFluid(2000))
                 .blastFurnaceTemp(1200)
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //SPERRYLITE ROASTING
@@ -40,7 +40,7 @@ public class ArsenicChain {
                 .chancedOutput(dust, ArsenicTrioxide, 5, 7500, 0)
                 .blastFurnaceTemp(1200)
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //REALGAR ROASTING
@@ -51,7 +51,7 @@ public class ArsenicChain {
                 .fluidOutputs(SulfurDioxide.getFluid(4000))
                 .blastFurnaceTemp(1200)
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //ARSENOPYRITE ROASTING
@@ -63,7 +63,7 @@ public class ArsenicChain {
                 .fluidOutputs(SulfurDioxide.getFluid(2000))
                 .blastFurnaceTemp(1200)
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //NOTE: ENARGITE AND PROUSTITE CANNOT BE PYROMETALLURGICALLY TREATED TO FORM SIGNIFICANT QUANTITES OF ARSENIC TRIOXIDE.
@@ -77,7 +77,7 @@ public class ArsenicChain {
                 .fluidOutputs(CobaltiteLeachSolution.getFluid(1000))
                 .fluidOutputs(NitricOxide.getFluid(7000))
                 .duration(240)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         ELECTROLYTIC_CELL_RECIPES.recipeBuilder()
@@ -88,7 +88,7 @@ public class ArsenicChain {
                 .fluidOutputs(Oxygen.getFluid(3000))
                 .fluidOutputs(AcidicArsenateVSolution.getFluid(1000))
                 .duration(240)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -99,7 +99,7 @@ public class ArsenicChain {
                 .fluidOutputs(ArsenopyriteLeachSolution.getFluid(1000))
                 .fluidOutputs(NitricOxide.getFluid(7000))
                 .duration(240)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         ELECTROLYTIC_CELL_RECIPES.recipeBuilder()
@@ -110,7 +110,7 @@ public class ArsenicChain {
                 .fluidOutputs(Oxygen.getFluid(3000))
                 .fluidOutputs(AcidicArsenateVSolution.getFluid(1000))
                 .duration(240)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
 //ARSENATE PROCESSING
@@ -140,7 +140,7 @@ public class ArsenicChain {
                 .output(dust, Arsenic, 2)
                 .fluidOutputs(CarbonMonoxide.getFluid(5000))
                 .duration(30)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //PROUSTITE ALKALINE LEACHING (90% EFFICIENT)
@@ -152,7 +152,7 @@ public class ArsenicChain {
                 .output(dust, SilverChloride, 6) //TO SILVER PROCESSING
                 .fluidOutputs(ProustiteAlkalineLeachSolution.getFluid(1000))
                 .duration(240)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //ENARGITE ALKALINE SULFIDE LEACHING
@@ -164,7 +164,7 @@ public class ArsenicChain {
                 .output(dust, EnargiteResidue, 6)
                 .fluidOutputs(EnargiteSulfideLeachSolution.getFluid(1000))
                 .duration(240)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //SEPARATION OF ARSENIC FROM ANTIMONY
@@ -175,7 +175,7 @@ public class ArsenicChain {
                 .fluidOutputs(HydrogenSulfide.getFluid(3000))
                 .fluidOutputs(DilutedSaltwater.getFluid(6000))
                 .duration(120)
-                .EUt(7)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -184,7 +184,7 @@ public class ArsenicChain {
                 .output(dust, ArsenicVSulfide, 7)
                 .fluidOutputs(HydrogenSulfide.getFluid(4500))
                 .duration(120)
-                .EUt(7)
+                .EUt(120)
                 .buildAndRegister();
 
 //REDUCTION OF ARSENIC SULFIDES
@@ -194,7 +194,7 @@ public class ArsenicChain {
                 .output(dust, Arsenic, 2)
                 .fluidOutputs(HydrogenSulfide.getFluid(3000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -203,7 +203,7 @@ public class ArsenicChain {
                 .output(dust, Arsenic, 2)
                 .fluidOutputs(HydrogenSulfide.getFluid(5000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -212,7 +212,7 @@ public class ArsenicChain {
                 .output(dust, ArsenicVOxide, 7)
                 .fluidOutputs(SulfurDioxide.getFluid(3000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -221,7 +221,7 @@ public class ArsenicChain {
                 .output(dust, ArsenicTrioxide, 5)
                 .fluidOutputs(SulfurDioxide.getFluid(3000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //SEMICONDUCTOR GRADE ARSENIC
@@ -232,7 +232,7 @@ public class ArsenicChain {
                 .fluidOutputs(CrudeArsenicTrichloride.getFluid(2000))
                 .fluidOutputs(Water.getFluid(3000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -240,7 +240,7 @@ public class ArsenicChain {
                 .fluidInputs(Chlorine.getFluid(3000))
                 .fluidOutputs(CrudeArsenicTrichloride.getFluid(1000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         DISTILLATION_RECIPES.recipeBuilder()
@@ -248,7 +248,7 @@ public class ArsenicChain {
                 .fluidOutputs(ArsenicTrichloride.getFluid(2000))
                 .fluidOutputs(SulfurDichloride.getFluid(250))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -257,7 +257,7 @@ public class ArsenicChain {
                 .output(dust, Sulfur)
                 .fluidOutputs(HydrogenChloride.getFluid(2000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -266,7 +266,7 @@ public class ArsenicChain {
                 .output(dust, HighPurityArsenic)
                 .fluidOutputs(HydrogenChloride.getFluid(3000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ARC_FURNACE_RECIPES.recipeBuilder()
@@ -274,7 +274,7 @@ public class ArsenicChain {
                 .input(dust, HighPurityArsenic)
                 .output(dust, SodiumArsenide, 4)
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //Arsine gas is used for chemical vapor deposition of high purity arsenic.
@@ -284,7 +284,7 @@ public class ArsenicChain {
                 .output(dust, SodiumHydroxide, 9)
                 .fluidOutputs(Arsine.getFluid(1000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //BROMINE REGENERATION
@@ -293,7 +293,7 @@ public class ArsenicChain {
                 .fluidInputs(Water.getFluid(1000))
                 .fluidOutputs(SodiumBromideSolution.getFluid(2000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         CSTR_RECIPES.recipeBuilder()
@@ -302,7 +302,7 @@ public class ArsenicChain {
                 .fluidOutputs(Bromine.getFluid(100))
                 .fluidOutputs(SaltWater.getFluid(100))
                 .duration(6)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //ROASTED ORE PROCESSING
@@ -312,7 +312,7 @@ public class ArsenicChain {
                 .output(dust, Platinum)
                 .fluidOutputs(SperryliteWaste.getFluid(750))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ELECTROLYZER_RECIPES.recipeBuilder()
@@ -324,7 +324,7 @@ public class ArsenicChain {
                 .fluidOutputs(Chlorine.getFluid(4000))
                 .fluidOutputs(Water.getFluid(6000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //LEACH RESIDUE PROCESSING
@@ -335,7 +335,7 @@ public class ArsenicChain {
                 .fluidOutputs(NitrogenDioxide.getFluid(2000))
                 .fluidOutputs(AcidicCopperSolution.getFluid(1000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -345,7 +345,7 @@ public class ArsenicChain {
                 .fluidOutputs(Oxygen.getFluid(1000))
                 .fluidOutputs(NitrogenDioxide.getFluid(4000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
     }
 }

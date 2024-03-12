@@ -20,7 +20,7 @@ public class TantalumChain {
                 .output(sifted, Tantalite)
                 .chancedOutput(dust, PegmatiteTailings, 2500, 0)
                 .chancedOutput(dust, NetherQuartz, 2500, 0)
-                .EUt(7)
+                .EUt(30)
                 .duration(40)
                 .buildAndRegister();
 
@@ -29,7 +29,7 @@ public class TantalumChain {
                 .output(concentrate, Tantalite)
                 .chancedOutput(dust, PegmatiteTailings, 2500, 0)
                 .chancedOutput(dust, NetherQuartz, 2500, 0)
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -37,7 +37,7 @@ public class TantalumChain {
                 .input(concentrate, Tantalite, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(Tantalite.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -49,7 +49,7 @@ public class TantalumChain {
                 .notConsumable(HydrochloricAcid.getFluid(100))
                 .fluidOutputs(Tantalite.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .fluidOutputs(PegmatiteTailingSlurry.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -58,7 +58,7 @@ public class TantalumChain {
                 .output(flotated, Tantalite, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
                 .duration(20)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         AUTOCLAVE_RECIPES.recipeBuilder() // Impure Fluorotantalic Acid Solution
@@ -67,7 +67,7 @@ public class TantalumChain {
                 .fluidInputs(DilutedSulfuricAcid.getFluid(2000))
                 .fluidOutputs(ImpureFluorotantalicAcidSolution.getFluid(1000))
                 .duration(80)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder() // Tantalum-rich Extract
@@ -76,7 +76,7 @@ public class TantalumChain {
                 .fluidOutputs(TantalumRichExtract.getFluid(8000))
                 .fluidOutputs(MetalSulfateWaste.getFluid(1000))
                 .duration(80)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder() // Scrubbed Tantalum-rich Extract
@@ -84,7 +84,7 @@ public class TantalumChain {
                 .notConsumable(SulfuricAcid.getFluid(500))
                 .fluidOutputs(ScrubbedTantalumRichExtract.getFluid(500))
                 .duration(5)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder() // Tantalum Extract
@@ -93,7 +93,7 @@ public class TantalumChain {
                 .fluidOutputs(TantalumExtract.getFluid(9000))
                 .fluidOutputs(PurifiedFluoroniobicAcidSolution.getFluid(1000))
                 .duration(90)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder() // Fluorotantalic Acid Solution
@@ -102,7 +102,7 @@ public class TantalumChain {
                 .fluidOutputs(MethylIsobutylKetone.getFluid(8000))
                 .fluidOutputs(FluorotantalicAcidSolution.getFluid(2000)) // 9/5 mol Ta
                 .duration(80)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CRYSTALLIZER_RECIPES.recipeBuilder() // Potassium Heptafluorotantalate
@@ -112,7 +112,7 @@ public class TantalumChain {
                 .chancedOutput(dust, PotassiumHeptafluorotantalate, 10, 2500, 0)
                 .fluidOutputs(HydrofluoricAmmoniaMixture.getFluid(2500))
                 .duration(90)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         DISTILLATION_RECIPES.recipeBuilder()
@@ -121,7 +121,7 @@ public class TantalumChain {
                 .fluidOutputs(HydrogenFluoride.getFluid(9000))
                 .fluidOutputs(Ammonia.getFluid(1250))
                 .duration(90)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         REACTION_FURNACE_RECIPES.recipeBuilder() // Tantalum
@@ -131,7 +131,7 @@ public class TantalumChain {
                 .output(dust, SodiumFluoride, 10)
                 .output(dust, PotassiumFluoride, 4)
                 .duration(40)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
 // From columbite
@@ -141,7 +141,7 @@ public class TantalumChain {
                 .fluidOutputs(MethylIsobutylKetone.getFluid(4500))
                 .fluidOutputs(FluorotantalicAcidSolution.getFluid(250)) //0.2 mol of Ta per 8000L of dil. Ta ext.
                 .duration(80)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
 // From pyrochlore
@@ -149,7 +149,7 @@ public class TantalumChain {
                 .fluidInputs(TantalumPentachloride.getFluid(1000))
                 .output(dust, TantalumPentachloride, 6)
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -158,7 +158,7 @@ public class TantalumChain {
                 .output(dust, TantalumFluoride, 6)
                 .fluidOutputs(HydrogenChloride.getFluid(5000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder()
@@ -166,7 +166,7 @@ public class TantalumChain {
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(TantalumFluorideSolution.getFluid(2000))
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         CRYSTALLIZER_RECIPES.recipeBuilder()
@@ -175,7 +175,7 @@ public class TantalumChain {
                 .output(dust, PotassiumHeptafluorotantalate, 10)
                 .fluidOutputs(HydrofluoricAcid.getFluid(2000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
     }
 }

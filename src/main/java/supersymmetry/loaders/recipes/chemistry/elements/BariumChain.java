@@ -18,7 +18,7 @@ public class BariumChain {
                 .input(dustImpure, Barite, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(Barite.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -28,7 +28,7 @@ public class BariumChain {
                 .notConsumable(LauricAcid.getFluid(100))
                 .fluidOutputs(Barite.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .fluidOutputs(GraniteTailingSlurry.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -36,7 +36,7 @@ public class BariumChain {
                 .fluidInputs(Barite.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .output(dust, Barite, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -44,7 +44,7 @@ public class BariumChain {
                 .fluidInputs(GraniteTailingSlurry.getFluid(1000))
                 .output(dust, GraniteTailings, 2)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -57,7 +57,7 @@ public class BariumChain {
                         .fluidInputs(comburent.fluid)
                         .output(dust, ImpureBariumSulfide, 2)
                         .fluidOutputs(CarbonDioxide.getFluid(2025))
-                        .EUt(7)
+                        .EUt(30)
                         .duration(fuel.duration + comburent.duration)
                         .buildAndRegister();
             }
@@ -68,7 +68,7 @@ public class BariumChain {
                 .fluidInputs(HeatedWater.getFluid(1000))
                 .output(dust, BariumResidue, 2)
                 .fluidOutputs(ImpureBariumSulfideSolution.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(100)
                 .buildAndRegister();
 
@@ -78,7 +78,7 @@ public class BariumChain {
                 .fluidInputs(HydrogenSulfide.getFluid(1000))
                 .fluidOutputs(ImpureBariumSulfideSolution.getFluid(1000))
                 .output(dust, SiliconDioxide)
-                .EUt(7)
+                .EUt(30)
                 .duration(100)
                 .buildAndRegister();
 
@@ -86,7 +86,7 @@ public class BariumChain {
                 .fluidInputs(ImpureBariumSulfideSolution.getFluid(1000))
                 .output(dust, BariumSulfide, 2)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(100)
                 .buildAndRegister();
 
@@ -97,7 +97,7 @@ public class BariumChain {
                 .output(dust, BariumCarbonate, 5)
                 .fluidOutputs(HydrogenSulfide.getFluid(1000))
                 .fluidOutputs(SodiumHydroxideSolution.getFluid(2000))
-                .EUt(7)
+                .EUt(30)
                 .duration(100)
                 .buildAndRegister();
 
@@ -108,7 +108,7 @@ public class BariumChain {
                 .output(dust, BariumCarbonate, 5)
                 .fluidOutputs(HydrogenSulfide.getFluid(1000))
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(100)
                 .buildAndRegister();
 
@@ -117,7 +117,7 @@ public class BariumChain {
                 .fluidInputs(HydrochloricAcid.getFluid(2000))
                 .fluidOutputs(BariumChlorideSolution.getFluid(1000))
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(100)
                 .buildAndRegister();
 
@@ -125,7 +125,7 @@ public class BariumChain {
                 .fluidInputs(BariumChlorideSolution.getFluid(1000))
                 .output(dust, BariumChloride, 3)
                 .fluidOutputs(Water.getFluid(2000))
-                .EUt(7)
+                .EUt(30)
                 .duration(100)
                 .buildAndRegister();
 
@@ -134,7 +134,7 @@ public class BariumChain {
                 .input(dust, BariumOxide, 6)
                 .output(dust, Barium, 3)
                 .output(dust, Alumina, 5)
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -142,7 +142,7 @@ public class BariumChain {
                 .input(dust, Witherite, 5)
                 .output(dust, BariumOxide, 2)
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(20)
                 .buildAndRegister();
 
@@ -150,7 +150,7 @@ public class BariumChain {
                 .input(dust, BariumCarbonate, 5)
                 .output(dust, BariumOxide, 2)
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(20)
                 .buildAndRegister();
     }

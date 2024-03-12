@@ -14,7 +14,7 @@ public class MercuryChain {
                 .input(dustImpure, Cinnabar, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(Cinnabar.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -24,7 +24,7 @@ public class MercuryChain {
                 .notConsumable(dust, LeadNitrate, 9)
                 .fluidOutputs(PegmatiteTailingSlurry.getFluid(1000))
                 .fluidOutputs(Cinnabar.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -32,7 +32,7 @@ public class MercuryChain {
                 .fluidInputs(Cinnabar.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .output(dust, Cinnabar, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -42,7 +42,7 @@ public class MercuryChain {
                 .fluidOutputs(Mercury.getFluid(1000))
                 .fluidOutputs(SulfurDioxide.getFluid(1000))
                 .duration(60)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
     }
 }

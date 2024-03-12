@@ -26,7 +26,7 @@ public class GoldChain {
                 .output(dust, Silver)
                 .fluidOutputs(GoldAmalgam.getFluid(1000))
                 .duration(60)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -34,7 +34,7 @@ public class GoldChain {
                 .output(dust, Gold)
                 .fluidOutputs(Mercury.getFluid(1000))
                 .duration(360)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //NATURAL ELECTRUM PURIFICATION VIA PARTING (PRIMITIVE, 67% EFFICIENCY)
@@ -46,7 +46,7 @@ public class GoldChain {
                 .fluidOutputs(SilverNitrateSolution.getFluid(4000))
                 .fluidOutputs(NitricOxide.getFluid(1000))
                 .duration(360)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //ADD PLACER DEPOSIT GRAVITY SEPARATION
@@ -58,7 +58,7 @@ public class GoldChain {
                 .output(dust, SilverChloride)
                 .fluidOutputs(Gold.getFluid(144))
                 .duration(120)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         //ADD MILLER PROCESS FOR OTHER ELECTROREFINING DORES
@@ -68,7 +68,7 @@ public class GoldChain {
                 .inputs(SuSyBlocks.RESOURCE_BLOCK.getItemVariant(BlockResource.ResourceBlockType.GOLD_ALLUVIAL))
                 .output(dust, GoldConcentrate, 8)
                 .duration(40)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder()
@@ -76,7 +76,7 @@ public class GoldChain {
                 .fluidInputs(DistilledWater.getFluid(6000))
                 .fluidOutputs(GoldOreSlurry.getFluid(6000))
                 .duration(160)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -87,7 +87,7 @@ public class GoldChain {
                 .output(SAND_DUST, 16)
                 .fluidOutputs(GoldLeachSolution.getFluid(6000))
                 .duration(160)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -95,7 +95,7 @@ public class GoldChain {
                 .fluidInputs(Nitrogen.getFluid(1000))
                 .output(dust, ActivatedCarbon)
                 .duration(1440)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()
@@ -104,7 +104,7 @@ public class GoldChain {
                 .output(dust, LoadedCarbon, 4)
                 .fluidOutputs(SodiumHydroxideSolution.getFluid(4000))
                 .duration(160)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -113,7 +113,7 @@ public class GoldChain {
                 .fluidInputs(DistilledWater.getFluid(9000))
                 .fluidOutputs(GoldEluent.getFluid(9000))
                 .duration(200)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()
@@ -122,7 +122,7 @@ public class GoldChain {
                 .output(dust, SpentActivatedCarbon)
                 .fluidOutputs(GoldEluteSolution.getFluid(1000))
                 .duration(40)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()
@@ -130,7 +130,7 @@ public class GoldChain {
                 .fluidInputs(HydrochloricAcid.getFluid(5))
                 .output(dust, WashedActivatedCarbon)
                 .duration(40)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -138,7 +138,7 @@ public class GoldChain {
                 .fluidInputs(Air.getFluid(100))
                 .output(dust, ActivatedCarbon)
                 .duration(40)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ELECTROLYTIC_CELL_RECIPES.recipeBuilder()
@@ -150,7 +150,7 @@ public class GoldChain {
                 .fluidOutputs(Oxygen.getFluid(500))
                 .fluidOutputs(MixedCyanideSolution.getFluid(500))
                 .duration(40)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         DISTILLATION_RECIPES.recipeBuilder()
@@ -159,7 +159,7 @@ public class GoldChain {
                 .fluidOutputs(Water.getFluid(500))
                 .fluidOutputs(HydrogenCyanide.getFluid(1000))
                 .duration(40)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -169,7 +169,7 @@ public class GoldChain {
                 .fluidOutputs(NitrogenDioxide.getFluid(3000))
                 .fluidOutputs(IronIIINitrateSolution.getFluid(3000))
                 .duration(40)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -179,7 +179,7 @@ public class GoldChain {
                 .fluidOutputs(NitrogenDioxide.getFluid(6000))
                 .fluidOutputs(Oxygen.getFluid(3000))
                 .duration(80)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //PURIFIED GOLD (SPECIALIZED)
@@ -188,7 +188,7 @@ public class GoldChain {
                 .fluidInputs(NitricAcid.getFluid(50))
                 .fluidOutputs(AquaRegia.getFluid(200))
                 .duration(6)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -197,7 +197,7 @@ public class GoldChain {
                 .fluidOutputs(ChloroauricAcidSolution.getFluid(1000))
                 .chancedOutput(dust, SilverChloride, 1000, 0)
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -207,7 +207,7 @@ public class GoldChain {
                 .fluidOutputs(NitrogenDioxide.getFluid(1000))
                 .fluidOutputs(Oxygen.getFluid(500))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -216,7 +216,7 @@ public class GoldChain {
                 .fluidInputs(HydrochloricAcid.getFluid(2000))
                 .fluidOutputs(WohlwillElectrolyte.getFluid(1000))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ELECTROLYTIC_CELL_RECIPES.recipeBuilder()
@@ -228,7 +228,7 @@ public class GoldChain {
                 .output(ANODE_SLIME_GOLD)
                 .fluidOutputs(SpentWohlwilElectrolyte.getFluid(250))
                 .duration(480)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         ELECTROLYTIC_CELL_RECIPES.recipeBuilder()
@@ -240,7 +240,7 @@ public class GoldChain {
                 .output(ANODE_SLIME_GOLD)
                 .fluidOutputs(SpentWohlwilElectrolyte.getFluid(250))
                 .duration(560)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -249,7 +249,7 @@ public class GoldChain {
                 .output(dust, Gold)
                 .fluidOutputs(SulfuricPGMSolution.getFluid(1000))
                 .duration(120)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         //Au3+ + 3e- --> Au
@@ -265,7 +265,7 @@ public class GoldChain {
                 .output(dust, CalciumSulfate, 18)
                 .fluidOutputs(PGMSolution.getFluid(1000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //ANODE SLIME PROCESSING
@@ -274,7 +274,7 @@ public class GoldChain {
                 .fluidInputs(AquaRegia.getFluid(16000))
                 .fluidOutputs(ChloroauricAcidSolution.getFluid(1000))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -284,7 +284,7 @@ public class GoldChain {
                 .fluidOutputs(SilverNitrateSolution.getFluid(1000))
                 .fluidOutputs(NitrogenDioxide.getFluid(1000))
                 .duration(240)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
     }
 }
