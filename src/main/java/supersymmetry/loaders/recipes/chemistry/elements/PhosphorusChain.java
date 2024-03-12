@@ -24,7 +24,7 @@ public class PhosphorusChain {
                 .output(dust, TricalciumPhosphate, 13)
                 .outputs(Fat.getItemStack())
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -33,7 +33,7 @@ public class PhosphorusChain {
                 .output(dust, MonocalciumPhosphate, 15)
                 .output(dust, CalciumSulfate, 12)
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -41,7 +41,7 @@ public class PhosphorusChain {
                 .output(dust, CalciumPhosphite, 11)
                 .fluidOutputs(Steam.getFluid(2000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -50,7 +50,7 @@ public class PhosphorusChain {
                 .output(dust, TricalciumPhosphate, 13)
                 .output(dust, Phosphorus, 4)
                 .duration(360)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //UNIVERSAL (MV)
@@ -71,7 +71,7 @@ public class PhosphorusChain {
                     .input(dust, Stone)
                     .outputs(BoneChinaClay.getItemStack(4))
                     .duration(40)
-                    .EUt(8)
+                    .EUt(7)
                     .buildAndRegister();
         }
 
@@ -82,7 +82,7 @@ public class PhosphorusChain {
                 .output(dust, CalciumSulfate, 6)
                 .fluidOutputs(DilutedPhosphoricAcid.getFluid(4000))
                 .duration(200)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -92,7 +92,7 @@ public class PhosphorusChain {
                 .fluidOutputs(PhosphoricAcid.getFluid(3000))
                 .fluidOutputs(HydrogenFluoride.getFluid(1000))
                 .duration(200)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -102,7 +102,7 @@ public class PhosphorusChain {
                 .fluidOutputs(PhosphoricAcid.getFluid(3000))
                 .fluidOutputs(HydrogenChloride.getFluid(1000))
                 .duration(200)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         DISTILLATION_RECIPES.recipeBuilder()
@@ -110,7 +110,7 @@ public class PhosphorusChain {
                 .fluidOutputs(PhosphoricAcid.getFluid(3000))
                 .fluidOutputs(Water.getFluid(1000))
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //CONVERSION TO WHITE PHOSPHORUS
@@ -120,7 +120,7 @@ public class PhosphorusChain {
                 .output(dust, MonocalciumPhosphate, 15)
                 .fluidOutputs(Water.getFluid(2000))
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //SULFURIC ACID REGENERATION
@@ -130,7 +130,7 @@ public class PhosphorusChain {
                 .output(dust, CalciumMetasilicate, 5)
                 .fluidOutputs(SulfurTrioxideReactionMixture.getFluid(2000))
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -152,7 +152,7 @@ public class PhosphorusChain {
                 .fluidOutputs(CarbonMonoxide.getFluid(15000))
                 .blastFurnaceTemp(1200)
                 .duration(720)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BLAST_RECIPES.recipeBuilder()
@@ -165,7 +165,7 @@ public class PhosphorusChain {
                 .fluidOutputs(CarbonMonoxide.getFluid(15000))
                 .blastFurnaceTemp(1200)
                 .duration(720)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BLAST_RECIPES.recipeBuilder()
@@ -177,7 +177,7 @@ public class PhosphorusChain {
                 .output(dust, CalciumHydroxide, 5)
                 .blastFurnaceTemp(1200)
                 .duration(720)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //SPECIALIZED (HV)
@@ -186,7 +186,7 @@ public class PhosphorusChain {
                 .fluidInputs(DistilledWater.getFluid(1000))
                 .fluidOutputs(PhosphoriteSlurry.getFluid(1000))
                 .duration(40)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder()
@@ -196,7 +196,7 @@ public class PhosphorusChain {
                 .chancedOutput(dust, SiliconDioxide, 3, 5000, 0)
                 .fluidOutputs(Wastewater.getFluid(1000))
                 .duration(40)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         SIFTER_RECIPES.recipeBuilder()
@@ -204,14 +204,14 @@ public class PhosphorusChain {
                 .output(dust, FilteredPhosphatePulp)
                 .chancedOutput(dust, SiliconDioxide, 2500, 0)
                 .duration(20)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, FilteredPhosphatePulp, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(FilteredPhosphateSlurry.getFluid(2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -222,7 +222,7 @@ public class PhosphorusChain {
                 .fluidOutputs(PhosphateConcentrateSlurry.getFluid(1000))
                 .fluidOutputs(LimestoneTailingSlurry.getFluid(1000))
                 .duration(20)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CLARIFIER.recipeBuilder()
@@ -230,7 +230,7 @@ public class PhosphorusChain {
                 .output(dust, PhosphateConcentrate, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
                 .duration(20)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -239,7 +239,7 @@ public class PhosphorusChain {
                 .output(dust, Gypsum, 4)
                 .fluidOutputs(PhosphoricAcid.getFluid(1000))
                 .duration(20)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
 //HIGH PURITY
@@ -247,14 +247,14 @@ public class PhosphorusChain {
                 .input(dust, Phosphorus)
                 .output(ingot, Phosphorus)
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ZONE_REFINER_RECIPES.recipeBuilder()
                 .input(ingot, Phosphorus)
                 .output(ingot, HighPurityPhosphorus)
                 .duration(400)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         AUTOCLAVE_RECIPES.recipeBuilder()
@@ -263,14 +263,14 @@ public class PhosphorusChain {
                 .chancedOutput(dust, Arsenic, 500, 50)
                 .fluidOutputs(HighPurityPhosphorusVaporMixture.getFluid(250))
                 .duration(60)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         DISTILLERY_RECIPES.recipeBuilder()
                 .fluidInputs(HighPurityPhosphorusVaporMixture.getFluid(1000))
                 .fluidOutputs(HighPurityPhosphorus.getFluid(576))
                 .duration(240)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         FLUID_SOLIDFICATION_RECIPES.recipeBuilder()
@@ -278,7 +278,7 @@ public class PhosphorusChain {
                 .notConsumable(SHAPE_MOLD_BALL)
                 .output(dust, HighPurityPhosphorus)
                 .duration(60)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //CALCIUM METASILICATE-SILICA RECYCLING
@@ -288,7 +288,7 @@ public class PhosphorusChain {
                 .output(dust, Calcite, 5)
                 .output(dust, SiliconDioxide, 3)
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
     }
 }

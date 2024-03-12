@@ -24,7 +24,7 @@ public class GalliumChain {
                 .fluidOutputs(SodaAshSolution.getFluid(1000))
                 .chancedOutput(dust, Gallium, 500, 0)
                 .duration(300)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ELECTROLYZER_RECIPES.recipeBuilder()
@@ -34,7 +34,7 @@ public class GalliumChain {
                 .fluidOutputs(SodiumHydroxideSolution.getFluid(1000))
                 .chancedOutput(dust, Gallium, 500, 0)
                 .duration(300)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //FROM SPHALERITE (WILL ADD LATER)
@@ -47,7 +47,7 @@ public class GalliumChain {
                 .fluidInputs(Chlorine.getFluid(3500))
                 .output(dust, CrudeGalliumTrichloride, 3)
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //CHLORIDE ROUTE (75%)
@@ -55,14 +55,14 @@ public class GalliumChain {
                 .fluidInputs(CrudeGalliumTrichloride.getFluid(432))
                 .fluidOutputs(GalliumTrichloride.getFluid(750))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         DISTILLATION_RECIPES.recipeBuilder()
                 .fluidInputs(CrudeGalliumTrichloride.getFluid(432))
                 .fluidOutputs(GalliumTrichloride.getFluid(1000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 // Small Pile of Mercury II Chloride Dust * 1
@@ -78,7 +78,7 @@ public class GalliumChain {
                 .output(dust, HighPurityGallium)
                 .fluidOutputs(HydrogenChloride.getFluid(3000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ELECTROLYZER_RECIPES.recipeBuilder()
@@ -89,7 +89,7 @@ public class GalliumChain {
                 .fluidOutputs(Chlorine.getFluid(2000))
                 .fluidOutputs(Mercury.getFluid(1000))
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //VACUUM ROUTE
@@ -97,7 +97,7 @@ public class GalliumChain {
                 .input(dust, Gallium)
                 .output(dust, HighPurityGallium)
                 .duration(120)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
 //GALLIUM ARSENIDE PRODUCTION (LIQUID ENCAPSULATED CZOCHIRALSKI PROCESS)
@@ -109,7 +109,7 @@ public class GalliumChain {
                 .fluidInputs(HighPurityGallium.getFluid(36))
                 .chancedOutput(SEED_CRYSTAL_GALLIUM_ARSENIDE, 2500, 0)
                 .duration(500)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //PBN CRUCIBLE
@@ -119,7 +119,7 @@ public class GalliumChain {
                 .output(dust, BoronNitride, 2)
                 .fluidOutputs(HydrogenChloride.getFluid(3000))
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         FORMING_PRESS_RECIPES.recipeBuilder()
@@ -127,7 +127,7 @@ public class GalliumChain {
                 .notConsumable(SHAPE_MOLD_CRUCIBLE)
                 .output(CRUCIBLE_BORON_NITRIDE)
                 .duration(500)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //CRYSTALLIZATION
@@ -140,7 +140,7 @@ public class GalliumChain {
                 .notConsumable(CRUCIBLE_BORON_NITRIDE)
                 .output(UNREFINED_BOULE_GALLIUM_ARSENIDE)
                 .duration(240)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         CRYSTALLIZER_RECIPES.recipeBuilder()
@@ -152,14 +152,14 @@ public class GalliumChain {
                 .notConsumable(CRUCIBLE_BORON_NITRIDE)
                 .output(ingot, GalliumArsenide)
                 .duration(240)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ZONE_REFINER_RECIPES.recipeBuilder()
                 .input(UNREFINED_BOULE_GALLIUM_ARSENIDE)
                 .output(BOULE_GALLIUM_ARSENIDE)
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         CUTTER_RECIPES.recipeBuilder()

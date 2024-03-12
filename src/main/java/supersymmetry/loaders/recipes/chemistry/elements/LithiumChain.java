@@ -22,7 +22,7 @@ public class LithiumChain {
                 .input(dustImpure, Spodumene, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(Spodumene.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -31,7 +31,7 @@ public class LithiumChain {
                 .notConsumable(AlkalineSodiumOleateSolution.getFluid(1000))
                 .fluidOutputs(Spodumene.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 1000))
                 .fluidOutputs(PegmatiteTailingSlurry.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -39,7 +39,7 @@ public class LithiumChain {
                 .fluidInputs(Spodumene.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 1000))
                 .output(dust, Spodumene, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -47,7 +47,7 @@ public class LithiumChain {
                 .fluidInputs(PegmatiteTailingSlurry.getFluid(1000))
                 .output(dust, PegmatiteTailings, 2)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 

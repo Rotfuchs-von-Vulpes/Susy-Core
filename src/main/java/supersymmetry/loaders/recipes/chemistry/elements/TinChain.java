@@ -23,7 +23,7 @@ public class TinChain {
                 .input(dustImpure, Cassiterite, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(Cassiterite.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -34,7 +34,7 @@ public class TinChain {
                 .notConsumable(MethylIsobutylCarbinol.getFluid(100))
                 .fluidOutputs(Cassiterite.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .fluidOutputs(LimestoneTailingSlurry.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -42,7 +42,7 @@ public class TinChain {
                 .fluidInputs(Cassiterite.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .output(dust, Cassiterite, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -50,7 +50,7 @@ public class TinChain {
                 .fluidInputs(LimestoneTailingSlurry.getFluid(1000))
                 .output(dust, LimestoneTailings, 2)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 

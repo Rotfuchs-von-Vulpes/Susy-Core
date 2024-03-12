@@ -19,7 +19,7 @@ public class StrontiumChain {
                 .output(sifted, Celestine)
                 .chancedOutput(dust, Limestone, 2500, 0)
                 .chancedOutput(dust, Dolomite, 2500, 0)
-                .EUt(7)
+                .EUt(30)
                 .duration(40)
                 .buildAndRegister();
 
@@ -27,7 +27,7 @@ public class StrontiumChain {
                 .input(sifted, Celestine, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(ImpureCelestineSlurry.getFluid(2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -37,7 +37,7 @@ public class StrontiumChain {
                 .notConsumable(AlkalineSodiumOleateSolution.getFluid(100))
                 .fluidOutputs(CelestineSlurry.getFluid(1000))
                 .fluidOutputs(LimestoneTailingSlurry.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -45,7 +45,7 @@ public class StrontiumChain {
                 .fluidInputs(CelestineSlurry.getFluid(1000))
                 .output(flotated, Celestine, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -58,7 +58,7 @@ public class StrontiumChain {
                         .fluidInputs(comburent.fluid)
                         .output(dust, ImpureStrontiumSulfide, 2)
                         .fluidOutputs(CarbonDioxide.getFluid(2025))
-                        .EUt(7)
+                        .EUt(30)
                         .duration(fuel.duration + comburent.duration)
                         .buildAndRegister();
             }
@@ -68,7 +68,7 @@ public class StrontiumChain {
                 .input(dust, ImpureStrontiumSulfide, 4)
                 .fluidInputs(HeatedWater.getFluid(2000))
                 .fluidOutputs(ImpureStrontiumSulfideSlurry.getFluid(2000))
-                .EUt(7)
+                .EUt(30)
                 .duration(100)
                 .buildAndRegister();
 
@@ -76,7 +76,7 @@ public class StrontiumChain {
                 .fluidInputs(ImpureStrontiumSulfideSlurry.getFluid(1000))
                 .output(dust, SiliconDioxide)
                 .fluidOutputs(StrontiumSulfideSolution.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -87,7 +87,7 @@ public class StrontiumChain {
                 .output(dust, StrontiumCarbonate, 5)
                 .fluidOutputs(HydrogenSulfide.getFluid(1000))
                 .fluidOutputs(SodiumHydroxideSolution.getFluid(2000))
-                .EUt(7)
+                .EUt(30)
                 .duration(100)
                 .buildAndRegister();
 
@@ -95,7 +95,7 @@ public class StrontiumChain {
                 .input(dust, StrontiumCarbonate, 5)
                 .output(dust, StrontiumOxide, 2)
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(20)
                 .buildAndRegister();
 
@@ -103,7 +103,7 @@ public class StrontiumChain {
                 .input(dust, Strontianite, 5)
                 .output(dust, StrontiumOxide, 2)
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(20)
                 .buildAndRegister();
 
@@ -112,7 +112,7 @@ public class StrontiumChain {
                 .input(dust, StrontiumOxide, 6)
                 .output(dust, Strontium, 3)
                 .output(dust, Alumina, 5)
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
     }

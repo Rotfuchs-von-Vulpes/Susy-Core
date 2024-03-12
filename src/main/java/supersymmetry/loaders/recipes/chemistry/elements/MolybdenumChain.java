@@ -20,7 +20,7 @@ public class MolybdenumChain {
                 .input(dust, Molybdenite, 8)
                 .fluidInputs(DistilledWater.getFluid(2500))
                 .fluidOutputs(Molybdenite.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 2500))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -31,7 +31,7 @@ public class MolybdenumChain {
                 .notConsumable(MethylIsobutylCarbinol.getFluid(100))
                 .fluidOutputs(CopperMolybdeniteSlurry.getFluid(2000))
                 .fluidOutputs(PegmatiteTailingSlurry.getFluid(500))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -39,7 +39,7 @@ public class MolybdenumChain {
                 .input("dustAnyPuritySulfur", 5)
                 .fluidInputs(Phosphorus.getFluid(288))
                 .output(dust, PhosphorusPentasulfide, 7)
-                .EUt(120)
+                .EUt(480)
                 .duration(20)
                 .buildAndRegister();
 
@@ -49,7 +49,7 @@ public class MolybdenumChain {
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(SodiumDithiophosphateSolution.getFluid(4000))
                 .fluidOutputs(HydrogenSulfide.getFluid(2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(20)
                 .buildAndRegister();
 
@@ -61,7 +61,7 @@ public class MolybdenumChain {
                 .notConsumable(MethylIsobutylCarbinol.getFluid(100))
                 .fluidOutputs(CopperConcentrateSlurry.getFluid(1000))
                 .fluidOutputs(Molybdenite.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -70,7 +70,7 @@ public class MolybdenumChain {
                 .output(flotated, Molybdenite, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
                 .duration(20)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 // WULFENITE
@@ -81,7 +81,7 @@ public class MolybdenumChain {
                 .output(dust, AlkaliFusedWulfenite, 9)
                 .blastFurnaceTemp(700)
                 .duration(100)
-                .EUt(480)
+                .EUt(1920)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -90,7 +90,7 @@ public class MolybdenumChain {
                 .output(dust, LeadIIHydroxide, 5)
                 .fluidOutputs(SodiumMolybdateSolution.getFluid(1000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CRYSTALLIZER_RECIPES.recipeBuilder()
@@ -102,7 +102,7 @@ public class MolybdenumChain {
                 .fluidOutputs(Steam.getFluid(3000))
                 .fluidOutputs(SaltWater.getFluid(4000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
 // PURIFICATION
@@ -113,7 +113,7 @@ public class MolybdenumChain {
                 .output(dust, MolybdenumTrioxide, 4)
                 .fluidOutputs(MolybdeniteFlueGas.getFluid(2000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -121,7 +121,7 @@ public class MolybdenumChain {
                 .fluidInputs(AmmoniaSolution.getFluid(2000))
                 .fluidOutputs(AmmoniumMolybdateSolution.getFluid(1000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CRYSTALLIZER_RECIPES.recipeBuilder()
@@ -132,7 +132,7 @@ public class MolybdenumChain {
                 .fluidOutputs(Steam.getFluid(2000))
                 .fluidOutputs(Wastewater.getFluid(1000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
 // TUNGSTEN BYPRODUCT PROCESSING
@@ -143,7 +143,7 @@ public class MolybdenumChain {
                 .output(dust, ImpureMolybdenumTrioxide, 4)
                 .fluidOutputs(SulfurDioxide.getFluid(3000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -152,7 +152,7 @@ public class MolybdenumChain {
                 .fluidInputs(DistilledWater.getFluid(1000))
                 .fluidOutputs(MolybdicAcidSolution.getFluid(1000)) // 1x H2MoO4, 1x HCl, 1x H2O
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CSTR_RECIPES.recipeBuilder()
@@ -160,7 +160,7 @@ public class MolybdenumChain {
                 .fluidInputs(AmmoniaSolution.getFluid(3000))
                 .fluidOutputs(NeutralizedAmmoniumMolybdateSolution.getFluid(4000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CRYSTALLIZER_RECIPES.recipeBuilder()
@@ -171,7 +171,7 @@ public class MolybdenumChain {
                 .fluidOutputs(Steam.getFluid(7000))
                 .fluidOutputs(AmmoniumChlorideSolution.getFluid(2000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
 // FINAL PROCESSING
@@ -182,7 +182,7 @@ public class MolybdenumChain {
                 .fluidOutputs(Steam.getFluid(1000))
                 .fluidOutputs(Ammonia.getFluid(2000))
                 .duration(100)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
 // BYPASS (95% yield)
@@ -193,7 +193,7 @@ public class MolybdenumChain {
                 .fluidOutputs(SublimatedMolybdenumTrioxide.getFluid(1000))
                 .blastFurnaceTemp(1400)
                 .duration(100)
-                .EUt(1920)
+                .EUt(7680)
                 .buildAndRegister();
 
         BLAST_RECIPES.recipeBuilder()
@@ -202,7 +202,7 @@ public class MolybdenumChain {
                 .fluidOutputs(SublimatedMolybdenumTrioxide.getFluid(1000))
                 .blastFurnaceTemp(1400)
                 .duration(100)
-                .EUt(1920)
+                .EUt(7680)
                 .buildAndRegister();
 
         SIFTER_RECIPES.recipeBuilder()
@@ -211,7 +211,7 @@ public class MolybdenumChain {
                 .chancedOutput(dust, PurifiedMolybdenumTrioxide, 4, 9500, 0)
                 .fluidOutputs(Air.getFluid(1000))
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 // REDUCTION TO PURE METAL
@@ -222,7 +222,7 @@ public class MolybdenumChain {
                 .fluidOutputs(Steam.getFluid(3000))
                 .output(dust, Molybdenum)
                 .duration(100)
-                .EUt(480)
+                .EUt(1920)
                 .buildAndRegister();
     }
 }

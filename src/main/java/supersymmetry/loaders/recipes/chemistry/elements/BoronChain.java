@@ -19,7 +19,7 @@ public class BoronChain {
                 .output(dust, SodiumTetraborate, 13)
                 .fluidOutputs(Steam.getFluid(10000))
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //DISSOLUTION OF TETRABORATE
@@ -29,7 +29,7 @@ public class BoronChain {
                 .output(dustTiny, Clay)
                 .fluidOutputs(BorateLiquor.getFluid(2000))
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //PRECIPITATION OF BORIC ACID
@@ -39,7 +39,7 @@ public class BoronChain {
                 .output(dust, BoricAcid, 28)
                 .fluidOutputs(SaltWater.getFluid(2000))
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //CALCINATION OF BORIC ACID
@@ -48,7 +48,7 @@ public class BoronChain {
                 .output(dust, BoronTrioxide, 5)
                 .fluidOutputs(Steam.getFluid(3000))
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //REDUCTION OF BORON TRIOXIDE
@@ -58,14 +58,14 @@ public class BoronChain {
                 .output(dust, AmorphousBoron, 2)
                 .output(dust, Magnesia, 6)
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         MACERATOR_RECIPES.recipeBuilder()
                 .input(dust, AmorphousBoron, 2)
                 .output(dust, Boron)
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //MAGNESIUM REGERNATION
@@ -78,7 +78,7 @@ public class BoronChain {
                 .duration(100)
                 .output(dust, Magnesium)
                 .fluidOutputs(Oxygen.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ELECTROLYTIC_CELL_RECIPES.recipeBuilder()
@@ -90,7 +90,7 @@ public class BoronChain {
                 .duration(400)
                 .output(dust, Magnesium)
                 .fluidOutputs(Oxygen.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //PRODUCTION OF KBF4
@@ -99,7 +99,7 @@ public class BoronChain {
                 .fluidInputs(HydrofluoricAcid.getFluid(4000))
                 .fluidOutputs(TetrafluoroboricAcid.getFluid(1000))
                 .duration(600)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -108,7 +108,7 @@ public class BoronChain {
                 .fluidOutputs(PotassiumTetrafluoroborateSolution.getFluid(1000))
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         DISTILLERY_RECIPES.recipeBuilder()
@@ -116,7 +116,7 @@ public class BoronChain {
                 .output(dust, PotassiumTetrafluoroborate, 12)
                 .fluidOutputs(Water.getFluid(7000))
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //ELECTROLYSIS ELECTRODE PRODUCTION
@@ -126,7 +126,7 @@ public class BoronChain {
                 .output(dust, BoronCarbide, 5)
                 .fluidOutputs(CarbonMonoxide.getFluid(6000))
                 .duration(300)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         for (Utils.Blanket blanket : sintering_blankets) {
@@ -136,7 +136,7 @@ public class BoronChain {
                     .fluidInputs(blanket.fluid)
                     .output(stick, BoronCarbide)
                     .duration(blanket.duration)
-                    .EUt(30)
+                    .EUt(120)
                     .buildAndRegister();
         }
 
@@ -145,7 +145,7 @@ public class BoronChain {
                 .notConsumable(SHAPE_MOLD_ROD)
                 .output(stick, BoronCarbide)
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //ELECTROLYSIS OF B2O3
@@ -165,7 +165,7 @@ public class BoronChain {
                 .input(dust, ElectrolyticBoron, 4)
                 .output(dust, Boron, 3)
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //PURIFICATION OF SEMICONDUCTOR-GRADE BORON
@@ -175,7 +175,7 @@ public class BoronChain {
                 .chancedOutput(dust, MagnesiumChloride, 3, 600, 0)
                 .fluidOutputs(BoronTrichloride.getFluid(1000))
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         FLUIDIZED_BED_REACTOR_RECIPES.recipeBuilder()
@@ -184,7 +184,7 @@ public class BoronChain {
                 .chancedOutput(dust, MagnesiumChloride, 3, 600, 0)
                 .fluidOutputs(BoronTrichloride.getFluid(1000))
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -193,7 +193,7 @@ public class BoronChain {
                 .output(dust, HighPurityBoron)
                 .fluidOutputs(HydrogenChloride.getFluid(3000))
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
     }
 }

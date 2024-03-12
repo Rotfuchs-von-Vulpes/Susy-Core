@@ -32,7 +32,7 @@ public class TitaniumChain {
                 .input(dustImpure, Ilmenite, 8)
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .fluidOutputs(Ilmenite.getFluid(SusyFluidStorageKeys.IMPURE_SLURRY, 2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -43,7 +43,7 @@ public class TitaniumChain {
                 .notConsumable(dust, SodiumFluoride, 2)
                 .fluidOutputs(Ilmenite.getFluid(SusyFluidStorageKeys.SLURRY, 1000))
                 .fluidOutputs(UltramaficTailingSlurry.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(80)
                 .buildAndRegister();
 
@@ -52,7 +52,7 @@ public class TitaniumChain {
                 .output(concentrate, Ilmenite, 16)
                 .fluidOutputs(Wastewater.getFluid(1000))
                 .duration(20)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder()
@@ -60,7 +60,7 @@ public class TitaniumChain {
                 .output(dust, UltramaficTailings, 2)
                 .fluidOutputs(Wastewater.getFluid(1000))
                 .duration(20)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ELECTROMAGNETIC_SEPARATOR_RECIPES.recipeBuilder()
@@ -77,7 +77,7 @@ public class TitaniumChain {
                 .output(dust, Rutile)
                 .chancedOutput(dust, Zircon, 1000, 250)
                 .duration(20)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         ELECTROMAGNETIC_SEPARATOR_RECIPES.recipeBuilder()
@@ -85,7 +85,7 @@ public class TitaniumChain {
                 .output(dust, Perovskite)
                 .chancedOutput(concentrate, Rutile, 1000, 250)
                 .duration(20)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 // Sulfate Process
@@ -96,7 +96,7 @@ public class TitaniumChain {
                 .fluidOutputs(TitanylSulfateSolution.getFluid(1000))
                 .output(dust, UltramaficTailings)
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder()
@@ -104,7 +104,7 @@ public class TitaniumChain {
                 .fluidInputs(TitanylSulfateSolution.getFluid(1000))
                 .fluidOutputs(RutileSlurry.getFluid(2000))
                 .duration(160)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         SIFTER_RECIPES.recipeBuilder()
@@ -122,7 +122,7 @@ public class TitaniumChain {
                 .fluidOutputs(Wastewater.getFluid(1000))
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .duration(200)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 // Chloride Ilmenite Process
@@ -138,7 +138,7 @@ public class TitaniumChain {
                     .fluidOutputs(CarbonMonoxide.getFluid(1000))
                     .output(dust, Rutile, 3)
                     .duration(100 * combustible.duration)
-                    .EUt(7)
+                    .EUt(30)
                     .buildAndRegister();
 
             FLUIDIZED_BED_REACTOR_RECIPES.recipeBuilder()
@@ -150,7 +150,7 @@ public class TitaniumChain {
                     .fluidOutputs(CarbonMonoxide.getFluid(1000))
                     .output(dust, Rutile, 3)
                     .duration(100 * combustible.duration)
-                    .EUt(7)
+                    .EUt(30)
                     .buildAndRegister();
 
             combustible.name.setCount(combustible.equivalent(2));
@@ -162,7 +162,7 @@ public class TitaniumChain {
                     .fluidOutputs(GaseousTitaniumTetrachloride.getFluid(1000))
                     .fluidOutputs(CarbonMonoxide.getFluid(2000))
                     .duration(50 * combustible.duration)
-                    .EUt(30)
+                    .EUt(120)
                     .buildAndRegister();
         }
 
@@ -193,7 +193,7 @@ public class TitaniumChain {
                 .fluidOutputs(TinTetrachloride.getFluid(50))
                 .fluidOutputs(SiliconTetrachloride.getFluid(50))
                 .duration(400)
-                .EUt(30  * 2)
+                .EUt(120  * 2)
                 .buildAndRegister();
 
         FIXED_BED_REACTOR_RECIPES.recipeBuilder()
@@ -203,7 +203,7 @@ public class TitaniumChain {
                 .fluidOutputs(VanadiumFreeTitaniumTetrachloride.getFluid(1000))
                 .chancedOutput(dust, VanadiumOxydichloride, 6000, 0)
                 .duration(200)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         DISTILLATION_RECIPES.recipeBuilder()
@@ -212,7 +212,7 @@ public class TitaniumChain {
                 .fluidOutputs(TitaniumTetrachloride.getFluid(1000))
                 .chancedOutput(dust, Iron3Chloride, 2000, 250)
                 .duration(300)
-                .EUt(30 * 2)
+                .EUt(120 * 2)
                 .buildAndRegister();
 
 // Kroll Process
@@ -228,7 +228,7 @@ public class TitaniumChain {
                     .chancedOutput(dust, Magnesium, 1250, 0)
                     .blastFurnaceTemp(2150)
                     .duration(100 * inertGas.duration)
-                    .EUt(120 * 2)
+                    .EUt(480 * 2)
                     .buildAndRegister();
         }
 
@@ -237,14 +237,14 @@ public class TitaniumChain {
                 .output(SPONGE_TITANIUM)
                 .fluidOutputs(TitaniumTetrachloride.getFluid(25))
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         MACERATOR_RECIPES.recipeBuilder()
                 .input(SPONGE_TITANIUM)
                 .chancedOutput(dust, Titanium, 8500, 0)
                 .duration(100)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 // Byproducts
@@ -254,7 +254,7 @@ public class TitaniumChain {
                 .fluidInputs(Chlorine.getFluid(1000))
                 .fluidOutputs(VanadiumOxytrichloride.getFluid(1000))
                 .duration(200)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -263,7 +263,7 @@ public class TitaniumChain {
                 .output(dust, VanadiumPentoxide, 7)
                 .fluidOutputs(HydrochloricAcid.getFluid(6000))
                 .duration(160)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -272,7 +272,7 @@ public class TitaniumChain {
                 .output(dust, TinIVOxide, 3)
                 .fluidOutputs(HydrochloricAcid.getFluid(4000))
                 .duration(160)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
 //VAN ARKEL-DE BOER
@@ -282,7 +282,7 @@ public class TitaniumChain {
                 .input("dustAnyPurityIodine", 4)
                 .output(dust, TitaniumIodide, 5)
                 .duration(240)
-                .EUt(120)
+                .EUt(480)
                 .buildAndRegister();
 
         CVD_RECIPES.recipeBuilder()
@@ -291,7 +291,7 @@ public class TitaniumChain {
                 .output(dust, HighPurityTitanium)
                 .fluidOutputs(Iodine.getFluid(576))
                 .duration(120)
-                .EUt(480)
+                .EUt(1920)
                 .buildAndRegister();
     }
 }

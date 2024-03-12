@@ -86,7 +86,7 @@ public class BerylliumChain {
                 .fluidInputs(SaltWater.getFluid(2000))
                 .output(dust, SodiumFluorosilicate, 9)
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
-                .EUt(480)
+                .EUt(1920)
                 .duration(400)
                 .buildAndRegister();
 
@@ -95,7 +95,7 @@ public class BerylliumChain {
                 .input(dust, SodiumFluorosilicate, 54)
                 .output(dust, FluorideFusedBeryl, 23)
                 .fluidOutputs(SiliconTetrafluoride.getFluid(1000))
-                .EUt(480)
+                .EUt(1920)
                 .duration(200)
                 .buildAndRegister();
 
@@ -104,7 +104,7 @@ public class BerylliumChain {
                 .input(dust, SodiumFluoride, 4)
                 .fluidInputs(SiliconTetrafluoride.getFluid(1000))
                 .output(dust, SodiumFluorosilicate, 9)
-                .EUt(480)
+                .EUt(1920)
                 .duration(100)
                 .buildAndRegister();
 
@@ -115,7 +115,7 @@ public class BerylliumChain {
                 .output(dust, Alumina, 10)
                 .output(dust, SiliconDioxide, 45)
                 .fluidOutputs(SodiumFluoroberyllateSolution.getFluid(5400))
-                .EUt(480)
+                .EUt(1920)
                 .duration(300)
                 .buildAndRegister();
 
@@ -125,7 +125,7 @@ public class BerylliumChain {
                 .fluidInputs(DistilledWater.getFluid(3000))
                 .output(dust, BerylliumHydroxide, 5)
                 .fluidOutputs(SodiumFluorideSolution.getFluid(4000))
-                .EUt(480)
+                .EUt(1920)
                 .duration(80)
                 .buildAndRegister();
 
@@ -133,7 +133,7 @@ public class BerylliumChain {
                 .input(dust, BerylliumHydroxide, 5)
                 .output(dust, BerylliumOxide, 2)
                 .fluidOutputs(Steam.getFluid(1000))
-                .EUt(480)
+                .EUt(1920)
                 .duration(80)
                 .buildAndRegister();
 
@@ -144,7 +144,7 @@ public class BerylliumChain {
                 .input("dustAnyPurityCarbon", 18)
                 .fluidInputs(Chlorine.getFluid(36000))
                 .fluidOutputs(ChlorinatedBeryl.getFluid(900))
-                .EUt(480)
+                .EUt(1920)
                 .duration(480)
                 .buildAndRegister();
 
@@ -154,14 +154,14 @@ public class BerylliumChain {
                 .fluidOutputs(AluminiumChloride.getFluid(2000))
                 .fluidOutputs(SiliconTetrachloride.getFluid(6000))
                 .fluidOutputs(CarbonMonoxide.getFluid(18000))
-                .EUt(480)
+                .EUt(1920)
                 .duration(480)
                 .buildAndRegister();
 
         FLUID_SOLIDFICATION_RECIPES.recipeBuilder()
                 .fluidInputs(AluminiumChloride.getFluid(1000))
                 .output(dust, AluminiumChloride, 4)
-                .EUt(7)
+                .EUt(30)
                 .duration(20)
                 .buildAndRegister();
 
@@ -171,7 +171,7 @@ public class BerylliumChain {
                 .fluidInputs(SodiumHydroxideSolution.getFluid(3000))
                 .output(dust, AluminiumHydroxide, 7)
                 .fluidOutputs(SaltWater.getFluid(3000))
-                .EUt(7)
+                .EUt(30)
                 .duration(480)
                 .buildAndRegister();
 
@@ -182,7 +182,7 @@ public class BerylliumChain {
                 .fluidInputs(Chlorine.getFluid(2000))
                 .output(dust, BerylliumChloride, 3)
                 .fluidOutputs(CarbonMonoxide.getFluid(1000))
-                .EUt(480)
+                .EUt(1920)
                 .duration(240)
                 .buildAndRegister();
 
@@ -193,7 +193,7 @@ public class BerylliumChain {
                 .fluidInputs(BerylliumChloride.getFluid(432))
                 .fluidOutputs(Chlorine.getFluid(2000))
                 .output(dust, Beryllium)
-                .EUt(480)
+                .EUt(1920)
                 .duration(480)
                 .buildAndRegister();
 
@@ -204,7 +204,7 @@ public class BerylliumChain {
                 .fluidInputs(DistilledWater.getFluid(2000))
                 .output(dust, SiliconDioxide, 3)
                 .output(dust, AmmoniumFluoride, 36)
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -213,7 +213,7 @@ public class BerylliumChain {
                 .input(dust, AmmoniumFluoride, 12)
                 .output(dust, AmmoniumBifluoride, 8)
                 .fluidOutputs(Ammonia.getFluid(1000))
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -222,7 +222,7 @@ public class BerylliumChain {
                 .input(dust, BerylliumHydroxide, 5)
                 .fluidInputs(DistilledWater.getFluid(1000))
                 .fluidOutputs(AmmoniumFluoroberyllateSolution.getFluid(1000))
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -232,7 +232,7 @@ public class BerylliumChain {
                 .chancedOutput(dustTiny, ChromiumIIIHydroxide, 200, 0)
                 .chancedOutput(dustTiny, IronIIIHydroxide, 200, 0)
                 .fluidOutputs(AmmoniumFluoroberyllateSolution.getFluid(1000))
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -240,7 +240,7 @@ public class BerylliumChain {
                 .fluidInputs(AmmoniumFluoroberyllateSolution.getFluid(1000))
                 .output(dust, AmmoniumFluoroberyllate, 13)
                 .fluidOutputs(Steam.getFluid(3000))
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -248,7 +248,7 @@ public class BerylliumChain {
                 .input(dust, AmmoniumFluoroberyllate, 13)
                 .output(dust, BerylliumFluoride, 3)
                 .fluidOutputs(DisassociatedAmmoniumFluoride.getFluid(2000))
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -256,7 +256,7 @@ public class BerylliumChain {
                 .fluidInputs(DisassociatedAmmoniumFluoride.getFluid(1000))
                 .fluidInputs(Water.getFluid(1000))
                 .fluidOutputs(AmmoniumFluorideSolution.getFluid(1000))
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -264,7 +264,7 @@ public class BerylliumChain {
                 .fluidInputs(AmmoniumFluorideSolution.getFluid(1000))
                 .output(dust, AmmoniumFluoride, 6)
                 .fluidOutputs(Water.getFluid(1000))
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -274,7 +274,7 @@ public class BerylliumChain {
                 .fluidInputs(CoalTar.getFluid(1000))
                 .output(CRUCIBLE_GRAPHITE)
                 .duration(1440)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         REACTION_FURNACE_RECIPES.recipeBuilder()
@@ -283,7 +283,7 @@ public class BerylliumChain {
                 .notConsumable(CRUCIBLE_GRAPHITE)
                 .output(dust, Beryllium)
                 .output(dust, MagnesiumFluoride, 3)
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -291,7 +291,7 @@ public class BerylliumChain {
                 .input(dust, MagnesiumFluoride, 3)
                 .fluidInputs(HydrochloricAcid.getFluid(2000))
                 .fluidOutputs(DissolvedMagnesiumFluoride.getFluid(1000))
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -299,7 +299,7 @@ public class BerylliumChain {
                 .fluidInputs(DissolvedMagnesiumFluoride.getFluid(1000))
                 .output(dust, MagnesiumChloride, 3)
                 .fluidOutputs(HydrofluoricAcid.getFluid(1000))
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 

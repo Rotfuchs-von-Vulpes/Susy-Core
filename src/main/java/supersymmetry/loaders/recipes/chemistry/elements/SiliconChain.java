@@ -143,7 +143,7 @@ public class SiliconChain {
                 .input(UNREFINED_BOULE_SILICON)
                 .output(SILICON_BOULE)
                 .duration(120)
-                .EUt(7)
+                .EUt(30)
                 .buildAndRegister();
 
         CUTTER_RECIPES.recipeBuilder()
@@ -275,7 +275,7 @@ public class SiliconChain {
                         .output(plate, SiliconCarbide)
                         .fluidOutputs(fuel.byproduct)
                         .duration(fuel.duration)
-                        .EUt(120)
+                        .EUt(480)
                         .buildAndRegister();
 
             } else {
@@ -288,7 +288,7 @@ public class SiliconChain {
                             .output(plate, SiliconCarbide)
                             .fluidOutputs(fuel.byproduct)
                             .duration(fuel.duration + comburent.duration)
-                            .EUt(7)
+                            .EUt(30)
                             .buildAndRegister();
                 }
             }

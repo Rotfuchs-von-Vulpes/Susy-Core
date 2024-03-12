@@ -18,7 +18,7 @@ public class CobaltChain {
                     .output(dust, Cobalt)
                     .fluidOutputs(CarbonMonoxide.getFluid(1000))
                     .duration(120)
-                    .EUt(30)
+                    .EUt(120)
                     .buildAndRegister();
         }
     }

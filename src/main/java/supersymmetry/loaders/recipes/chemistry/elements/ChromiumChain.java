@@ -20,7 +20,7 @@ public class ChromiumChain {
                 .output(dust, Ferrochromium, 3)
                 .fluidOutputs(CarbonMonoxide.getFluid(4000))
                 .duration(200)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         for (Utils.Combustible fuel : sintering_fuels) {
@@ -33,7 +33,7 @@ public class ChromiumChain {
                         .output(dust, SodiumChromateMixture, 5)
                         .fluidOutputs(CarbonDioxide.getFluid(4000))
                         .duration(400)
-                        .EUt(30)
+                        .EUt(120)
                         .buildAndRegister();
             }
         }
@@ -44,7 +44,7 @@ public class ChromiumChain {
                 .output(dust, IronIIIOxide, 10)
                 .fluidOutputs(SodiumChromateSolution.getFluid(8000))
                 .duration(800)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         CSTR_RECIPES.recipeBuilder()
@@ -52,7 +52,7 @@ public class ChromiumChain {
                 .fluidInputs(SulfuricAcid.getFluid(50))
                 .fluidOutputs(SodiumDichromateSolution.getFluid(50))
                 .duration(5)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         DISTILLATION_RECIPES.recipeBuilder()
@@ -61,7 +61,7 @@ public class ChromiumChain {
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .duration(100)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
@@ -70,7 +70,7 @@ public class ChromiumChain {
                 .output(dust, ChromiumSodaMixture, 2)
                 .fluidOutputs(CarbonMonoxide.getFluid(1000))
                 .duration(100)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -79,14 +79,14 @@ public class ChromiumChain {
                 .output(dust, ChromiumIIIOxide, 5)
                 .fluidOutputs(SodaAshSolution.getFluid(1000))
                 .duration(100)
-                .EUt(30)
+                .EUt(120)
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
                 .input(dust, ChromiumIIIHydroxide, 14)
                 .output(dust, ChromiumIIIOxide, 5)
                 .fluidOutputs(Steam.getFluid(3000))
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -95,7 +95,7 @@ public class ChromiumChain {
                 .input(dust, ChromiumIIIOxide, 5)
                 .output(dust, Alumina, 5)
                 .output(dust, Chrome, 2)
-                .EUt(30)
+                .EUt(120)
                 .duration(100)
                 .buildAndRegister();
 
@@ -103,7 +103,7 @@ public class ChromiumChain {
                 .fluidInputs(Ammonia.getFluid(100))
                 .fluidInputs(DilutedSulfuricAcid.getFluid(100))
                 .fluidOutputs(AmmoniumSulfateSolution.getFluid(50))
-                .EUt(30)
+                .EUt(120)
                 .duration(5)
                 .buildAndRegister();
 
@@ -111,7 +111,7 @@ public class ChromiumChain {
                 .fluidInputs(AmmoniumSulfateSolution.getFluid(1000))
                 .output(dust, AmmoniumSulfate, 15)
                 .fluidOutputs(Water.getFluid(1000))
-                .EUt(30)
+                .EUt(120)
                 .duration(5)
                 .buildAndRegister();
 
@@ -123,7 +123,7 @@ public class ChromiumChain {
                 .fluidInputs(DistilledWater.getFluid(750))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .fluidOutputs(DissolvedFerrochromium.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
@@ -132,7 +132,7 @@ public class ChromiumChain {
                 .fluidInputs(Ammonia.getFluid(4000))
                 .output(dust, CrudeAmmoniumIronIISulfate, 21)
                 .fluidOutputs(AmmoniumChromeAlumSolution.getFluid(750))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
@@ -142,7 +142,7 @@ public class ChromiumChain {
                 .fluidInputs(MohrMotherLiquor.getFluid(250))
                 .output(dust, CrudeAmmoniumIronIISulfate, 21)
                 .fluidOutputs(AmmoniumChromeAlumSolution.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
@@ -150,7 +150,7 @@ public class ChromiumChain {
                 .input(dust, CrudeAmmoniumIronIISulfate, 21)
                 .fluidInputs(HeatedWater.getFluid(250))
                 .fluidOutputs(CrudeAmmoniumIronIISulfateSolution.getFluid(250))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
@@ -158,7 +158,7 @@ public class ChromiumChain {
                 .fluidInputs(CrudeAmmoniumIronIISulfateSolution.getFluid(250))
                 .output(dust, AmmoniumIronIISulfate, 21)
                 .fluidOutputs(MohrMotherLiquor.getFluid(250))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
@@ -166,7 +166,7 @@ public class ChromiumChain {
                 .input(dust, AmmoniumIronIISulfate, 21)
                 .fluidInputs(HeatedWater.getFluid(1000))
                 .fluidOutputs(AmmoniumIronIISulfateSolution.getFluid(1000))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
@@ -175,7 +175,7 @@ public class ChromiumChain {
                 .fluidInputs(CrudeAmmoniumIronIISulfateSolution.getFluid(1000))
                 .output(dust, IronIIHydroxide, 5)
                 .fluidOutputs(AmmoniumSulfateSolution.getFluid(2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
@@ -183,7 +183,7 @@ public class ChromiumChain {
                 .fluidInputs(WarmWater.getFluid(1000))
                 .fluidInputs(AmmoniumChromeAlumSolution.getFluid(1000))
                 .fluidOutputs(AgedAmmoniumChromeAlumSolution.getFluid(2000))
-                .EUt(7)
+                .EUt(30)
                 .duration(800)
                 .buildAndRegister();
 
@@ -191,7 +191,7 @@ public class ChromiumChain {
                 .fluidInputs(AgedAmmoniumChromeAlumSolution.getFluid(2000))
                 .output(dust, AmmoniumChromeAlum, 12)
                 .fluidOutputs(ChromiumMotherLiquor.getFluid(2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
@@ -199,7 +199,7 @@ public class ChromiumChain {
                 .fluidInputs(HeatedWater.getFluid(1000))
                 .input(dust, AmmoniumChromeAlum, 16)
                 .fluidOutputs(PurifiedAmmoniumChromeAlumSolution.getFluid(1000))
-                .EUt(7)
+                .EUt(30)
                 .duration(800)
                 .buildAndRegister();
 
@@ -213,7 +213,7 @@ public class ChromiumChain {
                 .fluidOutputs(Oxygen.getFluid(1200))
                 .fluidOutputs(ChromiumAnolyte.getFluid(100))
                 .fluidOutputs(ChromiumCatholyte.getFluid(100))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
@@ -221,7 +221,7 @@ public class ChromiumChain {
                 .fluidInputs(WarmWater.getFluid(1000))
                 .fluidInputs(ChromiumCatholyte.getFluid(1000))
                 .fluidOutputs(AgedAmmoniumChromeAlumSolution.getFluid(2000))
-                .EUt(7)
+                .EUt(30)
                 .duration(800)
                 .buildAndRegister();
 
@@ -229,7 +229,7 @@ public class ChromiumChain {
                 .fluidInputs(ChromiumAnolyte.getFluid(100))
                 .fluidInputs(SulfurDioxide.getFluid(150))
                 .fluidOutputs(ReducedChromiumAnolyte.getFluid(100))
-                .EUt(7)
+                .EUt(30)
                 .duration(10)
                 .buildAndRegister();
 
@@ -241,7 +241,7 @@ public class ChromiumChain {
                 .fluidInputs(DistilledWater.getFluid(750))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .fluidOutputs(DissolvedFerrochromium.getFluid(2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
@@ -253,7 +253,7 @@ public class ChromiumChain {
                 .fluidInputs(DistilledWater.getFluid(750))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .fluidOutputs(DissolvedFerrochromium.getFluid(2000))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
@@ -261,7 +261,7 @@ public class ChromiumChain {
                 .fluidInputs(ElectrolyticChromium.getFluid(1440))
                 .fluidOutputs(HighPurityChrome.getFluid(1440))
                 .fluidOutputs(Oxygen.getFluid(144))
-                .EUt(120)
+                .EUt(480)
                 .duration(200)
                 .buildAndRegister();
 
