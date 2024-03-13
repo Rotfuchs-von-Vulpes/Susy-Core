@@ -19,6 +19,8 @@ import supersymmetry.loaders.recipes.chemistry.organic_chemistry.petrochemistry.
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.petrochemistry.OilOverhaul;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.petrochemistry.Surfactants;
 import supersymmetry.loaders.recipes.chemistry.organic_chemistry.polymers.*;
+import supersymmetry.loaders.recipes.eletronics.Batteries;
+import supersymmetry.loaders.recipes.eletronics.IntegratedCircuit;
 import supersymmetry.loaders.recipes.gameplay.Smelting;
 import supersymmetry.loaders.recipes.gameplay.StartingAge;
 import supersymmetry.loaders.recipes.misc.*;
@@ -121,6 +123,9 @@ public class SuSyRecipeLoader {
         Quenching.init();
         StainlessSteelChain.init();
         WaterPurificationChain.init();
+
+        IntegratedCircuit.init();
+        Batteries.init();
 
         Smelting.init();
         StartingAge.init();
