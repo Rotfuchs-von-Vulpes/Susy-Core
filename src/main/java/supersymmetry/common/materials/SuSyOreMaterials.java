@@ -280,7 +280,7 @@ public class SuSyOreMaterials {
                 .build();
 
         Phosphorite = new Material.Builder(7035, SuSyUtility.susyId("phosphorite"))
-                .dust()
+                .ore()
                 .iconSet(SHINY)
                 .color(0x8a6e42)
                 .build();
@@ -484,7 +484,7 @@ public class SuSyOreMaterials {
                 .build();
 
         Braggite = new Material.Builder(7064, SuSyUtility.susyId("braggite"))
-                .dust()
+                .ore()
                 .color(0x686b5f)
                 .components(Platinum, 1, Palladium, 1, Nickel, 1, Sulfur, 1)
                 .build()
@@ -554,7 +554,7 @@ public class SuSyOreMaterials {
         Carnotite.setFormula("K2(UO2)2(VO4)2 * 3H2O", true);
 
         AlluvialPGMSand = new Material.Builder(7074, SuSyUtility.susyId("alluvial_pgm_sand"))
-                .dust()
+                .ore()
                 .color(0x948a5d)
                 .build();
 
