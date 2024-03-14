@@ -27,21 +27,6 @@ public class PolydimethylsiloxaneChain {
                 .EUt(30 * 2)
                 .buildAndRegister();
 
-        DUMPING.recipeBuilder()
-                .fluidInputs(Methyltrichlorosilane.getFluid(50))
-                .duration(2)
-                .buildAndRegister();
-
-        DUMPING.recipeBuilder()
-                .fluidInputs(Methyldichlorosilane.getFluid(50))
-                .duration(2)
-                .buildAndRegister();
-
-        DUMPING.recipeBuilder()
-                .fluidInputs(Chlorotrimethylsilane.getFluid(50))
-                .duration(2)
-                .buildAndRegister();
-
 //Methyltrichlorosilane can be used as a water repellent when put on a surface with water
 //Chlorotrimethylsilane has some uses but mostly in reactions that are not relevant to this
 

@@ -148,7 +148,7 @@ public class SuSyChangeFlags {
         setupFluidType(SiliconDioxide, FluidStorageKeys.LIQUID, 1986);
         setupFluidType(Chlorine, FluidStorageKeys.PLASMA);
 
-        Polytetrafluoroethylene.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true));
+        Polytetrafluoroethylene.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, false));
         Polydimethylsiloxane.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         Cadmium.setProperty(PropertyKey.INGOT, new IngotProperty());

@@ -35,9 +35,9 @@ public class Batteries {
 // Small Cadmium Battery * 1
         removeRecipesByInputs(CANNER_RECIPES, BATTERY_HULL_LV.getStackForm(), OreDictUnifier.get(dust, Cadmium, 2));
 // Medium Cadmium Battery * 1
-        removeRecipesByInputs(CANNER_RECIPES, BATTERY_HULL_LV.getStackForm(), OreDictUnifier.get(dust, Cadmium, 8));
+        removeRecipesByInputs(CANNER_RECIPES, BATTERY_HULL_MV.getStackForm(), OreDictUnifier.get(dust, Cadmium, 8));
 // Large Cadmium Battery * 1
-        removeRecipesByInputs(CANNER_RECIPES, BATTERY_HULL_LV.getStackForm(), OreDictUnifier.get(dust, Cadmium, 16));
+        removeRecipesByInputs(CANNER_RECIPES, BATTERY_HULL_HV.getStackForm(), OreDictUnifier.get(dust, Cadmium, 16));
 
         ModHandler.addShapedRecipe(true, "battery_lead_acid", BATTERY_LEAD_ACID.getStackForm(),
                 "PWP", "CBA", "PPP",
@@ -62,8 +62,8 @@ public class Batteries {
                 'P', new UnificationEntry(plate, Lead),
                 'S', new UnificationEntry(stickLong, Lead));
 
-        ModHandler.addShapelessNBTClearingRecipe("drum_nbt_lead", LEAD_DRUM.getStackForm(), LEAD_DRUM);
-        ModHandler.addShapelessNBTClearingRecipe("drum_nbt_brass", BRASS_DRUM.getStackForm(), BRASS_DRUM);
+        ModHandler.addShapelessNBTClearingRecipe("drum_nbt_lead", LEAD_DRUM.getStackForm(), LEAD_DRUM.getStackForm());
+        ModHandler.addShapelessNBTClearingRecipe("drum_nbt_brass", BRASS_DRUM.getStackForm(), BRASS_DRUM.getStackForm());
 
 // Note: this is a temporary fix to clear brass drum.
 

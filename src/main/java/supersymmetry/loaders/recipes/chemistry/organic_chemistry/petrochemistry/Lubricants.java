@@ -671,11 +671,6 @@ public class Lubricants {
                 .EUt(240)
                 .buildAndRegister();
 
-        DUMPING.recipeBuilder()
-                .fluidInputs(OrthoCresol.getFluid(1))
-                .duration(50)
-                .buildAndRegister();
-
         CSTR_RECIPES.recipeBuilder()
                 .fluidInputs(MetaParaCresolMixture.getFluid(150))
                 .fluidInputs(PhosphorylChloride.getFluid(50))

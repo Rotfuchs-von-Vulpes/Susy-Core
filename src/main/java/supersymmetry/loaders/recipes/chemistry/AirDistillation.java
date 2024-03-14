@@ -76,16 +76,6 @@ public class AirDistillation {
                 .fluidOutputs(ColdHighPressureDecarburizedAir.getFluid(1000))
                 .duration(1)
                 .buildAndRegister();
-
-        SMOKE_STACK.recipeBuilder()
-                .fluidInputs(WasteGaseousNitrogen.getFluid(640))
-                .duration(1)
-                .buildAndRegister();
-
-        SMOKE_STACK.recipeBuilder()
-                .fluidInputs(ChillyWasteGaseousNitrogen.getFluid(640))
-                .duration(1)
-                .buildAndRegister();
 /*
 //SIDESTREAM OF BOOSTED AIR FOR COLD GENERATION
         FLUID_COMPRESSOR_RECIPES.recipeBuilder()
@@ -230,11 +220,6 @@ public class AirDistillation {
                 .fluidOutputs(ArgonRichGas.getFluid(200))
                 .duration(5)
                 .EUt(480)
-                .buildAndRegister();
-
-        SMOKE_STACK.recipeBuilder()
-                .fluidInputs(ArgonRichGas.getFluid(200))
-                .duration(5)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder()
