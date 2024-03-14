@@ -334,7 +334,7 @@ public class SuSyMetaItems {
             lines.add(I18n.format("gregtech.universal.tooltip.fluid_transfer_rate", new Object[]{32}));
         }));
         AIR_VENT = metaItem.addItem(4, "air_vent").addComponents(new TooltipBehavior((lines) -> {
-            lines.add(I18n.format("gregtech.universal.tooltip.fluid_transfer_rate", 100));
+            lines.add(I18n.format("metaitem.air_vent.tooltip.1", 100));
         }));
 
         ROCK_ORTHOMAGMATIC = customMetaItems.addItem(1, "rock.orthomagmatic");
