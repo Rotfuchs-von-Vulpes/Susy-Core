@@ -210,11 +210,6 @@ public class WaterPurificationChain {
                 .EUt(480)
                 .buildAndRegister();
 
-        DUMPING.recipeBuilder()
-                .fluidInputs(WastewaterSludge.getFluid(1000))
-                .duration(20)
-                .buildAndRegister();
-
         FLUID_HEATER_RECIPES.recipeBuilder()
                 .fluidInputs(Wastewater.getFluid(1000))
                 .fluidOutputs(HeatedWastewater.getFluid(1000))
