@@ -25,7 +25,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtechfoodoption.block.GTFOMetaBlocks.GTFO_LOGS;
 import static gregtechfoodoption.block.GTFOMetaBlocks.GTFO_PLANKS;
-import static net.minecraft.init.Blocks.TALLGRASS;
+import static net.minecraft.init.Blocks.*;
 import static net.minecraft.init.Items.REEDS;
 import static net.minecraft.init.Items.WHEAT;
 import static supersymmetry.common.blocks.SuSyBlocks.RESOURCE_BLOCK;
@@ -52,10 +52,13 @@ public class StartingAge {
             ModHandler.removeRecipeByName(name);
         }
 
-        ModHandler.addShapelessRecipe("fiber_from_cane", new ItemStack(GRASS_FIBER, 2), new ItemStack(REEDS), 'k');
-        ModHandler.addShapelessRecipe("fiber_from_cane", new ItemStack(GRASS_FIBER, 2), new ItemStack(WHEAT), 'k');
-        ModHandler.addShapelessRecipe("fiber_from_cane", new ItemStack(GRASS_FIBER), new ItemStack(TALLGRASS), 'k');
-        ModHandler.addShapelessRecipe("fiber_from_cane", new ItemStack(GRASS_FIBER), "treeLeaves", 'k');
+        ModHandler.removeRecipeByName("gregtech:clay_block_to_dust");
+        ModHandler.addShapelessRecipe("gregtech:clay_block_to_dust", OreDictUnifier.get(dust, Clay, 4), new UnificationEntry(block, Clay), 'm');
+
+        ModHandler.addShapelessRecipe("fiber_from_reeds", new ItemStack(GRASS_FIBER, 2), new ItemStack(REEDS), 'k');
+        ModHandler.addShapelessRecipe("fiber_from_wheat", new ItemStack(GRASS_FIBER, 2), new ItemStack(WHEAT), 'k');
+        ModHandler.addShapelessRecipe("fiber_from_grass", new ItemStack(GRASS_FIBER), new ItemStack(GRASS), 'k');
+        ModHandler.addShapelessRecipe("fiber_from_leaves", new ItemStack(GRASS_FIBER), "treeLeaves", 'k');
 
         ModHandler.addShapelessRecipe("gregtech:clay_block_to_ball", OreDictUnifier.get(dust, Clay), new UnificationEntry(ingot, Clay), 'm');
         ModHandler.addShapelessRecipe("gregtech:mud_block_to_ball", new ItemStack(mudball, 4), new ItemStack(mud));
