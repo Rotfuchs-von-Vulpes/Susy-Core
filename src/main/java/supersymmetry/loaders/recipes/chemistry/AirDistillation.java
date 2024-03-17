@@ -5,6 +5,7 @@ import gregtech.api.fluids.store.FluidStorageKeys;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.FLUID_FILTER;
 import static supersymmetry.api.recipes.SuSyRecipeMaps.*;
 import static supersymmetry.api.unification.ore.SusyOrePrefix.catalystBed;
 import static supersymmetry.common.materials.SusyMaterials.*;
@@ -13,41 +14,41 @@ public class AirDistillation {
     public static void init() {
 //TIER ONE (OXYGEN + NITROGEN)
 
-//AIR PREPROCESSING
+/*AIR PREPROCESSING
 //COMPRESSION
-        FLUID_COMPRESSOR_RECIPES.recipeBuilder()
-                .fluidInputs(Air.getFluid(6000))
-                .fluidOutputs(HighPressureAir.getFluid(1000))
-                .duration(31)
-                .EUt(30)
-                .buildAndRegister();
-/*
-//WATER COOLING
-        HEAT_EXCHANGER_RECIPES.recipeBuilder()
-                .fluidInputs(LiquidNitrogen.getFluid(10))
-                .fluidInputs(Water.getFluid(1280))
-                .fluidOutputs(Nitrogen.getFluid(640))
-                .fluidOutputs(ColdWater.getFluid(1280))
-                .duration(31)
-                .buildAndRegister();
+FLUID_COMPRESSOR_RECIPES.recipeBuilder()
+    .fluidInputs(Air.getFluid(6000))
+    .fluidOutputs(CompressedAir.getFluid(1000))
+    .duration(31)
+    .EUt(30)
+    .buildAndRegister();
 
-        HEAT_EXCHANGER_RECIPES.recipeBuilder()
-                .fluidInputs(PurifiedWasteGaseousNitrogen.getFluid(640))
-                .fluidInputs(Water.getFluid(1280))
-                .fluidOutputs(Nitrogen.getFluid(640))
-                .fluidOutputs(ColdWater.getFluid(1280))
-                .duration(5)
-                .buildAndRegister();
+//WATER COOLING
+HEAT_EXCHANGER_RECIPES.recipeBuilder()
+    .fluidInputs(LiquidNitrogen.getFluid(10))
+    .fluidInputs(Water.getFluid(1280))
+    .fluidOutputs(Nitrogen.getFluid(640))
+    .fluidOutputs(ColdWater.getFluid(1280))
+    .duration(31)
+    .buildAndRegister();
+
+HEAT_EXCHANGER_RECIPES.recipeBuilder()
+    .fluidInputs(PurifiedWasteGaseousNitrogen.getFluid(640))
+    .fluidInputs(Water.getFluid(1280))
+    .fluidOutputs(Nitrogen.getFluid(640))
+    .fluidOutputs(ColdWater.getFluid(1280))
+    .duration(5)
+    .buildAndRegister();
 
 //AIR WASHING AND PRECOOLING
-        COOLING_UNIT_RECIPES.recipeBuilder()
-                .fluidInputs(HighPressureAir.getFluid(1000))
-                .fluidInputs(ColdWater.getFluid(640))
-                .fluidOutputs(ColdHighPressureAir.getFluid(1000))
-                .fluidOutputs(Water.getFluid(640))
-                .duration(31)
-                .EUt(30)
-                .buildAndRegister();*/
+CONTACT_COOLER.recipeBuilder()
+    .fluidInputs(CompressedAir.getFluid(1000))
+    .fluidInputs(ColdWater.getFluid(640))
+    .fluidOutputs(ChilledAir.getFluid(1000))
+    .fluidOutputs(Water.getFluid(640))
+    .duration(31)
+    .EUt(30)
+    .buildAndRegister()*/;
 
 //CO2 REMOVAL
         SIFTER_RECIPES.recipeBuilder()
@@ -86,7 +87,7 @@ public class AirDistillation {
                 .buildAndRegister();
 
 //FIVE LANE HEAT EXCHANGER
-        TAPPED_OFF_HEAT_EXCHANGER_RECIPES.recipeBuilder()
+        TAPPED_OFF_HEAT_EXCHANGER.recipeBuilder()
                 .fluidInputs(BoostedAir.getFluid(300))
                 .fluidInputs(PurifiedAir.getFluid(500))
                 .fluidOutputs(ChilledBoostedAir.getFluid(150))
@@ -101,7 +102,7 @@ public class AirDistillation {
                 .fluidOutputs(GaseousAirFeedstock.getFluid(500))
                 .fluidOutputs(Oxygen.getFluid(720))
                 .duration(5)
-                .buildAndRegister();*/
+                .buildAndRegister();
 
         HEAT_EXCHANGER_RECIPES.recipeBuilder()
                 .fluidInputs(UntreatedLiquidOxygen.getFluid(10))
@@ -118,7 +119,7 @@ public class AirDistillation {
                 .fluidOutputs(Nitrogen.getFluid(1200))
                 .duration(5)
                 .buildAndRegister();
-/*
+
 //STARTUP HEAT EXCHANGE
         HEAT_EXCHANGER_RECIPES.recipeBuilder()
                 .fluidInputs(PurifiedAir.getFluid(500))
@@ -141,7 +142,7 @@ public class AirDistillation {
                 .fluidOutputs(LiquidAirFeedstock.getFluid(50))
                 .fluidOutputs(GaseousAirFeedstock.getFluid(100))
                 .duration(114)
-                .buildAndRegister();*/
+                .buildAndRegister()*/;
 
 //STARTUP DISTILLATION RECIPE
         HIGH_PRESSURE_CRYOGENIC_DISTILLATION.recipeBuilder()
@@ -159,7 +160,7 @@ public class AirDistillation {
         BATH_CONDENSER.recipeBuilder()
                 .fluidInputs(NitrogenRichGas.getFluid(200))
                 .fluidOutputs(UntreatedLiquidNitrogen.getFluid(25))
-                //.cleanroom(CleanroomType.LOW_PRESSURE_CRYOGENIC_DISTILLATION)
+                //.cleanroom(CleanroomType.LOW_PRESSURE_DISTILLATION_TOWER)
                 .duration(1)
                 .buildAndRegister();
 
@@ -231,7 +232,7 @@ public class AirDistillation {
 
         CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(LiquidOxygenProduct.getFluid(100))
-                .fluidOutputs(Oxygen.getFluid(FluidStorageKeys.LIQUID, 74))
+                .fluidOutputs(Oxygen.getFluid(FluidStorageKeys.LIQUID, 75))
                 .duration(1)
                 .EUt(7)
                 .buildAndRegister();
@@ -278,7 +279,7 @@ public class AirDistillation {
                 .fluidOutputs(LiquidCrudeArgon.getFluid(15))
                 .fluidOutputs(OxygenRichLiquid.getFluid(100))
                 .fluidOutputs(OxygenRichGas.getFluid(400))
-                //.cleanroom(CleanroomType.SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT)
+                //.cleanroom(CleanroomType.SINGLE_COLUMN_CRYOGENIC_DISTILLATION)
                 .duration(1)
                 .buildAndRegister();
 
@@ -324,7 +325,7 @@ public class AirDistillation {
         BATH_CONDENSER.recipeBuilder()
                 .fluidInputs(ColdWasteGaseousNitrogen.getFluid(8))
                 .fluidOutputs(LiquidWasteNitrogen.getFluid(1))
-                //.cleanroom(CleanroomType.SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT)
+                //.cleanroom(CleanroomType.SINGLE_COLUMN_CRYOGENIC_DISTILLATION)
                 .duration(1)
                 .buildAndRegister();
 
