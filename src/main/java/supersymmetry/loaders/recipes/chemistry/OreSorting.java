@@ -177,7 +177,7 @@ public class OreSorting {
         OreRock rock_sedimentary = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.SEDIMENTARY), 1, sedimentaryTier1, sedimentaryTier2, sedimentaryTier3, sedimentaryTier4);
         OreRock rock_metamorphic = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.METAMORPHIC), 1, metamorphicTier1, metamorphicTier2, metamorphicTier3);
         OreRock rock_magmatic_hydrothermal = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.MAGMATIC_HYDROTHERMAL), 1, magmaticHydrothermalTier1, magmaticHydrothermalTier2, magmaticHydrothermalTier3, magmaticHydrothermalTier4);
-        OreRock rock_hydrothermal = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.MAGMATIC_HYDROTHERMAL), 1, hydrothermalTier1, hydrothermalTier2, hydrothermalTier3, hydrothermalTier4);
+        OreRock rock_hydrothermal = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.HYDROTHERMAL), 1, hydrothermalTier1, hydrothermalTier2, hydrothermalTier3, hydrothermalTier4);
         OreRock rock_alluvial = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.ALLUVIAL), 1, alluvialTier1, alluvialTier2, alluvialTier3, alluvialTier4);
 
         OreRock[] rocks = {
