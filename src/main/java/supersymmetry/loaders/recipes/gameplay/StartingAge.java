@@ -57,7 +57,8 @@ public class StartingAge {
 
         ModHandler.addShapelessRecipe("fiber_from_reeds", new ItemStack(GRASS_FIBER, 2), new ItemStack(REEDS), 'k');
         ModHandler.addShapelessRecipe("fiber_from_wheat", new ItemStack(GRASS_FIBER, 2), new ItemStack(WHEAT), 'k');
-        ModHandler.addShapelessRecipe("fiber_from_grass", new ItemStack(GRASS_FIBER), new ItemStack(GRASS), 'k');
+        ModHandler.addShapelessRecipe("fiber_from_grass", new ItemStack(GRASS_FIBER), new ItemStack(TALLGRASS, 1, 1), 'k');
+        ModHandler.addShapelessRecipe("fiber_from_fern", new ItemStack(GRASS_FIBER), new ItemStack(TALLGRASS, 1, 2), 'k');
         ModHandler.addShapelessRecipe("fiber_from_leaves", new ItemStack(GRASS_FIBER), "treeLeaves", 'k');
 
         ModHandler.addShapelessRecipe("gregtech:clay_block_to_ball", OreDictUnifier.get(dust, Clay), new UnificationEntry(ingot, Clay), 'm');
