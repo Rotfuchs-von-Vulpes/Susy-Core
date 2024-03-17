@@ -1004,7 +1004,7 @@ public class Lubricants {
             solidFrictionModifierMap.forEach((Material sfm, Double multiplier2) -> {
                 MIXER_RECIPES.recipeBuilder()
                         .input(dust, sfm)
-                        .fluidInputs(Oil.getFluid((int) (1000 * multiplier2 * 4)))
+                        .fluidInputs(oil.getFluid((int) (1000 * multiplier2 * 4)))
                         .fluidOutputs(Lubricant.getFluid((int) (1000 * multiplier1 * multiplier2 * 4)))
                         .duration(200)
                         .EUt(7)
@@ -1013,7 +1013,7 @@ public class Lubricants {
 
             liquidFrictionModifierMap.forEach((Material lfm, Double multiplier3) -> {
                 MIXER_RECIPES.recipeBuilder()
-                        .fluidInputs(Oil.getFluid((int) (1000 * multiplier3)))
+                        .fluidInputs(oil.getFluid((int) (1000 * multiplier3)))
                         .fluidInputs(lfm.getFluid(250))
                         .fluidOutputs(Lubricant.getFluid((int) (1000 * multiplier1 * multiplier3)))
                         .duration(200)
