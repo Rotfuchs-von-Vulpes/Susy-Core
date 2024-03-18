@@ -620,7 +620,7 @@ public class Thermodynamics {
                     .buildAndRegister();
 
     /*if (!cryogas.needsAdvancedCooling) {
-     .recipeBuilder()
+     COOLING_UNIT_RECIPES.recipeBuilder()
         .fluidInputs(liquid(cryogas.high_pressure_gas) * cryogas.amount_to_use)
         .fluidOutputs(liquid(cryogas.cold_high_pressure_gas) * cryogas.amount_to_use)
         .duration(cryogas.duration_heat_exchanger * 2)
@@ -639,6 +639,36 @@ public class Thermodynamics {
         }
     }
     */
+            // return to gas
+            FLUID_HEATER_RECIPES.recipeBuilder()
+                    .circuitMeta(1)
+                    .fluidInputs(cryogas.cold_high_pressure_gas.getFluid(1280))
+                    .fluidOutputs(cryogas.high_pressure_gas.getFluid(1280))
+                    .duration(20)
+                    .EUt(8)
+                    .buildAndRegister();
+
+            FLUID_HEATER_RECIPES.recipeBuilder()
+                    .circuitMeta(2)
+                    .fluidInputs(cryogas.cold_high_pressure_gas.getFluid(1280))
+                    .fluidOutputs(cryogas.hot_high_pressure_gas.getFluid(1280))
+                    .duration(40)
+                    .EUt(8)
+                    .buildAndRegister();
+
+            FLUID_HEATER_RECIPES.recipeBuilder()
+                    .fluidInputs(cryogas.high_pressure_gas.getFluid(1280))
+                    .fluidOutputs(cryogas.hot_high_pressure_gas.getFluid(1280))
+                    .duration(20)
+                    .EUt(8)
+                    .buildAndRegister();
+
+            FLUID_DECOMPRESSOR_RECIPES.recipeBuilder()
+                    .fluidInputs(cryogas.hot_high_pressure_gas.getFluid(1280))
+                    .fluidOutputs(cryogas.normal_gas.getFluid(1280))
+                    .duration(cryogas.duration)
+                    .EUt(cryogas.EUt)
+                    .buildAndRegister();
         }
 
 //Water cooling
