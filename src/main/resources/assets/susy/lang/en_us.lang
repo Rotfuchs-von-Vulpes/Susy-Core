@@ -135,6 +135,7 @@ susy.material.gadolinium_silicon_germanium=Gadolinium Silicon Germanium
 susy.material.latex=Latex
 susy.material.mud=Mud
 susy.material.sea_water=Sea Water
+susy.material.uwunium=UwUnium
 
 # Rock/Mineral Materials
 susy.material.fluorite=Fluorite
