@@ -1839,6 +1839,8 @@ public class SusyMaterials {
     public static Material CoolDryEarthGreenhouseGas;
     public static Material CoolHumidEarthGreenhouseGas;
 
+    public static Material Uwunium;
+
     public static void init() {
         SuSyElementMaterials.init();
         SuSyUnknownCompositionMaterials.init();
