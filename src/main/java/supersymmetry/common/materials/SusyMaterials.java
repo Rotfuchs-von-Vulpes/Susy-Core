@@ -1840,6 +1840,10 @@ public class SusyMaterials {
     public static Material CoolHumidEarthGreenhouseGas;
 
     public static Material Uwunium;
+    public static Material Cien;
+    public static Material Cacatua;
+    public static Material HydrocienicAcid;
+    public static Material CacatuaHydroxide;
 
     public static void init() {
         SuSyElementMaterials.init();
