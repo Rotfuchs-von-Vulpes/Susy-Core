@@ -136,6 +136,10 @@ susy.material.latex=Latex
 susy.material.mud=Mud
 susy.material.sea_water=Sea Water
 susy.material.uwunium=UwUnium
+susy.material.cien=Cien
+susy.material.hydrocienic_acid=Hydrocienic Acid
+susy.material.cacatua=Cacatua
+susy.material.cacatua_hydroxide=Cacatua Hydroxide
 
 # Rock/Mineral Materials
 susy.material.fluorite=Fluorite
@@ -158,6 +162,8 @@ susy.material.albite=Albite
 susy.material.anorthite=Anorthite
 susy.material.forsterite=Forsterite
 susy.material.lizardite=Lizardite
+susy.material.aluminium_carbonate=Aluminium Carbonate
+susy.material.calcium_hydroxide_solution=Calcium Hydroxide Solution
 
 # Ore Prefixes (%s is the localised material name)
 item.material.oreprefix.oreGabbro=Gabbro %s Ore
