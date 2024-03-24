@@ -3,12 +3,14 @@ package supersymmetry.loaders.recipes;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.api.unification.ore.OrePrefix.gem;
+import static gregtech.common.items.MetaItems.INTEGRATED_CIRCUIT;
 import static supersymmetry.common.materials.SusyMaterials.*;
 
 public class Utils {
@@ -130,32 +132,32 @@ public class Utils {
     }
 
     public static Combustible[] sintering_fuels = {
-        new Combustible(Methane.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
-        new Combustible(Syngas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
-        new Combustible(NaturalGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
-        new Combustible(RefineryGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
-        new Combustible(Helium.getPlasma(10), true, 5, Helium.getFluid(10))
+            new Combustible(Methane.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+            new Combustible(Syngas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+            new Combustible(NaturalGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+            new Combustible(RefineryGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+            new Combustible(Helium.getPlasma(10), true, 5, Helium.getFluid(10))
     };
 
     public static Comburent[] sintering_comburents = {
-        new Comburent(Air.getFluid(10), 50),
-        new Comburent(Oxygen.getFluid(8), 30)
+            new Comburent(Air.getFluid(10), 50),
+            new Comburent(Oxygen.getFluid(8), 30)
     };
 
     public static Blanket[] sintering_blankets = {
-        new Blanket(Argon.getFluid(1), 100, 300)
+            new Blanket(Argon.getFluid(1), 100, 300)
     };
 
     public static Combustible[] rotary_kiln_fuels = {
-        new Combustible(Methane.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
-        new Combustible(NaturalGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
-        new Combustible(RefineryGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
-        new Combustible(FuelOil.getFluid(4), false, 50, CarbonDioxide.getFluid(25))
+            new Combustible(Methane.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+            new Combustible(NaturalGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+            new Combustible(RefineryGas.getFluid(10), false, 50, CarbonDioxide.getFluid(5)),
+            new Combustible(FuelOil.getFluid(4), false, 50, CarbonDioxide.getFluid(25))
     };
 
     public static Comburent[] rotary_kiln_comburents = {
-        new Comburent(Air.getFluid(250), 50),
-        new Comburent(Oxygen.getFluid(50), 30)
+            new Comburent(Air.getFluid(250), 50),
+            new Comburent(Oxygen.getFluid(50), 30)
     };
 
     public static class InertGas {
@@ -168,9 +170,18 @@ public class Utils {
     }
 
     public static InertGas[] inertGases =
-    {
-            new InertGas(Nitrogen, 8000, 4),
-            new InertGas(Helium, 4000, 2),
-            new InertGas(Argon, 1000, 1)
-    };
+            {
+                    new InertGas(Nitrogen, 8000, 4),
+                    new InertGas(Helium, 4000, 2),
+                    new InertGas(Argon, 1000, 1)
+            };
+    public static ItemStack getConfiguration(int conf) {
+        NBTTagCompound nbt = new NBTTagCompound();
+        ItemStack circuit = INTEGRATED_CIRCUIT.getStackForm();
+
+        nbt.setInteger("Configuration", conf);
+        circuit.setTagCompound(nbt);
+
+        return circuit;
+    }
 }
