@@ -128,6 +128,11 @@ public class SuSyRecipeLoader {
         EtchablesChain.init();
         FieldGenerators.init();
         IntegratedCircuit.init();
+        Photomasks.init();
+        ProcessorCircuits.init();
+        SMDComponents.init();
+        Superconductors.init();
+        VacuumComponents.init();
 
         Smelting.init();
         StartingAge.init();
