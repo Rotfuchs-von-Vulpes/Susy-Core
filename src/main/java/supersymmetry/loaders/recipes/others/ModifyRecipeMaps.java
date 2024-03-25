@@ -1,4 +1,4 @@
-package supersymmetry.loaders.recipes.misc;
+package supersymmetry.loaders.recipes.others;
 
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;
@@ -425,10 +425,22 @@ public class ModifyRecipeMaps {
 //                "gregtech:quantum_tank_uhv",
                 "gregtech:large_combustion_engine",
                 "gregtech:extreme_combustion_engine",
-                "gregtech:gregtech.machine.fisher.lv",
-                "gregtech:gregtech.machine.fisher.mv",
-                "gregtech:gregtech.machine.fisher.hv",
-                "gregtech:gregtech.machine.fisher.ev"
+                "gregtech:gregtech.machine.arc_furnace.lv",
+                "gregtech:gregtech.machine.arc_furnace.mv",
+                "gregtech:gregtech.machine.arc_furnace.hv",
+                "gregtech:gregtech.machine.arc_furnace.ev",
+                "gregtech:gregtech.machine.arc_furnace.iv",
+                "gregtech:gregtech.machine.arc_furnace.luv",
+                "gregtech:gregtech.machine.arc_furnace.zpm",
+                "gregtech:gregtech.machine.arc_furnace.uv",
+                "gregtech:gregtech.machine.chemical_reactor.lv",
+                "gregtech:gregtech.machine.chemical_reactor.mv",
+                "gregtech:gregtech.machine.chemical_reactor.hv",
+                "gregtech:gregtech.machine.chemical_reactor.ev",
+                "gregtech:gregtech.machine.chemical_reactor.iv",
+                "gregtech:gregtech.machine.chemical_reactor.luv",
+                "gregtech:gregtech.machine.chemical_reactor.zpm",
+                "gregtech:gregtech.machine.chemical_reactor.uv"
         };
 
         Arrays.stream(name_removals).forEach(ModHandler::removeRecipeByName);
@@ -523,15 +535,7 @@ public class ModifyRecipeMaps {
                 'P', new UnificationEntry(plate, Bronze),
                 'B', METAL_CASING.getItemVariant(PRIMITIVE_BRICKS));
 
-        ModHandler.addShapedRecipe(true, "gregtech:high_pressure_latex_extractor",
-                STEAM_LATEX_COLLECTOR[1].getStackForm(), "SPS", "IXI", "WWW",
-                'S', new UnificationEntry(pipeSmallFluid, Steel),
-                'P', PUMP_STEAM,
-                'I', new UnificationEntry(plate, Steel),
-                'X', STEAM_LATEX_COLLECTOR[0].getStackForm(),
-                'W', new UnificationEntry(plate, WroughtIron));
-
-        ModHandler.addShapedRecipe(true, "gregtech:co_bronze",
+        ModHandler.addShapedRecipe(true, "gregtech:coke_oven_bronze",
                 COKE_OVEN.getStackForm(), "CPC", "PwP", "CPC",
                 'C', METAL_CASING.getItemVariant(COKE_BRICKS),
                 'P', new UnificationEntry(plate, Bronze));

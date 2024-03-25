@@ -1,29 +1,19 @@
-package supersymmetry.loaders.recipes.misc;
+package supersymmetry.loaders.recipes.miscChains;
 
-import biomesoplenty.api.item.BOPItems;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.common.blocks.MetaBlocks;
-import gregtech.common.blocks.StoneVariantBlock;
 import gregtech.common.items.MetaItems;
 import gregtechfoodoption.item.GTFOMetaItem;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import supersymmetry.api.unification.ore.SusyStoneTypes;
-import supersymmetry.common.blocks.*;
 
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static supersymmetry.common.blocks.SuSyBlocks.*;
 import static supersymmetry.common.blocks.SusyStoneVariantBlock.*;
 
 import java.util.Arrays;
-import java.util.EnumMap;
-import java.util.List;
 
 import static biomesoplenty.api.item.BOPItems.mudball;
 import static com.alcatrazescapee.notreepunching.common.items.ModItems.GRASS_FIBER;
@@ -32,7 +22,6 @@ import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS;
 import static gregtech.common.blocks.MetaBlocks.METAL_CASING;
 import static gregtech.common.items.MetaItems.*;
-import gregtechfoodoption.item.GTFOMetaItem.*;
 import static supersymmetry.common.item.SuSyMetaItems.*;
 import static supersymmetry.common.materials.SusyMaterials.*;
 
