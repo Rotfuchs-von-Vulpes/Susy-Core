@@ -22,7 +22,9 @@ import supersymmetry.loaders.recipes.chemistry.organic_chemistry.polymers.*;
 import supersymmetry.loaders.recipes.eletronics.*;
 import supersymmetry.loaders.recipes.gameplay.Smelting;
 import supersymmetry.loaders.recipes.gameplay.StartingAge;
-import supersymmetry.loaders.recipes.misc.*;
+import supersymmetry.loaders.recipes.miscChains.*;
+import supersymmetry.loaders.recipes.others.Machines;
+import supersymmetry.loaders.recipes.others.ModifyRecipeMaps;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -139,6 +141,7 @@ public class SuSyRecipeLoader {
 
         BrickChain.init();
         CementChain.init();
+        GraphiteElectrodeChain.init();
         PollutionChain.init();
         Thermodynamics.init();
 
