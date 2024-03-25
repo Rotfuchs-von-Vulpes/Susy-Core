@@ -119,8 +119,6 @@ public class SuSyMetaTileEntities {
     public static MetaTileEntityPressureSwingAdsorber PRESSURE_SWING_ADSORBER;
     public static MetaTileEntityReactionFurnace REACTION_FURNACE;
 
-    public static SusyMetaTileEntityDumpingHatch DUMPING_HATCH;
-
     public static MetaTileEntityAdvancedArcFurnace ADVANCED_ARC_FURNACE;
     public static MetaTileEntityClarifier CLARIFIER;
     public static MetaTileEntityDumper DUMPER;
@@ -156,13 +154,13 @@ public class SuSyMetaTileEntities {
         STEAM_LATEX_COLLECTOR[0] = registerMetaTileEntity(14510, new MetaTileEntitySteamLatexCollector(susyId("latex_collector.bronze"), false));
         STEAM_LATEX_COLLECTOR[1] = registerMetaTileEntity(14511, new MetaTileEntitySteamLatexCollector(susyId("latex_collector.steel"), true));
 
-        SINTERING_OVEN = registerMetaTileEntity(14521, new MetaTileEntitySinteringOven(susyId("sintering_oven")));
+        SINTERING_OVEN = registerMetaTileEntity(14512, new MetaTileEntitySinteringOven(susyId("sintering_oven")));
 
-        registerSimpleSteamMTE(STEAM_VULCANIZING_PRESS, 14515, "vulcanizing_press", SuSyRecipeMaps.VULCANIZATION_RECIPES, SuSySteamProgressIndicators.COMPRESS, SusyTextures.VULCANIZING_PRESS_OVERLAY, true);
-        registerCatalystMTE(VULCANIZING_PRESS, 3, 14517, "vulcanizing_press", SuSyRecipeMaps.VULCANIZATION_RECIPES, SusyTextures.VULCANIZING_PRESS_OVERLAY, true);
+        registerSimpleSteamMTE(STEAM_VULCANIZING_PRESS, 14513, "vulcanizing_press", SuSyRecipeMaps.VULCANIZATION_RECIPES, SuSySteamProgressIndicators.COMPRESS, SusyTextures.VULCANIZING_PRESS_OVERLAY, true);
+        registerCatalystMTE(VULCANIZING_PRESS, 12, 14515, "vulcanizing_press", SuSyRecipeMaps.VULCANIZATION_RECIPES, SusyTextures.VULCANIZING_PRESS_OVERLAY, true);
 
         registerSimpleSteamMTE(STEAM_ROASTER, 14679, "roaster", SuSyRecipeMaps.ROASTER_RECIPES, SuSySteamProgressIndicators.ARROW, SusyTextures.ROASTER_OVERLAY, true);
-        registerCatalystMTE(ROASTER, 12, 14523, "roaster", SuSyRecipeMaps.ROASTER_RECIPES, SusyTextures.ROASTER_OVERLAY, true, SuSyUtility.bulkTankSizeFunction);
+        registerCatalystMTE(ROASTER, 12, 13988, "roaster", SuSyRecipeMaps.ROASTER_RECIPES, SusyTextures.ROASTER_OVERLAY, true, SuSyUtility.bulkTankSizeFunction);
 
         registerSimpleSteamMTE(STEAM_MIXER, 14536, "mixer", RecipeMaps.MIXER_RECIPES, SuSySteamProgressIndicators.MIXER, SusyTextures.MIXER_OVERLAY_STEAM, false);
 
@@ -310,8 +308,8 @@ public class SuSyMetaTileEntities {
         STEAM_MIXER = new SuSySimpleSteamMetaTileEntity[2];
         STEAM_VACUUM_CHAMBER = new SuSySimpleSteamMetaTileEntity[2];
 
-        LATEX_COLLECTOR = new PseudoMultiMachineMetaTileEntity[GTValues.EV];
-        VULCANIZING_PRESS = new CatalystMachineMetaTileEntity[GTValues.EV];
+        LATEX_COLLECTOR = new PseudoMultiMachineMetaTileEntity[GTValues.OpV];
+        VULCANIZING_PRESS = new CatalystMachineMetaTileEntity[GTValues.OpV];
         ROASTER = new CatalystMachineMetaTileEntity[GTValues.OpV];
         VACUUM_CHAMBER = new SimpleMachineMetaTileEntity[GTValues.OpV];
 
