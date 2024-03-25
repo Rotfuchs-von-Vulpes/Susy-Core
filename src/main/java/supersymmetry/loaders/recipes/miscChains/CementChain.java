@@ -1,10 +1,8 @@
-package supersymmetry.loaders.recipes.misc;
+package supersymmetry.loaders.recipes.miscChains;
 
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
-import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.loaders.recipe.chemistry.MixerRecipes;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;

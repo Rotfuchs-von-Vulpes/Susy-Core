@@ -1,4 +1,4 @@
-package supersymmetry.loaders.recipes.misc;
+package supersymmetry.loaders.recipes.miscChains;
 
 import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.SIFTER_RECIPES;

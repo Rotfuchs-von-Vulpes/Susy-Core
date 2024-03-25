@@ -1,4 +1,4 @@
-package supersymmetry.loaders.recipes.misc;
+package supersymmetry.loaders.recipes.miscChains;
 
 import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.unification.material.Material;
