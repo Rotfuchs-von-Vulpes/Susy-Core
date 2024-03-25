@@ -31,6 +31,7 @@ import supersymmetry.common.event.SuSyChangeFlags;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.materials.SusyMaterials;
 import supersymmetry.loaders.SuSyWorldLoader;
+import supersymmetry.loaders.recipes.SuSyCraftingComponent;
 import supersymmetry.loaders.recipes.SuSyRecipeLoader;
 import supersymmetry.loaders.SusyOreDictionaryLoader;
 import supersymmetry.loaders.recipes.SuSyMaterialRecipeHandler;
@@ -133,6 +134,11 @@ public class CommonProxy {
         MetaItems.addOrePrefix(SusyOrePrefix.thread);
 
         //SusyMaterials.removeFlags();
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void initComponents(RegistryEvent.Register<IRecipe> event) {
+        SuSyCraftingComponent.init();
     }
 
     @SubscribeEvent(priority = EventPriority.LOWEST)

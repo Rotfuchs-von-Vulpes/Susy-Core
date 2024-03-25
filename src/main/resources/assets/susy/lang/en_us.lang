@@ -309,6 +309,15 @@ gregtech.machine.vulcanizing_press.lv.name=Basic Vulcanizing Press
 gregtech.machine.vulcanizing_press.mv.name=Advanced Vulcanizing Press
 gregtech.machine.vulcanizing_press.hv.name=Advanced Vulcanizing Press II
 gregtech.machine.vulcanizing_press.ev.name=Advanced Vulcanizing Press III
+gregtech.machine.vulcanizing_press.iv.name=Elite Vulcanizing Press
+gregtech.machine.vulcanizing_press.luv.name=Elite Vulcanizing Press II
+gregtech.machine.vulcanizing_press.zpm.name=Elite Vulcanizing Press III
+gregtech.machine.vulcanizing_press.uv.name=Ultimate Vulcanizing Press
+gregtech.machine.vulcanizing_press.uhv.name=Epic Vulcanizing Press
+gregtech.machine.vulcanizing_press.uev.name=Epic Vulcanizing Press II
+gregtech.machine.vulcanizing_press.uiv.name=Epic Vulcanizing Press III
+gregtech.machine.vulcanizing_press.uxv.name=Epic Vulcanizing Press IV
+gregtech.machine.vulcanizing_press.opv.name=Legendary Vulcanizing Press
 
 # Steam Mixer
 gregtech.machine.mixer.bronze.name=Steam Mixer
