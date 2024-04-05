@@ -24,6 +24,7 @@ import supersymmetry.loaders.recipes.gameplay.Smelting;
 import supersymmetry.loaders.recipes.gameplay.StartingAge;
 import supersymmetry.loaders.recipes.miscChains.*;
 import supersymmetry.loaders.recipes.others.Machines;
+import supersymmetry.loaders.recipes.others.Mining;
 import supersymmetry.loaders.recipes.others.ModifyRecipeMaps;
 
 import java.util.*;
@@ -36,6 +37,7 @@ import static gregtech.common.items.MetaItems.SHAPE_EXTRUDER_BLOCK;
 public class SuSyRecipeLoader {
     public static void init() {
         ModifyRecipeMaps.init();
+        Machines.init();
 
         FermentingChain.init();
         GreenhouseChain.init();
@@ -144,6 +146,8 @@ public class SuSyRecipeLoader {
         GraphiteElectrodeChain.init();
         PollutionChain.init();
         Thermodynamics.init();
+
+        Mining.init();
 
         // ModHandler.addShapelessRecipe("convert_old_slaked_lime", OreDictUnifier.get(dust, CalciumHydroxide), OreDictUnifier.get(dust, Quicklime));
 
