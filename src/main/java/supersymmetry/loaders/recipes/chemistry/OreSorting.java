@@ -1,20 +1,14 @@
 package supersymmetry.loaders.recipes.chemistry;
 
-import com.cleanroommc.groovyscript.compat.vanilla.OreDict;
-import gregtech.api.GTValues;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.Materials;
-import net.minecraft.block.material.Material;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.Fluid;
 import supersymmetry.common.blocks.BlockDeposit;
 import supersymmetry.common.blocks.BlockResource;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.materials.SusyMaterials;
+import gregtech.api.items.metaitem.MetaItem.MetaValueItem;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,16 +17,17 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.ore;
 import static net.minecraft.init.Blocks.SOUL_SAND;
 import static supersymmetry.api.recipes.SuSyRecipeMaps.ORE_SORTER_RECIPES;
+import static supersymmetry.common.item.SuSyMetaItems.*;
 import static supersymmetry.common.materials.SusyMaterials.*;
 
 public class OreSorting {
     public static class OreRock {
-        public ItemStack input_rock;
+        public MetaValueItem input_rock;
         public int starting_tier;
         public Map<ItemStack, Integer>[] ore_lists;
 
         @SafeVarargs
-        public OreRock(ItemStack rock, int startingTier, Map<ItemStack, Integer> ...ore_list){
+        public OreRock(MetaValueItem rock, int startingTier, Map<ItemStack, Integer> ...ore_list){
             this.input_rock = rock;
             this.ore_lists = ore_list;
             this.starting_tier = startingTier;
@@ -173,12 +168,12 @@ public class OreSorting {
         alluvialTier4.put(new ItemStack(SOUL_SAND), 10000);
         alluvialTier4.put(SuSyBlocks.RESOURCE_BLOCK.getItemVariant(BlockResource.ResourceBlockType.MONAZITE_ALLUVIAL), 10000);
 
-        OreRock rock_orthomagmatic = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.ORTHOMAGMATIC), 1, orthomagmaticTier1, orthomagmaticTier2, orthomagmaticTier3, orthomagmaticTier4);
-        OreRock rock_sedimentary = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.SEDIMENTARY), 1, sedimentaryTier1, sedimentaryTier2, sedimentaryTier3, sedimentaryTier4);
-        OreRock rock_metamorphic = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.METAMORPHIC), 1, metamorphicTier1, metamorphicTier2, metamorphicTier3);
-        OreRock rock_magmatic_hydrothermal = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.MAGMATIC_HYDROTHERMAL), 1, magmaticHydrothermalTier1, magmaticHydrothermalTier2, magmaticHydrothermalTier3, magmaticHydrothermalTier4);
-        OreRock rock_hydrothermal = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.HYDROTHERMAL), 1, hydrothermalTier1, hydrothermalTier2, hydrothermalTier3, hydrothermalTier4);
-        OreRock rock_alluvial = new OreRock(SuSyBlocks.DEPOSIT_BLOCK.getItemVariant(BlockDeposit.DepositBlockType.ALLUVIAL), 1, alluvialTier1, alluvialTier2, alluvialTier3, alluvialTier4);
+        OreRock rock_orthomagmatic = new OreRock(ROCK_ORTHOMAGMATIC, 1, orthomagmaticTier1, orthomagmaticTier2, orthomagmaticTier3, orthomagmaticTier4);
+        OreRock rock_sedimentary = new OreRock(ROCK_SEDIMENTARY, 1, sedimentaryTier1, sedimentaryTier2, sedimentaryTier3, sedimentaryTier4);
+        OreRock rock_metamorphic = new OreRock(ROCK_METAMORPHIC, 1, metamorphicTier1, metamorphicTier2, metamorphicTier3);
+        OreRock rock_magmatic_hydrothermal = new OreRock(ROCK_MAGMATIC_HYDROTHERMAL, 1, magmaticHydrothermalTier1, magmaticHydrothermalTier2, magmaticHydrothermalTier3, magmaticHydrothermalTier4);
+        OreRock rock_hydrothermal = new OreRock(ROCK_HYDROTHERMAL, 1, hydrothermalTier1, hydrothermalTier2, hydrothermalTier3, hydrothermalTier4);
+        OreRock rock_alluvial = new OreRock(ROCK_ALLUVIAL, 1, alluvialTier1, alluvialTier2, alluvialTier3, alluvialTier4);
 
         OreRock[] rocks = {
                 rock_orthomagmatic,
@@ -196,8 +191,8 @@ public class OreSorting {
             for (var oreList : rock.ore_lists) {
                 RecipeBuilder<SimpleRecipeBuilder> recipe = ORE_SORTER_RECIPES.recipeBuilder();
                 recipe.circuitMeta(a + 1);
-                rock.input_rock.setCount(oreList.size());
-                recipe.inputs(rock.input_rock);
+                rock.input_rock.getStackForm(oreList.size());
+                recipe.input(rock.input_rock);
 
                 oreList.forEach((oreBlock, chance) -> {
                     if (oreBlock == OreDictUnifier.get(ore, Coal)) {
