@@ -189,7 +189,7 @@ public class Batteries {
                 .input(dust, Carbon)
                 .input(dust, SodiumCathodeAlloy)
                 .fluidInputs(DimethylCarbonate.getFluid(100))
-                .output(BATTERY_LV_LITHIUM)
+                .output(BATTERY_LV_SODIUM)
                 .duration(100)
                 .EUt(16)
                 .buildAndRegister();
