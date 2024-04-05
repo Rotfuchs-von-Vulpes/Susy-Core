@@ -2,6 +2,7 @@ package supersymmetry.common;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
+import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.properties.MaterialProperties;
 import gregtech.api.worldgen.config.OreDepositDefinition;
 import gregtech.api.worldgen.config.WorldGenRegistry;
@@ -30,6 +31,7 @@ import supersymmetry.common.blocks.*;
 import supersymmetry.common.event.SuSyChangeFlags;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.materials.SusyMaterials;
+import supersymmetry.loaders.SuSyRemoves;
 import supersymmetry.loaders.SuSyWorldLoader;
 import supersymmetry.loaders.recipes.SuSyCraftingComponent;
 import supersymmetry.loaders.recipes.SuSyRecipeLoader;
@@ -146,6 +148,7 @@ public class CommonProxy {
         SusyOreDictionaryLoader.init();
         SuSyMetaBlocks.registerOreDict();
         SuSyRecipeLoader.init();
+        SuSyRemoves.init();
     }
 
     private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer) {
