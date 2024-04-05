@@ -34,7 +34,6 @@ public class SuSyWorldGen {
     private static final Path oreVeinRootPath = susyWorldgenRootPath.resolve("vein");
     private static final Path bedrockFluidVeinRootPath = susyWorldgenRootPath.resolve("fluid");
     private static Path oreVeinJarRootPath;
-    private static Path bedrockFluidJarRootPath;
     private static final Map<Path, List<Path>> oreVeinsToAdd = new HashMap<>();
     private static final Map<Path, List<String>> fluidVeinsToAdd = new HashMap<>();
     private static final Path DUMMY_FILE_PATH = SUSY_CONFIG_PATH.resolve("worldgen").resolve("deleteToReset");
@@ -114,6 +113,7 @@ public class SuSyWorldGen {
         try {
             URI sampleUri = SuSyWorldGen.class.getResource("/assets/gregtech/.susyassetsroot").toURI();
 
+            Path bedrockFluidJarRootPath;
             if (sampleUri.getScheme().equals("jar") || sampleUri.getScheme().equals("zip")) {
                 zipFileSystem = FileSystems.newFileSystem(sampleUri, Collections.emptyMap());
                 oreVeinJarRootPath = zipFileSystem.getPath(VEIN_PATH);

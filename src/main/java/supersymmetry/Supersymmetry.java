@@ -15,6 +15,7 @@ import supersymmetry.common.blocks.SuSyMetaBlocks;
 import supersymmetry.common.covers.SuSyCoverBehaviors;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.metatileentities.SuSyMetaTileEntities;
+import supersymmetry.common.world.SuSyInitWorldGen;
 import supersymmetry.worldGen.SuSyWorldGen;
 
 import java.io.IOException;
@@ -62,6 +63,7 @@ public class Supersymmetry {
 
     @Mod.EventHandler
     public void onInit(@NotNull FMLInitializationEvent event) {
+        SuSyInitWorldGen.registerWorldGenerators();
         boolean doesDummyFileExist = SuSyWorldGen.INSTANCE.doesDummyFileExist();
 
         try {
