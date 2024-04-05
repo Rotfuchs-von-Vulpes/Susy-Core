@@ -386,65 +386,6 @@ public class ModifyRecipeMaps {
         // Reservoir Hatch * 1
         removeRecipesByInputs(ASSEMBLER_RECIPES, COVER_INFINITE_WATER.getStackForm(), MetaTileEntities.FLUID_EXPORT_HATCH[EV].getStackForm(), ELECTRIC_PUMP_EV.getStackForm());
 
-        String[] name_removals = {
-                "gregtech:cover_fluid_voiding",
-                "gregtech:cover_item_voiding",
-                "gregtech:fluid_filter_lapis",
-                "gregtech:fluid_filter_sodalite",
-                "gregtech:fluid_filter_lazurite",
-                "gregtech:comparator_certus",
-//                "gregtech:gregtech.machine.world_accelerator.lv",
-//                "gregtech:gregtech.machine.world_accelerator.mv",
-//                "gregtech:gregtech.machine.world_accelerator.hv",
-//                "gregtech:gregtech.machine.world_accelerator.ev",
-//                "gregtech:gregtech.machine.world_accelerator.iv",
-//                "gregtech:gregtech.machine.world_accelerator.luv",
-//                "gregtech:gregtech.machine.world_accelerator.zpm",
-//                "gregtech:gregtech.machine.world_accelerator.uv",
-                "gregtech:nano_helmet",
-                "gregtech:nano_chestplate",
-                "gregtech:nano_leggings",
-                "gregtech:nano_boots",
-//                "gregtech:super_chest_lv",
-//                "gregtech:super_chest_mv",
-//                "gregtech:super_chest_hv",
-//                "gregtech:super_chest_ev",
-//                "gregtech:super_tank_lv",
-//                "gregtech:super_tank_mv",
-//                "gregtech:super_tank_hv",
-//                "gregtech:super_tank_ev",
-//                "gregtech:quantum_chest_iv",
-//                "gregtech:quantum_chest_luv",
-//                "gregtech:quantum_chest_zpm",
-//                "gregtech:quantum_chest_uv",
-//                "gregtech:quantum_chest_uhv",
-//                "gregtech:quantum_tank_iv",
-//                "gregtech:quantum_tank_luv",
-//                "gregtech:quantum_tank_zpm",
-//                "gregtech:quantum_tank_uv",
-//                "gregtech:quantum_tank_uhv",
-                "gregtech:large_combustion_engine",
-                "gregtech:extreme_combustion_engine",
-                "gregtech:gregtech.machine.arc_furnace.lv",
-                "gregtech:gregtech.machine.arc_furnace.mv",
-                "gregtech:gregtech.machine.arc_furnace.hv",
-                "gregtech:gregtech.machine.arc_furnace.ev",
-                "gregtech:gregtech.machine.arc_furnace.iv",
-                "gregtech:gregtech.machine.arc_furnace.luv",
-                "gregtech:gregtech.machine.arc_furnace.zpm",
-                "gregtech:gregtech.machine.arc_furnace.uv",
-                "gregtech:gregtech.machine.chemical_reactor.lv",
-                "gregtech:gregtech.machine.chemical_reactor.mv",
-                "gregtech:gregtech.machine.chemical_reactor.hv",
-                "gregtech:gregtech.machine.chemical_reactor.ev",
-                "gregtech:gregtech.machine.chemical_reactor.iv",
-                "gregtech:gregtech.machine.chemical_reactor.luv",
-                "gregtech:gregtech.machine.chemical_reactor.zpm",
-                "gregtech:gregtech.machine.chemical_reactor.uv"
-        };
-
-        Arrays.stream(name_removals).forEach(ModHandler::removeRecipeByName);
-
         ModHandler.removeFurnaceSmelting(new ItemStack(IRON_NUGGET));
 
         String[] ore_smelting_removals = {
