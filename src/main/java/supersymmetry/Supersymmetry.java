@@ -38,6 +38,10 @@ public class Supersymmetry {
         //This is now a config option I think
         //GTValues.HT = true;
     }
+    @Mod.EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+        SuSyInitWorldGen.registerWorldGenerators();
+    }
 
     @Mod.EventHandler
     public void onPreInit(@NotNull FMLPreInitializationEvent event) {
@@ -60,7 +64,6 @@ public class Supersymmetry {
 
     @Mod.EventHandler
     public void onInit(@NotNull FMLInitializationEvent event) {
-        SuSyInitWorldGen.registerWorldGenerators();
         boolean doesDummyFileExist = SuSyWorldGen.INSTANCE.doesDummyFileExist();
 
         try {

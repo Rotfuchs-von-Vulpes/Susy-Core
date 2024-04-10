@@ -5,10 +5,12 @@ import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import org.jetbrains.annotations.NotNull;
+import supersymmetry.common.world.SuSyChunkGeneratorOverworld;
 
 public class SuSyWorldType extends WorldType {
     public SuSyWorldType() {
         super("SUSY");
+        this.enableInfoNotice();
     }
 
     @Override

@@ -1,12 +1,16 @@
 package supersymmetry.common.world;
 
 import net.minecraft.world.WorldType;
+import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import supersymmetry.common.world.SuSyWorldType;
+import supersymmetry.common.world.SuSyWorldGen;
 
 public class SuSyInitWorldGen {
-    public static final WorldType CLOUD_WORLD_TYPE = new SuSyWorldType();
+    public static SuSyWorldType SuSyWorldType;
     public static void registerWorldGenerators()
     {
-        GameRegistry.registerWorldGenerator(new SuSyWorldGen(), 10);
+        SuSyWorldType = new SuSyWorldType();
+        //GameRegistry.registerWorldGenerator(new SuSyWorldGen(), 10);
     }
 }
