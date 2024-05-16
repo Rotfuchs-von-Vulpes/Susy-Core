@@ -21,6 +21,7 @@ import supersymmetry.common.CommonProxy;
 import supersymmetry.common.blocks.SheetedFrameItemBlock;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SuSyMetaBlocks;
+import supersymmetry.entity.SuSyEntityList;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class ClientProxy extends CommonProxy {
 
     public void preLoad() {
         super.preLoad();
+        SuSyEntityList.registerRenders();
     }
 
     @Override

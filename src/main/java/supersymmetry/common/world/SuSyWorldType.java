@@ -22,6 +22,6 @@ public class SuSyWorldType extends WorldType {
     @Override
     public @NotNull IChunkGenerator getChunkGenerator(@NotNull World world, @NotNull String generatorOptions)
     {
-        return new SuSyChunkGeneratorOverworld(world, world.getSeed(), world.getWorldInfo().isMapFeaturesEnabled(), generatorOptions);
+        return new SuSyChunkGeneratorOverworld(world, world.getSeed(), generatorOptions);
     }
 }

@@ -9,19 +9,15 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEntitySpawner;
-import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.*;
 import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.feature.WorldGenLakes;
-import net.minecraft.world.gen.structure.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import scala.xml.Null;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -41,9 +37,7 @@ public class SuSyChunkGeneratorOverworld implements IChunkGenerator {
     private ChunkGeneratorSettings settings;
     private IBlockState oceanBlock = Blocks.WATER.getDefaultState();
     private double[] depthBuffer = new double[256];
-    private SuSyMapGenStoneLayers StoneLayerGenerator = new SuSyMapGenStoneLayers();
     private MapGenBase caveGenerator = new MapGenCaves();
-    private MapGenScatteredFeature scatteredFeatureGenerator = new MapGenScatteredFeature();
     private MapGenBase ravineGenerator = new MapGenRavine();
     private Biome[] biomesForGeneration;
     double[] mainNoiseRegion;
@@ -51,10 +45,9 @@ public class SuSyChunkGeneratorOverworld implements IChunkGenerator {
     double[] maxLimitRegion;
     double[] depthRegion;
 
-    public SuSyChunkGeneratorOverworld(World world, long seed, boolean mapFeaturesEnabledIn, String generatorOptions) {
+    public SuSyChunkGeneratorOverworld(World world, long seed, String generatorOptions) {
         {
             caveGenerator = net.minecraftforge.event.terraingen.TerrainGen.getModdedMapGen(caveGenerator, net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE);
-            scatteredFeatureGenerator = (MapGenScatteredFeature)net.minecraftforge.event.terraingen.TerrainGen.getModdedMapGen(scatteredFeatureGenerator, net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.SCATTERED_FEATURE);
             ravineGenerator = net.minecraftforge.event.terraingen.TerrainGen.getModdedMapGen(ravineGenerator, net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.RAVINE);
         }
         this.world = world;
@@ -85,8 +78,7 @@ public class SuSyChunkGeneratorOverworld implements IChunkGenerator {
             world.setSeaLevel(this.settings.seaLevel);
         }
 
-        net.minecraftforge.event.terraingen.InitNoiseGensEvent.ContextOverworld ctx =
-                new net.minecraftforge.event.terraingen.InitNoiseGensEvent.ContextOverworld(minLimitPerlinNoise, maxLimitPerlinNoise, mainPerlinNoise, surfaceNoise, scaleNoise, depthNoise, forestNoise);
+        net.minecraftforge.event.terraingen.InitNoiseGensEvent.ContextOverworld ctx = new net.minecraftforge.event.terraingen.InitNoiseGensEvent.ContextOverworld(minLimitPerlinNoise, maxLimitPerlinNoise, mainPerlinNoise, surfaceNoise, scaleNoise, depthNoise, forestNoise);
         ctx = net.minecraftforge.event.terraingen.TerrainGen.getModdedNoiseGenerators(world, this.rand, ctx);
         this.minLimitPerlinNoise = ctx.getLPerlin1();
         this.maxLimitPerlinNoise = ctx.getLPerlin2();
@@ -98,7 +90,7 @@ public class SuSyChunkGeneratorOverworld implements IChunkGenerator {
 
     public void setBlocksInChunk(int x, int z, ChunkPrimer primer) {
         this.biomesForGeneration = this.world.getBiomeProvider().getBiomesForGeneration(this.biomesForGeneration, x * 4 - 2, z * 4 - 2, 10, 10);
-        this.generateHeightmap(x * 4, 0, z * 4);
+        this.generateHeightmap(x * 4, z * 4);
 
         for (int i = 0; i < 4; ++i)
         {
@@ -252,8 +244,7 @@ public class SuSyChunkGeneratorOverworld implements IChunkGenerator {
     public void replaceBiomeBlocks(int x, int z, ChunkPrimer primer, Biome[] biomesIn)
     {
         if (!net.minecraftforge.event.ForgeEventFactory.onReplaceBiomeBlocks(this, x, z, primer, this.world)) return;
-        double d0 = 0.03125D;
-        this.depthBuffer = this.surfaceNoise.getRegion(this.depthBuffer, (double)(x * 16), (double)(z * 16), 16, 16, 0.0625D, 0.0625D, 1.0D);
+        this.depthBuffer = this.surfaceNoise.getRegion(this.depthBuffer, (x * 16), (z * 16), 16, 16, 0.0625D, 0.0625D, 1.0D);
 
         for (int i = 0; i < 16; ++i)
         {
@@ -274,7 +265,7 @@ public class SuSyChunkGeneratorOverworld implements IChunkGenerator {
         this.rand.setSeed((long)x * 341873128712L + (long)z * 132897987541L);
         ChunkPrimer chunkprimer = new ChunkPrimer();
         this.setBlocksInChunk(x, z, chunkprimer);
-        this.StoneLayerGenerator.generate(this.world, x, z, chunkprimer);
+        SuSyMapGenStoneLayers.generate(this.world, x, z, chunkprimer);
         this.biomesForGeneration = this.world.getBiomeProvider().getBiomes(this.biomesForGeneration, x * 16, z * 16, 16, 16);
         this.replaceBiomeBlocks(x, z, chunkprimer, this.biomesForGeneration);
 
@@ -288,7 +279,7 @@ public class SuSyChunkGeneratorOverworld implements IChunkGenerator {
             this.ravineGenerator.generate(this.world, x, z, chunkprimer);
         }
 
-        this.StoneLayerGenerator.generate(this.world, x, z, chunkprimer);
+        SuSyMapGenStoneLayers.generate(this.world, x, z, chunkprimer);
 
         Chunk chunk = new Chunk(this.world, chunkprimer, x, z);
         byte[] abyte = chunk.getBiomeArray();
@@ -302,14 +293,14 @@ public class SuSyChunkGeneratorOverworld implements IChunkGenerator {
         return chunk;
     }
 
-    private void generateHeightmap(int x, int y, int z)
+    private void generateHeightmap(int x, int z)
     {
         this.depthRegion = this.depthNoise.generateNoiseOctaves(this.depthRegion, x, z, 5, 5, (double)this.settings.depthNoiseScaleX, (double)this.settings.depthNoiseScaleZ, (double)this.settings.depthNoiseScaleExponent);
         float f = this.settings.coordinateScale;
         float f1 = this.settings.heightScale;
-        this.mainNoiseRegion = this.mainPerlinNoise.generateNoiseOctaves(this.mainNoiseRegion, x, y, z, 5, 33, 5, (double)(f / this.settings.mainNoiseScaleX), (double)(f1 / this.settings.mainNoiseScaleY), (double)(f / this.settings.mainNoiseScaleZ));
-        this.minLimitRegion = this.minLimitPerlinNoise.generateNoiseOctaves(this.minLimitRegion, x, y, z, 5, 33, 5, (double)f, (double)f1, (double)f);
-        this.maxLimitRegion = this.maxLimitPerlinNoise.generateNoiseOctaves(this.maxLimitRegion, x, y, z, 5, 33, 5, (double)f, (double)f1, (double)f);
+        this.mainNoiseRegion = this.mainPerlinNoise.generateNoiseOctaves(this.mainNoiseRegion, x, 0, z, 5, 33, 5, (double)(f / this.settings.mainNoiseScaleX), (double)(f1 / this.settings.mainNoiseScaleY), (double)(f / this.settings.mainNoiseScaleZ));
+        this.minLimitRegion = this.minLimitPerlinNoise.generateNoiseOctaves(this.minLimitRegion, x, 0, z, 5, 33, 5, (double)f, (double)f1, (double)f);
+        this.maxLimitRegion = this.maxLimitPerlinNoise.generateNoiseOctaves(this.maxLimitRegion, x, 0, z, 5, 33, 5, (double)f, (double)f1, (double)f);
         int i = 0;
         int j = 0;
 
@@ -320,7 +311,6 @@ public class SuSyChunkGeneratorOverworld implements IChunkGenerator {
                 float f2 = 0.0F;
                 float f3 = 0.0F;
                 float f4 = 0.0F;
-                int i1 = 2;
                 Biome biome = this.biomesForGeneration[k + 2 + (l + 2) * 10];
 
                 for (int j1 = -2; j1 <= 2; ++j1)

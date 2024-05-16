@@ -789,3 +789,7 @@ susy.command.horde.start.started=Successfully started %s invasion.
 susy.command.horde.stop.usage=/mobHorde stop
 susy.command.horde.stop.has_active_no_invasion=No active invasion to stop.
 susy.command.horde.stop.stopped=Successfully stopped %s invasion.
+
+# Entities
+
+entity.fox.name=Fox
