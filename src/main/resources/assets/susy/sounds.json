@@ -16,5 +16,202 @@
         "stream": true
       }
     ]
+  },
+  "entity.fox_idle": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "susy:fox/fox_idle1",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_idle2",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_idle3",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_idle4",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_idle5",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_idle6",
+        "stream": true
+      }
+    ]
+  },
+  "entity.fox_sniff": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "susy:fox/fox_sniff1",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_sniff2",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_sniff3",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_sniff4",
+        "stream": true
+      }
+    ]
+  },
+  "entity.fox_screech": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "susy:fox/fox_screech1",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_screech2",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_screech3",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_screech4",
+        "stream": true
+      }
+    ]
+  },
+  "entity.fox_aggro": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "susy:fox/fox_aggro1",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_aggro2",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_aggro3",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_aggro4",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_aggro5",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_aggro6",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_aggro7",
+        "stream": true
+      }
+    ]
+  },
+  "entity.fox_bite": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "susy:fox/fox_bite1",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_bite2",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_bite3",
+        "stream": true
+      }
+    ]
+  },
+  "entity.fox_death": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "susy:fox/fox_death1",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_death2",
+        "stream": true
+      }
+    ]
+  },
+  "entity.fox_eat": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "susy:fox/fox_eat1",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_eat2",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_eat3",
+        "stream": true
+      }
+    ]
+  },
+  "entity.fox_hurt": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "susy:fox/fox_hurt1",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_hurt2",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_hurt3",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_hurt4",
+        "stream": true
+      }
+    ]
+  },
+  "entity.fox_sleep": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "susy:fox/fox_sleep1",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_sleep2",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_sleep3",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_sleep4",
+        "stream": true
+      },
+      {
+        "name": "susy:fox/fox_sleep5",
+        "stream": true
+      }
+    ]
   }
 }

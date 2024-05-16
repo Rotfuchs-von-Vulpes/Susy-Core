@@ -16,6 +16,7 @@ import supersymmetry.common.covers.SuSyCoverBehaviors;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.metatileentities.SuSyMetaTileEntities;
 import supersymmetry.common.world.SuSyInitWorldGen;
+import supersymmetry.entity.SuSyEntityList;
 import supersymmetry.worldGen.SuSyWorldGen;
 
 import java.io.IOException;

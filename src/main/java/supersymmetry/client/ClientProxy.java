@@ -22,6 +22,7 @@ import supersymmetry.common.SusyMetaEntities;
 import supersymmetry.common.blocks.SheetedFrameItemBlock;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SuSyMetaBlocks;
+import supersymmetry.entity.SuSyEntityList;
 import supersymmetry.loaders.SuSyFluidTooltipLoader;
 import supersymmetry.loaders.SuSyIRLoader;
 
@@ -36,6 +37,7 @@ public class ClientProxy extends CommonProxy {
 
     public void preLoad() {
         super.preLoad();
+        SuSyEntityList.registerRenders();
         SusyMetaEntities.initRenderers();
         SuSyIRLoader.initEntityRenderers();
     }
