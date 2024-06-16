@@ -12,201 +12,113 @@ import static supersymmetry.common.materials.SusyMaterials.*;
 public class Thermodynamics {
     private static class ICoolant{
 
-        public Material cold_coolant;
-        public Material warm_coolant;
+        public Material coldCoolant;
+        public Material warmCoolant;
 
-        public int duration_radiator = 200;
-        public int amount_to_use = 1000;
-        public int hx_time_factor = 10;
+        public int durationRadiator = 200;
+        public int amountToUse = 1000;
+        public int hxTimeFactor = 10;
 
         public ICoolant(Material coolant_normal, Material coolant_warm){
-            this.cold_coolant = coolant_normal;
-            this.warm_coolant = coolant_warm;
-        }
-
-        public void setDurationRadiator(int time) {
-            this.duration_radiator = time;
-        }
-
-        public void setAmountToUse(int amount) {
-            this.amount_to_use = amount;
-        }
-
-        public void setTimeFactor(int time) {
-            this.hx_time_factor = time;
+            this.coldCoolant = coolant_normal;
+            this.warmCoolant = coolant_warm;
         }
     }
     private static class ICryoGas{
 
-        public Material normal_gas;
-        public Material hot_high_pressure_gas;
-        public Material high_pressure_gas;
-        public Material cold_high_pressure_gas;
-        public Material liquid_gas;
+        public Material normalGas;
+        public Material hotHighPressureGas;
+        public Material highPressureGas;
+        public Material coldHighPressureGas;
+        public Material liquidGas;
 
-        public int amount_to_use = 20000;
+        public int amountToUse = 20000;
 
         public int EUt = 30;
         public int duration = 20;
 
-        public int power_heat_exchanger = 20;
-        public int duration_heat_exchanger = 10;
+        public int powerHeatExchanger = 20;
+        public int durationHeatExchanger = 10;
 
-        public int duration_radiator = 100;
+        public int durationRadiator = 100;
 
-        public int fluid_temperature = 300;
+        public int fluidTemperature = 300;
 
         public ICryoGas(Material gas_normal, Material gas_hot_hp, Material gas_hp, Material gas_cold_hp, Material gas_liquid) {
-            normal_gas = gas_normal;
-            hot_high_pressure_gas = gas_hot_hp;
-            high_pressure_gas = gas_hp;
-            cold_high_pressure_gas = gas_cold_hp;
-            liquid_gas = gas_liquid;
-        }
-
-        public void setEUt(int power) {
-            EUt = power;
-        }
-
-        public void setDuration(int time) {
-            duration = time;
-        }
-
-        public void setPowerHX(int power_hx) {
-            power_heat_exchanger = power_hx;
-        }
-
-        public void setDurationHX(int duration_hx) {
-            duration_heat_exchanger = duration_hx;
-        }
-
-        public void setDurationRadiator(int duration_rad) {
-            duration_radiator = duration_rad;
-        }
-
-        public void setTemperature(int temp){
-            this.fluid_temperature = temp;
+            normalGas = gas_normal;
+            hotHighPressureGas = gas_hot_hp;
+            highPressureGas = gas_hp;
+            coldHighPressureGas = gas_cold_hp;
+            liquidGas = gas_liquid;
         }
     }
     private static class IRefrigerant{
 
-        Material normal_refrigerant;
-        Material hot_refrigerant;
-        Material comp_refrigerant;
-        Material cold_refrigerant;
+        Material normalRefrigerant;
+        Material hotRefrigerant;
+        Material compRefrigerant;
+        Material coldRefrigerant;
 
         int EUt = 30;
         int duration = 20;
 
-        int duration_radiator = 20;
-        int amount_to_use = 1000;
+        int durationRadiator = 20;
+        int amountToUse = 1000;
 
-        int hx_time_factor = 10;
+        int hxTimeFactor = 10;
 
         public IRefrigerant(Material refrigerant_normal, Material refrigerant_hot, Material refrigerant_comp, Material refrigerant_cold) {
-            normal_refrigerant = refrigerant_normal;
-            hot_refrigerant = refrigerant_hot;
-            comp_refrigerant = refrigerant_comp;
-            cold_refrigerant = refrigerant_cold;
-        }
-
-        public void setPowerToCompress(int power) {
-            EUt = power;
-        }
-
-        public void setDurationToCompress(int time) {
-            duration = time;
-        }
-
-        public void setDurationRadiator(int time) {
-            duration_radiator = time;
-        }
-
-        public void setAmountToUse(int amount) {
-            amount_to_use = amount;
-        }
-
-        public void setTimeFactor(int time) {
-            hx_time_factor = time;
+            normalRefrigerant = refrigerant_normal;
+            hotRefrigerant = refrigerant_hot;
+            compRefrigerant = refrigerant_comp;
+            coldRefrigerant = refrigerant_cold;
         }
     }
     private static class IFluidFuel{
 
-        public Material liquid_fuel;
+        public Material liquidFuel;
         public Material byproduct;
 
         public int duration;
-        public int amount_to_burn;
+        public int amountToBurn;
 
-        public int byproduct_amount = 1000;
+        public int byproductAmount = 1000;
 
-        public boolean refined_fuel = false;
-        public boolean gas_turbine = true;
+        public boolean refinedFuel = false;
+        public boolean gasTurbine = true;
 
         public IFluidFuel(Material fuel_liquid, Material byproduct_liquid) {
-            this.liquid_fuel = fuel_liquid;
+            this.liquidFuel = fuel_liquid;
             this.byproduct = byproduct_liquid;
-        }
-
-        public void setDuration(int duration) {
-            this.duration = duration;
-        }
-
-        public void setAmountToBurn(int amount_to_burn) {
-            this.amount_to_burn = amount_to_burn;
-        }
-
-        public void setByproductAmount(int byproduct_amount) {
-            this.byproduct_amount = byproduct_amount;
-        }
-
-        public void setIsRefinedFuel(boolean b) {
-            this.refined_fuel = b;
         }
     }
     private static class IWorkingFluid{
-        public Material normal_fluid;
-        public Material heated_fluid;
-        public Material leftover_fluid;
+        public Material normalFluid;
+        public Material heatedFluid;
+        public Material leftoverFluid;
 
         public int duration;
-        public int amount_to_use;
+        public int amountToUse;
 
-        public int conversion_factor = 160;
+        public int conversionFactor = 160;
 
         public int efficiency = 1;
 
         public IWorkingFluid(Material fluid_normal, Material fluid_heated, Material fluid_leftover) {
-            this.normal_fluid = fluid_normal;
-            this.heated_fluid = fluid_heated;
-            this.leftover_fluid = fluid_leftover;
-        }
-
-        public void setDuration(int duration) {
-            this.duration = duration;
-        }
-
-        public void setAmountToUse(int amount_to_use) {
-            this.amount_to_use = amount_to_use;
-        }
-
-        public void setEfficiency(int efficiency) {
-            this.efficiency = efficiency;
-        }
-
-        public void setConversionFactor(int conversion_factor) {
-            this.conversion_factor = conversion_factor;
+            this.normalFluid = fluid_normal;
+            this.heatedFluid = fluid_heated;
+            this.leftoverFluid = fluid_leftover;
         }
     }
 
 
     public static class ILubricant {
         public Material name;
-        public int amount_required;
+        public int amountRequired;
         public double boost;
-        public ILubricant(Material name, int amount_required, double boost) {
+        public ILubricant(Material name, int amountRequired, double boost) {
             this.name = name;
-            this.amount_required = amount_required;
+            this.amountRequired = amountRequired;
             this.boost = boost;
         }
     }
@@ -256,39 +168,39 @@ public class Thermodynamics {
         removeRecipesByInputs(COMBUSTION_GENERATOR_FUELS, RocketFuel.getFluid(16));
 
         ICoolant WaterCoolant = new ICoolant(Water, WarmWater);
-        WaterCoolant.setDurationRadiator(100);
-        WaterCoolant.setAmountToUse(1000);
-        WaterCoolant.setTimeFactor(10);
+        WaterCoolant.durationRadiator = 100;
+        WaterCoolant.amountToUse = 1000;
+        WaterCoolant.hxTimeFactor = 10;
 
         ICoolant SaltWaterCoolant = new ICoolant(SaltWater, WarmSaltWater);
-        SaltWaterCoolant.setDurationRadiator(100);
-        SaltWaterCoolant.setAmountToUse(1000);
-        SaltWaterCoolant.setTimeFactor(15);
+        SaltWaterCoolant.durationRadiator = 100;
+        SaltWaterCoolant.amountToUse = 1000;
+        SaltWaterCoolant.hxTimeFactor = 15;
 
         ICoolant BrineCoolant = new ICoolant(Brine, WarmBrine);
-        BrineCoolant.setDurationRadiator(100);
-        BrineCoolant.setAmountToUse(1000);
-        BrineCoolant.setTimeFactor(15);
+        BrineCoolant.durationRadiator = 100;
+        BrineCoolant.amountToUse = 1000;
+        BrineCoolant.hxTimeFactor = 15;
 
         ICoolant LubricantCoolant = new ICoolant(Lubricant, WarmLubricant);
-        LubricantCoolant.setDurationRadiator(75);
-        LubricantCoolant.setAmountToUse(1000);
-        LubricantCoolant.setTimeFactor(6);
+        LubricantCoolant.durationRadiator = 75;
+        LubricantCoolant.amountToUse = 1000;
+        LubricantCoolant.hxTimeFactor = 6;
 
         ICoolant SodiumPotassiumCoolant = new ICoolant(SodiumPotassium, WarmSodiumPotassium);
-        SodiumPotassiumCoolant.setDurationRadiator(60);
-        SodiumPotassiumCoolant.setAmountToUse(2000);
-        SodiumPotassiumCoolant.setTimeFactor(5);
+        SodiumPotassiumCoolant.durationRadiator = 60;
+        SodiumPotassiumCoolant.amountToUse = 2000;
+        SodiumPotassiumCoolant.hxTimeFactor = 5;
 
         ICoolant EthyleneGlycolCoolant = new ICoolant(EthyleneGlycol, WarmEthyleneGlycol);
-        EthyleneGlycolCoolant.setDurationRadiator(50);
-        EthyleneGlycolCoolant.setAmountToUse(2000);
-        EthyleneGlycolCoolant.setTimeFactor(4);
+        EthyleneGlycolCoolant.durationRadiator = 50;
+        EthyleneGlycolCoolant.amountToUse = 2000;
+        EthyleneGlycolCoolant.hxTimeFactor = 4;
 
         ICoolant PolychlorinatedBiphenylCoolant = new ICoolant(PolychlorinatedBiphenyl, WarmPolychlorinatedBiphenyl);
-        PolychlorinatedBiphenylCoolant.setDurationRadiator(40);
-        PolychlorinatedBiphenylCoolant.setAmountToUse(1000);
-        PolychlorinatedBiphenylCoolant.setTimeFactor(2);
+        PolychlorinatedBiphenylCoolant.durationRadiator = 40;
+        PolychlorinatedBiphenylCoolant.amountToUse = 1000;
+        PolychlorinatedBiphenylCoolant.hxTimeFactor = 2;
 
         ICoolant[] coolants = {
                 WaterCoolant,
@@ -300,117 +212,187 @@ public class Thermodynamics {
                 PolychlorinatedBiphenylCoolant
         };
 
-        ICryoGas CryoHydrogen = new ICryoGas(Hydrogen, HotHighPressureHydrogen, HighPressureHydrogen, ColdHighPressureHydrogen, LiquidHydrogen);
-        CryoHydrogen.setEUt(240);
-        CryoHydrogen.setDuration(100);
-        CryoHydrogen.setPowerHX(100);
-        CryoHydrogen.setDurationHX(5);
-        CryoHydrogen.setDurationRadiator(400);
-        CryoHydrogen.setTemperature(14);
+        ICryoGas CryoHydrogen = new ICryoGas(
+                Hydrogen,
+                HotHighPressureHydrogen,
+                HighPressureHydrogen,
+                ColdHighPressureHydrogen,
+                LiquidHydrogen
+        );
+        CryoHydrogen.EUt = 240;
+        CryoHydrogen.powerHeatExchanger = 100;
+        CryoHydrogen.duration = 5;
+        CryoHydrogen.durationRadiator = 400;
+        CryoHydrogen.fluidTemperature = (14);
 
-        ICryoGas CryoOxygen = new ICryoGas(Oxygen, HotHighPressureOxygen, HighPressureOxygen, ColdHighPressureOxygen, ColdLiquidOxygen);
-        CryoOxygen.setEUt(30);
-        CryoOxygen.setDuration(100);
-        CryoOxygen.setPowerHX(100);
-        CryoOxygen.setDurationHX(5);
-        CryoOxygen.setDurationRadiator(400);
-        CryoOxygen.setTemperature(90);
+        ICryoGas CryoOxygen = new ICryoGas(
+                Oxygen,
+                HotHighPressureOxygen,
+                HighPressureOxygen,
+                ColdHighPressureOxygen,
+                ColdLiquidOxygen
+        );
+        CryoOxygen.EUt = 30;
+        CryoOxygen.powerHeatExchanger = 100;
+        CryoOxygen.duration = 5;
+        CryoOxygen.durationRadiator = 400;
+        CryoOxygen.fluidTemperature = (90);
 
-        ICryoGas CryoHelium = new ICryoGas(Helium, HotHighPressureHelium, HighPressureHelium, ColdHighPressureHelium, Helium);
-        CryoHelium.setEUt(720);
-        CryoHelium.setDuration(100);
-        CryoHelium.setPowerHX(100);
-        CryoHelium.setDurationHX(5);
-        CryoHelium.setDurationRadiator(400);
-        CryoHelium.setTemperature(4);
+        ICryoGas CryoHelium = new ICryoGas(
+                Helium,
+                HotHighPressureHelium,
+                HighPressureHelium,
+                ColdHighPressureHelium,
+                Helium
+        );
+        CryoHelium.EUt = 720;
+        CryoHelium.powerHeatExchanger = 100;
+        CryoHelium.duration = 5;
+        CryoHelium.durationRadiator = 400;
+        CryoHelium.fluidTemperature = (4);
 
-        ICryoGas CryoNeon = new ICryoGas(Neon, HotHighPressureNeon, HighPressureNeon, ColdHighPressureNeon, LiquidNeon);
-        CryoNeon.setEUt(240);
-        CryoNeon.setDuration(100);
-        CryoNeon.setPowerHX(100);
-        CryoNeon.setDurationHX(5);
-        CryoNeon.setDurationRadiator(400);
-        CryoNeon.setTemperature(27);
+        ICryoGas CryoNeon = new ICryoGas(
+                Neon,
+                HotHighPressureNeon,
+                HighPressureNeon,
+                ColdHighPressureNeon,
+                LiquidNeon
+        );
+        CryoNeon.EUt = 240;
+        CryoNeon.powerHeatExchanger = 100;
+        CryoNeon.duration = 5;
+        CryoNeon.durationRadiator = 400;
+        CryoNeon.fluidTemperature = (27);
 
-        ICryoGas CryoArgon = new ICryoGas(Argon, HotHighPressureArgon, HighPressureArgon, ColdHighPressureArgon, LiquidArgon);
-        CryoArgon.setEUt(120);
-        CryoArgon.setDuration(100);
-        CryoArgon.setPowerHX(100);
-        CryoArgon.setDurationHX(5);
-        CryoArgon.setDurationRadiator(400);
-        CryoArgon.setTemperature(87);
+        ICryoGas CryoArgon = new ICryoGas(
+                Argon,
+                HotHighPressureArgon,
+                HighPressureArgon,
+                ColdHighPressureArgon,
+                LiquidArgon
+        );
+        CryoArgon.EUt = 120;
+        CryoArgon.powerHeatExchanger = 100;
+        CryoArgon.duration = 5;
+        CryoArgon.durationRadiator = 400;
+        CryoArgon.fluidTemperature = (87);
 
-        ICryoGas CryoKrypton = new ICryoGas(Krypton, HotHighPressureKrypton, HighPressureKrypton, ColdHighPressureKrypton, LiquidKrypton);
-        CryoKrypton.setEUt(120);
-        CryoKrypton.setDuration(100);
-        CryoKrypton.setPowerHX(100);
-        CryoKrypton.setDurationHX(5);
-        CryoKrypton.setDurationRadiator(400);
-        CryoKrypton.setTemperature(120);
+        ICryoGas CryoKrypton = new ICryoGas(
+                Krypton,
+                HotHighPressureKrypton,
+                HighPressureKrypton,
+                ColdHighPressureKrypton,
+                LiquidKrypton
+        );
+        CryoKrypton.EUt = 120;
+        CryoKrypton.powerHeatExchanger = 100;
+        CryoKrypton.duration = 5;
+        CryoKrypton.durationRadiator = 400;
+        CryoKrypton.fluidTemperature = (120);
 
-        ICryoGas CryoXenon = new ICryoGas(Xenon, HotHighPressureXenon, HighPressureXenon, ColdHighPressureXenon, LiquidXenon);
-        CryoXenon.setEUt(120);
-        CryoXenon.setDuration(100);
-        CryoXenon.setPowerHX(100);
-        CryoXenon.setDurationHX(5);
-        CryoXenon.setDurationRadiator(400);
-        CryoXenon.setTemperature(165);
+        ICryoGas CryoXenon = new ICryoGas(
+                Xenon,
+                HotHighPressureXenon,
+                HighPressureXenon,
+                ColdHighPressureXenon,
+                LiquidXenon
+        );
+        CryoXenon.EUt = 120;
+        CryoXenon.powerHeatExchanger = 100;
+        CryoXenon.duration = 5;
+        CryoXenon.durationRadiator = 400;
+        CryoXenon.fluidTemperature = (165);
 
-        ICryoGas CryoAir = new ICryoGas(Air, HotHighPressureAir, HighPressureAir, ColdHighPressureAir, LiquidAir);
-        CryoAir.setEUt(60);
-        CryoAir.setDuration(100);
-        CryoAir.setPowerHX(100);
-        CryoAir.setDurationHX(5);
-        CryoAir.setDurationRadiator(400);
-        CryoAir.setTemperature(80);
+        ICryoGas CryoAir = new ICryoGas(
+                Air,
+                HotHighPressureAir,
+                HighPressureAir,
+                ColdHighPressureAir,
+                LiquidAir
+        );
+        CryoAir.EUt = 60;
+        CryoAir.powerHeatExchanger = 100;
+        CryoAir.duration = 5;
+        CryoAir.durationRadiator = 400;
+        CryoAir.fluidTemperature = (80);
 
-        ICryoGas CryoDecarburizedAir = new ICryoGas(DecarburizedAir, HotHighPressureDecarburizedAir, HighPressureDecarburizedAir, ColdHighPressureDecarburizedAir, LiquidDecarburizedAir);
-        CryoDecarburizedAir.setEUt(60);
-        CryoDecarburizedAir.setDuration(1);
-        CryoDecarburizedAir.setPowerHX(100);
-        CryoDecarburizedAir.setDurationHX(8);
-        CryoDecarburizedAir.setDurationRadiator(40);
-        CryoDecarburizedAir.setTemperature(80);
+        ICryoGas CryoDecarburizedAir = new ICryoGas(
+                DecarburizedAir,
+                HotHighPressureDecarburizedAir,
+                HighPressureDecarburizedAir,
+                ColdHighPressureDecarburizedAir,
+                LiquidDecarburizedAir
+        );
+        CryoDecarburizedAir.EUt = 60;
+        CryoDecarburizedAir.powerHeatExchanger = 100;
+        CryoDecarburizedAir.duration = 8;
+        CryoDecarburizedAir.durationRadiator = 40;
+        CryoDecarburizedAir.fluidTemperature = (80);
 
-        ICryoGas CryoNitrogen = new ICryoGas(Nitrogen, HotHighPressureNitrogen, HighPressureNitrogen, ColdHighPressureNitrogen, LiquidNitrogen);
-        CryoNitrogen.setEUt(60);
-        CryoNitrogen.setDuration(100);
-        CryoNitrogen.setPowerHX(100);
-        CryoNitrogen.setDurationHX(5);
-        CryoNitrogen.setDurationRadiator(400);
-        CryoNitrogen.setTemperature(77);
+        ICryoGas CryoNitrogen = new ICryoGas(
+                Nitrogen,
+                HotHighPressureNitrogen,
+                HighPressureNitrogen,
+                ColdHighPressureNitrogen,
+                LiquidNitrogen
+        );
+        CryoNitrogen.EUt = 60;
+        CryoNitrogen.powerHeatExchanger = 100;
+        CryoNitrogen.duration = 5;
+        CryoNitrogen.durationRadiator = 400;
+        CryoNitrogen.fluidTemperature = (77);
 
-        ICryoGas CryoNetherAir = new ICryoGas(NetherAir, HotHighPressureNetherAir, HighPressureNetherAir, ColdHighPressureNetherAir, LiquidNetherAir);
-        CryoNetherAir.setEUt(60);
-        CryoNetherAir.setDuration(100);
-        CryoNetherAir.setPowerHX(100);
-        CryoNetherAir.setDurationHX(5);
-        CryoNetherAir.setDurationRadiator(400);
-        CryoNetherAir.setTemperature(80);
+        ICryoGas CryoNetherAir = new ICryoGas(
+                NetherAir,
+                HotHighPressureNetherAir,
+                HighPressureNetherAir,
+                ColdHighPressureNetherAir,
+                LiquidNetherAir
+        );
+        CryoNetherAir.EUt = 60;
+        CryoNetherAir.powerHeatExchanger = 100;
+        CryoNetherAir.duration = 5;
+        CryoNetherAir.durationRadiator = 400;
+        CryoNetherAir.fluidTemperature = (80);
 
-        ICryoGas CryoRefineryGas = new ICryoGas(RefineryGas, HotHighPressureRefineryGas, HighPressureRefineryGas, ColdHighPressureRefineryGas, LiquidRefineryGas);
-        CryoRefineryGas.setEUt(60);
-        CryoRefineryGas.setDuration(100);
-        CryoRefineryGas.setPowerHX(100);
-        CryoRefineryGas.setDurationHX(5);
-        CryoRefineryGas.setDurationRadiator(400);
-        CryoRefineryGas.setTemperature(80);
+        ICryoGas CryoRefineryGas = new ICryoGas(
+                RefineryGas,
+                HotHighPressureRefineryGas,
+                HighPressureRefineryGas,
+                ColdHighPressureRefineryGas,
+                LiquidRefineryGas
+        );
+        CryoRefineryGas.EUt = 60;
+        CryoRefineryGas.powerHeatExchanger = 100;
+        CryoRefineryGas.duration = 5;
+        CryoRefineryGas.durationRadiator = 400;
+        CryoRefineryGas.fluidTemperature = (80);
 
-        ICryoGas CryoNaturalGas = new ICryoGas(NaturalGas, HotHighPressureNaturalGas, HighPressureNaturalGas, ColdHighPressureNaturalGas, LiquidNaturalGas);
-        CryoNaturalGas.setEUt(60);
-        CryoNaturalGas.setDuration(100);
-        CryoNaturalGas.setPowerHX(100);
-        CryoNaturalGas.setDurationHX(5);
-        CryoNaturalGas.setDurationRadiator(400);
-        CryoNaturalGas.setTemperature(80);
+        ICryoGas CryoNaturalGas = new ICryoGas(
+                NaturalGas,
+                HotHighPressureNaturalGas,
+                HighPressureNaturalGas,
+                ColdHighPressureNaturalGas,
+                LiquidNaturalGas
+        );
+        CryoNaturalGas.EUt = 60;
+        CryoNaturalGas.powerHeatExchanger = 100;
+        CryoNaturalGas.duration = 5;
+        CryoNaturalGas.durationRadiator = 400;
+        CryoNaturalGas.fluidTemperature = (80);
 
-        ICryoGas CryoMethane = new ICryoGas(Methane, HotHighPressureMethane, HighPressureMethane, ColdHighPressureMethane, LiquidMethane);
-        CryoMethane.setEUt(60);
-        CryoMethane.setDuration(100);
-        CryoMethane.setPowerHX(100);
-        CryoMethane.setDurationHX(5);
-        CryoMethane.setDurationRadiator(400);
-        CryoMethane.setTemperature(80);
+        ICryoGas CryoMethane = new ICryoGas(
+                Methane,
+                HotHighPressureMethane,
+                HighPressureMethane,
+                ColdHighPressureMethane,
+                LiquidMethane
+        );
+        CryoMethane.EUt = 60;
+        CryoMethane.powerHeatExchanger = 100;
+        CryoMethane.duration = 5;
+        CryoMethane.durationRadiator = 400;
+        CryoMethane.fluidTemperature = (80);
 
         ICryoGas[] cryoGases = {
                 CryoHydrogen,
@@ -429,54 +411,89 @@ public class Thermodynamics {
                 CryoMethane
         };
 
-        IRefrigerant AmmoniaRefrigerant = new IRefrigerant(Ammonia, HotCompressedAmmonia, CompressedAmmonia, ColdAmmonia);
-        AmmoniaRefrigerant.setPowerToCompress(120);
-        AmmoniaRefrigerant.setDurationToCompress(20);
-        AmmoniaRefrigerant.setDurationRadiator(20);
-        AmmoniaRefrigerant.setAmountToUse(1000);
-        AmmoniaRefrigerant.setTimeFactor(10);
+        IRefrigerant AmmoniaRefrigerant = new IRefrigerant(
+                Ammonia,
+                HotCompressedAmmonia,
+                CompressedAmmonia,
+                ColdAmmonia
+        );
+        AmmoniaRefrigerant.EUt = 120;
+        AmmoniaRefrigerant.duration = 20;
+        AmmoniaRefrigerant.durationRadiator = 20;
+        AmmoniaRefrigerant.amountToUse = 1000;
+        AmmoniaRefrigerant.hxTimeFactor = 10;
 
-        IRefrigerant PropaneRefrigerant = new IRefrigerant(Propane, HotCompressedPropane, CompressedPropane, ColdPropane);
-        PropaneRefrigerant.setPowerToCompress(60);
-        PropaneRefrigerant.setDurationToCompress(30);
-        PropaneRefrigerant.setDurationRadiator(10);
-        PropaneRefrigerant.setAmountToUse(2000);
-        PropaneRefrigerant.setTimeFactor(15);
+        IRefrigerant PropaneRefrigerant = new IRefrigerant(
+                Propane,
+                HotCompressedPropane,
+                CompressedPropane,
+                ColdPropane
+        );
+        PropaneRefrigerant.EUt = 60;
+        PropaneRefrigerant.duration = 30;
+        PropaneRefrigerant.durationRadiator = 10;
+        PropaneRefrigerant.amountToUse = 2000;
+        PropaneRefrigerant.hxTimeFactor = 15;
 
-        IRefrigerant CarbonDioxideRefrigerant = new IRefrigerant(CarbonDioxide, HotCompressedCarbonDioxide, CompressedCarbonDioxide, ColdCarbonDioxide);
-        CarbonDioxideRefrigerant.setPowerToCompress(30);
-        CarbonDioxideRefrigerant.setDurationToCompress(60);
-        CarbonDioxideRefrigerant.setDurationRadiator(10);
-        CarbonDioxideRefrigerant.setAmountToUse(3000);
-        CarbonDioxideRefrigerant.setTimeFactor(20);
+        IRefrigerant CarbonDioxideRefrigerant = new IRefrigerant(
+                CarbonDioxide,
+                HotCompressedCarbonDioxide,
+                CompressedCarbonDioxide,
+                ColdCarbonDioxide
+        );
+        CarbonDioxideRefrigerant.EUt = 30;
+        CarbonDioxideRefrigerant.duration = 60;
+        CarbonDioxideRefrigerant.durationRadiator = 10;
+        CarbonDioxideRefrigerant.amountToUse = 3000;
+        CarbonDioxideRefrigerant.hxTimeFactor = 20;
 
-        IRefrigerant TrichlorofluoromethaneRefrigerant = new IRefrigerant(Trichlorofluoromethane, HotCompressedTrichlorofluoromethane, CompressedTrichlorofluoromethane, ColdTrichlorofluoromethane);
-        TrichlorofluoromethaneRefrigerant.setPowerToCompress(180);
-        TrichlorofluoromethaneRefrigerant.setDurationToCompress(4);
-        TrichlorofluoromethaneRefrigerant.setDurationRadiator(2);
-        TrichlorofluoromethaneRefrigerant.setAmountToUse(1000);
-        TrichlorofluoromethaneRefrigerant.setTimeFactor(2);
+        IRefrigerant TrichlorofluoromethaneRefrigerant = new IRefrigerant(
+                Trichlorofluoromethane,
+                HotCompressedTrichlorofluoromethane,
+                CompressedTrichlorofluoromethane,
+                ColdTrichlorofluoromethane
+        );
+        TrichlorofluoromethaneRefrigerant.EUt = 180;
+        TrichlorofluoromethaneRefrigerant.duration = 4;
+        TrichlorofluoromethaneRefrigerant.durationRadiator = 2;
+        TrichlorofluoromethaneRefrigerant.amountToUse = 1000;
+        TrichlorofluoromethaneRefrigerant.hxTimeFactor = 2;
 
-        IRefrigerant DichlorodifluoromethaneRefrigerant = new IRefrigerant(Dichlorodifluoromethane, HotCompressedDichlorodifluoromethane, CompressedDichlorodifluoromethane, ColdDichlorodifluoromethane);
-        DichlorodifluoromethaneRefrigerant.setPowerToCompress(180);
-        DichlorodifluoromethaneRefrigerant.setDurationToCompress(4);
-        DichlorodifluoromethaneRefrigerant.setDurationRadiator(2);
-        DichlorodifluoromethaneRefrigerant.setAmountToUse(1000);
-        DichlorodifluoromethaneRefrigerant.setTimeFactor(2);
+        IRefrigerant DichlorodifluoromethaneRefrigerant = new IRefrigerant(
+                Dichlorodifluoromethane,
+                HotCompressedDichlorodifluoromethane,
+                CompressedDichlorodifluoromethane,
+                ColdDichlorodifluoromethane
+        );
+        DichlorodifluoromethaneRefrigerant.EUt = 180;
+        DichlorodifluoromethaneRefrigerant.duration = 4;
+        DichlorodifluoromethaneRefrigerant.durationRadiator = 2;
+        DichlorodifluoromethaneRefrigerant.amountToUse = 1000;
+        DichlorodifluoromethaneRefrigerant.hxTimeFactor = 2;
 
-        IRefrigerant ChlorotrifluoromethaneRefrigerant = new IRefrigerant(Chlorotrifluoromethane, HotCompressedChlorotrifluoromethane, CompressedChlorotrifluoromethane, ColdChlorotrifluoromethane);
-        ChlorotrifluoromethaneRefrigerant.setPowerToCompress(180);
-        ChlorotrifluoromethaneRefrigerant.setDurationToCompress(4);
-        ChlorotrifluoromethaneRefrigerant.setDurationRadiator(2);
-        ChlorotrifluoromethaneRefrigerant.setAmountToUse(1000);
-        ChlorotrifluoromethaneRefrigerant.setTimeFactor(2);
+        IRefrigerant ChlorotrifluoromethaneRefrigerant = new IRefrigerant(
+                Chlorotrifluoromethane,
+                HotCompressedChlorotrifluoromethane,
+                CompressedChlorotrifluoromethane,
+                ColdChlorotrifluoromethane
+        );
+        ChlorotrifluoromethaneRefrigerant.EUt = 180;
+        ChlorotrifluoromethaneRefrigerant.duration = 4;
+        ChlorotrifluoromethaneRefrigerant.durationRadiator = 2;
+        ChlorotrifluoromethaneRefrigerant.amountToUse = 1000;
+        ChlorotrifluoromethaneRefrigerant.hxTimeFactor = 2;
 
-        IRefrigerant ChlorodifluoromethaneRefrigerant = new IRefrigerant(Chlorodifluoromethane, HotCompressedChlorodifluoromethane, CompressedChlorodifluoromethane, ColdChlorodifluoromethane);
-        ChlorodifluoromethaneRefrigerant.setPowerToCompress(180);
-        ChlorodifluoromethaneRefrigerant.setDurationToCompress(4);
-        ChlorodifluoromethaneRefrigerant.setDurationRadiator(2);
-        ChlorodifluoromethaneRefrigerant.setAmountToUse(1000);
-        ChlorodifluoromethaneRefrigerant.setTimeFactor(2);
+        IRefrigerant ChlorodifluoromethaneRefrigerant = new IRefrigerant(
+                Chlorodifluoromethane,
+                HotCompressedChlorodifluoromethane,
+                CompressedChlorodifluoromethane,
+                ColdChlorodifluoromethane
+        );
+        ChlorodifluoromethaneRefrigerant.EUt = 180;
+        ChlorodifluoromethaneRefrigerant.duration = 4;
+        ChlorodifluoromethaneRefrigerant.durationRadiator = 2;
+        ChlorodifluoromethaneRefrigerant.amountToUse = 1000;
+        ChlorodifluoromethaneRefrigerant.hxTimeFactor = 2;
 
         IRefrigerant[] refrigerants = {
                 AmmoniaRefrigerant,
@@ -492,38 +509,38 @@ public class Thermodynamics {
         for (IRefrigerant refrigerant : refrigerants) {
             //Compression
             FLUID_COMPRESSOR_RECIPES.recipeBuilder()
-                    .fluidInputs(refrigerant.normal_refrigerant.getFluid(refrigerant.amount_to_use))
-                    .fluidOutputs(refrigerant.hot_refrigerant.getFluid(refrigerant.amount_to_use))
+                    .fluidInputs(refrigerant.normalRefrigerant.getFluid(refrigerant.amountToUse))
+                    .fluidOutputs(refrigerant.hotRefrigerant.getFluid(refrigerant.amountToUse))
                     .EUt(refrigerant.EUt)
                     .duration(refrigerant.duration)
                     .buildAndRegister();
 
             //Decompression
             FLUID_DECOMPRESSOR_RECIPES.recipeBuilder()
-                    .fluidInputs(refrigerant.comp_refrigerant.getFluid(refrigerant.amount_to_use))
-                    .fluidOutputs(refrigerant.cold_refrigerant.getFluid(refrigerant.amount_to_use))
+                    .fluidInputs(refrigerant.compRefrigerant.getFluid(refrigerant.amountToUse))
+                    .fluidOutputs(refrigerant.coldRefrigerant.getFluid(refrigerant.amountToUse))
                     .EUt(8)
                     .duration(refrigerant.duration)
                     .buildAndRegister();
 
             //Radiative Cooling
             HEAT_RADIATOR_RECIPES.recipeBuilder()
-                    .fluidInputs(refrigerant.hot_refrigerant.getFluid(refrigerant.amount_to_use))
-                    .fluidOutputs(refrigerant.comp_refrigerant.getFluid(refrigerant.amount_to_use))
-                    .duration(refrigerant.duration_radiator)
+                    .fluidInputs(refrigerant.hotRefrigerant.getFluid(refrigerant.amountToUse))
+                    .fluidOutputs(refrigerant.compRefrigerant.getFluid(refrigerant.amountToUse))
+                    .duration(refrigerant.durationRadiator)
                     .buildAndRegister();
 
             COOLING_UNIT_RECIPES.recipeBuilder()
-                    .fluidInputs(refrigerant.hot_refrigerant.getFluid(refrigerant.amount_to_use))
-                    .fluidOutputs(refrigerant.comp_refrigerant.getFluid(refrigerant.amount_to_use))
-                    .duration(refrigerant.duration_radiator / 2)
+                    .fluidInputs(refrigerant.hotRefrigerant.getFluid(refrigerant.amountToUse))
+                    .fluidOutputs(refrigerant.compRefrigerant.getFluid(refrigerant.amountToUse))
+                    .duration(refrigerant.durationRadiator / 2)
                     .EUt(480)
                     .buildAndRegister();
 
             COOLING_UNIT_RECIPES.recipeBuilder()
-                    .fluidInputs(refrigerant.comp_refrigerant.getFluid(refrigerant.amount_to_use))
-                    .fluidOutputs(refrigerant.cold_refrigerant.getFluid(refrigerant.amount_to_use))
-                    .duration(refrigerant.duration_radiator / 2)
+                    .fluidInputs(refrigerant.compRefrigerant.getFluid(refrigerant.amountToUse))
+                    .fluidOutputs(refrigerant.coldRefrigerant.getFluid(refrigerant.amountToUse))
+                    .duration(refrigerant.durationRadiator / 2)
                     .EUt(480)
                     .buildAndRegister();
         }
@@ -531,75 +548,75 @@ public class Thermodynamics {
 //Coolant recipes generation
         for (ICoolant coolant : coolants) {
             HEAT_RADIATOR_RECIPES.recipeBuilder()
-                    .fluidInputs(coolant.warm_coolant.getFluid(coolant.amount_to_use))
-                    .fluidOutputs(coolant.cold_coolant.getFluid(coolant.amount_to_use))
-                    .duration(coolant.duration_radiator)
+                    .fluidInputs(coolant.warmCoolant.getFluid(coolant.amountToUse))
+                    .fluidOutputs(coolant.coldCoolant.getFluid(coolant.amountToUse))
+                    .duration(coolant.durationRadiator)
                     .buildAndRegister();
 
             COOLING_UNIT_RECIPES.recipeBuilder()
-                    .fluidInputs(coolant.warm_coolant.getFluid(coolant.amount_to_use))
-                    .fluidOutputs(coolant.cold_coolant.getFluid(coolant.amount_to_use))
-                    .duration(coolant.duration_radiator / 2)
+                    .fluidInputs(coolant.warmCoolant.getFluid(coolant.amountToUse))
+                    .fluidOutputs(coolant.coldCoolant.getFluid(coolant.amountToUse))
+                    .duration(coolant.durationRadiator / 2)
                     .EUt(480)
                     .buildAndRegister();
         }
 
 //Heat exchanger recipes generation
-        for (ICryoGas cryogas : cryoGases) {
+        for (ICryoGas cryoGas : cryoGases) {
             for (ICoolant coolant : coolants) {
                 HEAT_EXCHANGER_RECIPES.recipeBuilder()
-                        .fluidInputs(cryogas.hot_high_pressure_gas.getFluid(cryogas.amount_to_use))
-                        .fluidInputs(coolant.cold_coolant.getFluid(coolant.amount_to_use))
-                        .fluidOutputs(coolant.warm_coolant.getFluid(coolant.amount_to_use))
-                        .fluidOutputs(cryogas.high_pressure_gas.getFluid(cryogas.amount_to_use))
-                        .duration(cryogas.duration_heat_exchanger + coolant.hx_time_factor)
+                        .fluidInputs(cryoGas.hotHighPressureGas.getFluid(cryoGas.amountToUse))
+                        .fluidInputs(coolant.coldCoolant.getFluid(coolant.amountToUse))
+                        .fluidOutputs(coolant.warmCoolant.getFluid(coolant.amountToUse))
+                        .fluidOutputs(cryoGas.highPressureGas.getFluid(cryoGas.amountToUse))
+                        .duration(cryoGas.durationHeatExchanger + coolant.hxTimeFactor)
                         .buildAndRegister();
             }
             for (IRefrigerant refrigerant : refrigerants) {
                 HEAT_EXCHANGER_RECIPES.recipeBuilder()
-                        .fluidInputs(cryogas.high_pressure_gas.getFluid(cryogas.amount_to_use))
-                        .fluidInputs(refrigerant.cold_refrigerant.getFluid(refrigerant.amount_to_use))
-                        .fluidOutputs(refrigerant.normal_refrigerant.getFluid(refrigerant.amount_to_use))
-                        .fluidOutputs(cryogas.cold_high_pressure_gas.getFluid(cryogas.amount_to_use))
-                        .duration(cryogas.duration_heat_exchanger + refrigerant.hx_time_factor)
+                        .fluidInputs(cryoGas.highPressureGas.getFluid(cryoGas.amountToUse))
+                        .fluidInputs(refrigerant.coldRefrigerant.getFluid(refrigerant.amountToUse))
+                        .fluidOutputs(refrigerant.normalRefrigerant.getFluid(refrigerant.amountToUse))
+                        .fluidOutputs(cryoGas.coldHighPressureGas.getFluid(cryoGas.amountToUse))
+                        .duration(cryoGas.durationHeatExchanger + refrigerant.hxTimeFactor)
                         .buildAndRegister();
             }
 
             FLUID_COMPRESSOR_RECIPES.recipeBuilder()
-                    .fluidInputs(cryogas.normal_gas.getFluid(1280))
-                    .fluidOutputs(cryogas.hot_high_pressure_gas.getFluid(1280))
-                    .duration(cryogas.duration)
-                    .EUt(cryogas.EUt)
+                    .fluidInputs(cryoGas.normalGas.getFluid(1280))
+                    .fluidOutputs(cryoGas.hotHighPressureGas.getFluid(1280))
+                    .duration(cryoGas.duration)
+                    .EUt(cryoGas.EUt)
                     .buildAndRegister();
 
             //Decompression
-            if (cryogas.liquid_gas == cryogas.normal_gas) {
+            if (cryoGas.liquidGas == cryoGas.normalGas) {
                 FLUID_DECOMPRESSOR_RECIPES.recipeBuilder()
-                        .fluidInputs(cryogas.cold_high_pressure_gas.getFluid(1280))
-                        .fluidOutputs(cryogas.normal_gas.getFluid(FluidStorageKeys.LIQUID, 20))
+                        .fluidInputs(cryoGas.coldHighPressureGas.getFluid(1280))
+                        .fluidOutputs(cryoGas.normalGas.getFluid(FluidStorageKeys.LIQUID, 20))
                         .duration(20)
                         .EUt(8)
                         .buildAndRegister();
 
                 //Reheating
                 FLUID_HEATER_RECIPES.recipeBuilder()
-                        .fluidInputs(cryogas.normal_gas.getFluid(FluidStorageKeys.LIQUID, 20))
-                        .fluidOutputs(cryogas.cold_high_pressure_gas.getFluid(1280))
+                        .fluidInputs(cryoGas.normalGas.getFluid(FluidStorageKeys.LIQUID, 20))
+                        .fluidOutputs(cryoGas.coldHighPressureGas.getFluid(1280))
                         .duration(20)
                         .EUt(8)
                         .buildAndRegister();
             } else {
                 FLUID_DECOMPRESSOR_RECIPES.recipeBuilder()
-                        .fluidInputs(cryogas.cold_high_pressure_gas.getFluid(1280))
-                        .fluidOutputs(cryogas.liquid_gas.getFluid(20))
+                        .fluidInputs(cryoGas.coldHighPressureGas.getFluid(1280))
+                        .fluidOutputs(cryoGas.liquidGas.getFluid(20))
                         .duration(20)
                         .EUt(8)
                         .buildAndRegister();
 
                 //Reheating
                 FLUID_HEATER_RECIPES.recipeBuilder()
-                        .fluidInputs(cryogas.liquid_gas.getFluid(20))
-                        .fluidOutputs(cryogas.cold_high_pressure_gas.getFluid(1280))
+                        .fluidInputs(cryoGas.liquidGas.getFluid(20))
+                        .fluidOutputs(cryoGas.coldHighPressureGas.getFluid(1280))
                         .duration(20)
                         .EUt(8)
                         .buildAndRegister();
@@ -607,15 +624,15 @@ public class Thermodynamics {
 
             //Radiative Cooling
             HEAT_RADIATOR_RECIPES.recipeBuilder()
-                    .fluidInputs(cryogas.hot_high_pressure_gas.getFluid(cryogas.amount_to_use))
-                    .fluidOutputs(cryogas.high_pressure_gas.getFluid(cryogas.amount_to_use))
-                    .duration(cryogas.duration_heat_exchanger * 5)
+                    .fluidInputs(cryoGas.hotHighPressureGas.getFluid(cryoGas.amountToUse))
+                    .fluidOutputs(cryoGas.highPressureGas.getFluid(cryoGas.amountToUse))
+                    .duration(cryoGas.durationHeatExchanger * 5)
                     .buildAndRegister();
 
             COOLING_UNIT_RECIPES.recipeBuilder()
-                    .fluidInputs(cryogas.hot_high_pressure_gas.getFluid(cryogas.amount_to_use))
-                    .fluidOutputs(cryogas.high_pressure_gas.getFluid(cryogas.amount_to_use))
-                    .duration(cryogas.duration_heat_exchanger * 2)
+                    .fluidInputs(cryoGas.hotHighPressureGas.getFluid(cryoGas.amountToUse))
+                    .fluidOutputs(cryoGas.highPressureGas.getFluid(cryoGas.amountToUse))
+                    .duration(cryoGas.durationHeatExchanger * 2)
                     .EUt(480)
                     .buildAndRegister();
 
@@ -642,32 +659,32 @@ public class Thermodynamics {
             // return to gas
             FLUID_HEATER_RECIPES.recipeBuilder()
                     .circuitMeta(1)
-                    .fluidInputs(cryogas.cold_high_pressure_gas.getFluid(1280))
-                    .fluidOutputs(cryogas.high_pressure_gas.getFluid(1280))
+                    .fluidInputs(cryoGas.coldHighPressureGas.getFluid(1280))
+                    .fluidOutputs(cryoGas.highPressureGas.getFluid(1280))
                     .duration(20)
                     .EUt(8)
                     .buildAndRegister();
 
             FLUID_HEATER_RECIPES.recipeBuilder()
                     .circuitMeta(2)
-                    .fluidInputs(cryogas.cold_high_pressure_gas.getFluid(1280))
-                    .fluidOutputs(cryogas.hot_high_pressure_gas.getFluid(1280))
+                    .fluidInputs(cryoGas.coldHighPressureGas.getFluid(1280))
+                    .fluidOutputs(cryoGas.hotHighPressureGas.getFluid(1280))
                     .duration(40)
                     .EUt(8)
                     .buildAndRegister();
 
             FLUID_HEATER_RECIPES.recipeBuilder()
-                    .fluidInputs(cryogas.high_pressure_gas.getFluid(1280))
-                    .fluidOutputs(cryogas.hot_high_pressure_gas.getFluid(1280))
+                    .fluidInputs(cryoGas.highPressureGas.getFluid(1280))
+                    .fluidOutputs(cryoGas.hotHighPressureGas.getFluid(1280))
                     .duration(20)
                     .EUt(8)
                     .buildAndRegister();
 
             FLUID_DECOMPRESSOR_RECIPES.recipeBuilder()
-                    .fluidInputs(cryogas.hot_high_pressure_gas.getFluid(1280))
-                    .fluidOutputs(cryogas.normal_gas.getFluid(1280))
-                    .duration(cryogas.duration)
-                    .EUt(cryogas.EUt)
+                    .fluidInputs(cryoGas.hotHighPressureGas.getFluid(1280))
+                    .fluidOutputs(cryoGas.normalGas.getFluid(1280))
+                    .duration(cryoGas.duration)
+                    .EUt(cryoGas.EUt)
                     .buildAndRegister();
         }
 
@@ -675,209 +692,209 @@ public class Thermodynamics {
         for (IRefrigerant refrigerant : refrigerants) {
             HEAT_EXCHANGER_RECIPES.recipeBuilder()
                     .fluidInputs(Water.getFluid(1000))
-                    .fluidInputs(refrigerant.cold_refrigerant.getFluid(refrigerant.amount_to_use))
+                    .fluidInputs(refrigerant.coldRefrigerant.getFluid(refrigerant.amountToUse))
                     .fluidOutputs(Ice.getFluid(1000))
-                    .fluidOutputs(refrigerant.normal_refrigerant.getFluid(refrigerant.amount_to_use))
+                    .fluidOutputs(refrigerant.normalRefrigerant.getFluid(refrigerant.amountToUse))
                     .duration(60)
                     .buildAndRegister();
         }
 
         IFluidFuel NaphthaFuel = new IFluidFuel(Naphtha, FlueGas);
-        NaphthaFuel.setDuration(160);
-        NaphthaFuel.setAmountToBurn(10);
-        NaphthaFuel.setByproductAmount(1000);
+        NaphthaFuel.duration = 160;
+        NaphthaFuel.amountToBurn = 10;
+        NaphthaFuel.byproductAmount = 1000;
 
         IFluidFuel NaturalGasFuel = new IFluidFuel(NaturalGas, FlueGas);
-        NaturalGasFuel.setDuration(100);
-        NaturalGasFuel.setAmountToBurn(160);
-        NaturalGasFuel.setByproductAmount(750);
+        NaturalGasFuel.duration = 100;
+        NaturalGasFuel.amountToBurn = 160;
+        NaturalGasFuel.byproductAmount = 750;
 
         IFluidFuel MethaneFuel = new IFluidFuel(Methane, FlueGas);
-        MethaneFuel.setDuration(80);
-        MethaneFuel.setAmountToBurn(160);
-        MethaneFuel.setByproductAmount(500);
+        MethaneFuel.duration = 80;
+        MethaneFuel.amountToBurn = 160;
+        MethaneFuel.byproductAmount = 500;
 
         IFluidFuel EthaneFuel = new IFluidFuel(Ethane, FlueGas);
-        EthaneFuel.setDuration(85);
-        EthaneFuel.setAmountToBurn(160);
-        EthaneFuel.setByproductAmount(500);
+        EthaneFuel.duration = 85;
+        EthaneFuel.amountToBurn = 160;
+        EthaneFuel.byproductAmount = 500;
 
         IFluidFuel ButadieneFuel = new IFluidFuel(Butadiene, FlueGas);
-        ButadieneFuel.setDuration(100);
-        ButadieneFuel.setAmountToBurn(160);
-        ButadieneFuel.setByproductAmount(600);
+        ButadieneFuel.duration = 100;
+        ButadieneFuel.amountToBurn = 160;
+        ButadieneFuel.byproductAmount = 600;
 
         IFluidFuel PropaneFuel = new IFluidFuel(Propane, FlueGas);
-        PropaneFuel.setDuration(90);
-        PropaneFuel.setAmountToBurn(160);
-        PropaneFuel.setByproductAmount(500);
+        PropaneFuel.duration = 90;
+        PropaneFuel.amountToBurn = 160;
+        PropaneFuel.byproductAmount = 500;
 
         IFluidFuel ButaneFuel = new IFluidFuel(Butane, FlueGas);
-        ButaneFuel.setDuration(95);
-        ButaneFuel.setAmountToBurn(160);
-        ButaneFuel.setByproductAmount(500);
+        ButaneFuel.duration = 95;
+        ButaneFuel.amountToBurn = 160;
+        ButaneFuel.byproductAmount = 500;
 
         IFluidFuel TolueneFuel = new IFluidFuel(Toluene, FlueGas);
-        TolueneFuel.setDuration(160);
-        TolueneFuel.setAmountToBurn(10);
-        TolueneFuel.setByproductAmount(1000);
+        TolueneFuel.duration = 160;
+        TolueneFuel.amountToBurn = 10;
+        TolueneFuel.byproductAmount = 1000;
 
         IFluidFuel WoodGasFuel = new IFluidFuel(WoodGas, FlueGas);
-        WoodGasFuel.setDuration(80);
-        WoodGasFuel.setAmountToBurn(160);
-        WoodGasFuel.setByproductAmount(750);
+        WoodGasFuel.duration = 80;
+        WoodGasFuel.amountToBurn = 160;
+        WoodGasFuel.byproductAmount = 750;
 
         IFluidFuel CoalGasFuel = new IFluidFuel(CoalGas, FlueGas);
-        CoalGasFuel.setDuration(90);
-        CoalGasFuel.setAmountToBurn(160);
-        CoalGasFuel.setByproductAmount(750);
+        CoalGasFuel.duration = 90;
+        CoalGasFuel.amountToBurn = 160;
+        CoalGasFuel.byproductAmount = 750;
 
         IFluidFuel SyngasFuel = new IFluidFuel(Syngas, FlueGas);
-        SyngasFuel.setDuration(200);
-        SyngasFuel.setAmountToBurn(160);
-        SyngasFuel.setByproductAmount(1500);
+        SyngasFuel.duration = 200;
+        SyngasFuel.amountToBurn = 160;
+        SyngasFuel.byproductAmount = 1500;
 
         IFluidFuel EthyleneFuel = new IFluidFuel(Ethylene, FlueGas);
-        EthyleneFuel.setDuration(85);
-        EthyleneFuel.setAmountToBurn(160);
-        EthyleneFuel.setByproductAmount(500);
+        EthyleneFuel.duration = 85;
+        EthyleneFuel.amountToBurn = 160;
+        EthyleneFuel.byproductAmount = 500;
 
         IFluidFuel RefineryGasFuel = new IFluidFuel(RefineryGas, FlueGas);
-        RefineryGasFuel.setDuration(100);
-        RefineryGasFuel.setAmountToBurn(160);
-        RefineryGasFuel.setByproductAmount(750);
+        RefineryGasFuel.duration = 100;
+        RefineryGasFuel.amountToBurn = 160;
+        RefineryGasFuel.byproductAmount = 750;
 
         IFluidFuel AmmoniaFuel = new IFluidFuel(Ammonia, Nitrogen);
-        AmmoniaFuel.setDuration(70);
-        AmmoniaFuel.setAmountToBurn(160);
-        AmmoniaFuel.setByproductAmount(500);
+        AmmoniaFuel.duration = 70;
+        AmmoniaFuel.amountToBurn = 160;
+        AmmoniaFuel.byproductAmount = 500;
 
         IFluidFuel PropeneFuel = new IFluidFuel(Propene, FlueGas);
-        PropeneFuel.setDuration(85);
-        PropeneFuel.setAmountToBurn(160);
-        PropeneFuel.setByproductAmount(500);
+        PropeneFuel.duration = 85;
+        PropeneFuel.amountToBurn = 160;
+        PropeneFuel.byproductAmount = 500;
 
         IFluidFuel ButeneFuel = new IFluidFuel(Butene, FlueGas);
-        ButeneFuel.setDuration(90);
-        ButeneFuel.setAmountToBurn(160);
-        ButeneFuel.setByproductAmount(500);
+        ButeneFuel.duration = 90;
+        ButeneFuel.amountToBurn = 160;
+        ButeneFuel.byproductAmount = 500;
 
         IFluidFuel PhenolFuel = new IFluidFuel(Phenol, FlueGas);
-        PhenolFuel.setDuration(120);
-        PhenolFuel.setAmountToBurn(10);
-        PhenolFuel.setByproductAmount(750);
+        PhenolFuel.duration = 120;
+        PhenolFuel.amountToBurn = 10;
+        PhenolFuel.byproductAmount = 750;
 
         IFluidFuel BenzeneFuel = new IFluidFuel(Benzene, FlueGas);
-        BenzeneFuel.setDuration(120);
-        BenzeneFuel.setAmountToBurn(10);
-        BenzeneFuel.setByproductAmount(750);
+        BenzeneFuel.duration = 120;
+        BenzeneFuel.amountToBurn = 10;
+        BenzeneFuel.byproductAmount = 750;
 
         IFluidFuel HydrogenFuel = new IFluidFuel(Hydrogen, Steam);
-        HydrogenFuel.setDuration(10);
-        HydrogenFuel.setAmountToBurn(160);
-        HydrogenFuel.setByproductAmount(80);
+        HydrogenFuel.duration = 10;
+        HydrogenFuel.amountToBurn = 160;
+        HydrogenFuel.byproductAmount = 80;
 
         IFluidFuel MethanolFuel = new IFluidFuel(Methanol, FlueGas);
-        MethanolFuel.setDuration(40);
-        MethanolFuel.setAmountToBurn(10);
-        MethanolFuel.setByproductAmount(1000);
-        MethanolFuel.setIsRefinedFuel(true);
+        MethanolFuel.duration = 40;
+        MethanolFuel.amountToBurn = 10;
+        MethanolFuel.byproductAmount = 1000;
+        MethanolFuel.refinedFuel = true;
 
         IFluidFuel EthanolFuel = new IFluidFuel(Ethanol, FlueGas);
-        EthanolFuel.setDuration(48);
-        EthanolFuel.setAmountToBurn(10);
-        EthanolFuel.setByproductAmount(1200);
-        EthanolFuel.setIsRefinedFuel(true);
+        EthanolFuel.duration = 48;
+        EthanolFuel.amountToBurn = 10;
+        EthanolFuel.byproductAmount = 1200;
+        EthanolFuel.refinedFuel = true;
 
         IFluidFuel LiquidNaturalGasFuel = new IFluidFuel(LiquidNaturalGas, FlueGas);
-        LiquidNaturalGasFuel.setDuration(120);
-        LiquidNaturalGasFuel.setAmountToBurn(10);
-        LiquidNaturalGasFuel.setByproductAmount(1250);
-        LiquidNaturalGasFuel.setIsRefinedFuel(true);
+        LiquidNaturalGasFuel.duration = 120;
+        LiquidNaturalGasFuel.amountToBurn = 10;
+        LiquidNaturalGasFuel.byproductAmount = 1250;
+        LiquidNaturalGasFuel.refinedFuel = true;
 
         IFluidFuel FuelOilFuel = new IFluidFuel(FuelOil, FlueGas);
-        FuelOilFuel.setDuration(100);
-        FuelOilFuel.setAmountToBurn(10);
-        FuelOilFuel.setByproductAmount(2000);
-        FuelOilFuel.setIsRefinedFuel(true);
+        FuelOilFuel.duration = 100;
+        FuelOilFuel.amountToBurn = 10;
+        FuelOilFuel.byproductAmount = 2000;
+        FuelOilFuel.refinedFuel = true;
 
         IFluidFuel BioDieselFuel = new IFluidFuel(BioDiesel, FlueGas);
-        BioDieselFuel.setDuration(75);
-        BioDieselFuel.setAmountToBurn(10);
-        BioDieselFuel.setByproductAmount(1500);
-        BioDieselFuel.setIsRefinedFuel(true);
+        BioDieselFuel.duration = 75;
+        BioDieselFuel.amountToBurn = 10;
+        BioDieselFuel.byproductAmount = 1500;
+        BioDieselFuel.refinedFuel = true;
 
         IFluidFuel DieselFuel = new IFluidFuel(Diesel, FlueGas);
-        DieselFuel.setDuration(100);
-        DieselFuel.setAmountToBurn(10);
-        DieselFuel.setByproductAmount(2000);
-        DieselFuel.setIsRefinedFuel(true);
+        DieselFuel.duration = 100;
+        DieselFuel.amountToBurn = 10;
+        DieselFuel.byproductAmount = 2000;
+        DieselFuel.refinedFuel = true;
 
         IFluidFuel MidgradeDieselFuel = new IFluidFuel(MidgradeDiesel, FlueGas);
-        MidgradeDieselFuel.setDuration(150);
-        MidgradeDieselFuel.setAmountToBurn(10);
-        MidgradeDieselFuel.setByproductAmount(3000);
-        MidgradeDieselFuel.setIsRefinedFuel(true);
+        MidgradeDieselFuel.duration = 150;
+        MidgradeDieselFuel.amountToBurn = 10;
+        MidgradeDieselFuel.byproductAmount = 3000;
+        MidgradeDieselFuel.refinedFuel = true;
 
         IFluidFuel PremiumDieselFuel = new IFluidFuel(PremiumDiesel, FlueGas);
-        PremiumDieselFuel.setDuration(200);
-        PremiumDieselFuel.setAmountToBurn(10);
-        PremiumDieselFuel.setByproductAmount(4000);
-        PremiumDieselFuel.setIsRefinedFuel(true);
+        PremiumDieselFuel.duration = 200;
+        PremiumDieselFuel.amountToBurn = 10;
+        PremiumDieselFuel.byproductAmount = 4000;
+        PremiumDieselFuel.refinedFuel = true;
 
         IFluidFuel SupremeDieselFuel = new IFluidFuel(SupremeDiesel, FlueGas);
-        SupremeDieselFuel.setDuration(250);
-        SupremeDieselFuel.setAmountToBurn(10);
-        SupremeDieselFuel.setByproductAmount(5000);
-        SupremeDieselFuel.setIsRefinedFuel(true);
+        SupremeDieselFuel.duration = 250;
+        SupremeDieselFuel.amountToBurn = 10;
+        SupremeDieselFuel.byproductAmount = 5000;
+        SupremeDieselFuel.refinedFuel = true;
 
         IFluidFuel GasolineFuel = new IFluidFuel(Gasoline, FlueGas);
-        GasolineFuel.setDuration(100);
-        GasolineFuel.setAmountToBurn(10);
-        GasolineFuel.setByproductAmount(2000);
-        GasolineFuel.setIsRefinedFuel(true);
+        GasolineFuel.duration = 100;
+        GasolineFuel.amountToBurn = 10;
+        GasolineFuel.byproductAmount = 2000;
+        GasolineFuel.refinedFuel = true;
 
         IFluidFuel MidgradeGasolineFuel = new IFluidFuel(MidgradeGasoline, FlueGas);
-        MidgradeGasolineFuel.setDuration(150);
-        MidgradeGasolineFuel.setAmountToBurn(10);
-        MidgradeGasolineFuel.setByproductAmount(3000);
-        MidgradeGasolineFuel.setIsRefinedFuel(true);
+        MidgradeGasolineFuel.duration = 150;
+        MidgradeGasolineFuel.amountToBurn = 10;
+        MidgradeGasolineFuel.byproductAmount = 3000;
+        MidgradeGasolineFuel.refinedFuel = true;
 
         IFluidFuel PremiumGasolineFuel = new IFluidFuel(PremiumGasoline, FlueGas);
-        PremiumGasolineFuel.setDuration(200);
-        PremiumGasolineFuel.setAmountToBurn(10);
-        PremiumGasolineFuel.setByproductAmount(4000);
-        PremiumGasolineFuel.setIsRefinedFuel(true);
+        PremiumGasolineFuel.duration = 200;
+        PremiumGasolineFuel.amountToBurn = 10;
+        PremiumGasolineFuel.byproductAmount = 4000;
+        PremiumGasolineFuel.refinedFuel = true;
 
         IFluidFuel SupremeGasolineFuel = new IFluidFuel(SupremeGasoline, FlueGas);
-        SupremeGasolineFuel.setDuration(250);
-        SupremeGasolineFuel.setAmountToBurn(10);
-        SupremeGasolineFuel.setByproductAmount(5000);
-        SupremeGasolineFuel.setIsRefinedFuel(true);
+        SupremeGasolineFuel.duration = 250;
+        SupremeGasolineFuel.amountToBurn = 10;
+        SupremeGasolineFuel.byproductAmount = 5000;
+        SupremeGasolineFuel.refinedFuel = true;
 
         IFluidFuel KeroseneFuel = new IFluidFuel(Kerosene, FlueGas);
-        KeroseneFuel.setDuration(100);
-        KeroseneFuel.setAmountToBurn(10);
-        KeroseneFuel.setByproductAmount(1000);
-        KeroseneFuel.setIsRefinedFuel(true);
+        KeroseneFuel.duration = 100;
+        KeroseneFuel.amountToBurn = 10;
+        KeroseneFuel.byproductAmount = 1000;
+        KeroseneFuel.refinedFuel = true;
 
         IFluidFuel MidgradeKeroseneFuel = new IFluidFuel(MidgradeKerosene, FlueGas);
-        MidgradeKeroseneFuel.setDuration(150);
-        MidgradeKeroseneFuel.setAmountToBurn(10);
-        MidgradeKeroseneFuel.setByproductAmount(3000);
-        MidgradeKeroseneFuel.setIsRefinedFuel(true);
+        MidgradeKeroseneFuel.duration = 150;
+        MidgradeKeroseneFuel.amountToBurn = 10;
+        MidgradeKeroseneFuel.byproductAmount = 3000;
+        MidgradeKeroseneFuel.refinedFuel = true;
 
         IFluidFuel PremiumKeroseneFuel = new IFluidFuel(PremiumKerosene, FlueGas);
-        PremiumKeroseneFuel.setDuration(200);
-        PremiumKeroseneFuel.setAmountToBurn(10);
-        PremiumKeroseneFuel.setByproductAmount(4000);
-        PremiumKeroseneFuel.setIsRefinedFuel(true);
+        PremiumKeroseneFuel.duration = 200;
+        PremiumKeroseneFuel.amountToBurn = 10;
+        PremiumKeroseneFuel.byproductAmount = 4000;
+        PremiumKeroseneFuel.refinedFuel = true;
 
         IFluidFuel SupremeKeroseneFuel = new IFluidFuel(SupremeKerosene, FlueGas);
-        SupremeKeroseneFuel.setDuration(250);
-        SupremeKeroseneFuel.setAmountToBurn(10);
-        SupremeKeroseneFuel.setByproductAmount(5000);
-        SupremeKeroseneFuel.setIsRefinedFuel(true);
+        SupremeKeroseneFuel.duration = 250;
+        SupremeKeroseneFuel.amountToBurn = 10;
+        SupremeKeroseneFuel.byproductAmount = 5000;
+        SupremeKeroseneFuel.refinedFuel = true;
 
         IFluidFuel[] fluidFuels = {
                 NaphthaFuel,
@@ -919,71 +936,71 @@ public class Thermodynamics {
         };
 
         IWorkingFluid WaterWF = new IWorkingFluid(Water, Steam, ExhaustSteam);
-        WaterWF.setDuration(10);
-        WaterWF.setAmountToUse(6);
-        WaterWF.setEfficiency(1);
-        WaterWF.setConversionFactor(160);
+        WaterWF.duration = 10;
+        WaterWF.amountToUse = 6;
+        WaterWF.efficiency = 1;
+        WaterWF.conversionFactor = 160;
 
         IWorkingFluid[] workingFluids = {
                 WaterWF
         };
 
         for (IFluidFuel fluidFuel : fluidFuels) {
-            if (fluidFuel.gas_turbine) {
-                if (fluidFuel.refined_fuel) {
+            if (fluidFuel.gasTurbine) {
+                if (fluidFuel.refinedFuel) {
                     GAS_TURBINE_FUELS.recipeBuilder()
                             .circuitMeta(1)
-                            .fluidInputs(fluidFuel.liquid_fuel.getFluid(fluidFuel.amount_to_burn))
+                            .fluidInputs(fluidFuel.liquidFuel.getFluid(fluidFuel.amountToBurn))
                             .fluidInputs(Air.getFluid(100))
-                            .fluidOutputs(fluidFuel.byproduct.getFluid(fluidFuel.byproduct_amount))
+                            .fluidOutputs(fluidFuel.byproduct.getFluid(fluidFuel.byproductAmount))
                             .duration(fluidFuel.duration)
                             .EUt(128)
                             .buildAndRegister();
 
                     GAS_TURBINE_FUELS.recipeBuilder()
                             .circuitMeta(1)
-                            .fluidInputs(fluidFuel.liquid_fuel.getFluid(fluidFuel.amount_to_burn))
+                            .fluidInputs(fluidFuel.liquidFuel.getFluid(fluidFuel.amountToBurn))
                             .fluidInputs(Oxygen.getFluid(20))
-                            .fluidOutputs(fluidFuel.byproduct.getFluid((int) (fluidFuel.byproduct_amount * 1.5f)))
+                            .fluidOutputs(fluidFuel.byproduct.getFluid((int) (fluidFuel.byproductAmount * 1.5f)))
                             .duration((int) (fluidFuel.duration * 1.5))
                             .EUt(128)
                             .buildAndRegister();
                 } else {
                     GAS_TURBINE_FUELS.recipeBuilder()
                             .circuitMeta(1)
-                            .fluidInputs(fluidFuel.liquid_fuel.getFluid(fluidFuel.amount_to_burn))
+                            .fluidInputs(fluidFuel.liquidFuel.getFluid(fluidFuel.amountToBurn))
                             .fluidInputs(Air.getFluid(100))
-                            .fluidOutputs(fluidFuel.byproduct.getFluid(fluidFuel.byproduct_amount))
+                            .fluidOutputs(fluidFuel.byproduct.getFluid(fluidFuel.byproductAmount))
                             .duration(fluidFuel.duration)
                             .EUt(32)
                             .buildAndRegister();
 
                     GAS_TURBINE_FUELS.recipeBuilder()
                             .circuitMeta(1)
-                            .fluidInputs(fluidFuel.liquid_fuel.getFluid(fluidFuel.amount_to_burn))
+                            .fluidInputs(fluidFuel.liquidFuel.getFluid(fluidFuel.amountToBurn))
                             .fluidInputs(Oxygen.getFluid(20))
-                            .fluidOutputs(fluidFuel.byproduct.getFluid((int) (fluidFuel.byproduct_amount * 1.5f)))
+                            .fluidOutputs(fluidFuel.byproduct.getFluid((int) (fluidFuel.byproductAmount * 1.5f)))
                             .duration((int) (fluidFuel.duration * 1.5))
                             .EUt(32)
                             .buildAndRegister();
                 }
 
                 for (ILubricant lubricant : lubricants) {
-                    if (fluidFuel.refined_fuel) {
+                    if (fluidFuel.refinedFuel) {
                         GAS_TURBINE_FUELS.recipeBuilder()
-                                .fluidInputs(lubricant.name.getFluid(lubricant.amount_required))
-                                .fluidInputs(fluidFuel.liquid_fuel.getFluid(fluidFuel.amount_to_burn))
+                                .fluidInputs(lubricant.name.getFluid(lubricant.amountRequired))
+                                .fluidInputs(fluidFuel.liquidFuel.getFluid(fluidFuel.amountToBurn))
                                 .fluidInputs(Oxygen.getFluid(20))
-                                .fluidOutputs(fluidFuel.byproduct.getFluid((int) (fluidFuel.byproduct_amount * 1.5f)))
+                                .fluidOutputs(fluidFuel.byproduct.getFluid((int) (fluidFuel.byproductAmount * 1.5f)))
                                 .duration((int) (fluidFuel.duration * lubricant.boost * 1.5))
                                 .EUt(128)
                                 .buildAndRegister();
                     } else {
                         GAS_TURBINE_FUELS.recipeBuilder()
-                                .fluidInputs(lubricant.name.getFluid(lubricant.amount_required))
-                                .fluidInputs(fluidFuel.liquid_fuel.getFluid(fluidFuel.amount_to_burn))
+                                .fluidInputs(lubricant.name.getFluid(lubricant.amountRequired))
+                                .fluidInputs(fluidFuel.liquidFuel.getFluid(fluidFuel.amountToBurn))
                                 .fluidInputs(Oxygen.getFluid(20))
-                                .fluidOutputs(fluidFuel.byproduct.getFluid((int) (fluidFuel.byproduct_amount * 1.5f)))
+                                .fluidOutputs(fluidFuel.byproduct.getFluid((int) (fluidFuel.byproductAmount * 1.5f)))
                                 .duration((int) (fluidFuel.duration * lubricant.boost * 1.5))
                                 .EUt(32)
                                 .buildAndRegister();
@@ -993,7 +1010,7 @@ public class Thermodynamics {
 
             //THIS IS ONLY ADDED SO THAT IT IS A VALID JETPACK FUEL
             COMBUSTION_GENERATOR_FUELS.recipeBuilder()
-                    .fluidInputs(fluidFuel.liquid_fuel.getFluid(25))
+                    .fluidInputs(fluidFuel.liquidFuel.getFluid(25))
                     .duration(100)
                     .EUt(1)
                     .buildAndRegister();
@@ -1001,58 +1018,58 @@ public class Thermodynamics {
 
         for (IWorkingFluid workingFluid : workingFluids) {
             HEAT_EXCHANGER_RECIPES.recipeBuilder()
-                    .fluidInputs(workingFluid.normal_fluid.getFluid(workingFluid.amount_to_use))
+                    .fluidInputs(workingFluid.normalFluid.getFluid(workingFluid.amountToUse))
                     .fluidInputs(DesulfurizedFlueGas.getFluid(500))
-                    .fluidOutputs(workingFluid.heated_fluid.getFluid(workingFluid.amount_to_use * workingFluid.conversion_factor))
+                    .fluidOutputs(workingFluid.heatedFluid.getFluid(workingFluid.amountToUse * workingFluid.conversionFactor))
                     .fluidOutputs(ChilledFlueGas.getFluid(500))
                     .duration((int) (workingFluid.duration * 0.75))
                     .buildAndRegister();
 
             HEAT_EXCHANGER_RECIPES.recipeBuilder()
-                    .fluidInputs(workingFluid.normal_fluid.getFluid(workingFluid.amount_to_use))
+                    .fluidInputs(workingFluid.normalFluid.getFluid(workingFluid.amountToUse))
                     .fluidInputs(FlueGas.getFluid(500))
-                    .fluidOutputs(workingFluid.heated_fluid.getFluid(workingFluid.amount_to_use * workingFluid.conversion_factor))
+                    .fluidOutputs(workingFluid.heatedFluid.getFluid(workingFluid.amountToUse * workingFluid.conversionFactor))
                     .fluidOutputs(ChilledFlueGas.getFluid(500))
                     .duration(workingFluid.duration)
                     .buildAndRegister();
 
             STEAM_TURBINE_FUELS.recipeBuilder()
-                    .fluidInputs(workingFluid.heated_fluid.getFluid(workingFluid.amount_to_use * workingFluid.conversion_factor))
-                    .fluidOutputs(workingFluid.leftover_fluid.getFluid(workingFluid.amount_to_use * workingFluid.conversion_factor))
+                    .fluidInputs(workingFluid.heatedFluid.getFluid(workingFluid.amountToUse * workingFluid.conversionFactor))
+                    .fluidOutputs(workingFluid.leftoverFluid.getFluid(workingFluid.amountToUse * workingFluid.conversionFactor))
                     .duration(workingFluid.duration * workingFluid.efficiency)
                     .EUt(32)
                     .buildAndRegister();
 
             LARGE_STEAM_TURBINE.recipeBuilder()
                     .circuitMeta(1)
-                    .fluidInputs(workingFluid.heated_fluid.getFluid(workingFluid.amount_to_use * workingFluid.conversion_factor))
-                    .fluidOutputs(workingFluid.leftover_fluid.getFluid(workingFluid.amount_to_use * workingFluid.conversion_factor))
+                    .fluidInputs(workingFluid.heatedFluid.getFluid(workingFluid.amountToUse * workingFluid.conversionFactor))
+                    .fluidOutputs(workingFluid.leftoverFluid.getFluid(workingFluid.amountToUse * workingFluid.conversionFactor))
                     .duration(workingFluid.duration * workingFluid.efficiency)
                     .EUt(32)
                     .buildAndRegister();
 
             for (var lubricant : lubricants) {
                 LARGE_STEAM_TURBINE.recipeBuilder()
-                        .fluidInputs(lubricant.name.getFluid(lubricant.amount_required))
-                        .fluidInputs(workingFluid.heated_fluid.getFluid(workingFluid.amount_to_use * workingFluid.conversion_factor))
-                        .fluidOutputs(workingFluid.leftover_fluid.getFluid(workingFluid.amount_to_use * workingFluid.conversion_factor))
+                        .fluidInputs(lubricant.name.getFluid(lubricant.amountRequired))
+                        .fluidInputs(workingFluid.heatedFluid.getFluid(workingFluid.amountToUse * workingFluid.conversionFactor))
+                        .fluidOutputs(workingFluid.leftoverFluid.getFluid(workingFluid.amountToUse * workingFluid.conversionFactor))
                         .duration((int) (workingFluid.duration * workingFluid.efficiency * lubricant.boost))
                         .EUt(32)
                         .buildAndRegister();
             }
 
             COOLING_TOWER_RECIPES.recipeBuilder()
-                    .fluidInputs(workingFluid.leftover_fluid.getFluid(workingFluid.amount_to_use * workingFluid.conversion_factor * 64))
+                    .fluidInputs(workingFluid.leftoverFluid.getFluid(workingFluid.amountToUse * workingFluid.conversionFactor * 64))
                     .fluidInputs(Water.getFluid(1000))
-                    .fluidOutputs(workingFluid.normal_fluid.getFluid(workingFluid.amount_to_use * 64))
+                    .fluidOutputs(workingFluid.normalFluid.getFluid(workingFluid.amountToUse * 64))
                     .fluidOutputs(Water.getFluid(750))
                     .duration(workingFluid.duration)
                     .EUt(8)
                     .buildAndRegister();
 
             HEAT_RADIATOR_RECIPES.recipeBuilder()
-                    .fluidInputs(workingFluid.leftover_fluid.getFluid(workingFluid.amount_to_use * workingFluid.conversion_factor * 16))
-                    .fluidOutputs(workingFluid.normal_fluid.getFluid(workingFluid.amount_to_use * 16))
+                    .fluidInputs(workingFluid.leftoverFluid.getFluid(workingFluid.amountToUse * workingFluid.conversionFactor * 16))
+                    .fluidOutputs(workingFluid.normalFluid.getFluid(workingFluid.amountToUse * 16))
                     .duration(workingFluid.duration)
                     .EUt(8)
                     .buildAndRegister();
