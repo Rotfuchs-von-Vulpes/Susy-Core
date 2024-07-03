@@ -18,13 +18,11 @@ import supersymmetry.Supersymmetry;
 import supersymmetry.api.recipes.catalysts.CatalystGroup;
 import supersymmetry.api.recipes.catalysts.CatalystInfo;
 import supersymmetry.common.CommonProxy;
-import supersymmetry.common.SusyMetaEntities;
 import supersymmetry.common.blocks.SheetedFrameItemBlock;
 import supersymmetry.common.blocks.SuSyBlocks;
 import supersymmetry.common.blocks.SuSyMetaBlocks;
 import supersymmetry.entity.SuSyEntityList;
 import supersymmetry.loaders.SuSyFluidTooltipLoader;
-import supersymmetry.loaders.SuSyIRLoader;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -38,8 +36,6 @@ public class ClientProxy extends CommonProxy {
     public void preLoad() {
         super.preLoad();
         SuSyEntityList.registerRenders();
-        SusyMetaEntities.initRenderers();
-        SuSyIRLoader.initEntityRenderers();
     }
 
     @Override

@@ -44,6 +44,7 @@ public class SuSyWorldGen {
     }
 
     public void createDummyFile() throws IOException {
+        SusyLog.logger.info("Creating dummy file");
         Files.createDirectories(DUMMY_FILE_PATH.getParent());
         Files.createFile(DUMMY_FILE_PATH);
     }

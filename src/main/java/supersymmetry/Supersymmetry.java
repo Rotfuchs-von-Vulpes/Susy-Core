@@ -6,8 +6,8 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import org.jetbrains.annotations.NotNull;
+import supersymmetry.api.SusyLog;
 import supersymmetry.api.sound.SusySounds;
 import supersymmetry.common.CommonProxy;
 import supersymmetry.common.blocks.SuSyBlocks;
@@ -16,11 +16,9 @@ import supersymmetry.common.covers.SuSyCoverBehaviors;
 import supersymmetry.common.item.SuSyMetaItems;
 import supersymmetry.common.metatileentities.SuSyMetaTileEntities;
 import supersymmetry.common.world.SuSyInitWorldGen;
-import supersymmetry.entity.SuSyEntityList;
 import supersymmetry.worldGen.SuSyWorldGen;
 
 import java.io.IOException;
-import supersymmetry.loaders.SuSyIRLoader;
 
 @Mod(name = Supersymmetry.NAME, modid = Supersymmetry.MODID, version = "0.1.12", dependencies = GTInternalTags.DEP_VERSION_STRING + ";required-after:gcym;required-after:gregtechfoodoption;required-after:notreepunching")
 
@@ -39,8 +37,6 @@ public class Supersymmetry {
     public void onModConstruction(FMLConstructionEvent event) {
         //This is now a config option I think
         //GTValues.HT = true;
-        SuSyIRLoader.initDefinitions();
-        SuSyIRLoader.initEntities();
     }
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -72,8 +68,11 @@ public class Supersymmetry {
 
         try {
             if (!doesDummyFileExist) {
+                SusyLog.logger.info("Dummy file not exists");
                 SuSyWorldGen.INSTANCE.addRemoveVeins();
                 SuSyWorldGen.INSTANCE.createDummyFile();
+            } else {
+                SusyLog.logger.info("Dummy file exists");
             }
         } catch (IOException e) {
             e.printStackTrace();
