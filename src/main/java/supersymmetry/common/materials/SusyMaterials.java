@@ -2,6 +2,7 @@ package supersymmetry.common.materials;
 
 import gregtech.api.GregTechAPI;
 import gregtech.api.fluids.FluidBuilder;
+import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
@@ -10,6 +11,7 @@ import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.properties.*;
 import supersymmetry.api.SusyLog;
 import supersymmetry.api.unification.material.info.SuSyMaterialFlags;
+import supersymmetry.api.util.SuSyUtility;
 
 import java.lang.reflect.Field;
 import java.util.HashSet;
@@ -494,6 +496,30 @@ public class SusyMaterials {
     public static Material SpandexPolymerizationMix;
     public static Material AcrylicPhotoemulsion;
     public static Material TreatedCollagen;
+    public static Material ImpureCadmiumSulfateSolution;
+    public static Material TannicAcidSolution;
+    public static Material GermaniumLeach;
+    public static Material GermaniumConcentrate;
+    public static Material ImpureGermaniumTetrachloride;
+    public static Material GermaniumOxalateLeach;
+    public static Material PurifiedGermaniumOxalateLeach;
+    public static Material GermaniumGalliumExtractionMixture;
+    public static Material GermaniumGalliumExtract;
+    public static Material GermaniumExtract;
+    public static Material GermaniumOxalateSolution;
+    public static Material CrudeIndiumIIIHydroxide;
+    public static Material IndiumResidue;
+    public static Material IndiumLeach;
+    public static Material CrudeIndiumIIISulfateSolution;
+    public static Material SulfatizedLeadSlime;
+    public static Material ImpureIndiumLeach;
+    public static Material ZincHydrochloricLeachResidue;
+    public static Material CopperAnodeSlimePaste;
+    public static Material SeleniumTelluriumConcentrate;
+    public static Material TelluriumResidue;
+    public static Material TelluriumSlag;
+    public static Material PolluciteLeach;
+    public static Material CaesiumRubidiumAlumMixture;
 
 // Petrochem Materials
 
@@ -630,7 +656,7 @@ public class SusyMaterials {
     public static Material AluminiumTrifluoride;
     public static Material GalliumPhosphate;
     public static Material LithiumNiobate;
-    public static Material LeadZirconateTitanite;
+    public static Material LeadZirconateTitanate;
     public static Material BoricAcid;
     public static Material AmorphousBoron;
     public static Material BoronTrioxide;
@@ -778,7 +804,6 @@ public class SusyMaterials {
     public static Material BetaSpodumene;
     public static Material LithiumSulfate;
     public static Material AluminiumPhosphate;
-    public static Material LithiumChloride;
     public static Material AluminiumSilicate;
     public static Material SodiumFluorosilicate;
     public static Material BerylliumHydroxide;
@@ -917,7 +942,6 @@ public class SusyMaterials {
     public static Material ElectrolyticChromium;
     public static Material GalliumTrioxide;
     public static Material AmmoniumDihydrogenPhosphate;
-    public static Material AluminiumCarbonate;
     public static Material IronCarbonate;
     public static Material AmmoniumDiuranate;
     public static Material VanadiumOxydichloride;
@@ -937,7 +961,6 @@ public class SusyMaterials {
     public static Material GoldAmalgam;
     public static Material AntimonyTrichloride;
     public static Material AntimonyPentachloride;
-    public static Material DilutedSilverNitrateSolution;
     public static Material DecarburizedAir;
     public static Material MolybdenumTrisulfide;
     public static Material AmmoniumIsopolytungstateSolution;
@@ -1018,6 +1041,33 @@ public class SusyMaterials {
     public static Material SaltyHydrofluoricAcid;
     public static Material SiliconTetrachloride;
     public static Material PurifiedSiliconTetrachloride;
+    public static Material ThalliumIChloride;
+    public static Material AcidicThalliumSulfateSolution;
+    public static Material ThalliumSulfateSolution;
+    public static Material ArsenicIIIOxide;
+    public static Material AntimonyIIIOxide;
+    public static Material PurifiedCadmiumSolution;
+    public static Material GermaniumTetrachloride;
+    public static Material GermaniumDioxide;
+    public static Material IronOxalateDihydrate;
+    public static Material IndiumIIISulfateSolution;
+    public static Material ZincSulfateSolution;
+    public static Material SodiumSelenateSolution;
+    public static Material SodiumSeleniteSolution;
+    public static Material HydrogenSelenide;
+    public static Material TelluriumDioxide;
+    public static Material SodiumTelluriteSolution;
+    public static Material SodiumAlum;
+    public static Material CaesiumAlum;
+    public static Material RubidiumAlum;
+    public static Material CaesiumSulfateSolution;
+    public static Material CaesiumChloride;
+    public static Material ReducedCaesiumMixture;
+    public static Material CaesiumHydroxideSolution;
+    public static Material CaesiumFormateSolution;
+    public static Material RubidiumHydroxide;
+    public static Material DilutedSilverNitrateSolution;
+    public static Material AluminiumCarbonate;
 
 // HP Materials
 
@@ -1196,6 +1246,12 @@ public class SusyMaterials {
     public static Material MixedCyanideSolution;
     public static Material SupportedMolybdenumVanadium;
     public static Material ChlorinatedBeryl;
+    public static Material IndiumChlorideSolution;
+    public static Material TelluriumLiquor;
+    public static Material CaesiumAluminaMixture;
+    public static Material CaesiumChlorideSolution;
+    public static Material RubidiumHydroxideSolution;
+    public static Material SodiumAlumSolution;
 
 // Organic Chemistry Materials
 
@@ -1587,6 +1643,13 @@ public class SusyMaterials {
     public static Material Dichlorodifluoromethane;
     public static Material Chlorotrifluoromethane;
     public static Material Chlorodifluoromethane;
+    public static Material SodiumMethoxide;
+    public static Material NeutralizedMethylFormateSolution;
+    public static Material HydrolyzedMethylFormateSolution;
+    public static Material EthylAcetate;
+    public static Material FormicAcid;
+    public static Material MethylFormateSolution;
+    public static Material PolyvinylAlcohol;
 
 // Third Degree Materials
 
@@ -1686,6 +1749,10 @@ public class SusyMaterials {
     public static Material DilutedDiTertButylPeroxide;
     public static Material DilutedTwoEthylhexylNitrate;
     public static Material DilutedNitromethane;
+    public static Material SpentPBISolution;
+    public static Material OxalicAcidSolution;
+    public static Material GalliumSulfateSolution;
+    public static Material FormicAcidWaterAzeotrope;
 
 // Thermodynamics Materials
     public static Material EarthLikeAir;
@@ -1722,7 +1789,6 @@ public class SusyMaterials {
     public static Material LiquidWasteNitrogen;
     public static Material PartiallyLiquefiedArgon;
     public static Material SupercriticalCarbonDioxide;
-
     public static Material HotHighPressureHydrogen;
     public static Material HighPressureHydrogen;
     public static Material ColdHighPressureHydrogen;
@@ -1838,7 +1904,6 @@ public class SusyMaterials {
     public static Material CoolEarthGreenhouseGas;
     public static Material CoolDryEarthGreenhouseGas;
     public static Material CoolHumidEarthGreenhouseGas;
-
     public static Material Uwunium;
     public static Material Cien;
     public static Material Cacatua;

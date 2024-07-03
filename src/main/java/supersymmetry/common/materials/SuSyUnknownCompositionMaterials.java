@@ -1802,6 +1802,126 @@ public class SuSyUnknownCompositionMaterials {
                 .components(HydrochloricAcid, 9, HydrofluoricAcid, 9, AceticAcid, 2)
                 .color(0x3e7d68)
                 .build();
+
+        ImpureCadmiumSulfateSolution = new Material.Builder(4400, SuSyUtility.susyId("impure_cadmium_sulfate_solution"))
+                .liquid()
+                .color(0x6f8485)
+                .build();
+
+        TannicAcidSolution = new Material.Builder(4401, SuSyUtility.susyId("tannic_acid_solution"))
+                .liquid()
+                .color(0x702507)
+                .build();
+
+        GermaniumLeach = new Material.Builder(4402, SuSyUtility.susyId("germanium_leach"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0x7ecccb)
+                .build();
+
+        GermaniumConcentrate = new Material.Builder(4403, SuSyUtility.susyId("germanium_concentrate"))
+                .dust()
+                .color(0x6ca3a2)
+                .build();
+
+        ImpureGermaniumTetrachloride = new Material.Builder(4404, SuSyUtility.susyId("impure_germanium_tetrachloride"))
+                .gas(new FluidBuilder().temperature(360))
+                .color(0xc3ded9)
+                .build();
+
+        GermaniumOxalateLeach = new Material.Builder(4405, SuSyUtility.susyId("germanium_oxalate_leach"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0x476f91)
+                .build();
+
+        PurifiedGermaniumOxalateLeach = new Material.Builder(4406, SuSyUtility.susyId("purified_germanium_oxalate_leach"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0x52809c)
+                .build();
+
+        GermaniumGalliumExtractionMixture = new Material.Builder(4407, SuSyUtility.susyId("germanium_gallium_extraction_mixture"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0x7657b5)
+                .build();
+
+        GermaniumGalliumExtract = new Material.Builder(4408, SuSyUtility.susyId("germanium_gallium_extract"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0x5a56a3)
+                .build();
+
+        GermaniumExtract = new Material.Builder(4409, SuSyUtility.susyId("germanium_extract"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0x6e59b5)
+                .build();
+
+        GermaniumOxalateSolution = new Material.Builder(4410, SuSyUtility.susyId("germanium_oxalate_solution"))
+                .liquid()
+                .color(0x8b78cc)
+                .build();
+
+        CrudeIndiumIIIHydroxide = new Material.Builder(4411, SuSyUtility.susyId("crude_indium_iii_hydroxide"))
+                .dust()
+                .color(0x5618ad)
+                .build();
+
+        IndiumResidue = new Material.Builder(4412, SuSyUtility.susyId("indium_residue"))
+                .dust()
+                .color(0x7d41b5)
+                .build();
+
+        IndiumLeach = new Material.Builder(4413, SuSyUtility.susyId("indium_leach"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0x7418ad)
+                .build();
+
+        CrudeIndiumIIISulfateSolution = new Material.Builder(4414, SuSyUtility.susyId("crude_indium_iii_sulfate_solution"))
+                .liquid()
+                .color(0xab18ad)
+                .build();
+
+        SulfatizedLeadSlime = new Material.Builder(4415, SuSyUtility.susyId("sulfatized_lead_slime"))
+                .dust()
+                .color(0x522a44)
+                .build();
+
+        ImpureIndiumLeach = new Material.Builder(4416, SuSyUtility.susyId("impure_indium_leach"))
+                .liquid()
+                .color(0x853579)
+                .build();
+
+        ZincHydrochloricLeachResidue = new Material.Builder(4417, SuSyUtility.susyId("zinc_hydrochloric_leach_residue"))
+                .dust()
+                .color(0x4a3b2f)
+                .build();
+
+        CopperAnodeSlimePaste = new Material.Builder(4418, SuSyUtility.susyId("copper_anode_slime_paste"))
+                .liquid()
+                .color(0x706b36)
+                .build();
+
+        SeleniumTelluriumConcentrate = new Material.Builder(4419, SuSyUtility.susyId("selenium_tellurium_concentrate"))
+                .dust()
+                .color(0x9bbf77)
+                .build();
+
+        TelluriumResidue = new Material.Builder(4420, SuSyUtility.susyId("tellurium_residue"))
+                .dust()
+                .color(0x688767)
+                .build();
+
+        TelluriumSlag = new Material.Builder(4421, SuSyUtility.susyId("tellurium_slag"))
+                .dust()
+                .color(0x98bf97)
+                .build();
+
+        PolluciteLeach = new Material.Builder(4422, SuSyUtility.susyId("pollucite_leach"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0x8fa8cf)
+                .build();
+
+        CaesiumRubidiumAlumMixture = new Material.Builder(4423, SuSyUtility.susyId("caesium_rubidium_alum_mixture"))
+                .dust()
+                .color(0x631a87)
+                .build();
     }
 
 }
