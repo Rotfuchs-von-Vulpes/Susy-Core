@@ -1797,12 +1797,6 @@ public class SuSyUnknownCompositionMaterials {
                 .iconSet(ROUGH)
                 .build();
 
-        WaferTreatmentAcid = new Material.Builder(4400, SuSyUtility.susyId("wafer_treatment_acid"))
-                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(HydrochloricAcid, 9, HydrofluoricAcid, 9, AceticAcid, 2)
-                .color(0x3e7d68)
-                .build();
-
         ImpureCadmiumSulfateSolution = new Material.Builder(4400, SuSyUtility.susyId("impure_cadmium_sulfate_solution"))
                 .liquid()
                 .color(0x6f8485)

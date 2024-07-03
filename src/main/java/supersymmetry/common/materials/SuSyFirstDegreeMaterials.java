@@ -2816,13 +2816,13 @@ public class SuSyFirstDegreeMaterials {
 
         ThalliumIChloride = new Material.Builder(8594, SuSyUtility.susyId("thallium_i_chloride"))
                 .dust()
-                .components(Thallium, Chlorine)
+                .components(Thallium, 1, Chlorine, 1)
                 .colorAverage()
                 .build();
 
         AcidicThalliumSulfateSolution = new Material.Builder(8595, SuSyUtility.susyId("acidic_thallium_sulfate_solution"))
                 .liquid()
-                .components(Thallium, 2, Sulfur, Oxygen, 4, HydrogenChloride, 2, Water)
+                .components(Thallium, 2, Sulfur, 1, Oxygen, 4, HydrogenChloride, 2, Water, 1)
                 .colorAverage()
                 .build();
 
@@ -2830,7 +2830,7 @@ public class SuSyFirstDegreeMaterials {
 
         ThalliumSulfateSolution = new Material.Builder(8596, SuSyUtility.susyId("thallium_sulfate_solution"))
                 .liquid()
-                .components(Thallium, 2, Sulfur, Oxygen, 4, Water)
+                .components(Thallium, 2, Sulfur, 1, Oxygen, 4, Water, 1)
                 .colorAverage()
                 .build();
 
@@ -2842,25 +2842,25 @@ public class SuSyFirstDegreeMaterials {
 
         PurifiedCadmiumSolution = new Material.Builder(8599, SuSyUtility.susyId("purified_cadmium_solution"))
                 .liquid()
-                .components(Cadmium, Sulfur, Oxygen, 4, Water)
+                .components(Cadmium, 1, Sulfur, 1, Oxygen, 4, Water, 1)
                 .colorAverage()
                 .build();
 
         GermaniumTetrachloride = new Material.Builder(8600, SuSyUtility.susyId("germanium_tetrachloride"))
                 .liquid()
-                .components(Germanium, Chlorine, 4)
+                .components(Germanium, 1, Chlorine, 4)
                 .color(0xbae6dd)
                 .build();
 
         GermaniumDioxide = new Material.Builder(8601, SuSyUtility.susyId("germanium_dioxide"))
                 .dust()
-                .components(Germanium, Oxygen, 2)
+                .components(Germanium, 1, Oxygen, 2)
                 .color(0x4b9485)
                 .build();
 
         IronOxalateDihydrate = new Material.Builder(8602, SuSyUtility.susyId("iron_oxalate_dihydrate"))
                 .dust()
-                .components(Iron, Carbon, 2, Oxygen, 4, Water, 2)
+                .components(Iron, 1, Carbon, 2, Oxygen, 4, Water, 2)
                 .colorAverage()
                 .build();
 
@@ -2874,7 +2874,7 @@ public class SuSyFirstDegreeMaterials {
 
         ZincSulfateSolution = new Material.Builder(8604, SuSyUtility.susyId("zinc_sulfate_solution"))
                 .liquid()
-                .components(Zinc, Sulfur, Oxygen, 4, Water, 2)
+                .components(Zinc, 1, Sulfur, 1, Oxygen, 4, Water, 2)
                 .colorAverage()
                 .build();
 
@@ -2882,7 +2882,7 @@ public class SuSyFirstDegreeMaterials {
 
         SodiumSelenateSolution = new Material.Builder(8605, SuSyUtility.susyId("sodium_selenate_solution"))
                 .liquid()
-                .components(Sodium, 2, Selenium, Oxygen, 4, Water)
+                .components(Sodium, 2, Selenium, 1, Oxygen, 4, Water, 1)
                 .color(0xb0bf97)
                 .build();
 
@@ -2890,7 +2890,7 @@ public class SuSyFirstDegreeMaterials {
 
         SodiumSeleniteSolution = new Material.Builder(8606, SuSyUtility.susyId("sodium_selenite_solution"))
                 .liquid()
-                .components(Sodium, 2, Selenium, Oxygen, 3, Water)
+                .components(Sodium, 2, Selenium, 1, Oxygen, 3, Water, 1)
                 .color(0x96a67c)
                 .build();
 
@@ -2898,19 +2898,19 @@ public class SuSyFirstDegreeMaterials {
 
         HydrogenSelenide = new Material.Builder(8607, SuSyUtility.susyId("hydrogen_selenide"))
                 .gas()
-                .components(Hydrogen, 2, Selenium)
+                .components(Hydrogen, 2, Selenium, 1)
                 .color(0xcadb93)
                 .build();
 
         TelluriumDioxide = new Material.Builder(8608, SuSyUtility.susyId("tellurium_dioxide"))
                 .dust()
-                .components(Tellurium, Oxygen, 2)
+                .components(Tellurium, 1, Oxygen, 2)
                 .color(0xb1d4b0)
                 .build();
 
         SodiumTelluriteSolution = new Material.Builder(8609, SuSyUtility.susyId("sodium_tellurite_solution"))
                 .liquid()
-                .components(Sodium, 2, Tellurium, Oxygen, 3, Water, 3)
+                .components(Sodium, 2, Tellurium, 1, Oxygen, 3, Water, 3)
                 .color(0xb0d4c6)
                 .build();
 
@@ -2918,7 +2918,7 @@ public class SuSyFirstDegreeMaterials {
 
         SodiumAlum = new Material.Builder(8610, SuSyUtility.susyId("sodium_alum"))
                 .dust()
-                .components(Sodium, Aluminium, Sulfur, 2, Oxygen, 8)
+                .components(Sodium, 1, Aluminium, 1, Sulfur, 2, Oxygen, 8)
                 .colorAverage()
                 .build();
 
@@ -2926,7 +2926,7 @@ public class SuSyFirstDegreeMaterials {
 
         CaesiumAlum = new Material.Builder(8611, SuSyUtility.susyId("caesium_alum"))
                 .dust()
-                .components(Caesium, Aluminium, Sulfur, 2, Oxygen, 8)
+                .components(Caesium, 1, Aluminium, 1, Sulfur, 2, Oxygen, 8)
                 .color(0x293c9e)
                 .build();
 
@@ -2934,7 +2934,7 @@ public class SuSyFirstDegreeMaterials {
 
         RubidiumAlum = new Material.Builder(8612, SuSyUtility.susyId("rubidium_alum"))
                 .dust()
-                .components(Rubidium, Aluminium, Sulfur, 2, Oxygen, 8)
+                .components(Rubidium, 1, Aluminium, 1, Sulfur, 2, Oxygen, 8)
                 .color(0xc72882)
                 .build();
 
@@ -2942,38 +2942,38 @@ public class SuSyFirstDegreeMaterials {
 
         CaesiumSulfateSolution = new Material.Builder(8613, SuSyUtility.susyId("caesium_sulfate_solution"))
                 .liquid()
-                .components(Caesium, 2, Sulfur, Oxygen, 4)
+                .components(Caesium, 2, Sulfur, 1, Oxygen, 4)
                 .color(0x8528c7)
                 .build();
 
         CaesiumChloride = new Material.Builder(8614, SuSyUtility.susyId("caesium_chloride"))
                 .dust()
-                .components(Caesium, Chlorine)
+                .components(Caesium, 1, Chlorine, 1)
                 .color(0x2885c7)
                 .build();
 
         ReducedCaesiumMixture = new Material.Builder(8615, SuSyUtility.susyId("reduced_caesium_mixture"))
                 .dust()
-                .components(Caesium, 2, CalciumChloride)
+                .components(Caesium, 2, CalciumChloride, 1)
                 .color(0xf7f7d0)
                 .build();
 
         CaesiumHydroxideSolution = new Material.Builder(8616, SuSyUtility.susyId("caesium_hydroxide_solution"))
                 .liquid()
-                .components(Caesium, Oxygen, Hydrogen, Water)
+                .components(Caesium, 1, Oxygen, 1, Hydrogen, 1, Water, 1)
                 .color(0x5458bf)
                 .build();
         CaesiumHydroxideSolution.setFormula("(CsOH)(H2O)", true);
 
         CaesiumFormateSolution = new Material.Builder(8617, SuSyUtility.susyId("caesium_formate_solution"))
                 .liquid()
-                .components(Caesium, Carbon, Hydrogen, Oxygen, 2)
+                .components(Caesium, 1, Carbon, 1, Hydrogen, 1, Oxygen, 2)
                 .color(0x7b54bf)
                 .build();
 
         RubidiumHydroxide = new Material.Builder(8618, SuSyUtility.susyId("rubidium_hydroxide"))
                 .dust()
-                .components(Rubidium, Oxygen, Hydrogen)
+                .components(Rubidium, 1, Oxygen, 1, Hydrogen, 1)
                 .color(0xbf54bb)
                 .build();
     }
