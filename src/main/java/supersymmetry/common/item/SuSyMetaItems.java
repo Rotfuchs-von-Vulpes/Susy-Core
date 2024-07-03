@@ -315,7 +315,6 @@ public class SuSyMetaItems {
         customMetaItems.setRegistryName("meta_item_2");
 
         CatalystItems.init();
-
     }
 
     public static void initSubItems() {
