@@ -10,8 +10,8 @@
   "generator": {
     "type": "layered",
     "radius": [
-      16,
-      16
+      20,
+      20
     ]
   },
   "filler": {
@@ -21,13 +21,13 @@
         "primary": "ore:acanthite"
       },
       {
-        "secondary": "ore:proustite"
+        "secondary": "ore:galena"
       },
       {
         "between": "ore:pyrargyrite"
       },
       {
-        "sporadic": "ore:silver"
+        "sporadic": "ore:proustite"
       }
     ]
   }

@@ -1,30 +1,27 @@
 {
-  "weight": 90,
-  "density": 1,
-  "max_height": 60,
+  "weight": 120,
+  "density": 0.75,
+  "dimension_filter": ["dimension_id:10"],
+  "max_height": 255,
   "min_height": 0,
-  "vein_populator": {
-    "type": "surface_rock",
-    "material": "talc"
-  },
   "generator": {
     "type": "layered",
     "radius": [
-      15,
-      15
+      25,
+      25
     ]
   },
   "filler": {
     "type": "layered",
     "values": [
       {
-        "primary": "ore:talc"
+        "primary": "ore:magnesite"
       },
       {
-        "secondary": "ore:asbestos"
+        "secondary": "ore:magnesite"
       },
       {
-        "between": "ore:calcite"
+        "between": "ore:magnesite"
       },
       {
         "sporadic": "ore:magnesite"

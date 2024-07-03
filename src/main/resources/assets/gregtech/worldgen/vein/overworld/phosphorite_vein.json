@@ -1,8 +1,12 @@
 {
   "weight": 80,
-  "density": 0.75,
-   "max_height":120,
-   "min_height":0,
+  "density": 1,
+  "max_height": 80,
+  "min_height": 0,
+  "vein_populator": {
+    "type": "surface_rock",
+    "material": "phosphorite"
+  },
   "generator": {
     "type": "layered",
     "radius": [
@@ -20,19 +24,13 @@
 	}
       },
       {
-        "secondary": {
-          "block":"susy:resource_block",
-          "variant":"phosphorite"
-	}
+        "secondary": "fluorapatite"
       },
       {
-        "between": {
-          "block":"susy:resource_block",
-          "variant":"phosphorite"
-	}
+        "between": "hydroxyapatite"
       },
       {
-        "sporadic": "ore:apatite"
+        "sporadic": "ore:chlorapatite"
       }
     ]
   }

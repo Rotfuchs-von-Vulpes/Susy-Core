@@ -10,7 +10,7 @@
   },
   "biome_modifier": {
     "type": "biome_map",
-    "biomesoplenty:mountain": 35
+    "mountain": 35
   },
   "generator": {
     "type": "layered",
