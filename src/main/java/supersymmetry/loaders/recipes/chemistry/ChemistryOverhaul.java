@@ -4397,5 +4397,23 @@ Thus, HSQ should be 1.24% molar in MIBK
                 .EUt(16)
                 .duration(100)
                 .buildAndRegister();
+
+// Zinc chloride soln.
+
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(Water.getFluid(1000))
+                .input(dust, ZincChloride, 3)
+                .fluidOutputs(ZincChlorideSolution.getFluid(1000))
+                .EUt(16)
+                .duration(80)
+                .buildAndRegister();
+
+        DISTILLERY_RECIPES.recipeBuilder()
+                .fluidInputs(DilutedSodiumSulfateSolution.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
+                .output(dust, SodiumSulfate, 7)
+                .duration(30)
+                .EUt(200)
+                .buildAndRegister();
     }
 }

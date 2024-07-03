@@ -119,6 +119,8 @@ public class SuSyMetaItems {
     public static MetaValueItem SPONGE_HAFNIUM;
     public static MetaValueItem SPONGE_HAFNIUM_CRUDE;
     public static MetaValueItem SPONGE_PLATINUM;
+    public static MetaValueItem SPONGE_CADMIUM;
+    public static MetaValueItem SPONGE_INDIUM;
 
     public static MetaValueItem BOUND_LEATHER;
 
@@ -425,13 +427,16 @@ public class SuSyMetaItems {
         VTI_RICH_PIG_IRON = customMetaItems.addItem(201, "vti_rich_pig_iron");
         VT_SLAG = customMetaItems.addItem(202, "vt_slag");
 
-        SPONGE_TITANIUM = customMetaItems.addItem(203, "sponge.titanium");
-        SPONGE_TITANIUM_CRUDE = customMetaItems.addItem(204, "sponge.titanium.crude");
-        SPONGE_ZIRCONIUM = customMetaItems.addItem(205, "sponge.zirconium");
-        SPONGE_ZIRCONIUM_CRUDE = customMetaItems.addItem(206, "sponge.zirconium.crude");
-        SPONGE_HAFNIUM = customMetaItems.addItem(207, "sponge.hafnium");
-        SPONGE_HAFNIUM_CRUDE = customMetaItems.addItem(208, "sponge.hafnium.crude");
-        SPONGE_PLATINUM = customMetaItems.addItem(209, "sponge.platinum");
+        // metal sponges 6200 - 6300
+        SPONGE_TITANIUM = customMetaItems.addItem(6200, "sponge.titanium");
+        SPONGE_TITANIUM_CRUDE = customMetaItems.addItem(6201, "sponge.titanium.crude");
+        SPONGE_ZIRCONIUM = customMetaItems.addItem(6202, "sponge.zirconium");
+        SPONGE_ZIRCONIUM_CRUDE = customMetaItems.addItem(6203, "sponge.zirconium.crude");
+        SPONGE_HAFNIUM = customMetaItems.addItem(6204, "sponge.hafnium");
+        SPONGE_HAFNIUM_CRUDE = customMetaItems.addItem(6205, "sponge.hafnium.crude");
+        SPONGE_PLATINUM = customMetaItems.addItem(6206, "sponge.platinum");
+        SPONGE_CADMIUM = customMetaItems.addItem(6207, "sponge.cadmium");
+        SPONGE_INDIUM = customMetaItems.addItem(6208, "sponge.indium");
 
         BOUND_LEATHER = customMetaItems.addItem(210, "bound_leather");
 

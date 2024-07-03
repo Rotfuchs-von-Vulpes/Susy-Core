@@ -171,8 +171,8 @@ public class SusyMaterials {
     public static Material Asphalt;
     public static Material BlackAsh;
     public static Material ImpureAcetaldehyde;
-    public static Material CativaProcessPreparation;
-    public static Material CativaProcessSolution;
+    public static Material CativaCatalystPreparation;
+    public static Material CativaCatalystSolution;
     public static Material AcidicCumene;
     public static Material RearrangedCumene;
     public static Material AlkylatedButane;
@@ -257,7 +257,7 @@ public class SusyMaterials {
     public static Material ImpureLithiumSulfateSolution;
     public static Material GalenaByproductsSlurry;
     public static Material SinteredLeadConcentrate;
-    public static Material CadmiumRichFlue;
+    public static Material ZincOxideFume;
     public static Material BlackMetal;
     public static Material AntimonyArsenicFlueDust;
     public static Material BurnedBlackMetal;
@@ -295,7 +295,7 @@ public class SusyMaterials {
     public static Material HydratedPropene;
     public static Material EthylamineMix;
     public static Material UnprocessedSphaleriteSlurry;
-    public static Material ThalliumRichFlue;
+    public static Material ZincFlue;
     public static Material CrudeZinc;
     public static Material CadmiumRichZinc;
     public static Material ImpureSmithsoniteSlurry;
@@ -303,11 +303,10 @@ public class SusyMaterials {
     public static Material ZincLeach;
     public static Material ZincLeachResidue;
     public static Material HotZincLeach;
-    public static Material HotZincLeachResidue;
-    public static Material ZincRichSlag;
+    public static Material LeadSilicaResidue;
+    public static Material WaelzSlag;
     public static Material ReducedZincLeach;
     public static Material WaelzOxide;
-    public static Material GermaniumRichSlag;
     public static Material ZincCementationSlurry;
     public static Material PrecipitatedZincLeach;
     public static Material CopperCadmiumResidue;
@@ -317,9 +316,9 @@ public class SusyMaterials {
     public static Material FuselOil;
     public static Material AshSlurry;
     public static Material DesulfurizedFlueGas;
-    public static Material CadmiumRichFlueGas;
+    public static Material ZincOxideFumeGas;
     public static Material AntimonyArsenicFlueGas;
-    public static Material ThalliumRichFlueGas;
+    public static Material ZincFlueGas;
     public static Material FluorinatedOctanoylChlorideMixture;
     public static Material ButyraldehydeMixture;
     public static Material PentanalMixture;
@@ -446,7 +445,6 @@ public class SusyMaterials {
     public static Material OrganosiliconMixture;
     public static Material ImpurePolydimethylsiloxaneMixture;
     public static Material RawPolydimethylsiloxaneMixture;
-    public static Material WaferTreatmentAcid;
     public static Material LubricityAdditive;
     public static Material AntistaticAdditive;
     public static Material AntifoamingAdditive;
@@ -496,8 +494,10 @@ public class SusyMaterials {
     public static Material SpandexPolymerizationMix;
     public static Material AcrylicPhotoemulsion;
     public static Material TreatedCollagen;
+    public static Material ImpureThalliumSulfateSolution;
     public static Material ImpureCadmiumSulfateSolution;
     public static Material TannicAcidSolution;
+    public static Material GermaniumRichOxide;
     public static Material GermaniumLeach;
     public static Material GermaniumConcentrate;
     public static Material ImpureGermaniumTetrachloride;
@@ -507,9 +507,10 @@ public class SusyMaterials {
     public static Material GermaniumGalliumExtract;
     public static Material GermaniumExtract;
     public static Material GermaniumOxalateSolution;
-    public static Material CrudeIndiumIIIHydroxide;
+    public static Material DilutedZincLeach;
     public static Material IndiumResidue;
     public static Material IndiumLeach;
+    public static Material CrudeIndiumIIIHydroxide;
     public static Material CrudeIndiumIIISulfateSolution;
     public static Material SulfatizedLeadSlime;
     public static Material ImpureIndiumLeach;
@@ -518,6 +519,10 @@ public class SusyMaterials {
     public static Material SeleniumTelluriumConcentrate;
     public static Material TelluriumResidue;
     public static Material TelluriumSlag;
+    public static Material CoconutOil;
+    public static Material CoconutAcid;
+    public static Material CocoAmine;
+    public static Material CocoAmineAcetate;
     public static Material PolluciteLeach;
     public static Material CaesiumRubidiumAlumMixture;
 
