@@ -1,5 +1,6 @@
 package supersymmetry.loaders.recipes.chemistry.inorganicChemistry.elements.DBlock.group12;
 
+import gregtech.api.recipes.ingredients.GTRecipeItemInput;
 import gregtech.api.unification.OreDictUnifier;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -24,6 +25,7 @@ public class ZincChain {
         // Zincite Dust * 1
         removeRecipesByInputs(BLAST_RECIPES, new ItemStack[]{OreDictUnifier.get(dust, Sphalerite)}, new FluidStack[]{Oxygen.getFluid(3000)});
 
+        // Zinc ore beneficiation
         MIXER_RECIPES.recipeBuilder()
                 .input(dustImpure, Sphalerite, 4)
                 .fluidInputs(DistilledWater.getFluid(2000))
@@ -87,10 +89,11 @@ public class ZincChain {
                 .duration(20)
                 .buildAndRegister();
 
+// Ore pretreatment to form oxide concentrate
         ROASTER_RECIPES.recipeBuilder()
                 .input(dust, Sphalerite, 1)
                 .fluidInputs(Oxygen.getFluid(2000))
-                .fluidOutputs(SulfurDioxide.getFluid(1000))
+                .fluidOutputs(ZincFlueGas.getFluid(1000))
                 .output(dust, Zincite, 2)
                 .EUt(30)
                 .duration(200)
@@ -98,18 +101,18 @@ public class ZincChain {
 
         FLUIDIZED_BED_REACTOR_RECIPES.recipeBuilder()
                 .input(dust, Sphalerite, 1)
-                .fluidInputs(Oxygen.getFluid(3000))
-                .fluidOutputs(ThalliumRichFlueGas.getFluid(1000))
+                .fluidInputs(Oxygen.getFluid(2000))
+                .fluidOutputs(ZincFlueGas.getFluid(1000))
                 .output(dust, Zincite, 2)
-                .output(dust, ZincRichSlag, 1)
                 .EUt(120)
                 .duration(20)
                 .buildAndRegister();
 
+// Cadmium/Thallium chain for pyrometallurgy start
         SIFTER_RECIPES.recipeBuilder()
                 .notConsumable(ITEM_FILTER)
-                .fluidInputs(ThalliumRichFlueGas.getFluid(1000))
-                .chancedOutput(dust, ThalliumRichFlue, 1000, 250)
+                .fluidInputs(ZincFlueGas.getFluid(1000))
+                .chancedOutput(dust, ZincFlue, 1000, 250)
                 .fluidOutputs(SulfurDioxide.getFluid(1000))
                 .EUt(120)
                 .duration(20)
@@ -131,8 +134,8 @@ public class ZincChain {
                 .duration(200)
                 .buildAndRegister();
 
+// Conversion to metal via pyrometallurgy
         for (CarbonSource combustible : combustibles) {
-            combustible.name.setCount(combustible.equivalent(1));
             ROASTER_RECIPES.recipeBuilder()
                     .input(dust, Zincite, 2)
                     .inputs(combustible.name)
@@ -145,7 +148,6 @@ public class ZincChain {
         }
 
         for (CarbonSource combustible : highPurityCombustibles) {
-            combustible.name.setCount(combustible.equivalent(1));
             ROASTER_RECIPES.recipeBuilder()
                     .input(dust, ZincOxide, 2)
                     .inputs(combustible.name)
@@ -191,6 +193,7 @@ public class ZincChain {
                 .duration(300)
                 .buildAndRegister();
 
+// Hydrometallurgical method
         CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .input(dust, Zincite, 2)
                 .fluidInputs(SulfuricAcid.getFluid(1000))
@@ -209,17 +212,17 @@ public class ZincChain {
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .input(dust, ZincLeachResidue)
-                .fluidInputs(HotSulfuricAcid.getFluid(100))
-                .fluidOutputs(HotZincLeach.getFluid(100))
-                .chancedOutput(dust, HotZincLeachResidue, 500, 500)
+                .fluidInputs(HotSulfuricAcid.getFluid(125))
+                .fluidOutputs(HotZincLeach.getFluid(125))
+                .chancedOutput(dust, LeadSilicaResidue, 500, 500)
                 .EUt(30)
                 .duration(160)
                 .buildAndRegister();
 
-        ROASTER_RECIPES.recipeBuilder()
-                .input(dust, HotZincLeachResidue)
-                .fluidOutputs(SulfurTrioxide.getFluid(1000))
-                .output(dust, SoftenedLead)
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .input(dust, LeadSilicaResidue)
+                .chancedOutput(dust, SiliconDioxide, 6000, 0)
+                .chancedOutput(dust, Anglesite, 4000, 0)
                 .EUt(30)
                 .duration(160)
                 .buildAndRegister();
@@ -227,6 +230,7 @@ public class ZincChain {
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, Sphalerite, 2)
                 .fluidInputs(HotZincLeach.getFluid(16000))
+                .output(dust, Sulfur, 2)
                 .fluidOutputs(ReducedZincLeach.getFluid(16000))
                 .EUt(30)
                 .duration(400)
@@ -239,25 +243,6 @@ public class ZincChain {
                 .output(dust, IronIIIOxide, 5)
                 .EUt(30)
                 .duration(400)
-                .buildAndRegister();
-
-        BLAST_RECIPES.recipeBuilder()
-                .input(dust, ZincRichSlag, 10)
-                .input("dustAnyPurityCarbon", 2)
-                .output(dust, WaelzOxide, 7)
-                .output(dust, GermaniumRichSlag, 3)
-                .blastFurnaceTemp(1400)
-                .EUt(120)
-                .duration(200)
-                .buildAndRegister();
-
-        HIGH_TEMPERATURE_DISTILLATION.recipeBuilder()
-                .fluidInputs(WaelzOxide.getFluid(1440))
-                .chancedOutput(dust, Lead, 500, 300)
-                .fluidOutputs(CadmiumRichZinc.getFluid(1440))
-                .fluidOutputs(Cadmium.getFluid(72))
-                .EUt(120)
-                .duration(300)
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder()
@@ -273,16 +258,6 @@ public class ZincChain {
                 .fluidInputs(ZincCementationSlurry.getFluid(100))
                 .fluidOutputs(PrecipitatedZincLeach.getFluid(1000))
                 .output(dust, CopperCadmiumResidue, 1)
-                .EUt(30)
-                .duration(160)
-                .buildAndRegister();
-
-        CENTRIFUGE_RECIPES.recipeBuilder()
-                .fluidInputs(SulfuricAcid.getFluid(1000))
-                .fluidInputs(Water.getFluid(1000))
-                .input(dust, CopperCadmiumResidue, 20)
-                .fluidOutputs(CadmiumSulfateSolution.getFluid(1000))
-                .output(dust, Copper, 2)
                 .EUt(30)
                 .duration(160)
                 .buildAndRegister();
@@ -342,5 +317,57 @@ public class ZincChain {
                 .EUt(120)
                 .duration(200)
                 .buildAndRegister();
+
+// From lead processing
+        SIFTER_RECIPES.recipeBuilder()
+                .notConsumable(ITEM_FILTER)
+                .fluidInputs(ZincOxideFumeGas.getFluid(1000))
+                .chancedOutput(dust, ZincOxideFume, 1000, 0)
+                .fluidOutputs(CarbonMonoxide.getFluid(1000))
+                .EUt(120)
+                .duration(160)
+                .buildAndRegister();
+
+        ItemStack[] carbons = {
+                OreDictUnifier.get(dust, Carbon),
+                OreDictUnifier.get(dust, HighPurityCarbon),
+                OreDictUnifier.get(dust, Coke)
+        };
+
+        for (Combustible fuel : rotary_kiln_fuels) {
+            for (Comburent comburent : rotary_kiln_comburents) {
+                ROTARY_KILN.recipeBuilder()
+                        .input(dust, ZincOxideFume, 2)
+                        .input(new GTRecipeItemInput(carbons, 1))
+                        .output(dust, WaelzOxide)
+                        .output(dust, WaelzSlag)
+                        .fluidInputs(fuel.getFluid())
+                        .fluidInputs(comburent.getFluid())
+                        .fluidOutputs(fuel.byproduct)
+                        .duration(fuel.duration + comburent.duration)
+                        .EUt(120)
+                        .buildAndRegister();
+            }
+        }
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .input(dust, WaelzSlag)
+                .chancedOutput(dust, Hematite, 5000, 0)
+                .chancedOutput(dust, Quicklime, 2, 2500, 0)
+                .chancedOutput(dust, SiliconDioxide, 3, 2500, 0)
+                .EUt(30)
+                .duration(40)
+                .buildAndRegister();
+
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .notConsumable(GRAPHITE_ELECTRODE)
+                .notConsumable(stick, Zinc)
+                .fluidInputs(ZincChloride.getFluid(432))
+                .fluidOutputs(Chlorine.getFluid(2000))
+                .output(dust, Zinc)
+                .EUt(30)
+                .duration(300)
+                .buildAndRegister();
+
     }
 }

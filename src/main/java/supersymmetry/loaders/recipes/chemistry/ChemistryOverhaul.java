@@ -2427,30 +2427,6 @@ public class ChemistryOverhaul {
                 .EUt(30)
                 .buildAndRegister();
 
-        BATCH_REACTOR_RECIPES.recipeBuilder()
-                .input(dust, IridiumIodide, 5)
-                .fluidInputs(Dimethylformamide.getFluid(1000))
-                .fluidInputs(CarbonMonoxide.getFluid(1000))
-                .fluidOutputs(CativaProcessPreparation.getFluid(1000))
-                .duration(100)
-                .EUt(30)
-                .buildAndRegister();
-
-        MIXER_RECIPES.recipeBuilder()
-                .fluidInputs(CativaProcessPreparation.getFluid(500))
-                .input(dust, BistriphenylphosphineiminiumChloride)
-                .fluidOutputs(CativaProcessSolution.getFluid(500))
-                .duration(100)
-                .EUt(30)
-                .buildAndRegister();
-
-        DRYER_RECIPES.recipeBuilder()
-                .fluidInputs(CativaProcessSolution.getFluid(1000))
-                .output(dust, CativaProcessCatalyst, 10)
-                .duration(100)
-                .EUt(30)
-                .buildAndRegister();
-
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, PotassiumIodide, 2)
                 .fluidInputs(Water.getFluid(1000))

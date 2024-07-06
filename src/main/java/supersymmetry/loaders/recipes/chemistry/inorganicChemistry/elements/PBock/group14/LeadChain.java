@@ -168,21 +168,12 @@ public class LeadChain {
                     .input(dustTiny, Calcite)
                     .output(ingot, CrudeLead, 2)
                     .outputs(combustible.byproduct)
-                    .fluidOutputs(CadmiumRichFlueGas.getFluid(1000))
+                    .fluidOutputs(ZincOxideFumeGas.getFluid(1000))
                     .EUt(120)
                     .blastFurnaceTemp(850)
                     .duration(160)
                     .buildAndRegister();
         }
-
-        SIFTER_RECIPES.recipeBuilder()
-                .notConsumable(ITEM_FILTER)
-                .fluidInputs(CadmiumRichFlueGas.getFluid(1000))
-                .output(dust, CadmiumRichFlue)
-                .fluidOutputs(CarbonMonoxide.getFluid(1000))
-                .EUt(120)
-                .duration(160)
-                .buildAndRegister();
 
 //DECOPPERING
         BATCH_REACTOR_RECIPES.recipeBuilder()
@@ -417,7 +408,8 @@ public class LeadChain {
         SIFTER_RECIPES.recipeBuilder()
                 .notConsumable(ITEM_FILTER)
                 .fluidInputs(AntimonyArsenicFlueGas.getFluid(1000))
-                .output(dust, CadmiumRichFlue, 3)
+                .output(dust, AntimonyTrioxide, 5)
+                .output(dust, ArsenicTrioxide, 5)
                 .fluidOutputs(FlueGas.getFluid(1000))
                 .EUt(120)
                 .duration(160)
