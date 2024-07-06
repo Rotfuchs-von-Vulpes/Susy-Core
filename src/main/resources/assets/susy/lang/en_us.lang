@@ -135,11 +135,6 @@ susy.material.gadolinium_silicon_germanium=Gadolinium Silicon Germanium
 susy.material.latex=Latex
 susy.material.mud=Mud
 susy.material.sea_water=Sea Water
-susy.material.uwunium=UwUnium
-susy.material.cien=Cien
-susy.material.hydrocienic_acid=Hydrocienic Acid
-susy.material.cacatua=Cacatua
-susy.material.cacatua_hydroxide=Cacatua Hydroxide
 
 # Rock/Mineral Materials
 susy.material.fluorite=Fluorite
@@ -817,6 +812,14 @@ susy.fluid.voiding.liquid=Voidable with Dumper
 susy.fluid.voiding.gas=Voidable with Smoke Stack
 susy.fluid.voiding.flammable=Voidable with Flare Stack
 
-# Entities
+# my additions
 
+# materials
+susy.material.uwunium=UwUnium
+susy.material.cien=Cien
+susy.material.hydrocienic_acid=Hydrocienic Acid
+susy.material.cacatua=Cacatua
+susy.material.cacatua_hydroxide=Cacatua Hydroxide
+
+# Entities
 entity.fox.name=Fox
