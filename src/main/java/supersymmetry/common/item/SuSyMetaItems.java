@@ -82,6 +82,7 @@ public class SuSyMetaItems {
     public static MetaValueItem ANODE_SLIME_SILVER;
     public static MetaValueItem ANODE_SLIME_LEAD;
     public static MetaValueItem ANODE_SLIME_COPPER;
+    public static MetaValueItem ANODE_SLIME_DECOPPERIZED;
 
     public static MetaValueItem ZEOLITE_MEMBRANE_SUPPORT;
     public static MetaValueItem ZEOLITE_MEMBRANE;
@@ -393,11 +394,6 @@ public class SuSyMetaItems {
 
         CELLULOSE_ACETATE_MESH = customMetaItems.addItem(171, "cellulose_acetate_mesh");
 
-        ANODE_SLIME_GOLD = customMetaItems.addItem(175, "anode_slime.gold");
-        ANODE_SLIME_SILVER = customMetaItems.addItem(176, "anode_slime.silver");
-        ANODE_SLIME_LEAD = customMetaItems.addItem(179, "anode_slime.lead");
-        ANODE_SLIME_COPPER = customMetaItems.addItem(211, "anode_slime.copper");
-
         ZEOLITE_MEMBRANE_SUPPORT = customMetaItems.addItem(177, "zeolite_membrane_support");
         ZEOLITE_MEMBRANE = customMetaItems.addItem(178, "zeolite_membrane");
 
@@ -426,17 +422,6 @@ public class SuSyMetaItems {
 
         VTI_RICH_PIG_IRON = customMetaItems.addItem(201, "vti_rich_pig_iron");
         VT_SLAG = customMetaItems.addItem(202, "vt_slag");
-
-        // metal sponges 6200 - 6300
-        SPONGE_TITANIUM = customMetaItems.addItem(6200, "sponge.titanium");
-        SPONGE_TITANIUM_CRUDE = customMetaItems.addItem(6201, "sponge.titanium.crude");
-        SPONGE_ZIRCONIUM = customMetaItems.addItem(6202, "sponge.zirconium");
-        SPONGE_ZIRCONIUM_CRUDE = customMetaItems.addItem(6203, "sponge.zirconium.crude");
-        SPONGE_HAFNIUM = customMetaItems.addItem(6204, "sponge.hafnium");
-        SPONGE_HAFNIUM_CRUDE = customMetaItems.addItem(6205, "sponge.hafnium.crude");
-        SPONGE_PLATINUM = customMetaItems.addItem(6206, "sponge.platinum");
-        SPONGE_CADMIUM = customMetaItems.addItem(6207, "sponge.cadmium");
-        SPONGE_INDIUM = customMetaItems.addItem(6208, "sponge.indium");
 
         BOUND_LEATHER = customMetaItems.addItem(210, "bound_leather");
 
@@ -514,8 +499,8 @@ public class SuSyMetaItems {
         CIRCUIT_SUPRACHRONAL_OPV = customMetaItems.addItem(3033, "circuit.suprachronal.opv");
         CIRCUIT_SUPRACHRONAL_MAX = customMetaItems.addItem(3034, "circuit.suprachronal.max");
 
-        // WAFER_ADVANCED_RANDOM_ACCESS_MEMORY = customMetaItems.addItem(3035, "wafer.advanced_random_access_memory");
-        // PLATE_ADVANCED_RANDOM_ACCESS_MEMORY = customMetaItems.addItem(3036, "plate.advanced_random_access_memory");
+//        WAFER_ADVANCED_RANDOM_ACCESS_MEMORY = customMetaItems.addItem(3035, "wafer.advanced_random_access_memory");
+//        PLATE_ADVANCED_RANDOM_ACCESS_MEMORY = customMetaItems.addItem(3036, "plate.advanced_random_access_memory");
 
         // Batteries 4000-4100
         BATTERY_LEAD_ACID = customMetaItems.addItem(4000, "battery.lead_acid").addComponents(ElectricStats.createRechargeableBattery(120000, GTValues.LV)).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.LV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
@@ -605,6 +590,24 @@ public class SuSyMetaItems {
         ASSEMBLYRUTHENIUMTRINIUMAMERICIUMNEUTRONATE = customMetaItems.addItem(6119, "assemblyrutheniumtriniumamericiumneutronate");
         BASERUTHENIUMTRINIUMAMERICIUMNEUTRONATE = customMetaItems.addItem(6120, "baserutheniumtriniumamericiumneutronate");
 
+        // metal sponges 6200 - 6300
+        SPONGE_TITANIUM = customMetaItems.addItem(6200, "sponge.titanium");
+        SPONGE_TITANIUM_CRUDE = customMetaItems.addItem(6201, "sponge.titanium.crude");
+        SPONGE_ZIRCONIUM = customMetaItems.addItem(6202, "sponge.zirconium");
+        SPONGE_ZIRCONIUM_CRUDE = customMetaItems.addItem(6203, "sponge.zirconium.crude");
+        SPONGE_HAFNIUM = customMetaItems.addItem(6204, "sponge.hafnium");
+        SPONGE_HAFNIUM_CRUDE = customMetaItems.addItem(6205, "sponge.hafnium.crude");
+        SPONGE_PLATINUM = customMetaItems.addItem(6206, "sponge.platinum");
+        SPONGE_CADMIUM = customMetaItems.addItem(6207, "sponge.cadmium");
+        SPONGE_INDIUM = customMetaItems.addItem(6208, "sponge.indium");
+
+        // Anode slimes 6300-6400
+        ANODE_SLIME_GOLD = customMetaItems.addItem(6300, "anode_slime.gold");
+        ANODE_SLIME_SILVER = customMetaItems.addItem(6301, "anode_slime.silver");
+        ANODE_SLIME_LEAD = customMetaItems.addItem(6302, "anode_slime.lead");
+        ANODE_SLIME_COPPER = customMetaItems.addItem(6303, "anode_slime.copper");
+        ANODE_SLIME_DECOPPERIZED = customMetaItems.addItem(6304, "anode_slime.decopperized");
+
         // Seed crystals 7000-7500
         SEED_CRYSTAL_SILICON = customMetaItems.addItem(7000, "seed_crystal.silicon");
         SEED_CRYSTAL_GALLIUM_ARSENIDE = customMetaItems.addItem(7001, "seed_crystal.gallium_arsenide");
@@ -613,7 +616,7 @@ public class SuSyMetaItems {
         SEED_CRYSTAL_EMERALD = customMetaItems.addItem(7004, "seed_crystal.emerald");
         SEED_CRYSTAL_LITHIUM_NIOBATE = customMetaItems.addItem(7005, "seed_crystal.lithium_niobate");
 
-        // Boules 7500-8000
+        //Boules 7500-8000
         UNREFINED_BOULE_SILICON = customMetaItems.addItem(7500, "unrefined_boule.silicon");
         BOULE_GALLIUM_ARSENIDE = customMetaItems.addItem(7501, "boule.gallium_arsenide");
         UNREFINED_BOULE_GALLIUM_ARSENIDE = customMetaItems.addItem(7502, "unrefined_boule.gallium_arsenide");
@@ -624,6 +627,8 @@ public class SuSyMetaItems {
         BOULE_RUBY = customMetaItems.addItem(7507, "boule.ruby");
         BOULE_SILICON_GERMANIUM = customMetaItems.addItem(7508, "boule.silicon_germanium");
         BOULE_LITHIUM_NIOBATE = customMetaItems.addItem(7509, "boule.lithium_niobate");
+
+        // Wafers 8000-9000
         WAFER_DOPED_SILICON = customMetaItems.addItem(8000, "wafer.doped.silicon");
         WAFER_N_DOPED_SILICON = customMetaItems.addItem(8001, "wafer.n_doped.silicon");
         WAFER_SILICON_DIOXIDE = customMetaItems.addItem(8002, "wafer.silicon_dioxide");
