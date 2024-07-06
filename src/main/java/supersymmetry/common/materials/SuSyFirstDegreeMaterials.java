@@ -205,9 +205,9 @@ public class SuSyFirstDegreeMaterials {
         HighPurityCopper = generatePurifiedElement(Copper, 8020, false, false);
         HighPurityZinc = generatePurifiedElement(Zinc, 8021, false, false);
         HighPurityGallium = generatePurifiedElement(Gallium, 8022, true, false);
-        HighPurityGermanium = generatePurifiedElement(Germanium, 8023, true, false);
+        HighPurityGermanium = generatePurifiedElement(Germanium, 8023, true, true);
         HighPurityArsenic = generatePurifiedElement(Arsenic, 8024, true, false);
-        HighPuritySelenium = generatePurifiedElement(Selenium, 8025, false, false);
+        HighPuritySelenium = generatePurifiedElement(Selenium, 8025, true, false);
         HighPurityRubidium = generatePurifiedElement(Rubidium, 8026, false, false);
         HighPurityStronium = generatePurifiedElement(Strontium, 8027, false, false);
         HighPurityYttrium = generatePurifiedElement(Yttrium, 8028, false, false);
@@ -223,7 +223,7 @@ public class SuSyFirstDegreeMaterials {
         HighPurityIndium = generatePurifiedElement(Indium, 8038, false, false);
         HighPurityTin = generatePurifiedElement(Tin, 8039, false, false);
         HighPurityAntimony = generatePurifiedElement(Antimony, 8040, false, false);
-        HighPurityTellurium = generatePurifiedElement(Tellurium, 8041, false, false);
+        HighPurityTellurium = generatePurifiedElement(Tellurium, 8041, false, true);
         HighPurityIodine = generatePurifiedElement(Iodine, 8042, false, false);
         HighPurityCaesium = generatePurifiedElement(Caesium, 8043, false, false);
         HighPurityBarium = generatePurifiedElement(Barium, 8044, false, false);

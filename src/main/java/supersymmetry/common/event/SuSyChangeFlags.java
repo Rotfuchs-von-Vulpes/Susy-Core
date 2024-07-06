@@ -22,6 +22,7 @@ import supersymmetry.api.recipes.SuSyRecipeMaps;
 import supersymmetry.api.unification.material.properties.SuSyPropertyKey;
 import supersymmetry.api.unification.material.properties.FiberProperty;
 
+import java.lang.reflect.Method;
 import java.util.Objects;
 
 public class SuSyChangeFlags {
@@ -72,6 +73,88 @@ public class SuSyChangeFlags {
         SuSyRecipeMaps.RAILROAD_ENGINEERING_STATION_RECIPES.setMaxFluidInputs(3);
         SuSyRecipeMaps.RAILROAD_ENGINEERING_STATION_RECIPES.setMaxInputs(12);
 
+        // Properties
+
+        Germanium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Tellurium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Cadmium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Asbestos.setProperty(PropertyKey.INGOT, new IngotProperty());
+
+        BisphenolA.setProperty(PropertyKey.DUST, new DustProperty());
+
+        Silver.setProperty(
+                PropertyKey.FLUID_PIPE,
+                new FluidPipeProperties(
+                        1234,
+                        50,
+                        false,
+                        false,
+                        true,
+                        false
+                )
+        );
+
+        setupFluidType(AntimonyTrifluoride, FluidStorageKeys.LIQUID, 565);
+        setupFluidType(LithiumChloride, FluidStorageKeys.LIQUID, 890);
+        setupFluidType(SiliconDioxide, FluidStorageKeys.LIQUID, 1986);
+        setupFluidType(Caesium, FluidStorageKeys.LIQUID, 302);
+        setupFluidType(Cadmium, FluidStorageKeys.LIQUID, 600);
+        setupFluidType(BisphenolA, FluidStorageKeys.LIQUID, 428);
+        setupFluidType(Iodine, FluidStorageKeys.GAS, 460);
+        setupFluidType(Chlorine, FluidStorageKeys.PLASMA);
+        setupFluidType(Selenium, FluidStorageKeys.LIQUID, 494);
+
+        Polybenzimidazole.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, true));
+        Polytetrafluoroethylene.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, false));
+        Polydimethylsiloxane.setProperty(PropertyKey.FLUID, new FluidProperty());
+
+        BlastProperty tantalumBlast = new BlastProperty(3293, GasTier.MID);
+        tantalumBlast.setEutOverride(480);
+        tantalumBlast.setDurationOverride(240);
+        tantalumBlast.setVacuumEutOverride(-1);
+        tantalumBlast.setVacuumDurationOverride(-1);
+        Tantalum.setProperty(PropertyKey.BLAST, tantalumBlast);
+        BlastProperty MolybdenumBlast = new BlastProperty(2890, GasTier.MID);
+        MolybdenumBlast.setEutOverride(480);
+        MolybdenumBlast.setDurationOverride(240);
+        MolybdenumBlast.setVacuumEutOverride(-1);
+        MolybdenumBlast.setVacuumDurationOverride(-1);
+        Molybdenum.setProperty(PropertyKey.BLAST, MolybdenumBlast);
+        BlastProperty platinumBlast = new BlastProperty(2045, GasTier.LOW);
+        platinumBlast.setEutOverride(480);
+        platinumBlast.setDurationOverride(240);
+        platinumBlast.setVacuumEutOverride(-1);
+        platinumBlast.setVacuumDurationOverride(-1);
+        Platinum.setProperty(PropertyKey.BLAST, platinumBlast);
+        BlastProperty thoriumBlast = new BlastProperty(2028, GasTier.LOW);
+        thoriumBlast.setEutOverride(480);
+        thoriumBlast.setDurationOverride(240);
+        thoriumBlast.setVacuumEutOverride(-1);
+        thoriumBlast.setVacuumDurationOverride(-1);
+        Thorium.setProperty(PropertyKey.BLAST, thoriumBlast);
+        BlastProperty cobaltBlast = new BlastProperty(1750, GasTier.LOW);
+        cobaltBlast.setEutOverride(120);
+        cobaltBlast.setDurationOverride(200);
+        cobaltBlast.setVacuumEutOverride(-1);
+        cobaltBlast.setVacuumDurationOverride(-1);
+        Cobalt.setProperty(PropertyKey.BLAST, cobaltBlast);
+        BlastProperty berylliumBlast = new BlastProperty(1560, GasTier.LOW);
+        berylliumBlast.setEutOverride(120);
+        berylliumBlast.setDurationOverride(200);
+        berylliumBlast.setVacuumEutOverride(-1);
+        berylliumBlast.setVacuumDurationOverride(-1);
+        Beryllium.setProperty(PropertyKey.BLAST, berylliumBlast);
+        BlastProperty nickelBlast = new BlastProperty(1728, GasTier.LOW);
+        nickelBlast.setEutOverride(120);
+        nickelBlast.setDurationOverride(120);
+        nickelBlast.setVacuumEutOverride(-1);
+        nickelBlast.setVacuumDurationOverride(-1);
+        Nickel.setProperty(PropertyKey.BLAST, nickelBlast);
+
+        // Flags
+
+        Asbestos.addFlags("generate_foil");
+        Tellurium.addFlags("generate_plate");
         Steel.addFlags("generate_spring", "generate_spring_small");
         Titanium.addFlags("generate_foil", "generate_spring", "generate_spring_small");
         Lead.addFlags("generate_round");
@@ -90,6 +173,9 @@ public class SuSyChangeFlags {
         Silver.addFlags("generate_catalyst_bed");
         Nickel.addFlags("generate_catalyst_bed");
         Brass.addFlags("generate_ring");
+        Indium.addFlags("generate_plate");
+        BisphenolA.addFlags("no_unification");
+        Phosphorus.addFlags("no_smelting");
 
         /*
         ManganesePhosphide.addFlags("no_smashing", "no_smelting");
@@ -103,18 +189,24 @@ public class SuSyChangeFlags {
         RutheniumTriniumAmericiumNeutronate.addFlags("no_smashing", "no_smelting");
         */
 
-        DilutedHydrochloricAcid.setFormula("(H2O)2(HCl)", true);
-
         ManganesePhosphide.addFlags("generate_fine_wire");
         UraniumTriplatinum.addFlags("generate_fine_wire");
         RutheniumTriniumAmericiumNeutronate.addFlags("generate_fine_wire");
 
-        Phosphorus.setMaterialRGB(0xfffed6);
-        Phosphorus.addFlags("no_smelting");
+        //Colors
 
+        Phosphorus.setMaterialRGB(0xfffed6);
+
+        // Formulae
+
+        DilutedHydrochloricAcid.setFormula("(H2O)2(HCl)", true);
         DilutedSulfuricAcid.setFormula("(H2SO4)(H2O)", true);
         AquaRegia.setFormula("(HNO3)(HCl)3", true);
         Tantalite.setFormula("(Fe,Mn)Ta2O6", true);
+        Lepidolite.setFormula("(K,Rb)AlLi2Si4O10(OH,F)2", true);
+        IndiumGalliumPhosphide.setFormula("InGaP2", true);
+
+        // Ore Processing
 
         Borax.setProperty(PropertyKey.ORE, new OreProperty());
         Scheelite.addFlags("generate_sifted", "generate_flotated");
@@ -136,27 +228,9 @@ public class SuSyChangeFlags {
         setupSlurries(Malachite);
         Rutile.addFlags("generate_concentrate");
         setupSlurries(Sphalerite);
+        setupSlurries(Pollucite);
 
-        Asbestos.setProperty(PropertyKey.INGOT, new IngotProperty());
-        Asbestos.addFlags("generate_foil");
-
-        Silver.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(1234, 50, false, false, true, false));
-
-        setupFluidType(Iodine, FluidStorageKeys.GAS, 460);
-        setupFluidType(AntimonyTrifluoride, FluidStorageKeys.LIQUID, 565);
-        setupFluidType(LithiumChloride, FluidStorageKeys.LIQUID, 890);
-        setupFluidType(SiliconDioxide, FluidStorageKeys.LIQUID, 1986);
-        setupFluidType(Chlorine, FluidStorageKeys.PLASMA);
-
-        Polytetrafluoroethylene.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, false));
-        Polydimethylsiloxane.setProperty(PropertyKey.FLUID, new FluidProperty());
-
-        Cadmium.setProperty(PropertyKey.INGOT, new IngotProperty());
-        setupFluidType(Cadmium, FluidStorageKeys.LIQUID, 600);
-
-        BisphenolA.setProperty(PropertyKey.DUST, new DustProperty());
-        BisphenolA.addFlags("no_unification");
-        setupFluidType(BisphenolA, FluidStorageKeys.LIQUID, 428);
+        setupFluidType(PolyvinylAcetate, FluidStorageKeys.LIQUID, 385);
 
         OreProperty oreProp = Petalite.getProperty(PropertyKey.ORE);
         oreProp.setOreByProducts(PegmatiteTailings, PegmatiteTailings, PegmatiteTailings, PegmatiteTailings);
@@ -696,54 +770,26 @@ public class SuSyChangeFlags {
         oreProp = Magnesite.getProperty(PropertyKey.ORE);
         oreProp.setDirectSmeltResult(null);
 
-        BlastProperty TantalumBlast = new BlastProperty(3293, GasTier.MID);
-        TantalumBlast.setEutOverride(480);
-        TantalumBlast.setDurationOverride(240);
-        TantalumBlast.setEutOverride(-1);
-        TantalumBlast.setVacuumDurationOverride(-1);
+        // Flammables
 
-        BlastProperty MolybdenumBlast = new BlastProperty(2045, GasTier.LOW);
-        MolybdenumBlast.setEutOverride(480);
-        MolybdenumBlast.setDurationOverride(240);
-        MolybdenumBlast.setEutOverride(-1);
-        MolybdenumBlast.setVacuumDurationOverride(-1);
-
-        BlastProperty PlatinumBlast = new BlastProperty(2028, GasTier.LOW);
-        PlatinumBlast.setEutOverride(480);
-        PlatinumBlast.setDurationOverride(240);
-        PlatinumBlast.setEutOverride(-1);
-        PlatinumBlast.setVacuumDurationOverride(-1);
-
-        BlastProperty ThoriumBlast = new BlastProperty(1750, GasTier.LOW);
-        ThoriumBlast.setEutOverride(480);
-        ThoriumBlast.setDurationOverride(240);
-        ThoriumBlast.setEutOverride(-1);
-        ThoriumBlast.setVacuumDurationOverride(-1);
-
-        BlastProperty CobaltBlast = new BlastProperty(1750, GasTier.LOW);
-        CobaltBlast.setEutOverride(120);
-        CobaltBlast.setDurationOverride(200);
-        CobaltBlast.setEutOverride(-1);
-        CobaltBlast.setVacuumDurationOverride(-1);
-
-        BlastProperty BerylliumBlast = new BlastProperty(1560, GasTier.LOW);
-        BerylliumBlast.setEutOverride(120);
-        BerylliumBlast.setDurationOverride(200);
-        BerylliumBlast.setEutOverride(-1);
-        BerylliumBlast.setVacuumDurationOverride(-1);
-
-        BlastProperty NickelBlast = new BlastProperty(1728, GasTier.LOW);
-        NickelBlast.setEutOverride(120);
-        NickelBlast.setDurationOverride(200);
-        NickelBlast.setEutOverride(-1);
-        NickelBlast.setVacuumDurationOverride(-1);
-
-        Tantalum.setProperty(PropertyKey.BLAST, TantalumBlast);
-        Molybdenum.setProperty(PropertyKey.BLAST, MolybdenumBlast);
-        Platinum.setProperty(PropertyKey.BLAST, PlatinumBlast);
-        Thorium.setProperty(PropertyKey.BLAST, ThoriumBlast);
-        Cobalt.setProperty(PropertyKey.BLAST, CobaltBlast);
-        Beryllium.setProperty(PropertyKey.BLAST, BerylliumBlast);
-        Nickel.setProperty(PropertyKey.BLAST, NickelBlast);
+        Naphtha.addFlags("flammable");
+        NaturalGas.addFlags("flammable");
+        Methane.addFlags("flammable");
+        Propane.addFlags("flammable");
+        Butane.addFlags("flammable");
+        Butadiene.addFlags("flammable");
+        Toluene.addFlags("flammable");
+        WoodGas.addFlags("flammable");
+        CoalGas.addFlags("flammable");
+        Ethylene.addFlags("flammable");
+        RefineryGas.addFlags("flammable");
+        Ammonia.addFlags("flammable");
+        Propene.addFlags("flammable");
+        Butene.addFlags("flammable");
+        Phenol.addFlags("flammable");
+        Benzene.addFlags("flammable");
+        Hydrogen.addFlags("flammable");
+        Methanol.addFlags("flammable");
+        Ethanol.addFlags("flammable");
     }
 }

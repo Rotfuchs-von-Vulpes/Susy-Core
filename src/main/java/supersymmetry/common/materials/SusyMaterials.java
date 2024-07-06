@@ -1049,6 +1049,7 @@ public class SusyMaterials {
     public static Material ThalliumIChloride;
     public static Material AcidicThalliumSulfateSolution;
     public static Material ThalliumSulfateSolution;
+    public static Material WaferTreatmentAcid;
     public static Material ArsenicIIIOxide;
     public static Material AntimonyIIIOxide;
     public static Material PurifiedCadmiumSolution;
