@@ -9,6 +9,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.Materials.LithiumChloride;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static gregtechfoodoption.GTFOMaterialHandler.LithiumCarbonate;
 import static gregtechfoodoption.GTFOMaterialHandler.SodiumSulfate;
 import static supersymmetry.api.recipes.SuSyRecipeMaps.*;
 import static supersymmetry.common.item.SuSyMetaItems.*;
@@ -145,7 +146,7 @@ public class LithiumChain {
         BATCH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(LithiumSulfateSolution.getFluid(1000))
                 .input(dust, SodaAsh, 6)
-                .output(dust, LithiumCarbonate, 6)
+                .outputs(LithiumCarbonate.getItemStack(6))
                 .fluidOutputs(SodiumSulfateSolution.getFluid(1000))
                 .duration(180)
                 .EUt(200)
@@ -153,7 +154,7 @@ public class LithiumChain {
 
         ROASTER_RECIPES.recipeBuilder()
                 .fluidInputs(HydrochloricAcid.getFluid(2000))
-                .input(dust, LithiumCarbonate, 6)
+                .inputs(LithiumCarbonate.getItemStack(6))
                 .output(dust, LithiumChloride, 4)
                 .fluidOutputs(Steam.getFluid(3000))
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
@@ -201,7 +202,7 @@ public class LithiumChain {
         BATCH_REACTOR_RECIPES.recipeBuilder()
                 .input(dust, LithiumSulfate, 7)
                 .fluidInputs(SodaAshSolution.getFluid(1000))
-                .output(dust, LithiumCarbonate, 6)
+                .outputs(LithiumCarbonate.getItemStack(6))
                 .fluidOutputs(SodiumSulfateSolution.getFluid(1000))
                 .duration(120)
                 .EUt(200)
@@ -281,7 +282,7 @@ public class LithiumChain {
         CRYSTALLIZER_RECIPES.recipeBuilder()
                 .input(dust, SodaAsh, 6)
                 .fluidInputs(AluminiumFreeLepidoliteLeach.getFluid(1000))
-                .output(dust, LithiumCarbonate, 6)
+                .outputs(LithiumCarbonate.getItemStack(6))
                 .fluidOutputs(Wastewater.getFluid(1000))
                 .duration(120)
                 .EUt(200)

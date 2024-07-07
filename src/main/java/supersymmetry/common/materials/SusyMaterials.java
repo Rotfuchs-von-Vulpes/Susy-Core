@@ -773,7 +773,6 @@ public class SusyMaterials {
     public static Material Ferrosilicon;
     public static Material ConcentratedSaltWater;
     public static Material HypersalineWater;
-    public static Material LithiumCarbonate;
     public static Material LithiumCobaltOxide;
     public static Material SodiumCathodeAlloy;
     public static Material LithiumHexafluorophosphate;

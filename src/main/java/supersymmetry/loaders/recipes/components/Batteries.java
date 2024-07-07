@@ -12,6 +12,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static gregtechfoodoption.GTFOMaterialHandler.LithiumCarbonate;
 import static supersymmetry.api.recipes.SuSyRecipeMaps.*;
 import static supersymmetry.common.item.SuSyMetaItems.*;
 import static supersymmetry.common.materials.SusyMaterials.*;
@@ -115,7 +116,7 @@ public class Batteries {
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
-                .input(dust, LithiumCarbonate, 6)
+                .inputs(LithiumCarbonate.getItemStack(6))
                 .fluidInputs(HydrogenFluoride.getFluid(2000))
                 .fluidOutputs(Steam.getFluid(1000))
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
@@ -151,7 +152,7 @@ public class Batteries {
                 .buildAndRegister();
 
         ROASTER_RECIPES.recipeBuilder()
-                .input(dust, LithiumCarbonate, 6)
+                .inputs(LithiumCarbonate.getItemStack(6))
                 .input(dust, CobaltOxide, 4)
                 .fluidOutputs(CarbonMonoxide.getFluid(1000))
                 .output(dust, LithiumCobaltOxide, 8)
