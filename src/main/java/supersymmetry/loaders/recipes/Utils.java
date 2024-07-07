@@ -46,35 +46,24 @@ public class Utils {
             this.duration = duration;
         }
     }
-    public static final CarbonSource[] highPurityCombustibles = {
-            new CarbonSource(OreDictUnifier.get(dust, HighPurityCarbon), 100, OreDictUnifier.get(dustTiny, Ash), 1),
-            new CarbonSource(OreDictUnifier.get(dust, Carbon), 100, OreDictUnifier.get(dustTiny, Ash), 1),
-            new CarbonSource(OreDictUnifier.get(dust, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2),
-    };
-    public static final CarbonSource[] combustibles = {
-            new CarbonSource(OreDictUnifier.get(gem, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2),
-            new CarbonSource(OreDictUnifier.get(gem, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
-            new CarbonSource(OreDictUnifier.get(dust, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
-            new CarbonSource(OreDictUnifier.get(gem, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
-            new CarbonSource(OreDictUnifier.get(dust, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
-            new CarbonSource(OreDictUnifier.get(gem, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-            new CarbonSource(OreDictUnifier.get(dust, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-            new CarbonSource(OreDictUnifier.get(gem, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-            new CarbonSource(OreDictUnifier.get(dust, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-    };
-    public static final CarbonSource[] sources = {
-            new CarbonSource(OreDictUnifier.get(gem, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2),
-            new CarbonSource(OreDictUnifier.get(gem, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
-            new CarbonSource(OreDictUnifier.get(dust, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2),
-            new CarbonSource(OreDictUnifier.get(gem, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
-            new CarbonSource(OreDictUnifier.get(dust, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3),
-            new CarbonSource(OreDictUnifier.get(gem, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-            new CarbonSource(OreDictUnifier.get(dust, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-            new CarbonSource(OreDictUnifier.get(gem, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-            new CarbonSource(OreDictUnifier.get(dust, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4),
-            new CarbonSource(OreDictUnifier.get(gem, Lignite), 25, OreDictUnifier.get(dustTiny, Ash), 0),
-            new CarbonSource(OreDictUnifier.get(gem, Lignite), 25, OreDictUnifier.get(dustTiny, Ash), 0),
-    };
+
+    private static final CarbonSource highPurityCarbon = new CarbonSource(OreDictUnifier.get(dust, HighPurityCarbon), 100, OreDictUnifier.get(dustTiny, Ash), 1);
+    private static final CarbonSource carbon = new CarbonSource(OreDictUnifier.get(dust, Carbon), 100, OreDictUnifier.get(dustTiny, Ash), 1);
+    private static final CarbonSource coke = new CarbonSource(OreDictUnifier.get(gem, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2);
+    private static final CarbonSource cokeDust = new CarbonSource(OreDictUnifier.get(dust, Coke), 100, OreDictUnifier.get(dustTiny, Ash), 2);
+    private static final CarbonSource anthracite = new CarbonSource(OreDictUnifier.get(gem, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2);
+    private static final CarbonSource anthraciteDust = new CarbonSource(OreDictUnifier.get(dust, Anthracite), 90, OreDictUnifier.get(dustTiny, Ash), 2);;
+    private static final CarbonSource ligniteCoke = new CarbonSource(OreDictUnifier.get(gem, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3);
+    private static final CarbonSource ligniteCokeDust = new CarbonSource(OreDictUnifier.get(dust, LigniteCoke), 75, OreDictUnifier.get(dustTiny, Ash), 3);
+    private static final CarbonSource coal = new CarbonSource(OreDictUnifier.get(gem, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4);
+    private static final CarbonSource coalDust = new CarbonSource(OreDictUnifier.get(dust, Coal), 75, OreDictUnifier.get(dustTiny, DarkAsh), 4);
+    private static final CarbonSource charcoal = new CarbonSource(OreDictUnifier.get(gem, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4);
+    private static final CarbonSource charcoalDust = new CarbonSource(OreDictUnifier.get(dust, Charcoal), 60, OreDictUnifier.get(dustTiny, DarkAsh), 4);
+    private static final CarbonSource lignite = new CarbonSource(OreDictUnifier.get(gem, Lignite), 25, OreDictUnifier.get(dustTiny, Ash), 0);
+    private static final CarbonSource ligniteDust = new CarbonSource(OreDictUnifier.get(gem, Lignite), 25, OreDictUnifier.get(dustTiny, Ash), 0);
+    public static final CarbonSource[] highPurityCombustibles = {highPurityCarbon, carbon, cokeDust};
+    public static final CarbonSource[] combustibles = {coke, cokeDust, anthracite, anthraciteDust, ligniteCoke, ligniteCokeDust, coal, coalDust, charcoal, charcoalDust};
+    public static final CarbonSource[] sources = {coke, cokeDust, anthracite, anthraciteDust, ligniteCoke, ligniteCokeDust, coal, coalDust, charcoal, charcoalDust, lignite, ligniteDust};
     public static class Combustible {
         public final FluidStack fluid;
         public final boolean isPlasma;
