@@ -10,11 +10,9 @@ import static supersymmetry.loaders.recipes.Utils.combustibles;
 public class CobaltChain {
     public static void init() {
         for (Utils.CarbonSource combustible : combustibles) {
-            combustible.name.setCount(combustible.equivalent(1));
-
             ROASTER_RECIPES.recipeBuilder()
                     .input(dust, CobaltOxide, 2)
-                    .inputs(combustible.name)
+                    .input(combustible.name.getItem(), combustible.equivalent(1))
                     .output(dust, Cobalt)
                     .fluidOutputs(CarbonMonoxide.getFluid(1000))
                     .duration(120)
