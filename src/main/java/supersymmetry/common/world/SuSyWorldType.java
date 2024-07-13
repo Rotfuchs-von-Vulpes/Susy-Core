@@ -10,13 +10,12 @@ import supersymmetry.common.world.SuSyChunkGeneratorOverworld;
 public class SuSyWorldType extends WorldType {
     public SuSyWorldType() {
         super("SUSY");
-        this.enableInfoNotice();
     }
 
     @Override
     public @NotNull BiomeProvider getBiomeProvider(@NotNull World world)
     {
-        return new SuSyBiomeProvider(world);
+        return new BiomeProvider(world.getWorldInfo());
     }
 
     @Override
