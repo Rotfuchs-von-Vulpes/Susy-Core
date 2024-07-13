@@ -1944,6 +1944,7 @@ public class SusyMaterials {
         removeProperty(PropertyKey.FLUID_PIPE, Materials.Lead);
         Materials.Lead.setProperty(PropertyKey.FLUID_PIPE, new FluidPipeProperties(1200, 8, true, true, false, false));
 
+        Materials.Rutile.setProperty(PropertyKey.ORE, new OreProperty());
         //Add dusts and fluids for elements that do not have them
         Materials.Iodine.setProperty(PropertyKey.DUST, new DustProperty());
 

@@ -103,6 +103,7 @@ public class SuSyOrganicChemistryMaterials {
                 .build();
 
         Rayon = new Material.Builder(15014, SuSyUtility.susyId("rayon"))
+                .dust()
                 .components(Carbon, 6, Hydrogen, 10, Oxygen, 5)
                 .color(0xaee8d9)
                 .build();
@@ -881,6 +882,7 @@ public class SuSyOrganicChemistryMaterials {
                 .build();
 
         Kevlar = new Material.Builder(15154, SuSyUtility.susyId("kevlar"))
+                .dust()
                 .color(0x4d443e)
                 .components(Carbon, 14, Hydrogen, 10, Nitrogen, 2, Oxygen, 2)
                 .flags(GENERATE_PLATE)
@@ -2309,6 +2311,7 @@ public class SuSyOrganicChemistryMaterials {
                 .build();
 
         Nomex = new Material.Builder(15379, SuSyUtility.susyId("nomex"))
+                .dust()
                 .components(Carbon, 14, Hydrogen, 10, Nitrogen, 2, Oxygen, 2)
                 .color(0x5d95a3)
                 .build();

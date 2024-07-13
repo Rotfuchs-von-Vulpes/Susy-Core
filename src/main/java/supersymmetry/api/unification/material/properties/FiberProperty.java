@@ -1,5 +1,6 @@
 package supersymmetry.api.unification.material.properties;
 
+import gregtech.api.unification.material.properties.DustProperty;
 import gregtech.api.unification.material.properties.IMaterialProperty;
 import gregtech.api.unification.material.properties.MaterialProperties;
 import gregtech.api.unification.material.properties.PropertyKey;

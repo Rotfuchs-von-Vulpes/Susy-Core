@@ -2231,12 +2231,6 @@ public class SuSyFirstDegreeMaterials {
                 .components(UltramaficTailings, 1, Water, 1)
                 .color(0x878170)
                 .build();
-        RutileSlurry = new Material.Builder(8487, SuSyUtility.susyId("rutile_slurry"))
-                .liquid()
-                .components(Rutile, 1, Water, 1)
-                .color(0xe8e6e2)
-                .build();
-        RutileSlurry.setFormula("(H2O)(TiO2)(?)", true);
         ImpureTitaniumTetrachloride = new Material.Builder(8488, SuSyUtility.susyId("impure_titanium_tetrachloride"))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
                 .components(TitaniumTetrachloride, 1)

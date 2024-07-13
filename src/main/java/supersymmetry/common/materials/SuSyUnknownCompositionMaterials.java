@@ -1783,6 +1783,7 @@ public class SuSyUnknownCompositionMaterials {
         Cotton.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, false, false));
 
         Spandex = new Material.Builder(4394, SuSyUtility.susyId("spandex"))
+                .dust()
                 .color(0x625f8a)
                 .build();
 
