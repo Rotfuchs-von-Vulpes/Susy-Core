@@ -15,8 +15,6 @@ import static supersymmetry.common.blocks.SusyStoneVariantBlock.*;
 
 import java.util.Arrays;
 
-import static biomesoplenty.api.item.BOPItems.mudball;
-import static com.alcatrazescapee.notreepunching.common.items.ModItems.GRASS_FIBER;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.PRIMITIVE_BRICKS;
@@ -75,10 +73,10 @@ public class BrickChain {
                 METAL_CASING.getItemVariant(PRIMITIVE_BRICKS), "BB", "BB",
                 'B', FIRECLAY_BRICK);
 
-        ModHandler.addShapedRecipe("StrawCutting", STRAW.getStackForm(2), "k", "X",
-                'X', new ItemStack(GRASS_FIBER));
-        ModHandler.addShapelessRecipe("ManualMudbrickMix", MUDBRICK_MIX.getStackForm(4),
-                mudball, SAND_DUST.getStackForm(), STRAW.getStackForm(), Items.CLAY_BALL);
+//        ModHandler.addShapedRecipe("StrawCutting", STRAW.getStackForm(2), "k", "X",
+//                'X', new ItemStack(GRASS_FIBER));
+//        ModHandler.addShapelessRecipe("ManualMudbrickMix", MUDBRICK_MIX.getStackForm(4),
+//                mudball, SAND_DUST.getStackForm(), STRAW.getStackForm(), Items.CLAY_BALL);
         CompressBrickRecipes(MUDBRICK_MIX.getStackForm(), GTFOMetaItem.ADOBE_BRICK.getStackForm());
     }
 }

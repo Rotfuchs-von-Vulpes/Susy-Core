@@ -4,30 +4,20 @@ import appeng.api.AEApi;
 import appeng.api.definitions.IDefinitions;
 import appeng.api.features.IGrinderRecipeBuilder;
 import appeng.api.features.IGrinderRegistry;
-import biomesoplenty.api.block.BOPBlocks;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.stack.UnificationEntry;
-import gregtechfoodoption.block.GTFOMetaBlocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import appeng.block.grindstone.BlockGrinder;
 import supersymmetry.common.blocks.BlockResource;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static biomesoplenty.api.block.BOPBlocks.mud;
-import static biomesoplenty.api.item.BOPItems.mudball;
-import static com.alcatrazescapee.notreepunching.common.items.ModItems.GRASS_FIBER;
-import static gregtech.api.recipes.RecipeMaps.CUTTER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtechfoodoption.block.GTFOMetaBlocks.GTFO_LOGS;
-import static gregtechfoodoption.block.GTFOMetaBlocks.GTFO_PLANKS;
-import static net.minecraft.init.Blocks.*;
-import static net.minecraft.init.Items.REEDS;
-import static net.minecraft.init.Items.WHEAT;
+//import static net.minecraft.init.Blocks.*;
+//import static net.minecraft.init.Items.REEDS;
+//import static net.minecraft.init.Items.WHEAT;
 import static supersymmetry.common.blocks.SuSyBlocks.RESOURCE_BLOCK;
 import static supersymmetry.common.item.SuSyMetaItems.CHUNK_MAGNETITE;
 import static supersymmetry.common.materials.SusyMaterials.*;
@@ -55,14 +45,14 @@ public class StartingAge {
         ModHandler.removeRecipeByName("gregtech:clay_block_to_dust");
         ModHandler.addShapelessRecipe("gregtech:clay_block_to_dust", OreDictUnifier.get(dust, Clay, 4), new UnificationEntry(block, Clay), 'm');
 
-        ModHandler.addShapelessRecipe("fiber_from_reeds", new ItemStack(GRASS_FIBER, 2), new ItemStack(REEDS), 'k');
-        ModHandler.addShapelessRecipe("fiber_from_wheat", new ItemStack(GRASS_FIBER, 2), new ItemStack(WHEAT), 'k');
-        ModHandler.addShapelessRecipe("fiber_from_grass", new ItemStack(GRASS_FIBER), new ItemStack(TALLGRASS, 1, 1), 'k');
-        ModHandler.addShapelessRecipe("fiber_from_fern", new ItemStack(GRASS_FIBER), new ItemStack(TALLGRASS, 1, 2), 'k');
-        ModHandler.addShapelessRecipe("fiber_from_leaves", new ItemStack(GRASS_FIBER), "treeLeaves", 'k');
+//        ModHandler.addShapelessRecipe("fiber_from_reeds", new ItemStack(GRASS_FIBER, 2), new ItemStack(REEDS), 'k');
+//        ModHandler.addShapelessRecipe("fiber_from_wheat", new ItemStack(GRASS_FIBER, 2), new ItemStack(WHEAT), 'k');
+//        ModHandler.addShapelessRecipe("fiber_from_grass", new ItemStack(GRASS_FIBER), new ItemStack(TALLGRASS, 1, 1), 'k');
+//        ModHandler.addShapelessRecipe("fiber_from_fern", new ItemStack(GRASS_FIBER), new ItemStack(TALLGRASS, 1, 2), 'k');
+//        ModHandler.addShapelessRecipe("fiber_from_leaves", new ItemStack(GRASS_FIBER), "treeLeaves", 'k');
 
         ModHandler.addShapelessRecipe("gregtech:clay_block_to_ball", OreDictUnifier.get(dust, Clay), new UnificationEntry(ingot, Clay), 'm');
-        ModHandler.addShapelessRecipe("gregtech:mud_block_to_ball", new ItemStack(mudball, 4), new ItemStack(mud));
+//        ModHandler.addShapelessRecipe("gregtech:mud_block_to_ball", new ItemStack(mudball, 4), new ItemStack(mud));
 
         ModHandler.addShapelessRecipe("gregtech:magnetite_chunk", CHUNK_MAGNETITE.getStackForm(), new UnificationEntry(ore, Magnetite), "rock");
         ModHandler.addShapelessRecipe("gregtech:magnetite_chunk_1", CHUNK_MAGNETITE.getStackForm(), new UnificationEntry(ore, VanadiumMagnetite), "rock");
@@ -127,55 +117,7 @@ public class StartingAge {
             reg.addRecipe(builder.build());
         });
 
-        for (int i = 4; i < 8; i++) {
-            ModHandler.addShapedRecipe(true, "biomesoplenty:wood_cutting_0_" + i,
-                    new ItemStack(BOPBlocks.planks_0, 6, i - 4), " s ", " X ", "   ",
-                    'X', new ItemStack(BOPBlocks.log_0, 1, i));
 
-            CUTTER_RECIPES.recipeBuilder()
-                    .inputs(new ItemStack(BOPBlocks.log_0, 1, i))
-                    .outputs(new ItemStack(BOPBlocks.planks_0, 6, i - 4))
-                    .output(dust, Wood, 2)
-                    .duration(200)
-                    .EUt(7)
-                    .buildAndRegister();
-
-            ModHandler.addShapedRecipe(true, "biomesoplenty:wood_cutting_0_" + i,
-                    new ItemStack(BOPBlocks.planks_0, 6, i), " s ", " X ", "   ",
-                    'X', new ItemStack(BOPBlocks.log_1, 1, i));
-
-            CUTTER_RECIPES.recipeBuilder()
-                    .inputs(new ItemStack(BOPBlocks.log_1, 1, i))
-                    .outputs(new ItemStack(BOPBlocks.planks_0, 6, i))
-                    .output(dust, Wood, 2)
-                    .duration(200)
-                    .EUt(7)
-                    .buildAndRegister();
-
-            ModHandler.addShapedRecipe(true, "biomesoplenty:wood_cutting_0_" + i,
-                    new ItemStack(BOPBlocks.planks_0, 6, i + 4), " s ", " X ", "   ",
-                    'X', new ItemStack(BOPBlocks.log_2, 1, i));
-
-            CUTTER_RECIPES.recipeBuilder()
-                    .inputs(new ItemStack(BOPBlocks.log_2, 1, i))
-                    .outputs(new ItemStack(BOPBlocks.planks_0, 6, i + 4))
-                    .output(dust, Wood, 2)
-                    .duration(200)
-                    .EUt(7)
-                    .buildAndRegister();
-
-            ModHandler.addShapedRecipe(true, "biomesoplenty:wood_cutting_0_" + i,
-                    new ItemStack(BOPBlocks.planks_0, 6, i + 8), " s ", " X ", "   ",
-                    'X', new ItemStack(BOPBlocks.log_3, 1, i));
-
-            CUTTER_RECIPES.recipeBuilder()
-                    .inputs(new ItemStack(BOPBlocks.log_3, 1, i))
-                    .outputs(new ItemStack(BOPBlocks.planks_0, 6, i + 8))
-                    .output(dust, Wood, 2)
-                    .duration(200)
-                    .EUt(7)
-                    .buildAndRegister();
-        }
 
 
 //        ModHandler.addShapelessRecipe("gtfo:wood_crafting_0", new ItemStack(GTFO_PLANKS.get(0)), GTFO_LOGS.get(0));

@@ -1,6 +1,5 @@
 package supersymmetry.loaders.recipes.biology;
 
-import biomesoplenty.api.block.BOPBlocks;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
@@ -8,7 +7,6 @@ import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtechfoodoption.block.GTFOMetaBlocks;
-import gregtechfoodoption.block.tree.GTFOBlockLeaves;
 import gregtechfoodoption.item.GTFOMetaItem;
 import gregtechfoodoption.worldgen.trees.GTFOTrees;
 import net.minecraft.init.Items;
@@ -676,52 +674,6 @@ public class GreenhouseChain {
                 .EUt(30)
                 .duration(2400)
                 .buildAndRegister();
-
-        GREENHOUSE_RECIPES.recipeBuilder()
-                .notConsumable(new ItemStack(BOPBlocks.sapling_0, 1, 2))
-                .circuitMeta(1)
-                .fluidInputs(WarmHumidEarthGreenhouseGas.getFluid(10000))
-                .fluidInputs(Water.getFluid(5000))
-                .inputs(MetaItems.FERTILIZER.getStackForm(4))
-                .outputs(new ItemStack(BOPBlocks.bamboo, 12))
-                .EUt(30)
-                .duration(2400)
-                .buildAndRegister();
-
-        GREENHOUSE_RECIPES.recipeBuilder()
-                .notConsumable(new ItemStack(BOPBlocks.sapling_1, 1, 7))
-                .circuitMeta(1)
-                .fluidInputs(EarthGreenhouseGas.getFluid(20000))
-                .fluidInputs(Water.getFluid(20000))
-                .inputs(MetaItems.FERTILIZER.getStackForm(16))
-                .outputs(new ItemStack(LOG, 120))
-                .outputs(new ItemStack(LEAVES, 64))
-                .EUt(30)
-                .duration(6000)
-                .buildAndRegister();
-
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_0, 2, 1), new ItemStack(BOPBlocks.leaves_0, 12, 9), new ItemStack(LOG, 6, 1));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_0, 2, 0), new ItemStack(BOPBlocks.leaves_0, 12, 8), new ItemStack(LOG, 6, 2));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_0, 2, 3), new ItemStack(BOPBlocks.leaves_0, 12, 11), new ItemStack(BOPBlocks.log_1, 6, 5));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_0, 2, 4), new ItemStack(BOPBlocks.leaves_1, 12, 8), new ItemStack(BOPBlocks.log_0, 6, 6));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_0, 2, 5), new ItemStack(BOPBlocks.leaves_1, 12, 9), new ItemStack(BOPBlocks.log_4, 6, 5));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_0, 2, 6), new ItemStack(BOPBlocks.leaves_1, 12, 10), new ItemStack(BOPBlocks.log_0, 6, 7));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_0, 2, 7), new ItemStack(BOPBlocks.leaves_1, 12, 11), new ItemStack(BOPBlocks.log_1, 6, 4));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_1, 2, 0), new ItemStack(BOPBlocks.leaves_2, 12, 8), new ItemStack(LOG, 6));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_1, 2, 1), new ItemStack(BOPBlocks.leaves_2, 12, 9), new ItemStack(BOPBlocks.log_0, 6, 5));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_1, 2, 2), new ItemStack(BOPBlocks.leaves_2, 12, 10), new ItemStack(BOPBlocks.log_0, 6, 5));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_1, 2, 3), new ItemStack(BOPBlocks.leaves_2, 12, 11), new ItemStack(LOG, 6));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_1, 2, 5), new ItemStack(BOPBlocks.leaves_3, 12, 9), new ItemStack(LOG, 6));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_1, 2, 6), new ItemStack(BOPBlocks.leaves_3, 12, 10), new ItemStack(BOPBlocks.log_3, 6, 4));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_2, 2, 0), new ItemStack(BOPBlocks.leaves_4, 12, 8), new ItemStack(BOPBlocks.log_1, 6, 6));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_2, 2, 1), new ItemStack(BOPBlocks.leaves_4, 12, 9), new ItemStack(BOPBlocks.log_1, 6, 7));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_2, 2, 2), new ItemStack(BOPBlocks.leaves_4, 12, 10), new ItemStack(BOPBlocks.log_2, 6, 4));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_2, 2, 3), new ItemStack(BOPBlocks.leaves_4, 12, 11), new ItemStack(BOPBlocks.log_2, 6, 5));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_2, 2, 4), new ItemStack(BOPBlocks.leaves_5, 12, 8), new ItemStack(BOPBlocks.log_2, 6, 6));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_2, 2, 5), new ItemStack(BOPBlocks.leaves_5, 12, 9), new ItemStack(BOPBlocks.log_3, 6, 5));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_2, 2, 6), new ItemStack(BOPBlocks.leaves_5, 12, 10), new ItemStack(BOPBlocks.log_3, 6, 6));
-        generateGreenhouseTreeRecipes(EarthGreenhouseGas, new ItemStack(BOPBlocks.sapling_2, 2, 7), new ItemStack(BOPBlocks.leaves_5, 12, 11), new ItemStack(BOPBlocks.log_3, 6, 7));
-
 //VANILLA CROPS
 
         GREENHOUSE_RECIPES.recipeBuilder()

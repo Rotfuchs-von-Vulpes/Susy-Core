@@ -38,9 +38,7 @@ public class ClientProxy extends CommonProxy {
         SuSyEntityList.registerRenders();
     }
 
-    @Override
     public void load() {
-        super.load();
         SuSyMetaBlocks.registerColors();
         SuSyFluidTooltipLoader.registerTooltips();
     }

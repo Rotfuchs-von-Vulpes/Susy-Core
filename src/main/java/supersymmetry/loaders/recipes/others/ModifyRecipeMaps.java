@@ -22,7 +22,6 @@ import supersymmetry.common.blocks.BlockResource;
 import java.util.Arrays;
 import java.util.Objects;
 
-import static biomesoplenty.api.item.BOPItems.*;
 import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.ALLOY_BLAST_RECIPES;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.GTRecipeHandler.removeAllRecipes;
@@ -181,8 +180,6 @@ public class ModifyRecipeMaps {
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, OreDictUnifier.get(dust, Redrock, 3));
         // Copper Dust * 1
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, OreDictUnifier.get(dust, AnnealedCopper));
-        // Methane * 54
-        removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(persimmon));
         // Methane * 35
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(PORKCHOP));
         // Methane * 94
@@ -195,8 +192,6 @@ public class ModifyRecipeMaps {
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(BEEF));
         // Methane * 12
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(POTATO));
-        // Methane * 58
-        removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(pear));
         // Methane * 130
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(COOKED_PORKCHOP));
         // Methane * 35
@@ -211,8 +206,6 @@ public class ModifyRecipeMaps {
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(GOLDEN_CARROT));
         // Methane * 23
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(MUTTON));
-        // Methane * 10
-        removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(berries));
         // Methane * 23
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(MELON));
         // Methane * 18
@@ -227,8 +220,6 @@ public class ModifyRecipeMaps {
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(FISH, 1, 2));
         // Methane * 10
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(FISH, 1, 3));
-        // Methane * 38
-        removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(filled_honeycomb));
         // Methane * 34
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, GTFOMetaItem.CORN_COB.getStackForm());
         // Methane * 34
@@ -298,18 +289,12 @@ public class ModifyRecipeMaps {
         // removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, item('quark:frog_leg'));
         // Methane * 130
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(COOKED_BEEF));
-        // Methane * 10
-        removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(shroompowder));
         // Methane * 18
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(BROWN_MUSHROOM));
         // Methane * 86
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(COOKED_CHICKEN));
         // Methane * 12
         // removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, item('quark:crab_leg'));
-        // Methane * 54
-        removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(peach));
-        // Methame * 56
-        removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(ricebowl));
         // Methane * 86
         removeRecipesByInputs(RecipeMaps.CENTRIFUGE_RECIPES, new ItemStack(MUSHROOM_STEW));
         // Methane * 130
@@ -754,13 +739,13 @@ public class ModifyRecipeMaps {
                 .EUt(30)
                 .buildAndRegister();
 
-        FLUID_SOLIDFICATION_RECIPES.recipeBuilder()
-                .fluidInputs(Mud.getFluid(250))
-                .notConsumable(SHAPE_MOLD_BALL)
-                .outputs(new ItemStack(mudball))
-                .duration(40)
-                .EUt(4)
-                .buildAndRegister();
+//        FLUID_SOLIDFICATION_RECIPES.recipeBuilder()
+//                .fluidInputs(Mud.getFluid(250))
+//                .notConsumable(SHAPE_MOLD_BALL)
+//                .outputs(new ItemStack(mudball))
+//                .duration(40)
+//                .EUt(4)
+//                .buildAndRegister();
 
         // Acetone * 200
         nbt.setInteger("Configuration", 1);

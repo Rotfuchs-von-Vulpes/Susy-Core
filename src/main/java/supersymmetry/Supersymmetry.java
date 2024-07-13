@@ -20,7 +20,7 @@ import supersymmetry.worldGen.SuSyWorldGen;
 
 import java.io.IOException;
 
-@Mod(name = Supersymmetry.NAME, modid = Supersymmetry.MODID, version = "0.1.12", dependencies = GTInternalTags.DEP_VERSION_STRING + ";required-after:gcym;required-after:gregtechfoodoption;required-after:notreepunching")
+@Mod(name = Supersymmetry.NAME, modid = Supersymmetry.MODID, version = "0.1.12", dependencies = GTInternalTags.DEP_VERSION_STRING + ";required-after:gcym;required-after:gregtechfoodoption")
 
 public class Supersymmetry {
 
@@ -78,7 +78,6 @@ public class Supersymmetry {
             e.printStackTrace();
         }
 
-        proxy.load();
         SuSyCoverBehaviors.init();
     }
 }
