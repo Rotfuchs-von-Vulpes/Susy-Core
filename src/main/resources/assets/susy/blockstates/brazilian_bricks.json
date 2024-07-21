@@ -1,0 +1,6 @@
+{
+  "forge_marker" : 1,
+  "variants": {
+    "variant=bricks": { "model": "susy:decorative/brazilian_bricks" }
+  }
+}

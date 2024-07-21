@@ -814,6 +814,9 @@ susy.fluid.voiding.flammable=Voidable with Flare Stack
 
 # my additions
 
+# blocks
+tile.brazilian_bricks.bricks.name=Brazilian Bricks
+
 # materials
 susy.material.uwunium=UwUnium
 susy.material.cien=Cien

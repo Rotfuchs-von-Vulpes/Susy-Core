@@ -36,6 +36,7 @@ public class SuSyBlocks {
     public static BlockElectrodeAssembly ELECTRODE_ASSEMBLY;
     public static BlockSuSyMultiblockCasing MULTIBLOCK_CASING;
     public static BlockSerpentine SERPENTINE;
+    public static BlockBrick BRICK;
 
     public static void init() {
         COOLING_COIL = new BlockCoolingCoil();
@@ -93,6 +94,8 @@ public class SuSyBlocks {
         SERPENTINE = new BlockSerpentine();
         SERPENTINE.setRegistryName("serpentine");
 
+        BRICK = new BlockBrick();
+        BRICK.setRegistryName("brazilian_bricks");
     }
 
     @SideOnly(Side.CLIENT)
@@ -116,6 +119,7 @@ public class SuSyBlocks {
         ELECTRODE_ASSEMBLY.onModelRegister();
         registerItemModel(MULTIBLOCK_CASING);
         SERPENTINE.onModelRegister();
+        registerItemModel(BRICK);
     }
 
     @SideOnly(Side.CLIENT)
@@ -158,3 +162,22 @@ public class SuSyBlocks {
         return property.getName((T) value);
     }
 }
+
+//{
+//  "forge_marker" : 1,
+//  "defaults": {
+//    "model": "minecraft:cube",
+//    "textures": {
+//      "particle": "gregtech:blocks/decorative/brick_front",
+//      "down": "gregtech:blocks/decorative/brick_up",
+//      "up": "gregtech:blocks/decorative/brick_up",
+//      "north": "gregtech:blocks/decorative/brick_front",
+//      "east": "gregtech:blocks/decorative/brick_side",
+//      "south": "gregtech:blocks/decorative/brick_front",
+//      "west": "gregtech:blocks/decorative/brick_side"
+//    }
+//  },
+//  "variants": {
+//    "normal": [{}]
+//  }
+//}
